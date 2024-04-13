@@ -1,0 +1,33 @@
+function Show-Menu
+{
+    param (
+        [string]$Title = 'Moje Menu'
+    )
+    Clear-Host
+    Write-Host "================ $Title ================"
+
+    Write-Host "1: Wyświetl dostępne skrypty"
+    Write-Host "2: Uruchom skrypt"
+    Write-Host "Q: Wyjdź."
+}
+do
+{
+    Show-Menu –Title 'Moje Menu'
+    $input = Read-Host "Wybierz opcję"
+    switch ($input)
+    {
+        '1' {
+            $path = Read-Host "Podaj ścieżkę do katalogu ze skryptami"
+            Get-ChildItem -Path $path -Filter *.ps1
+        } 
+        '2' {
+            $script = Read-Host "Podaj nazwę skryptu do uruchomienia"
+            & $script
+        }
+        'q' {
+            return
+        }
+    }
+    pause
+}
+until ($input -eq 'q')
