@@ -1,0 +1,35 @@
+#projects {
+    padding: 20px 0;
+    background: #f4f4f4;
+}
+.project-item {
+    margin-bottom: 20px;
+    padding: 20px;
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+.project-item img {
+    max-width: 100%;
+    height: auto;
+    border-bottom: 1px solid #ddd;
+}
+.project-item h3 {
+    margin-top: 20px;
+    color: #333;
+}
+.project-item p {
+    color: #666;
+}
+.project-item a {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 15px;
+    background: #50b3a2;
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+}
+.project-item a:hover {
+    background: #429188;
+}
