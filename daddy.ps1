@@ -1,10 +1,10 @@
-
-read-host $daddy haslo;
-read-host haslo
-if (haslo === "$daddy") {
-    // Miejsce na Twój kod, który zostanie wykonany po wprowadzeniu poprawnego hasła
-    alert("Hasło poprawne! Rozpoczynamy działanie skryptu...");
-    // Tutaj możesz umieścić resztę swojego kodu
+Write-Host "Ustal hasło"
+$daddy = Read-Host
+Write-Host "Podaj hasło"
+$haslo = Read-Host
+if ($haslo -eq $daddy) {
+    # Tutaj umieść kod, który ma być wykonany, gdy hasło jest poprawne
+    Write-Host "Hasło poprawne! Skrypt zostanie wykonany."
 } else {
-    alert("Hasło niepoprawne! Skrypt nie zostanie wykonany.");
+    Write-Host "Hasło niepoprawne! Skrypt nie zostanie wykonany."
 }
