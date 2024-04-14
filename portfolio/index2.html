@@ -3,46 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Moje Portfolio</title>
+    <title>O Mnie - Nomad Portfolio</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
     <style>
-        body { font-family: Arial, sans-serif; }
-        .container { width: 80%; margin: auto; }
-        header { background: #333; color: white; padding: 10px 0; text-align: center; }
-        nav { background: #444; padding: 10px 0; text-align: center; }
-        nav a { color: white; text-decoration: none; padding: 0 15px; }
-        nav a:hover { background: #555; }
-        section { margin: 20px 0; }
-        footer { background: #333; color: white; text-align: center; padding: 10px 0; }
+        body { padding-top: 4.5rem; }
+        .container { max-width: 40em; }
+        .profile-image { width: 100%; height: auto; margin-bottom: 20px; }
     </style>
 </head>
 <body>
-    <div class="container">
-        <header>
-            <h1>Witaj na mojej stronie portfolio</h1>
-        </header>
-        <nav>
-            <a href="#o-mnie">O mnie</a>
-            <a href="#projekty">Projekty</a>
-            <a href="#kontakt">Kontakt</a>
-        </nav>
-        <section id="o-mnie">
-            <h2>O mnie</h2>
-            <p>Tutaj wpisz informacje o sobie...</p>
-        </section>
-        <section id="projekty">
-            <h2>Projekty</h2>
-            <p>Tutaj przedstaw swoje projekty...</p>
-        </section>
-        <section id="kontakt">
-            <h2>Kontakt</h2>
-            <p>Tutaj dodaj swoje dane kontaktowe...</p>
-        </section>
-        <footer>
-            <p>© 2024 Moje Portfolio</p>
-        </footer>
-    </div>
-    <script>
-        // Tutaj możesz dodać JavaScript, jeśli potrzebujesz interaktywności
-    </script>
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+        <a class="navbar-brand" href="index.html">Nomad</a>
+    </nav>
+
+    <main role="main" class="container">
+        <h1 class="mt-5">O Mnie</h1>
+        <img src="ścieżka_do_twojego_zdjęcia.jpg" alt="Nomad Somni" class="profile-image">
+        <p class="lead">Tutaj wpisz kilka słów o sobie, swoim doświadczeniu zawodowym i pasjach.</p>
+        <p>Możesz również opowiedzieć o swoich umiejętnościach, osiągnięciach i celach zawodowych. To miejsce, gdzie możesz się przedstawić i pokazać swoją osobowość.</p>
+        <p><a class="btn btn-secondary" href="index.html" role="button">Powrót do portfolio</a></p>
+    </main>
+
+    <footer class="container">
+        <p>© Nomad Somni 2024</p>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
 </body>
 </html>
