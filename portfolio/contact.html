@@ -6,19 +6,73 @@
     <title>Kontakt - Nomad Portfolio</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
     <style>
+        @keyframes slideFadeIn {
+  0% {
+    transform: translateX(100%); /* Start off-screen to the left */
+    opacity: 0; /* Start fully transparent */
+  }
+  100% {
+    transform: translateX(0); /* End at its final position */
+    opacity: 1; /* Fade to fully opaque */
+  }
+  
+}
         body { padding-top: 4.5rem; }
         .container { max-width: 40em; }
         .contact-form { margin-top: 2rem; }
+        .dark-box {
+  width: 500px; /* Set the width of your box */
+  height: 200px; /* Set the height of your box */
+  background-color: rgba(0, 0, 0, 0.7); /* Dark background with transparency */
+  color: white; /* Text color */
+  padding: 20px; /* Padding inside the box */
+  border-radius: 10px; /* Rounded corners */
+  position: absolute; /* Position it absolutely within its parent */
+  right: 0; /* Start at the left edge of the parent */
+  animation: slideFadeIn 2s ease-in-out forwards; /* Apply the animation */
+} .navbar, .jumbotron {
+            background-color: red; /* Sets the background color of the navbar, jumbotron, and footer to red */
+            background-image: url('./photos/OIG1 (1).jpg'); /* Sets the background image */
+            color: rgba(255, 255, 255, 0.5); /* Sets the text color to white for contrast */
+        }
+
     </style>
 </head>
 <body>
-    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top bg-dark">
         <a class="navbar-brand" href="index.html">Nomad</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="index2.html">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="projects.html">Projects</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="contact.html">Contact</a>
+                </li>
+            </ul>
+        </div>
     </nav>
+    
 
     <main role="main" class="container">
-        <h1 class="mt-5">Kontakt</h1>
+        <div class="dark-box" class="mt-5">aspen_codes:: PORTFOLIO_CONTACT
+            <h2 class="lead">#CONTACT</h2>
         <p class="lead">Jeśli masz jakiekolwiek pytania lub chcesz nawiązać współpracę, skorzystaj z poniższego formularza, aby się ze mną skontaktować.</p>
+        </div>
+        <div class="jumbotron">
+                    <div class="container">
+                    </div><h1 ><B>aspen_codes:: PORTFOLIO_CONTACT<P></P></B>#CONTACT</h1>
+                    </div>
         <form class="contact-form">
             <div class="form-group">
                 <label for="name">Imię i nazwisko</label>

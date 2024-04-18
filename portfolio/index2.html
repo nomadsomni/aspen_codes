@@ -6,21 +6,116 @@
     <title>O Mnie - Nomad Portfolio</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
     <style>
-        body { padding-top: 4.5rem; }
+      @keyframes slideFadeIn {
+  0% {
+    transform: translateX(100%); /* Start off-screen to the left */
+    opacity: 0; /* Start fully transparent */
+  }
+  100% {
+    transform: translateX(0); /* End at its final position */
+    opacity: 1; /* Fade to fully opaque */
+  }
+  
+}
+
+body { padding-top: 4.5rem; }
         .container { max-width: 40em; }
-        .profile-image { width: 100%; height: auto; margin-bottom: 20px; }
-    </style>
+        .profile-image { width: 21%; height: auto; margin-bottom: 20px; }
+        
+.dark-box {
+  width: 420px; /* Set the width of your box */
+  height: 500px; /* Set the height of your box */
+  background-color: rgba(0, 0, 0, 0.7); /* Dark background with transparency */
+  background-image: url("photos/OIG2\ \(2\).jpg" height: '50%');
+  color: white; /* Text color */
+  padding: 20px; /* Padding inside the box */
+  border-radius: 10px; /* Rounded corners */
+  position: absolute; /* Position it absolutely within its parent */
+  right: 0; /* Start at the left edge of the parent */
+  animation: slideFadeIn 2s ease-in-out forwards; /* Apply the animation */
+}
+.dark-box_left {
+  width: 420px; /* Set the width of your box */
+  height: 500px; /* Set the height of your box */
+  background-color: rgba(0, 0, 0, 0.7); /* Dark background with transparency */
+  background-image: url("photos/OIG2\ \(2\).jpg" height: '50%');
+  color: white; /* Text color */
+  padding: 20px; /* Padding inside the box */
+  border-radius: 10px; /* Rounded corners */
+  position: absolute; /* Position it absolutely within its parent */
+  left: 0; /* Start at the left edge of the parent */
+  animation: slideFadeIn 2s ease-in-out forwards; /* Apply the animation */
+}
+.dark-box_left_small{
+  width: 420px; /* Set the width of your box */
+  height: auto; /* Set the height of your box */
+  background-color: rgba(0, 0, 0, 0.7); /* Dark background with transparency */
+  background-image: url("photos/OIG2\ \(2\).jpg" height: '50%');
+  color: white; /* Text color */
+  padding: 20px; /* Padding inside the box */
+  border-radius: 10px; /* Rounded corners */
+  position: absolute; /* Position it absolutely within its parent */
+  left: 0; /* Start at the left edge of the parent */
+  animation: slideFadeIn 2s ease-in-out forwards; /* Apply the animation */
+}
+ 
+   </style>
 </head>
 <body>
-    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-        <a class="navbar-brand" href="index.html">Nomad</a>
-    </nav>
+  <nav class="navbar navbar-expand-lg navbar-dark fixed-top bg-dark">
+    <a class="navbar-brand" href="index.html">Nomad</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="index2.htmlx">About</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="projects.html">Projects</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="contact.html">Contact</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
 
     <main role="main" class="container">
-        <h1 class="mt-5">O Mnie</h1>
-        <img src="ścieżka_do_twojego_zdjęcia.jpg" alt="Nomad Somni" class="profile-image">
-        <p class="lead">Tutaj wpisz kilka słów o sobie, swoim doświadczeniu zawodowym i pasjach.</p>
+      <div class="dark-box_left_small mt-5" style="top: 5%; background-image: url('/photos/oig2.jpg');">
+        <img src="/photos/OIG3.jpg" alt="Nomad Somni" class="profile-image" style="width: 41px;">
+        <p>aspen_codes:: PORTFOLIO_PROJECT_ID2</p>
+        <img src="/photos/OIG3.jpg" alt="Nomad Somni" class="profile-image dark-box_left_small" style="width:150px; top:150px;">
+        <p>#AVALANCHE.</p>
+        <p>aspen_codes:: PORTFOLIO_ABOUT</p>
+    </div>
+
+      <div class="dark-box_left_small" class="mt-5" style="top: 75%; background-image:url(photos/OIG2.jpg).jpg"><img src="\photos\OIG3.jpg" alt="Nomad Somni" class="profile-image" style="width: 41px">aspen_codes:: PORTFOLIO_PROJECT_ID2
+      <img src="\photos\OIG3.jpg" alt="Nomad Somni" class="profile-image; dark-box_left_small" style="width:150px; top:150px" lead >#AVALANCHE.
+     aspen_codes:: PORTFOLIO_ABOUT</P></div>
+      <div class="dark-box_left_small" class="mt-5" style="top: 50%" src="\photos\oig2.jpg"><b>aspen_codes:: PORTFOLIO_PROJECT_ID2</b>
+        <p class="lead" style="color: rgba(172, 172, 172, 0.795);">Krótki opis projektu i użytych technologii.</p>
+    </div>
+      <img src="\photos\OIG3.jpg" alt="Nomad Somni" class="profile-image">#AVALANCHE.</div>
+      <div class="dark-box" class="mt-5">      
+        <h2> aspen_codes:: PORTFOLIO_ABOUT</P></h2>
+     <div class="mt-6"> 
+          <p class="lead">Tutaj wpisz kilka słów o sobie, swoim doświadczeniu zawodowym i pasjach.</p>
+          <p>Możesz również opowiedzieć o swoich umiejętnościach, osiągnięciach i celach zawodowych. To miejsce, gdzie możesz się przedstawić i pokazać swoją osobowość.</p>
+</div>
+<div class="mt-6">  <img src="\photos\OIG3.jpg" alt="Nomad Somni" class="profile-image">avalanche.</div>
+        </div>
+        <img src="\photos\OIG3.jpg" alt="Nomad Somni" class="profile-image width=100%">avalanche.        Możesz również opowiedzieć o swoich umiejętnościach, osiągnięciach i celach zawodowych. To miejsce, gdzie możesz się przedstawić i pokazać swoją osobowość.</p>
+
+
         <p>Możesz również opowiedzieć o swoich umiejętnościach, osiągnięciach i celach zawodowych. To miejsce, gdzie możesz się przedstawić i pokazać swoją osobowość.</p>
+      </div>
         <p><a class="btn btn-secondary" href="index.html" role="button">Powrót do portfolio</a></p>
     </main>
 

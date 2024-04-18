@@ -9,7 +9,18 @@
  
 @keyframes slideFadeIn {
   0% {
-    transform: translateX(50%); /* Start off-screen to the left */
+    transform: translateX(100%); /* Start off-screen to the left */
+    opacity: 0; /* Start fully transparent */
+  }
+  100% {
+    transform: translateX(0); /* End at its final position */
+    opacity: 1; /* Fade to fully opaque */
+  }
+  
+}
+@keyframes slideFadeInleft {
+  0% {
+    transform: translateX(40%); /* Start off-screen to the left */
     opacity: 0; /* Start fully transparent */
   }
   100% {
@@ -31,29 +42,30 @@ body { padding-top: 4.5rem; }
   color: white; /* Text color */
   padding: 20px; /* Padding inside the box */
   border-radius: 10px; /* Rounded corners */
+  margin-bottom: 20px; /* Dodaj margines dolny, aby oddzielić elementy */
   position: absolute; /* Position it absolutely within its parent */
   right: 0; /* Start at the left edge of the parent */
-  animation: slideFadeIn 1s ease-in-out forwards; /* Apply the animation */
+  animation: slideFadeIn 2s ease-in-out forwards; /* Apply the animation */
 }
-.dark-box_left_small{
-  width: 500px; /* Set the width of your box */
-  height: auto; /* Set the height of your box */
-  background-color: rgba(0, 0, 0, 0.7); /* Dark background with transparency */
-  background-image: url("photos/OIG2\ \(2\).jpg");
+.dark-box_left {
+  width: 350px; /* Set the width of your box */
+  height: 100px; /* Set the height of your box */
+  background-color: rgba(255, 0, 0, 0.7); /* Dark background with transparency */
   color: white; /* Text color */
   padding: 20px; /* Padding inside the box */
   border-radius: 10px; /* Rounded corners */
   position: absolute; /* Position it absolutely within its parent */
-  nav-left: 0; /* Start at the left edge of the parent */
-  animation: slideFadeIn 2s ease-in-out forwards; /* Apply the animation */
+  left: 0; /* Start at the left edge of the parent */
+  animation: slideFadeIn 0.5s ease-in-out forwards; /* Apply the animation */
 }
+
 
     </style>
     </style>
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark fixed-top bg-dark">
-        <a class="navbar-brand" href="index.html">Nomad</a>
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top bg-dark" style=" background-color: yellowgreen;">
+        <a class="navbar-brand" href="redsheet.html">Nomad</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -61,7 +73,7 @@ body { padding-top: 4.5rem; }
         <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item active">
-                    <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="redsheet.html">Home <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="index2.html">About</a>
@@ -72,22 +84,36 @@ body { padding-top: 4.5rem; }
                 <li class="nav-item">
                     <a class="nav-link" href="contact.html">Contact</a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="canvas.html">AVALANCHE.</a>
+                </li>
             </ul>
         </div>
     </nav>
     
 
     <main role="main" class="container">
-        <div class="dark-box" class="mt-5">aspen_codes:: PORTFOLIO_PROJECT
+    
+    <div class="dark-box_left" class="mt-5">aspen_codes:: PORTFOLIO_ABOUT
+        <p><a class="btn btn-secondary" href="index2.html" role="button">#ABOUT_ME</a></p>
+    </div>
+    <div class="dark-box" class="mt-5" style="top: 250px;%">aspen_codes:: PORTFOLIO_PROJECT
         <p class="lead">Krótki opis projektu i użytych technologii.</p>
-        <div class="col-md-6 dark-box_left_small" style="top: 620px; left: -900px;">
-            <h2><b>about_me</b></h2>
-            <p>aspen_codes:: PORTFOLIO_ABOUT</p>
-            <p><a class="btn btn-secondary" href="contact.html" role="button" style=color:yellowgreen>#CONTACT</a></p>
-        </div>
+    </div>
+    <div class="dark-box" class="mt-5" style="top: 375px; background-color: red;"><b style="background-color: lightgrey;">aspen_codes:: PORTFOLIO_PROJECT_ID2</b>
+        <p class="lead">Krótki opis projektu i użytych technologii.</p>
+    </div>
+    <div class="dark-box" class="mt-5" style="top: 620px; background-color: yellowgreen;"><b style="color: gray">aspen_codes:: PORTFOLIO_PROJECT_ID4</b>
+        <p class="lead" style="background-color: gray">Krótki opis projektu i użytych technologii.</p>
+    </div>
+    <div class="dark-box" class="mt-5" style="top: 55%; background-image: url(photos/bg.jpg)";><b style="background-color: aquamarine;"> PORTFOLIO_PROJECT_ID3
+        <p class="lead" style="background-color: rgb(0, 162, 255);">Krótki opis projektu i użytych technologii.</p></b>
     </div>
     <img src="\photos\OIG1.jpg" alt="Nazwa Projektu" class="project-image">
-        <p>Tutaj możesz umieścić bardziej szczegółowy opis projektu, w tym wyzwania, które napotkałeś, rozwiązania, które zastosowałeś, i to, czego się nauczyłeś. Możesz również wspomnieć o narzędziach i technologiach, które były użyte w projekcie.</p>
+       
+    <div class="dark-box_left" class="mt-5">aspen_codes:: PORTFOLIO_CONTACT
+        <p><a class="btn btn-secondary" href="contact.html" role="button">#CONTACT</a></p>
+    </div><p>Tutaj możesz umieścić bardziej szczegółowy opis projektu, w tym wyzwania, które napotkałeś, rozwiązania, które zastosowałeś, i to, czego się nauczyłeś. Możesz również wspomnieć o narzędziach i technologiach, które były użyte w projekcie.</p>
         <p><a class="btn btn-secondary" href="index.html" role="button">Powrót do portfolio</a></p>
 
     </main>
