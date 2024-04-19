@@ -1,0 +1,13 @@
+body {
+    font-family: 'Arial', sans-serif;
+}
+
+.jumbotron {
+    background-color: #f8f9fa; /* Light grey background */
+    border-radius: 0.5em;
+    padding: 2em;
+}
+
+.card {
+    margin-bottom: 20px;
+}
