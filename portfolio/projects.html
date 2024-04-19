@@ -47,7 +47,27 @@ body { padding-top: 4.5rem; }
   nav-left: 0; /* Start at the left edge of the parent */
   animation: slideFadeIn 2s ease-in-out forwards; /* Apply the animation */
 }
+.project_id_right{
+                  background-color: rgba(255, 255, 255, 0.5);
+                  border-radius: 10px;
+                  width: 555px;
+                  height: 230px;
+                  padding: 20px;
+                  text-align: start;
+                  background-position: center;
+                  background-repeat: no-repeat;
+                  background-size: cover; /* Sets the background image */
+                  color: rgba(255, 255, 255, 0.5); /* Sets the text color to white for contrast */
 
+              }
+              .btn-orange{
+                      background-color: rgba(255, 102, 0, 0.63); /* Sets the background color of the navbar, jumbotron, and footer to red */
+                      color: rgba(255, 255, 255, 0.5); /* Sets the text color to white for contrast */
+                  }
+                  .btn-gray{
+                      background-color: rgba(0, 0, 0, 0.5); /* Sets the background color of the navbar, jumbotron, and footer to red */
+                      color: rgba(255, 255, 255, 0.5); /* Sets the text color to white for contrast */
+                  }
     </style>
     </style>
 </head>
@@ -77,7 +97,7 @@ body { padding-top: 4.5rem; }
     </nav>
     
 
-    <main role="main" class="container">
+    <main role="main" class="container dark-box_quick">
         <div class="dark-box" class="mt-5">aspen_codes:: PORTFOLIO_PROJECT
         <p class="lead">Krótki opis projektu i użytych technologii.</p>
         <div class="col-md-6 dark-box_left_small" style="top: 620px; left: -900px;">
@@ -86,10 +106,42 @@ body { padding-top: 4.5rem; }
             <p><a class="btn btn-secondary" href="XVODE.HTML" role="button" style=color:yellowgreen>#CONTACT</a></p>
         </div>
     </div>
-    <img src="\photos\OIG1.jpg" alt="Nazwa Projektu" class="project-image">
-        <p>Tutaj możesz umieścić bardziej szczegółowy opis projektu, w tym wyzwania, które napotkałeś, rozwiązania, które zastosowałeś, i to, czego się nauczyłeś. Możesz również wspomnieć o narzędziach i technologiach, które były użyte w projekcie.</p>
-        <p><a class="btn btn-secondary" href="index.html" role="button">Powrót do portfolio</a></p>
-
+    <div
+            class="col-md-6 "><div class="project_id_right banner"
+            style="background-image: url(/photos/orange_detail.jpg);"
+            href="/projects/project_id2.html"
+            role="banner"
+            
+          >
+            <h2 style="background-color: rgba(255, 102, 0, 0.63)">
+              aspen_codes::
+            </h2>
+            <p style="color: rgba(0, 0, 0, 0.5); background-color: rgba(255, 102, 0, 0.63);">aspen_codes:: PORTFOLIO_PROJECT_ID2</p>
+            <p><a class="btn btn-orange" href="/projects/project_id2.html" role="button"
+                >#AVALANCHE</a></div>
+                
+            </p>
+          </div>
+          
+        <p>Tutaj możesz umieścić bardziej szczegółowy opis projektu, w tym wyzwania, które napotkałeś, rozwiązania, które zastosowałeś, i to, czego się nauczyłeś. Możesz również wspomnieć o narzędziach i technologiach, które były użyte w projekcie.</p></div>
+        <div
+            class="col-md-6 "><div class="project_id_right banner"
+            style="background-image: url(/photos/YINGYANG.jpg)"
+            href="/projects/project_id2.html"
+            role="banner"
+            
+          >
+            <h2 style="background-color: rgba(41, 41, 41, 0.699); ">
+              aspen_codes::
+            </h2>
+            <p style="color: rgba(180, 180, 180, 0.753); ; background-color: rgba(0, 0, 0, 0.5);">aspen_codes:: PORTFOLIO_PROJECT_ID4</p>
+            <p><a class="btn btn-gray" href="/projects/project_id4.html" role="button"
+                >#AVALANCHE</a></div>
+                
+            </p>
+          </div>
+        
+          <p><a class="btn btn-secondary" href="index.html" role="button">Powrót do portfolio</a></p>
     </main>
 
     <footer class="container">
