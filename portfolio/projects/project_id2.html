@@ -1,145 +1,226 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Nomad Somni | Portfolio</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+    />
     <style>
-        @keyframes slideFadeIn {
-  0% {
-    transform: translateX(100%); /* Start off-screen to the left */
-    opacity: 0; /* Start fully transparent */
-  }
-  100% {
-    transform: translateX(0); /* End at its final position */
-    opacity: 1; /* Fade to fully opaque */
-  }
-}
-        /* Add your CSS here */
-        body {
-            background-color: whitesmoke;
-            background-image: url(/photos/OIG2\ \(3\).jpg);
-            background-position: center;
-            background-size: cover; /* Sets the default background color of the page */
-            color: rgba(65, 65, 65, 0.74); /* Sets the default text color of the page */
+              @keyframes slideFadeIn {
+        0% {
+          transform: translateX(100%); /* Start off-screen to the left */
+          opacity: 0; /* Start fully transparent */
         }
+        100% {
+          transform: translateX(0); /* End at its final position */
+          opacity: 1; /* Fade to fully opaque */
+        }
+      }
+              /* Add your CSS here */
+              body, main {
+                  background-color: whitesmoke;
+                  background-image: url(/photos/orange_detail.jpg);
+                  background-position: center;
+                  background-size: cover; /* Sets the default background color of the page */
+                  color: rgba(65, 65, 65, 0.74); /* Sets the default text color of the page */
+                  height: 100%;
+              }
 
-            .navbar, .jumbotron {
-                background-color: red; /* Sets the background color of the navbar, jumbotron, and footer to red */
-                background-image: url('/photos/OIG2\ \(3\).jpg');
-                background-position: center;
-                background-repeat: no-repeat;
-                background-size: cover; /* Sets the background image */
-                color: rgba(255, 255, 255, 0.5); /* Sets the text color to white for contrast */
-            }
-        .dark-box {
-            background-color: rgba(0, 0, 0, 0.7); /* Adjust the alpha value for desired transparency */
-            color: white; /* Text color */
-            padding: 20px; /* Add some padding for content */
-            border-radius: 10px; /* Rounded corners */
-            /* animation: slideFadeIn 2s ease-in-out forwards; Apply the animation */
-            
-        }
-        .dark-box_quick {
-            background-color: rgba(156, 154, 154, 0.7); /* Adjust the alpha value for desired transparency */
-            color: rgba(43, 42, 42, 0.658); /* Text color */
-            padding: 20px; /* Add some padding for content */
-            border-radius: 10px; /* Rounded corners */
-            animation: slideFadeIn 2s ease-in-out forwards; Apply the animation */
-            
-        }
-        .light-box_quick {
-            background-color: rgba(0, 0, 0, 0.7); /* Adjust the alpha value for desired transparency */
-            color: white; /* Text color */
-            padding: 20px; /* Add some padding for content */
-            border-radius: 10px; /* Rounded corners */
-            animation: slideFadeIn 2s ease-in-out forwards; Apply the animation */
-            
-        }
+                  .navbar, .jumbotron {
+                      background-color: rgba(255, 102, 0, 0.63); /* Sets the background color of the navbar, jumbotron, and footer to red */
+                      background-position: center;
+                      background-repeat: no-repeat;
+                      background-size: cover; /* Sets the background image */
+                      color: rgba(255, 255, 255, 0.5); /* Sets the text color to white for contrast */
+                  }
+              .dark-box {
+                  background-color: rgba(0, 0, 0, 0.7); /* Adjust the alpha value for desired transparency */
+                  color: white; /* Text color */
+                  padding: 20px; /* Add some padding for content */
+                  border-radius: 10px; /* Rounded corners */
+                  /* animation: slideFadeIn 2s ease-in-out forwards; Apply the animation */
 
-        /* You can add more specific styles below */
+              }
+              .dark-box_quick {
+                  background-color: rgba(156, 154, 154, 0.7); /* Adjust the alpha value for desired transparency */
+                  color: rgba(43, 42, 42, 0.658); /* Text color */
+                  padding: 20px; /* Add some padding for content */
+                  border-radius: 10px; /* Rounded corners */
+                  animation: slideFadeIn 1s ease-in-out forwards; Apply the animation */
+
+              }
+              .light-box_quick {
+                  background-color: rgba(0, 0, 0, 0.7); /* Adjust the alpha value for desired transparency */
+                  color: white; /* Text color */
+                  padding: 20px; /* Add some padding for content */
+                  border-radius: 10px; /* Rounded corners */
+                  animation: slideFadeIn 1s ease-in-out forwards; Apply the animation */
+
+              }
+              .project_id{
+                  background-color: rgba(255, 255, 255, 0.5);
+                  border-radius: 10px;
+                  width: auto;
+                  height: 230px;
+                  padding: 20px;
+                  text-align: end;
+                  background-position: center;
+                  background-repeat: no-repeat;
+                  background-size: cover; /* Sets the background image */
+                  color: rgba(255, 255, 255, 0.5); /* Sets the text color to white for contrast */
+
+              }
+              .project_id_right{
+                  background-color: rgba(255, 255, 255, 0.5);
+                  border-radius: 10px;
+                  width: auto;
+                  height: 230px;
+                  padding: 20px;
+                  text-align: start;
+                  background-position: center;
+                  background-repeat: no-repeat;
+                  background-size: cover; /* Sets the background image */
+                  color: rgba(255, 255, 255, 0.5); /* Sets the text color to white for contrast */
+
+              }
+              .btn-secondary{
+                      background-color: rgba(255, 102, 0, 0.63); /* Sets the background color of the navbar, jumbotron, and footer to red */
+                      color: rgba(255, 255, 255, 0.5); /* Sets the text color to white for contrast */
+                  }
+              /* You can add more specific styles below */
     </style>
-    
-</head>
-<body>
-    <nav class="navbar navbar-expand-lg navbar-dark fixed-top bg-dark">
-        <a class="navbar-brand" href="redsheet.html">Nomad</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-    
-        <div class="collapse navbar-collapse" id="navbarResponsive">
-            <ul class="navbar-nav ml-auto">
-                <li class="nav-item active">
-                    <a class="nav-link" href="redsheet.html">Home <span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="about.html">About</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="projects.html">Projects</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="contact.html">Contact</a>
-                </li>
-            </ul>
-        </div>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top bg-transparent">
+      <a class="navbar-brand" href="redsheet.html">Nomad</a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarResponsive"
+        aria-controls="navbarResponsive"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="redsheet.html"
+              >Home <span class="sr-only">(current)</span></a
+            >
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="about.html">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="projects.html">Projects</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="contact.html">Contact</a>
+          </li>
+        </ul>
+      </div>
     </nav>
-    
 
     <main role="main">
-  
-        <div class="jumbotron">
-            <div class="container">
-                <div class="dark-box">
-                <h1 class="display-4">PORTFOLIO_PROJECT_ID2</h1>
-                <h1>aspen_codes:: PORTFOLIO_PROJECT_ID2</h1>
+      <div class="jumbotron">
+        <div class="container">
+          <div class="dark-box">
+            <h1 class="display-4">PORTFOLIO_PROJECT_ID2</h1>
+            <h1>aspen_codes:: PORTFOLIO_PROJECT_ID2</h1>
 
-                <p>This is a showcase of my work and skills. Feel free to explore!</p>
-            </div>
+            
+          </div>
         </div>
-        </div>
-        <!-- <B>hello_moto</B>
+      </div>
+      <!-- <B>hello_moto</B>
         <a href="projects/project_id2.html"><div class="dark-box" style="top: 00px; left: -250px;height: auto; width: 555px; background-image: url('/photos/OIG2\ \(3\).jpg');">
             <img src="/photos/OIG3.jpg" alt="Nomad Somni" class="profile-image" style="width: 41px;"> <b>Avalanche Ocean.</b>
             <h1>aspen_codes:: PORTFOLIO_PROJECT_ID2</h1>
             <p style="background-color: rgba(128, 128, 128, 0.466); color: rgba(19, 19, 19, 0.651);"; href="projects/project_id2.html"><b href="projects/project_id2.html" >.</b></p>
             <p style="background-color: rgba(128, 128, 128, 0.466); color: rgba(0, 0, 0, 0.493);">aspen_codes:: PORTFOLIO_ABOUT</p>
                            </div></a> HELLO DADDY -->
-        <div class="container">
-            <div class="row light-box_quick">
-                <div class="col-md-6 ">
-                  <img src="/photos/OIG3 (9).jpg" style="width: 41%";>
-                    <h2>aspen_codes:</h2>
-                    <p>aspen_codes:: PORTFOLIO_PROJECT<p><a class="btn btn-secondary" href="index2.html" role="button">View details »</a></p>
-                </div>
-                <div class="col-md-6 ">
-                    <h2>aspen_codes:: PORTFOLIO_PROJECT</h2>
-                    <p>aspen_codes:: PORTFOLIO_PROJECT<p><a class="btn btn-secondary" href="projects.html" role="button">View details »</a></p>
-                </div>
-                <div class="col-md-6 ">
-                    <h2>about_me</h2>
-                    <p>aspen_codes:: PORTFOLIO_ABOUT</p>
-                    <p><a class="btn btn-secondary" href="contact.html" role="button">#CONTACT</a></p>
-                </div>
-                <div class="col-md-6 ">
-                <div class="dark-box_quick"style="animation: slideFadeIn 2s ease-in-out forwards;"style="background-color:white";>
-                    <h2>Contact me.</h2>
-                    <p>This is a cool dark box section.</p>
-                    <p><a class="btn btn-primary" href="canvas.html" role="button">contact »</a></p>
-                </div>
+      <div class="container">
+        <div class="row light-box_quick">
+            <div
+            class="col-md-6 project_id banner"
+            style="background-image: url(/photos/orange_detail.jpg)"
+            href="/projects/project_id2.html"
+            role="banner"
+            
+            >
+            <img src="/photos/OIG3 (9).jpg" style="width: 41%" ; />
+            <h2 style="background-color: rgba(255, 102, 0, 0.63)">aspen_codes:</h2>
+            <p style="color: rgba(0, 0, 0, 0.5); background-color: rgba(255, 102, 0, 0.63);">aspen_codes:: PORTFOLIO_PROJECT</p>
+            <p>
+              <a class="btn btn-secondary" href="index2.html" role="button"
+                >#AVALANCHE</a
+              >
+            </p>
+          </div>
+          <div
+            class="col-md-6 "><div class="project_id_right banner"
+            style="background-image: url(/photos/orange_detail.jpg)"
+            href="/projects/project_id2.html"
+            role="banner"
+            
+          >
+            <h2 style="background-color: rgba(255, 102, 0, 0.63)">
+              aspen_codes::
+            </h2>
+            <p style="color: rgba(0, 0, 0, 0.5); background-color: rgba(255, 102, 0, 0.63);">aspen_codes:: PORTFOLIO_PROJECT</p>
+            <p><a class="btn btn-secondary" href="index2.html" role="button"
+                >#AVALANCHE</a></div>
+                
+            </p>
+          </div>
+          <div 
+          class="col-md-6 project_id banner"
+          style="background-image: url(/photos/orange_detail.jpg)"
+          href="/projects/project_id2.html"
+          role="banner"
+          
+        >
+            <h2 style="background-color: rgba(255, 102, 0, 0.63)">about_me</h2>
+            <p style="color: rgba(0, 0, 0, 0.5); background-color: rgba(255, 102, 0, 0.63);">aspen_codes:: PORTFOLIO_ABOUT</p>
+            <p>
+              <a class="btn btn-secondary" href="contact.html" role="button"
+                >#CONTACT</a
+              >
+            </p>
+          </div>
+          <div class="col-md-6">
+            <div
+            class="project_id_right banner"
+            style="background-image: url(/photos/orange_detail.jpg)"
+            href="/projects/project_id2.html"
+            role="banner"
+            
+          >
+              <h2 style="background-color: rgba(255, 102, 0, 0.63)">Contact me.</h2>
+              <p style="color: rgba(0, 0, 0, 0.5); background-color: rgba(255, 102, 0, 0.63);">This is a cool dark box section.</p>
+                            <a class="btn btn-secondary" href="canvas.html" role="button"
+                  >#AVALANCHE</a
+                >
+              </p>
             </div>
-            </div>
-            <!-- Add more projects as needed -->
+          </div>
         </div>
+        <!-- Add more projects as needed -->
+      </div>
     </main>
 
     <footer class="container">
-        <p>© Nomad Somni 2024</p>
+      <p>© Nomad Somni 2024</p>
     </footer>
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
-</body>
+  </body>
 </html>
