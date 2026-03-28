@@ -1,0 +1,125 @@
+﻿**********************
+Windows PowerShell transcript start
+Start time: 20251117162117
+Username: NOMAD\Surface
+RunAs User: NOMAD\Surface
+Configuration Name: 
+Machine: NOMAD (Microsoft Windows NT 10.0.22631.0)
+Host Application: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe
+Process ID: 23844
+PSVersion: 5.1.22621.5624
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.22621.5624
+BuildVersion: 10.0.22621.5624
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+Transcript started, output file is C:\Users\Surface\OneDrive\SIRENSSD\Research Lab\Records and logging\Session_2025-11-17_16-21-05.txt
+Session logging started. Log file: C:\Users\Surface\OneDrive\SIRENSSD\Research Lab\Records and logging\Session_2025-11-17_16-21-05.txt
+[38;2;243;174;53m[0m[48;2;243;174;53m[38;2;38;43;68m Surface [0m[38;2;243;174;53m[0m[0m[38;2;240;118;35;49m[7m[0m[48;2;240;118;35m[38;2;224;222;244m  ]8;;file:C:/Users/Surface/OneDrive/SIRENSSD\SIRENSSD]8;;\ [0m[48;2;243;174;53m[38;2;240;118;35m[0m[48;2;243;174;53m[38;2;38;43;68m ]8;;https://github.com/nomadsomni/aspen_codes.git\ ]8;;\ 888.000.555 ≡  ?35 ~2 -1 [0m[48;2;243;174;53m[38;2;243;174;53m[0m[48;2;243;174;53m[38;2;224;222;244m  [0m[38;2;243;174;53m[0m[0m[38;2;75;149;233;49m[7m[0m[48;2;75;149;233m[38;2;224;222;244m  [0m[38;2;75;149;233m[0m]0;pwsh in SIRENSSD 7                                [38;2;89;201;165m [0m[38;2;224;222;244min [38;2;75;149;233m[1mpwsh[22m[38;2;224;222;244m [0m[38;2;224;222;244mat [38;2;75;149;233m[1m16:21:19[22m[0m8
+PS>.//sandbox
+x : The term 'x' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelli
+ng of the name, or if a path was included, verify that the path is correct and try again.
+At C:\Users\Surface\OneDrive\SIRENSSD\sandbox.ps1:17 char:1
++ x
++ ~
+    + CategoryInfo          : ObjectNotFound: (x:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+x : The term 'x' is not recognized as the name of a cmdlet,
+ function, script file, or operable program. Check the spel
+ling of the name, or if a path was included, verify that th
+e path is correct and try again.
+At C:\Users\Surface\OneDrive\SIRENSSD\sandbox.ps1:17 char:1
++ x
++ ~
+    + CategoryInfo          : ObjectNotFound: (x:String) [
+   ], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+SANDBOX :: KX__HMBQEJA_SZFY 1.204.156.158
+SANDBOX :: SFCV_H__LPX 7.240.154.49
+SANDBOX :: _GBYWDU 63.228.112.220
+SANDBOX :: H___BNI 177.207.235.115
+SANDBOX :: _ND 211.95.97.238
+SANDBOX :: X_D_KBHWG 217.239.208.17
+SANDBOX :: YN_ZMDIBX_ERSV 148.104.48.7
+SANDBOX :: ERHFOLP_CJ 10.1.235.94
+SANDBOX :: _URSMTGQCK 238.55.71.73
+SANDBOX :: _MVHIGTJOW 228.40.30.131
+SANDBOX :: WNEDQSXJ_VFMKUR_GYIP 76.91.161.228
+SANDBOX :: NIG_QSBJ 55.76.159.157
+SANDBOX :: PEILX_BV 18.25.233.187
+SANDBOX :: R__M_SCUNQ 70.224.140.17
+SANDBOX :: XFHABVURE__WC 252.138.10.158
+SANDBOX :: PDB__HEZGT 192.146.38.61
+SANDBOX :: J_EB 248.18.237.122
+SANDBOX :: RXD_GTWQNZO 135.162.142.170
+SANDBOX :: _D_VMBOWH_ZK 65.221.162.125
+SANDBOX :: _SQZYHBWEMDCN 78.235.218.72
+SANDBOX :: I_ZC 201.146.244.241
+SANDBOX :: TX_PBO 23.48.24.14
+SANDBOX :: __LCJSRMPUN 170.53.77.89
+SANDBOX :: RLNK__JUBOHM_PGT 30.127.194.186
+SANDBOX :: KTI_S_CAOF 53.99.236.36
+SANDBOX :: _SK 94.37.21.112
+SANDBOX :: JEPR_QIBFOTHAVSCXWU 138.63.121.104
+SANDBOX :: _VY 62.14.195.17
+SANDBOX :: BVQIG_RZTHFEJ_AKWO 176.193.213.45
+PS>TerminatingError(Get-Random): "The Minimum value (0) cannot be greater than or equal to the Maximum value (0)."
+Get-Random : The Minimum value (0) cannot be greater than or equal to the Maximum value (0).
+At C:\Users\Surface\OneDrive\SIRENSSD\sandbox.ps1:12 char:16
++         $pos = Get-Random -Minimum 0 -Maximum ($text.Length - 1)
++                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (:) [Get-Random], ArgumentException
+    + FullyQualifiedErrorId : MinGreaterThanOrEqualMax,Microsoft.PowerShell.Commands.GetRandomCommand
+Get-Random : The Minimum value (0) cannot be greater than o
+r equal to the Maximum value (0).
+At C:\Users\Surface\OneDrive\SIRENSSD\sandbox.ps1:12 char:1
+6
++         $pos = Get-Random -Minimum 0 -Maximum ($text.Leng
+th - 1)
++                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~
+    + CategoryInfo          : InvalidArgument: (:) [Get-Ra
+   ndom], ArgumentException
+    + FullyQualifiedErrorId : MinGreaterThanOrEqualMax,Mic
+   rosoft.PowerShell.Commands.GetRandomCommand
+
+SANDBOX :: __I 157.53.38.199
+SANDBOX :: WUTZBKJ_YIEO_PNFCVA 250.223.207.82
+SANDBOX :: _WQPJRMT_UGA 84.53.140.193
+SANDBOX :: ___TA 27.232.72.235
+SANDBOX :: DNEXRZHO_MSTQL 254.181.233.163
+SANDBOX :: CIQ_EDVGUWT 124.132.102.216
+SANDBOX :: VKGC_N_M_FSPEZY 183.176.208.156
+SANDBOX :: ZX_HJD_CS_FE 114.60.169.92
+SANDBOX :: SI_WYH_BKPUACGD 170.149.28.255
+SANDBOX :: TEBV__YKUDZRW 61.36.42.127
+PS>TerminatingError(Get-Random): "The Minimum value (0) cannot be greater than or equal to the Maximum value (0)."
+Get-Random : The Minimum value (0) cannot be greater than or equal to the Maximum value (0).
+At C:\Users\Surface\OneDrive\SIRENSSD\sandbox.ps1:12 char:16
++         $pos = Get-Random -Minimum 0 -Maximum ($text.Length - 1)
++                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (:) [Get-Random], ArgumentException
+    + FullyQualifiedErrorId : MinGreaterThanOrEqualMax,Microsoft.PowerShell.Commands.GetRandomCommand
+Get-Random : The Minimum value (0) cannot be greater than o
+r equal to the Maximum value (0).
+At C:\Users\Surface\OneDrive\SIRENSSD\sandbox.ps1:12 char:1
+6
++         $pos = Get-Random -Minimum 0 -Maximum ($text.Leng
+th - 1)
++                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~
+    + CategoryInfo          : InvalidArgument: (:) [Get-Ra
+   ndom], ArgumentException
+    + FullyQualifiedErrorId : MinGreaterThanOrEqualMax,Mic
+   rosoft.PowerShell.Commands.GetRandomCommand
+
+SANDBOX :: ___X 85.195.27.85
+SANDBOX :: G_SXPTEB_FYLJNUAOK 178.183.77.85
+SANDBOX :: YSIU_MEFGQOTXNBJL 197.215.18.250
+SANDBOX :: ST__HPD_WB 216.49.177.25
+SANDBOX :: RGKSDN_UPT_B_FY 207.77.16.74
+PS>TerminatingError(Get-Random): "The Minimum value (0) cannot be greater than or equal to the Maximum value (0)."

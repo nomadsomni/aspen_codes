@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>PSYNC / NOMAD Complex WebGL2 Graph</title>
+
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      background: #050509;
+      overflow: hidden;
+      font-family: system-ui, sans-serif;
+      color: #eee;
+    }
+    #glcanvas {
+      width: 100vw;
+      height: 100vh;
+      display: block;
+    }
+    #hud {
+      position: fixed;
+      left: 16px;
+      top: 16px;
+      padding: 8px 12px;
+      background: rgba(0, 0, 0, 0.6);
+      border-radius: 6px;
+      font-size: 12px;
+      pointer-events: none;
+      backdrop-filter: blur(8px);
+    }
+    #hud strong {
+      color: #ff4b9a;
+    }
+  </style>
+
+  <!-- Reliable glMatrix -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gl-matrix/3.4.1/gl-matrix-min.js"></script>
+  <script>
+    const mat4 = glMatrix.mat4;
+    const vec3 = glMatrix.vec3;
+  </script>
+</head>
+<body>
+<canvas id="glcanvas"></canvas>
+<div id="hud">
+  <div><strong>PSYNC COMPLEX / NODE MAP</strong></div>
+  <div>Drag: orbit · Wheel: zoom</div>
+</div>
+
+<script>
+// Minimal placeholder to confirm WebGL2 loads
+const canvas = document.getElementById("glcanvas");
+const gl = canvas.getContext("webgl2");
+if (!gl) {
+  alert("WebGL2 not supported");
+}
+
+function resize() {
+  const dpr = window.devicePixelRatio || 1;
+  canvas.width = window.innerWidth * dpr;
+  canvas.height = window.innerHeight * dpr;
+  canvas.style.width = window.innerWidth + "px";
+  canvas.style.height = window.innerHeight + "px";
+  gl.viewport(0, 0, canvas.width, canvas.height);
+}
+resize();
+window.addEventListener("resize", resize);
+
+gl.clearColor(0.01, 0.01, 0.03, 1.0);
+gl.clear(gl.COLOR_BUFFER_BIT);
+
+// placeholder until full engine injected
+</script>
+</body>
+</html>

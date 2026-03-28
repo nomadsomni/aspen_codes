@@ -1,0 +1,79 @@
+﻿**********************
+Windows PowerShell transcript start
+Start time: 20250709201722
+Username: NOMAD\Surface
+RunAs User: NOMAD\Surface
+Configuration Name: 
+Machine: NOMAD (Microsoft Windows NT 10.0.22631.0)
+Host Application: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe
+Process ID: 18596
+PSVersion: 5.1.22621.5624
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.22621.5624
+BuildVersion: 10.0.22621.5624
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+Transcript started, output file is C:\Users\Surface\OneDrive\SIRENSSD\Research Lab\Records and logging\Session_2025-07-09_20-17-22.txt
+Session logging started. Log file: C:\Users\Surface\OneDrive\SIRENSSD\Research Lab\Records and logging\Session_2025-07-09_20-17-22.txt
+[38;2;243;174;53m[0m[48;2;243;174;53m[38;2;38;43;68m Surface [0m[38;2;243;174;53m[0m[0m[38;2;240;118;35;49m[7m[0m[48;2;240;118;35m[38;2;224;222;244m  ]8;;file:C:/Users/Surface/OneDrive/SIRENSSD\SIRENSSD]8;;\ [0m[48;2;243;174;53m[38;2;240;118;35m[0m[48;2;243;174;53m[38;2;38;43;68m ]8;;https://github.com/nomadsomni/aspen_codes.git\ ]8;;\ 888.000.555 ≡  ?30 ~2 -1 [0m[48;2;243;174;53m[38;2;243;174;53m[0m[48;2;243;174;53m[38;2;224;222;244m  [0m[38;2;243;174;53m[0m[0m[38;2;75;149;233;49m[7m[0m[48;2;75;149;233m[38;2;224;222;244m  [0m[38;2;75;149;233m[0m]0;pwsh in SIRENSSD 7                                                                                                                                                                                                                        [38;2;89;201;165m [0m[38;2;224;222;244min [38;2;75;149;233m[1mpwsh[22m[38;2;224;222;244m [0m[38;2;224;222;244mat [38;2;75;149;233m[1m20:17:22[22m[0m8
+PS>log test
+log : The term 'log' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the sp
+elling of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:1
++ log test
++ ~~~
+    + CategoryInfo          : ObjectNotFound: (log:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+log : The term 'log' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelling of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:1
++ log test
++ ~~~
+    + CategoryInfo          : ObjectNotFound: (log:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+[38;2;243;174;53m[0m[48;2;243;174;53m[38;2;38;43;68m Surface [0m[38;2;243;174;53m[0m[0m[38;2;240;118;35;49m[7m[0m[48;2;240;118;35m[38;2;224;222;244m  ]8;;file:C:/Users/Surface/OneDrive/SIRENSSD\SIRENSSD]8;;\ [0m[48;2;243;174;53m[38;2;240;118;35m[0m[48;2;243;174;53m[38;2;38;43;68m ]8;;https://github.com/nomadsomni/aspen_codes.git\ ]8;;\ 888.000.555 ≡  ?30 ~2 -1 [0m[48;2;243;174;53m[38;2;243;174;53m[0m[48;2;243;174;53m[38;2;224;222;244m  [0m[38;2;243;174;53m[0m[0m[38;2;216;30;91;49m[7m[0m[48;2;216;30;91m[38;2;224;222;244m  [0m[38;2;216;30;91m[0m]0;pwsh in SIRENSSD 7                                                                                                                                                                                                                        [38;2;89;201;165m [0m[38;2;224;222;244min [38;2;75;149;233m[1mpwsh[22m[38;2;224;222;244m [0m[38;2;224;222;244mat [38;2;75;149;233m[1m20:17:39[22m[0m8
+PS>test
+test : The term 'test' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the 
+spelling of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:1
++ test
++ ~~~~
+    + CategoryInfo          : ObjectNotFound: (test:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+test : The term 'test' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelling of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:1
++ test
++ ~~~~
+    + CategoryInfo          : ObjectNotFound: (test:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+[38;2;243;174;53m[0m[48;2;243;174;53m[38;2;38;43;68m Surface [0m[38;2;243;174;53m[0m[0m[38;2;240;118;35;49m[7m[0m[48;2;240;118;35m[38;2;224;222;244m  ]8;;file:C:/Users/Surface/OneDrive/SIRENSSD\SIRENSSD]8;;\ [0m[48;2;243;174;53m[38;2;240;118;35m[0m[48;2;243;174;53m[38;2;38;43;68m ]8;;https://github.com/nomadsomni/aspen_codes.git\ ]8;;\ 888.000.555 ≡  ?30 ~2 -1 [0m[48;2;243;174;53m[38;2;243;174;53m[0m[48;2;243;174;53m[38;2;224;222;244m  [0m[38;2;243;174;53m[0m[0m[38;2;216;30;91;49m[7m[0m[48;2;216;30;91m[38;2;224;222;244m  [0m[38;2;216;30;91m[0m]0;pwsh in SIRENSSD 7                                                                                                                                                                                                                        [38;2;89;201;165m [0m[38;2;224;222;244min [38;2;75;149;233m[1mpwsh[22m[38;2;224;222;244m [0m[38;2;224;222;244mat [38;2;75;149;233m[1m20:17:42[22m[0m8
+PS>ipconfig
+
+Windows IP Configuration
+
+
+Wireless LAN adapter Połączenie lokalne* 1:
+
+   Media State . . . . . . . . . . . : Media disconnected
+   Connection-specific DNS Suffix  . :
+
+Wireless LAN adapter Połączenie lokalne* 10:
+
+   Connection-specific DNS Suffix  . :
+   Link-local IPv6 Address . . . . . : fe80::ab8c:e8c7:226c:c486%10
+   IPv4 Address. . . . . . . . . . . : 192.168.137.1
+   Subnet Mask . . . . . . . . . . . : 255.255.255.0
+   Default Gateway . . . . . . . . . :
+
+Wireless LAN adapter Wi-Fi:
+
+   Connection-specific DNS Suffix  . :
+   Link-local IPv6 Address . . . . . : fe80::dcd7:ce3f:fe2:6d50%18
+   IPv4 Address. . . . . . . . . . . : 192.168.0.124
+   Subnet Mask . . . . . . . . . . . : 255.255.255.0
+   Default Gateway . . . . . . . . . : 192.168.0.1
+[38;2;243;174;53m[0m[48;2;243;174;53m[38;2;38;43;68m Surface [0m[38;2;243;174;53m[0m[0m[38;2;240;118;35;49m[7m[0m[48;2;240;118;35m[38;2;224;222;244m  ]8;;file:C:/Users/Surface/OneDrive/SIRENSSD\SIRENSSD]8;;\ [0m[48;2;243;174;53m[38;2;240;118;35m[0m[48;2;243;174;53m[38;2;38;43;68m ]8;;https://github.com/nomadsomni/aspen_codes.git\ ]8;;\ 888.000.555 ≡  ?30 ~2 -1 [0m[48;2;243;174;53m[38;2;243;174;53m[0m[48;2;243;174;53m[38;2;224;222;244m  [0m[38;2;243;174;53m[0m[0m[38;2;75;149;233;49m[7m[0m[48;2;75;149;233m[38;2;224;222;244m  [0m[38;2;75;149;233m[0m]0;pwsh in SIRENSSD 7                                                                                                                                                                                                                        [38;2;89;201;165m [0m[38;2;224;222;244min [38;2;75;149;233m[1mpwsh[22m[38;2;224;222;244m [0m[38;2;224;222;244mat [38;2;75;149;233m[1m20:17:47[22m[0m8

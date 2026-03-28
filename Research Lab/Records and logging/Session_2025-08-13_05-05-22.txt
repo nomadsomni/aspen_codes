@@ -1,0 +1,647 @@
+﻿**********************
+Windows PowerShell transcript start
+Start time: 20250813050525
+Username: NOMAD\Surface
+RunAs User: NOMAD\Surface
+Configuration Name: 
+Machine: NOMAD (Microsoft Windows NT 10.0.22631.0)
+Host Application: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe
+Process ID: 6228
+PSVersion: 5.1.22621.5624
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.22621.5624
+BuildVersion: 10.0.22621.5624
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+Transcript started, output file is C:\Users\Surface\OneDrive\SIRENSSD\Research Lab\Records and logging\Session_2025-08-13_05-05-22.txt
+Session logging started. Log file: C:\Users\Surface\OneDrive\SIRENSSD\Research Lab\Records and logging\Session_2025-08-13_05-05-22.txt
+[38;2;243;174;53m[0m[48;2;243;174;53m[38;2;38;43;68m Surface [0m[38;2;243;174;53m[0m[0m[38;2;240;118;35;49m[7m[0m[48;2;240;118;35m[38;2;224;222;244m  ]8;;file:C:/Users/Surface/OneDrive/SIRENSSD\SIRENSSD]8;;\ [0m[48;2;243;174;53m[38;2;240;118;35m[0m[48;2;243;174;53m[38;2;38;43;68m ]8;;https://github.com/nomadsomni/aspen_codes.git\ ]8;;\ 888.000.555 ≡  ?33 ~2 -1 [0m[48;2;243;174;53m[38;2;243;174;53m[0m[48;2;243;174;53m[38;2;224;222;244m  [0m[38;2;243;174;53m[0m[0m[38;2;75;149;233;49m[7m[0m[48;2;75;149;233m[38;2;224;222;244m  [0m[38;2;75;149;233m[0m]0;pwsh in SIRENSSD 7                                                                                                                                                                                                                        [38;2;89;201;165m [0m[38;2;224;222;244min [38;2;75;149;233m[1mpwsh[22m[38;2;224;222;244m [0m[38;2;224;222;244mat [38;2;75;149;233m[1m05:05:25[22m[0m8
+PS>.//SANDBOX
+x : The term 'x' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelli
+ng of the name, or if a path was included, verify that the path is correct and try again.
+At C:\Users\Surface\OneDrive\SIRENSSD\sandbox.ps1:17 char:1
++ x
++ ~
+    + CategoryInfo          : ObjectNotFound: (x:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+x : The term 'x' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelling of the name, or if a path was included, verify that the path is correct and try again.
+At C:\Users\Surface\OneDrive\SIRENSSD\sandbox.ps1:17 char:1
++ x
++ ~
+    + CategoryInfo          : ObjectNotFound: (x:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+SANDBOX :: VL_SWAJIGH 68.164.3.221
+SANDBOX :: _P_SE_INXQ 205.33.0.76
+SANDBOX :: MFPBRDOS_WILHG_QU 34.51.149.8
+SANDBOX :: _OPBNQXMVSU 94.129.24.250
+SANDBOX :: _DAHW 76.251.141.109
+SANDBOX :: G_PWTZHC_EMKDQBX 8.103.236.145
+PS>TerminatingError(Get-Random): "The Minimum value (0) cannot be greater than or equal to the Maximum value (0)."
+Get-Random : The Minimum value (0) cannot be greater than or equal to the Maximum value (0).
+At C:\Users\Surface\OneDrive\SIRENSSD\sandbox.ps1:12 char:16
++         $pos = Get-Random -Minimum 0 -Maximum ($text.Length - 1)
++                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (:) [Get-Random], ArgumentException
+    + FullyQualifiedErrorId : MinGreaterThanOrEqualMax,Microsoft.PowerShell.Commands.GetRandomCommand
+Get-Random : The Minimum value (0) cannot be greater than or equal to the Maximum value (0).
+At C:\Users\Surface\OneDrive\SIRENSSD\sandbox.ps1:12 char:16
++         $pos = Get-Random -Minimum 0 -Maximum ($text.Length - 1)
++                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (:) [Get-Random], ArgumentException
+    + FullyQualifiedErrorId : MinGreaterThanOrEqualMax,Microsoft.PowerShell.Commands.GetRandomCommand
+
+SANDBOX :: ___P 74.3.198.48
+SANDBOX :: __V_ODB 243.10.107.144
+PS>TerminatingError(Get-Random): "The Minimum value (0) cannot be greater than or equal to the Maximum value (0)."
+Get-Random : The Minimum value (0) cannot be greater than or equal to the Maximum value (0).
+At C:\Users\Surface\OneDrive\SIRENSSD\sandbox.ps1:12 char:16
++         $pos = Get-Random -Minimum 0 -Maximum ($text.Length - 1)
++                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (:) [Get-Random], ArgumentException
+    + FullyQualifiedErrorId : MinGreaterThanOrEqualMax,Microsoft.PowerShell.Commands.GetRandomCommand
+Get-Random : The Minimum value (0) cannot be greater than or equal to the Maximum value (0).
+At C:\Users\Surface\OneDrive\SIRENSSD\sandbox.ps1:12 char:16
++         $pos = Get-Random -Minimum 0 -Maximum ($text.Length - 1)
++                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (:) [Get-Random], ArgumentException
+    + FullyQualifiedErrorId : MinGreaterThanOrEqualMax,Microsoft.PowerShell.Commands.GetRandomCommand
+
+SANDBOX :: _C 198.203.11.18
+SANDBOX :: XZPGCQJU_LDO 11.171.51.69
+SANDBOX :: S_L_MUHI_COTEKPGWRYN 98.143.32.15
+SANDBOX :: __XQ 39.57.20.126
+SANDBOX :: DOMXPQIUL_NZGYKV 147.118.64.102
+SANDBOX :: MVDHBYQ_PNR_JCI_EX 47.104.196.220
+SANDBOX :: RSTKGUA_ZBQFVWNYJH 183.113.146.202
+SANDBOX :: SMKPNCEBZ_VGJH_RXF 90.208.89.24
+SANDBOX :: TBF_ZNRQPMAJX 200.5.65.146
+SANDBOX :: _TQE_DXCOIR_WZYFG 118.6.238.161
+SANDBOX :: W___VKMLERZSH 200.72.10.121
+SANDBOX :: ZHDC__KVXM 70.221.106.17
+SANDBOX :: I_NT_KP 238.72.156.124
+SANDBOX :: _SWIOBTLFRXNCVGHD 201.4.96.94
+SANDBOX :: SU_EKGA_ZDR 7.46.90.154
+SANDBOX :: F_E_JOZMALBU 24.104.235.146
+SANDBOX :: _IV_RFOA 54.8.70.34
+SANDBOX :: XZB__RDH 247.129.8.141
+SANDBOX :: KGJR_MNSXWU_ZTI 136.158.158.231
+PS>TerminatingError(Get-Random): "The Minimum value (0) cannot be greater than or equal to the Maximum value (0)."
+Get-Random : The Minimum value (0) cannot be greater than or equal to the Maximum value (0).
+At C:\Users\Surface\OneDrive\SIRENSSD\sandbox.ps1:12 char:16
++         $pos = Get-Random -Minimum 0 -Maximum ($text.Length - 1)
++                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (:) [Get-Random], ArgumentException
+    + FullyQualifiedErrorId : MinGreaterThanOrEqualMax,Microsoft.PowerShell.Commands.GetRandomCommand
+Get-Random : The Minimum value (0) cannot be greater than or equal to the Maximum value (0).
+At C:\Users\Surface\OneDrive\SIRENSSD\sandbox.ps1:12 char:16
++         $pos = Get-Random -Minimum 0 -Maximum ($text.Length - 1)
++                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (:) [Get-Random], ArgumentException
+    + FullyQualifiedErrorId : MinGreaterThanOrEqualMax,Microsoft.PowerShell.Commands.GetRandomCommand
+
+SANDBOX :: __Q 93.75.149.218
+SANDBOX :: NOS_KPLJXIHGQUD__MW 7.129.219.18
+SANDBOX :: _MXSGYO_RDHN 52.220.78.196
+SANDBOX :: MEVGRD_O_JUABN_XI 164.227.139.71
+SANDBOX :: WCREPTD_YJB 171.84.136.95
+SANDBOX :: MLAX__HGUKNJYCET 92.120.67.62
+SANDBOX :: GS_URPAVKNDHW__CEFXL 151.71.25.109
+SANDBOX :: __IB 63.14.243.43
+SANDBOX :: CVFWNS_TDUORMXGK 102.121.0.188
+SANDBOX :: T_SAFPIDO 152.128.146.151
+SANDBOX :: P_HKFJULXRYTI 140.217.93.89
+SANDBOX :: _IDF 186.130.125.20
+SANDBOX :: _HAMK 246.192.226.52
+SANDBOX :: ___MF 22.62.138.229
+SANDBOX :: NJV_WM__EPS 7.87.67.192
+SANDBOX :: FYPMDGQE_TBNJARH_OS 104.110.210.37
+SANDBOX :: XCI_OUHVMTJDWRPNYBK 233.35.94.43
+SANDBOX :: ___SG 226.206.175.43
+SANDBOX :: AMD_ULKTXIFPSJWGB_ZY 193.241.211.130
+SANDBOX :: KIFQRZEPUM_WCN_S_JYL 26.233.131.20
+SANDBOX :: K_YGZEPULWHT 202.4.118.126
+SANDBOX :: DRLTVOZHAB_FCQE 44.190.20.39
+SANDBOX :: ___NZH 238.27.180.64
+SANDBOX :: OAIFPY_DCVH_EU_XTZGN 61.210.46.30
+SANDBOX :: C_SO_G_VZAMXLTPB 7.55.112.151
+SANDBOX :: _ICTO_HKQU 35.82.50.39
+SANDBOX :: OH_ZT__PYGIS 16.183.114.37
+PS>TerminatingError(Get-Random): "The Minimum value (0) cannot be greater than or equal to the Maximum value (0)."
+Get-Random : The Minimum value (0) cannot be greater than or equal to the Maximum value (0).
+At C:\Users\Surface\OneDrive\SIRENSSD\sandbox.ps1:12 char:16
++         $pos = Get-Random -Minimum 0 -Maximum ($text.Length - 1)
++                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (:) [Get-Random], ArgumentException
+    + FullyQualifiedErrorId : MinGreaterThanOrEqualMax,Microsoft.PowerShell.Commands.GetRandomCommand
+Get-Random : The Minimum value (0) cannot be greater than or equal to the Maximum value (0).
+At C:\Users\Surface\OneDrive\SIRENSSD\sandbox.ps1:12 char:16
++         $pos = Get-Random -Minimum 0 -Maximum ($text.Length - 1)
++                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (:) [Get-Random], ArgumentException
+    + FullyQualifiedErrorId : MinGreaterThanOrEqualMax,Microsoft.PowerShell.Commands.GetRandomCommand
+
+SANDBOX :: __R 107.7.203.30
+SANDBOX :: YD_WZCBT_PKL 211.46.246.100
+PS>TerminatingError(Get-Random): "The Minimum value (0) cannot be greater than or equal to the Maximum value (0)."
+Get-Random : The Minimum value (0) cannot be greater than or equal to the Maximum value (0).
+At C:\Users\Surface\OneDrive\SIRENSSD\sandbox.ps1:12 char:16
++         $pos = Get-Random -Minimum 0 -Maximum ($text.Length - 1)
++                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (:) [Get-Random], ArgumentException
+    + FullyQualifiedErrorId : MinGreaterThanOrEqualMax,Microsoft.PowerShell.Commands.GetRandomCommand
+Get-Random : The Minimum value (0) cannot be greater than or equal to the Maximum value (0).
+At C:\Users\Surface\OneDrive\SIRENSSD\sandbox.ps1:12 char:16
++         $pos = Get-Random -Minimum 0 -Maximum ($text.Length - 1)
++                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (:) [Get-Random], ArgumentException
+    + FullyQualifiedErrorId : MinGreaterThanOrEqualMax,Microsoft.PowerShell.Commands.GetRandomCommand
+
+SANDBOX :: ___I 247.83.249.42
+SANDBOX :: Y_R_P_NWID 14.54.61.199
+SANDBOX :: KXI__LH 26.110.237.239
+SANDBOX :: TM_JS__DGEILPV 194.181.123.226
+SANDBOX :: Q__JVM 121.236.241.119
+SANDBOX :: BN_WCSHIR__XMZP 210.79.109.116
+SANDBOX :: SULC__XZ_KJTEORHN 75.239.188.230
+SANDBOX :: JXKLWPO_HBI 80.149.108.14
+SANDBOX :: QWECJ__TK 220.202.38.179
+SANDBOX :: VM_PDUG_XTHAB_QRSKFWY 61.69.136.237
+SANDBOX :: _JHBIPCTYUF_NXSVL 21.107.12.162
+SANDBOX :: YJPULKSTA__NBWQZ 201.131.98.182
+SANDBOX :: __PH 140.232.164.231
+PS>TerminatingError(Get-Random): "The Minimum value (0) cannot be greater than or equal to the Maximum value (0)."
+Get-Random : The Minimum value (0) cannot be greater than or equal to the Maximum value (0).
+At C:\Users\Surface\OneDrive\SIRENSSD\sandbox.ps1:12 char:16
++         $pos = Get-Random -Minimum 0 -Maximum ($text.Length - 1)
++                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (:) [Get-Random], ArgumentException
+    + FullyQualifiedErrorId : MinGreaterThanOrEqualMax,Microsoft.PowerShell.Commands.GetRandomCommand
+Get-Random : The Minimum value (0) cannot be greater than or equal to the Maximum value (0).
+At C:\Users\Surface\OneDrive\SIRENSSD\sandbox.ps1:12 char:16
++         $pos = Get-Random -Minimum 0 -Maximum ($text.Length - 1)
++                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (:) [Get-Random], ArgumentException
+    + FullyQualifiedErrorId : MinGreaterThanOrEqualMax,Microsoft.PowerShell.Commands.GetRandomCommand
+
+SANDBOX :: __S 61.126.146.168
+SANDBOX :: VCWXLSOMA_UPTRFQ 229.133.222.30
+SANDBOX :: FGBTCRH__UY 122.86.119.132
+SANDBOX :: R_TUQH_NZB_CIPDLGAM 2.222.19.247
+SANDBOX :: V_OBWGEXL 142.200.165.51
+SANDBOX :: F_CNJBI_O_GU 99.4.98.102
+SANDBOX :: ZUJWNKTYIRE_DBLA__QFS 66.203.171.200
+SANDBOX :: VQYDWRS_KLIOHZX 141.6.90.103
+SANDBOX :: _GNSOACX 241.133.209.93
+SANDBOX :: _HUR 56.125.205.184
+SANDBOX :: _D_SRGNXF 102.106.115.190
+PS>TerminatingError(Get-Random): "The Minimum value (0) cannot be greater than or equal to the Maximum value (0)."
+Get-Random : The Minimum value (0) cannot be greater than or equal to the Maximum value (0).
+At C:\Users\Surface\OneDrive\SIRENSSD\sandbox.ps1:12 char:16
++         $pos = Get-Random -Minimum 0 -Maximum ($text.Length - 1)
++                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (:) [Get-Random], ArgumentException
+    + FullyQualifiedErrorId : MinGreaterThanOrEqualMax,Microsoft.PowerShell.Commands.GetRandomCommand
+Get-Random : The Minimum value (0) cannot be greater than or equal to the Maximum value (0).
+At C:\Users\Surface\OneDrive\SIRENSSD\sandbox.ps1:12 char:16
++         $pos = Get-Random -Minimum 0 -Maximum ($text.Length - 1)
++                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (:) [Get-Random], ArgumentException
+    + FullyQualifiedErrorId : MinGreaterThanOrEqualMax,Microsoft.PowerShell.Commands.GetRandomCommand
+
+SANDBOX :: _H 243.136.159.234
+SANDBOX :: _NV_WAPB_FDRE 111.106.39.195
+SANDBOX :: __BTAK 66.113.131.56
+SANDBOX :: H_CXR_OFQ 28.43.102.25
+SANDBOX :: RKVD__FA 217.22.145.115
+SANDBOX :: I_VEO_JT_FZBAHM 252.15.147.124
+SANDBOX :: KZOUVIWPT_NR_Q_DBAL 13.181.191.16
+SANDBOX :: ___VTQ 250.236.204.249
+SANDBOX :: _PUI_TVW 145.163.115.186
+SANDBOX :: M_XDRT 44.192.88.34
+SANDBOX :: FY_U__MV 223.150.37.128
+SANDBOX :: J_FW__ALNCV 1.152.65.13
+SANDBOX :: ZWLDGRTXCPH_Q_USEM 23.180.222.80
+SANDBOX :: _Q_Y_XPCHZG 216.255.194.228
+SANDBOX :: XLOSWQFZ_NRADTEB_PH 244.35.221.185
+SANDBOX :: LIGCU_NOVFY 171.22.201.86
+SANDBOX :: A_JR 164.138.167.120
+SANDBOX :: TCDYFE_RB_IZW 184.171.237.25
+SANDBOX :: DSRFZE_HWJK 189.110.148.102
+SANDBOX :: EHPVBJTKU_AO 234.19.122.116
+SANDBOX :: DLY__TOM_XCESHURZFJQK 116.177.248.70
+SANDBOX :: _FQGS_TPI_LYNDUZXA 13.124.32.145
+SANDBOX :: ACFNIE_LOB__WHM 225.142.197.9
+SANDBOX :: IBAH_KDWFMSRYUPZ 227.158.119.200
+SANDBOX :: IWLMK_NZ 204.206.219.119
+SANDBOX :: _QYCX 240.200.85.108
+SANDBOX :: QANTVL_OHICFERJSDP 198.197.147.106
+SANDBOX :: GPEMWAH_ZKDJYFNICBU 107.91.250.225
+SANDBOX :: _JIKDGQ__OPLB 168.105.69.249
+SANDBOX :: _TQXVBSH 29.131.72.39
+SANDBOX :: __ZL 105.22.151.41
+SANDBOX :: _HR_IX_FY 230.228.54.30
+SANDBOX :: BM_TW_PLKOER_JVZQIADN 246.203.153.27
+SANDBOX :: RNCMQ_SUIZ 55.3.131.171
+SANDBOX :: XKE_MG_QH 92.140.127.72
+SANDBOX :: _MQSP_NCFGX 233.182.37.133
+SANDBOX :: JEL__CB_TAYZPKDGNRI 147.228.96.121
+SANDBOX :: __PK 89.126.170.73
+SANDBOX :: __A_BCM 134.180.14.218
+SANDBOX :: FAKHWY_IJRQ_EGXS 48.43.133.226
+SANDBOX :: _WCNHJZMTY_OSDXUIA 142.116.115.159
+SANDBOX :: _WNPGADUKHFYSJ 194.223.169.165
+SANDBOX :: OCKF_ASUEV__LGQPHXYR 229.153.156.144
+SANDBOX :: MWOC_KSDJULGHR 3.255.62.179
+PS>TerminatingError(Get-Random): "The Minimum value (0) cannot be greater than or equal to the Maximum value (0)."
+Get-Random : The Minimum value (0) cannot be greater than or equal to the Maximum value (0).
+At C:\Users\Surface\OneDrive\SIRENSSD\sandbox.ps1:12 char:16
++         $pos = Get-Random -Minimum 0 -Maximum ($text.Length - 1)
++                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (:) [Get-Random], ArgumentException
+    + FullyQualifiedErrorId : MinGreaterThanOrEqualMax,Microsoft.PowerShell.Commands.GetRandomCommand
+Get-Random : The Minimum value (0) cannot be greater than or equal to the Maximum value (0).
+At C:\Users\Surface\OneDrive\SIRENSSD\sandbox.ps1:12 char:16
++         $pos = Get-Random -Minimum 0 -Maximum ($text.Length - 1)
++                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (:) [Get-Random], ArgumentException
+    + FullyQualifiedErrorId : MinGreaterThanOrEqualMax,Microsoft.PowerShell.Commands.GetRandomCommand
+
+SANDBOX :: __F 240.18.149.1
+SANDBOX :: FNV_GE_BAH_QZUJCLMPX 131.188.197.120
+SANDBOX :: JETCPUHXI_FM 32.79.149.131
+PS>TerminatingError(Get-Random): "The Minimum value (0) cannot be greater than or equal to the Maximum value (0)."
+Get-Random : The Minimum value (0) cannot be greater than or equal to the Maximum value (0).
+At C:\Users\Surface\OneDrive\SIRENSSD\sandbox.ps1:12 char:16
++         $pos = Get-Random -Minimum 0 -Maximum ($text.Length - 1)
++                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (:) [Get-Random], ArgumentException
+    + FullyQualifiedErrorId : MinGreaterThanOrEqualMax,Microsoft.PowerShell.Commands.GetRandomCommand
+Get-Random : The Minimum value (0) cannot be greater than or equal to the Maximum value (0).
+At C:\Users\Surface\OneDrive\SIRENSSD\sandbox.ps1:12 char:16
++         $pos = Get-Random -Minimum 0 -Maximum ($text.Length - 1)
++                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (:) [Get-Random], ArgumentException
+    + FullyQualifiedErrorId : MinGreaterThanOrEqualMax,Microsoft.PowerShell.Commands.GetRandomCommand
+
+SANDBOX :: ___E 244.169.123.48
+SANDBOX :: _PWBFMQ 6.157.185.116
+SANDBOX :: E_GX__VCRNY 66.134.194.180
+SANDBOX :: B_GSDEKIMVTUAZHQPCJ 58.187.147.191
+SANDBOX :: L_JDW__SR 225.25.70.134
+SANDBOX :: MJAB___QFELZU 117.91.233.30
+SANDBOX :: ___FY 149.132.94.210
+SANDBOX :: _S_XWBZE 175.250.127.115
+SANDBOX :: SR___CK 74.38.176.60
+SANDBOX :: _Y_PF 30.107.138.102
+SANDBOX :: RLI_WXAJGZKBEFHDOS 70.202.112.106
+SANDBOX :: _PJTNC_DIKZ 79.225.199.199
+SANDBOX :: QPKVA_EOGTJNHFWZIC 40.5.150.6
+PS>TerminatingError(Get-Random): "The Minimum value (0) cannot be greater than or equal to the Maximum value (0)."
+Get-Random : The Minimum value (0) cannot be greater than or equal to the Maximum value (0).
+At C:\Users\Surface\OneDrive\SIRENSSD\sandbox.ps1:12 char:16
++         $pos = Get-Random -Minimum 0 -Maximum ($text.Length - 1)
++                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (:) [Get-Random], ArgumentException
+    + FullyQualifiedErrorId : MinGreaterThanOrEqualMax,Microsoft.PowerShell.Commands.GetRandomCommand
+Get-Random : The Minimum value (0) cannot be greater than or equal to the Maximum value (0).
+At C:\Users\Surface\OneDrive\SIRENSSD\sandbox.ps1:12 char:16
++         $pos = Get-Random -Minimum 0 -Maximum ($text.Length - 1)
++                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (:) [Get-Random], ArgumentException
+    + FullyQualifiedErrorId : MinGreaterThanOrEqualMax,Microsoft.PowerShell.Commands.GetRandomCommand
+
+SANDBOX :: _Z 9.14.14.153
+SANDBOX :: AHVSXQMB_CFK 191.92.155.130
+SANDBOX :: VNHZLG_XWQR_F_MBIKCOS 62.231.197.71
+SANDBOX :: _Z__BT 7.79.106.20
+SANDBOX :: _QSLZBFDYXJ 11.87.161.117
+SANDBOX :: Z__IE 143.223.64.170
+SANDBOX :: QYETKZ_AWFJGL_H_CUIB 234.127.207.180
+SANDBOX :: __NOCUKY 189.151.170.169
+SANDBOX :: _NV 99.120.105.59
+SANDBOX :: _P_Z_GOFX 23.22.125.194
+SANDBOX :: YB_NEJTQUS_OWFMGC_KIV 208.7.40.95
+SANDBOX :: _HA 5.40.99.0
+SANDBOX :: BXCNTD__LQ_MYAWFUZH 118.178.188.209
+SANDBOX :: _GVBJHFPUQWMR_YSTXAK 100.33.119.41
+SANDBOX :: YOXP__DS_UZ 206.99.175.64
+SANDBOX :: AVEGDICMPNT__BOZ 141.231.197.167
+SANDBOX :: _ZIXBL_NUQTEAMP 61.27.227.142
+SANDBOX :: XH__U_MNOPZ 229.47.252.244
+SANDBOX :: IX_RM_JW 217.223.165.135
+SANDBOX :: C_MPZBDWGVRFU_AXI_SQ 183.224.165.193
+SANDBOX :: _TF 27.206.61.10
+PS>TerminatingError(Get-Random): "The Minimum value (0) cannot be greater than or equal to the Maximum value (0)."
+Get-Random : The Minimum value (0) cannot be greater than or equal to the Maximum value (0).
+At C:\Users\Surface\OneDrive\SIRENSSD\sandbox.ps1:12 char:16
++         $pos = Get-Random -Minimum 0 -Maximum ($text.Length - 1)
++                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (:) [Get-Random], ArgumentException
+    + FullyQualifiedErrorId : MinGreaterThanOrEqualMax,Microsoft.PowerShell.Commands.GetRandomCommand
+Get-Random : The Minimum value (0) cannot be greater than or equal to the Maximum value (0).
+At C:\Users\Surface\OneDrive\SIRENSSD\sandbox.ps1:12 char:16
++         $pos = Get-Random -Minimum 0 -Maximum ($text.Length - 1)
++                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (:) [Get-Random], ArgumentException
+    + FullyQualifiedErrorId : MinGreaterThanOrEqualMax,Microsoft.PowerShell.Commands.GetRandomCommand
+
+SANDBOX :: _S 218.216.69.66
+SANDBOX :: WCGZPQHRK_AMFJ 0.63.108.180
+SANDBOX :: KBPTR_XDWLC 103.61.52.233
+SANDBOX :: AD__HEJXCKYSZBF_WTQLV 66.128.34.234
+SANDBOX :: ___NW 69.212.26.71
+SANDBOX :: T___OY 182.199.247.132
+SANDBOX :: EZWBVHJACD__GMTP 123.239.114.237
+SANDBOX :: NCO_W__ZJ 190.237.36.190
+SANDBOX :: GHXNSA_WFDBVTRK 169.187.204.100
+SANDBOX :: __AOUN_YD 213.160.142.165
+PS>TerminatingError(Get-Random): "The Minimum value (0) cannot be greater than or equal to the Maximum value (0)."
+Get-Random : The Minimum value (0) cannot be greater than or equal to the Maximum value (0).
+At C:\Users\Surface\OneDrive\SIRENSSD\sandbox.ps1:12 char:16
++         $pos = Get-Random -Minimum 0 -Maximum ($text.Length - 1)
++                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (:) [Get-Random], ArgumentException
+    + FullyQualifiedErrorId : MinGreaterThanOrEqualMax,Microsoft.PowerShell.Commands.GetRandomCommand
+Get-Random : The Minimum value (0) cannot be greater than or equal to the Maximum value (0).
+At C:\Users\Surface\OneDrive\SIRENSSD\sandbox.ps1:12 char:16
++         $pos = Get-Random -Minimum 0 -Maximum ($text.Length - 1)
++                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (:) [Get-Random], ArgumentException
+    + FullyQualifiedErrorId : MinGreaterThanOrEqualMax,Microsoft.PowerShell.Commands.GetRandomCommand
+
+SANDBOX :: ___D 194.72.141.156
+SANDBOX :: _EKOT 170.188.69.54
+SANDBOX :: YWZAVP__CJNSFXIG_ULO 190.187.124.71
+SANDBOX :: __WHLI 180.245.84.19
+SANDBOX :: JQT_VUNBWP_FA 224.193.199.17
+SANDBOX :: XN_OKBCYPH 205.126.246.121
+SANDBOX :: ___OA 25.118.63.135
+SANDBOX :: D_USLYHRJE__PMWAFIGO 180.189.21.164
+SANDBOX :: C_YPLSO_IXZ_DTJWE 70.117.133.109
+SANDBOX :: PJ_KOBSVDWGL 58.91.218.191
+SANDBOX :: _UCTN 169.60.47.3
+SANDBOX :: _E_J_ZYWOVLKDGPQ 113.220.10.180
+SANDBOX :: CGQKREIVF_YJ 102.185.131.20
+SANDBOX :: UQRYDI_KZXSPTVB 217.124.216.67
+SANDBOX :: _TI 82.19.130.52
+SANDBOX :: _TJVSPM_BGRIZKQLHCDA 124.190.129.0
+SANDBOX :: _LRXW_GY 165.216.0.63
+SANDBOX :: MB_ZRFSHDAQ 112.230.216.133
+SANDBOX :: DMZTFWOSIJHP_YB_EN 230.7.103.145
+SANDBOX :: BGYZ_NFTSXRPHL 79.242.8.60
+SANDBOX :: __IQ 107.139.32.251
+SANDBOX :: E_TSW_RQD_ZYCOI 58.1.202.201
+SANDBOX :: CV_JI_AMBSL 156.66.27.39
+SANDBOX :: FOZW_MTKQYBDN 216.165.67.234
+SANDBOX :: LAMWVTHQBPNX_DZI 186.46.93.152
+SANDBOX :: __QO 219.203.68.128
+SANDBOX :: V__SL 224.254.45.210
+SANDBOX :: KNOVCPSJRFY_EQWAMBG 20.70.243.95
+SANDBOX :: PDYL_BM_GI_VN 10.70.200.241
+SANDBOX :: UYMARQWO_EXVCK_SD 158.134.198.164
+SANDBOX :: I_FJGAXPNUBQCRH_MTE 14.55.162.46
+SANDBOX :: F_LQS_DRIPNH 203.177.172.65
+SANDBOX :: _DW_Z_HS 196.125.214.32
+SANDBOX :: _AI 149.111.96.160
+SANDBOX :: _ZFWXBCPAQ 70.160.26.60
+SANDBOX :: L_IXYVJT 211.247.181.85
+PS>TerminatingError(Get-Random): "The Minimum value (0) cannot be greater than or equal to the Maximum value (0)."
+Get-Random : The Minimum value (0) cannot be greater than or equal to the Maximum value (0).
+At C:\Users\Surface\OneDrive\SIRENSSD\sandbox.ps1:12 char:16
++         $pos = Get-Random -Minimum 0 -Maximum ($text.Length - 1)
++                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (:) [Get-Random], ArgumentException
+    + FullyQualifiedErrorId : MinGreaterThanOrEqualMax,Microsoft.PowerShell.Commands.GetRandomCommand
+Get-Random : The Minimum value (0) cannot be greater than or equal to the Maximum value (0).
+At C:\Users\Surface\OneDrive\SIRENSSD\sandbox.ps1:12 char:16
++         $pos = Get-Random -Minimum 0 -Maximum ($text.Length - 1)
++                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (:) [Get-Random], ArgumentException
+    + FullyQualifiedErrorId : MinGreaterThanOrEqualMax,Microsoft.PowerShell.Commands.GetRandomCommand
+
+SANDBOX :: ___A 78.188.28.146
+SANDBOX :: _PT 221.81.76.51
+SANDBOX :: __EHW 104.184.138.164
+SANDBOX :: __YUERASM_QOJWHG 40.22.180.47
+SANDBOX :: HJZDRE_KUGTNPBO_SAFW 81.236.14.151
+SANDBOX :: FWN_LZX 111.210.201.154
+SANDBOX :: KTIRDC_SEG__HYP 230.39.170.254
+SANDBOX :: DJOY_NPF_TCS 107.137.208.22
+SANDBOX :: YWGL_MQBSRXIE 130.76.223.15
+SANDBOX :: _UGZ_WT 148.26.100.114
+SANDBOX :: TFWHUOZL_XEM 48.163.184.221
+SANDBOX :: __S_LODZUFKIXHJAGNET 229.187.120.48
+SANDBOX :: _Q_KOGASIT_ULPZBMRNFH 235.235.235.231
+SANDBOX :: _GYWECRU_HQ_VF 233.29.229.123
+SANDBOX :: _LM__ES 242.129.171.181
+SANDBOX :: ZWLPDCM_RTOSJGXF 166.78.200.222
+SANDBOX :: Z_NXCYFD 231.115.34.220
+SANDBOX :: _KPSLVJUXRCBMT 54.165.154.54
+SANDBOX :: HX_K_N_UYGIBJ 136.155.102.204
+SANDBOX :: LUIMF_STBGVCNEYO 26.236.181.42
+SANDBOX :: _WKXRBPF_JGT 175.122.19.128
+SANDBOX :: XN__BOWRITALY_MZDP 158.233.44.100
+SANDBOX :: LCIOKFV_UNGAWBHQPXS 102.100.28.19
+PS>TerminatingError(Get-Random): "The Minimum value (0) cannot be greater than or equal to the Maximum value (0)."
+Get-Random : The Minimum value (0) cannot be greater than or equal to the Maximum value (0).
+At C:\Users\Surface\OneDrive\SIRENSSD\sandbox.ps1:12 char:16
++         $pos = Get-Random -Minimum 0 -Maximum ($text.Length - 1)
++                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (:) [Get-Random], ArgumentException
+    + FullyQualifiedErrorId : MinGreaterThanOrEqualMax,Microsoft.PowerShell.Commands.GetRandomCommand
+Get-Random : The Minimum value (0) cannot be greater than or equal to the Maximum value (0).
+At C:\Users\Surface\OneDrive\SIRENSSD\sandbox.ps1:12 char:16
++         $pos = Get-Random -Minimum 0 -Maximum ($text.Length - 1)
++                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (:) [Get-Random], ArgumentException
+    + FullyQualifiedErrorId : MinGreaterThanOrEqualMax,Microsoft.PowerShell.Commands.GetRandomCommand
+
+SANDBOX :: __R 111.174.204.226
+SANDBOX :: ZLKMIGV__NORBT_YJ 218.217.245.113
+SANDBOX :: PJ_HU__TZ 153.156.249.69
+SANDBOX :: SVJMW_XROLAU_TG 80.180.95.78
+SANDBOX :: YZADHMOQ_IB 182.25.96.6
+PS>TerminatingError(Get-Random): "The Minimum value (0) cannot be greater than or equal to the Maximum value (0)."
+Get-Random : The Minimum value (0) cannot be greater than or equal to the Maximum value (0).
+At C:\Users\Surface\OneDrive\SIRENSSD\sandbox.ps1:12 char:16
++         $pos = Get-Random -Minimum 0 -Maximum ($text.Length - 1)
++                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (:) [Get-Random], ArgumentException
+    + FullyQualifiedErrorId : MinGreaterThanOrEqualMax,Microsoft.PowerShell.Commands.GetRandomCommand
+Get-Random : The Minimum value (0) cannot be greater than or equal to the Maximum value (0).
+At C:\Users\Surface\OneDrive\SIRENSSD\sandbox.ps1:12 char:16
++         $pos = Get-Random -Minimum 0 -Maximum ($text.Length - 1)
++                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (:) [Get-Random], ArgumentException
+    + FullyQualifiedErrorId : MinGreaterThanOrEqualMax,Microsoft.PowerShell.Commands.GetRandomCommand
+
+SANDBOX :: _I 204.128.5.43
+SANDBOX :: N_GSYZOLPK 59.72.64.254
+SANDBOX :: QL_MTSXGECKPIOWZ 71.189.117.209
+SANDBOX :: PT__W_UGCNX 137.135.199.217
+SANDBOX :: _LZ_OG 206.132.242.64
+SANDBOX :: U_ABGWOE 246.67.145.19
+SANDBOX :: _ULHT_K_EFNBZIVSPQCGY 128.205.47.234
+SANDBOX :: LTV_RKMWXFGAUH_PZE 137.221.174.77
+SANDBOX :: QCAPO_FLMNJ 4.22.70.238
+SANDBOX :: YCJ_BLI 169.160.167.146
+SANDBOX :: S_BJHZOVGUL__CF 153.247.42.219
+PS>TerminatingError(Get-Random): "The Minimum value (0) cannot be greater than or equal to the Maximum value (0)."
+Get-Random : The Minimum value (0) cannot be greater than or equal to the Maximum value (0).
+At C:\Users\Surface\OneDrive\SIRENSSD\sandbox.ps1:12 char:16
++         $pos = Get-Random -Minimum 0 -Maximum ($text.Length - 1)
++                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (:) [Get-Random], ArgumentException
+    + FullyQualifiedErrorId : MinGreaterThanOrEqualMax,Microsoft.PowerShell.Commands.GetRandomCommand
+Get-Random : The Minimum value (0) cannot be greater than or equal to the Maximum value (0).
+At C:\Users\Surface\OneDrive\SIRENSSD\sandbox.ps1:12 char:16
++         $pos = Get-Random -Minimum 0 -Maximum ($text.Length - 1)
++                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (:) [Get-Random], ArgumentException
+    + FullyQualifiedErrorId : MinGreaterThanOrEqualMax,Microsoft.PowerShell.Commands.GetRandomCommand
+
+SANDBOX :: __R 38.40.188.201
+SANDBOX :: OV_GHDSNR_CPK_MEWLB 236.134.128.50
+SANDBOX :: XB__W_SH 38.31.16.136
+SANDBOX :: D__AFJW_RYCQMIUBZTGX 239.242.171.109
+SANDBOX :: H_LRYUTXOGZCE 24.85.116.105
+SANDBOX :: QZ_L_OG_YIN 15.39.205.115
+SANDBOX :: _SP_ZRUX 64.217.48.45
+SANDBOX :: __VJYHR 220.95.167.254
+SANDBOX :: _ISBR 25.181.236.88
+SANDBOX :: _GYURL 17.101.253.2
+SANDBOX :: CS_JGP_KHTDEOIAUL 93.123.38.228
+SANDBOX :: BAICGKHWEVQ_MNDPFJ 6.190.255.182
+SANDBOX :: ___HZ 245.58.121.67
+SANDBOX :: _G_LESZJMIFQAVPOT 130.192.204.254
+SANDBOX :: VW_XYNBDTK 90.72.136.19
+SANDBOX :: OVFD_AMZHEWITQRLBSY 86.82.86.199
+SANDBOX :: OD_EHPCVIKQA 120.17.110.57
+SANDBOX :: ___DN 5.82.91.179
+PS>TerminatingError(Get-Random): "The Minimum value (0) cannot be greater than or equal to the Maximum value (0)."
+Get-Random : The Minimum value (0) cannot be greater than or equal to the Maximum value (0).
+At C:\Users\Surface\OneDrive\SIRENSSD\sandbox.ps1:12 char:16
++         $pos = Get-Random -Minimum 0 -Maximum ($text.Length - 1)
++                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (:) [Get-Random], ArgumentException
+    + FullyQualifiedErrorId : MinGreaterThanOrEqualMax,Microsoft.PowerShell.Commands.GetRandomCommand
+Get-Random : The Minimum value (0) cannot be greater than or equal to the Maximum value (0).
+At C:\Users\Surface\OneDrive\SIRENSSD\sandbox.ps1:12 char:16
++         $pos = Get-Random -Minimum 0 -Maximum ($text.Length - 1)
++                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (:) [Get-Random], ArgumentException
+    + FullyQualifiedErrorId : MinGreaterThanOrEqualMax,Microsoft.PowerShell.Commands.GetRandomCommand
+
+SANDBOX :: _D 88.113.11.148
+SANDBOX :: RLX_O__CS 1.233.109.130
+SANDBOX :: GTAZSCX_DRF__JLO 218.121.56.162
+SANDBOX :: XKWHVR_IDQSMP__BULOJC 229.100.123.88
+SANDBOX :: HVPQZXRWS_BYDUJL_CGN 233.238.254.200
+SANDBOX :: VJDN_XGYFEQ_LOH_CUTKW 220.234.172.11
+SANDBOX :: ___YRCQAKG 37.95.108.244
+SANDBOX :: ___BCH 79.197.177.163
+SANDBOX :: _BNRO_IEGCWQM 222.198.235.17
+SANDBOX :: BGY_R_DQHWKEFMNZSU 181.56.253.112
+SANDBOX :: KGJYVIP_OMB_QHEWCT 219.6.56.221
+SANDBOX :: _RWNSZK_TIVCDHAPGEU 25.179.225.19
+SANDBOX :: VJMILEGZFHB__PX 150.22.80.22
+SANDBOX :: __XZ 83.147.214.109
+SANDBOX :: _B_HR 197.0.110.161
+SANDBOX :: CMDK_SEA 125.120.51.20
+SANDBOX :: _VCH 199.149.196.31
+SANDBOX :: NJFT__EY 121.106.163.177
+SANDBOX :: P_HO_CNMSYGB 240.141.236.214
+SANDBOX :: VPHRBGSEN_YQMOUK 177.207.241.113
+SANDBOX :: UESZBRDL_GXQK 126.88.94.56
+SANDBOX :: V__JF 117.155.79.75
+SANDBOX :: OAHMKSGI_XCYLQREDF 240.125.75.181
+SANDBOX :: K_TYZOPIVQA 201.91.243.99
+SANDBOX :: HF_PUADB_GYEXN_JVCKZO 210.35.21.132
+SANDBOX :: PW_LABSVQEXFGHDRM 239.194.154.43
+SANDBOX :: _D__SH 114.159.38.198
+SANDBOX :: L_NZ_KWPVUR 166.255.188.245
+SANDBOX :: J_ZOR_Q_HIP 14.252.35.36
+PS>TerminatingError(Get-Random): "The Minimum value (0) cannot be greater than or equal to the Maximum value (0)."
+Get-Random : The Minimum value (0) cannot be greater than or equal to the Maximum value (0).
+At C:\Users\Surface\OneDrive\SIRENSSD\sandbox.ps1:12 char:16
++         $pos = Get-Random -Minimum 0 -Maximum ($text.Length - 1)
++                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (:) [Get-Random], ArgumentException
+    + FullyQualifiedErrorId : MinGreaterThanOrEqualMax,Microsoft.PowerShell.Commands.GetRandomCommand
+Get-Random : The Minimum value (0) cannot be greater than or equal to the Maximum value (0).
+At C:\Users\Surface\OneDrive\SIRENSSD\sandbox.ps1:12 char:16
++         $pos = Get-Random -Minimum 0 -Maximum ($text.Length - 1)
++                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (:) [Get-Random], ArgumentException
+    + FullyQualifiedErrorId : MinGreaterThanOrEqualMax,Microsoft.PowerShell.Commands.GetRandomCommand
+
+SANDBOX :: ___X 26.250.159.44
+SANDBOX :: BNTIF_LAJPUM 70.121.47.252
+SANDBOX :: ___ZW 30.238.231.148
+SANDBOX :: _L_HS 153.137.4.141
+SANDBOX :: T_MJEVZ_W_KYPUL 185.108.130.188
+SANDBOX :: BQMXSHGE_YC 189.50.197.214
+SANDBOX :: VBAWMNP__GCQHYDS_UO 117.136.164.241
+SANDBOX :: TBR_U_AF_IX 192.85.166.204
+SANDBOX :: GP_OZLXJNE_MFT_QAI 56.207.72.215
+SANDBOX :: K_X_MZJT 132.233.62.117
+SANDBOX :: DCW_VO 146.158.13.132
+SANDBOX :: IBF___HVKC 183.145.44.28
+SANDBOX :: DUINQSLK_OYB_P_JMW 250.46.60.161
+SANDBOX :: ENA__FL_IHQ 122.103.102.232
+SANDBOX :: JG_HTLW_KVX 52.201.183.189
+SANDBOX :: J_E__TM 212.62.59.201
+SANDBOX :: _Z__EI 71.26.92.202
+SANDBOX :: QUTWS_YNMDLIVEOFX 65.44.9.208
+SANDBOX :: _J_G_FL 46.12.41.31
+SANDBOX :: _BCLND 37.65.30.227
+SANDBOX :: ASLBGYHORWMKF_ZE 91.136.246.145
+SANDBOX :: VJMDZ_YTCNFRIP 25.4.82.208
+SANDBOX :: _J_PMK 104.95.163.187
+SANDBOX :: QU__ECGA_VPNIDHOSBF 50.129.161.84
+SANDBOX :: D___TY 99.67.60.156
+PS>TerminatingError(Get-Random): "The Minimum value (0) cannot be greater than or equal to the Maximum value (0)."
+Get-Random : The Minimum value (0) cannot be greater than or equal to the Maximum value (0).
+At C:\Users\Surface\OneDrive\SIRENSSD\sandbox.ps1:12 char:16
++         $pos = Get-Random -Minimum 0 -Maximum ($text.Length - 1)
++                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (:) [Get-Random], ArgumentException
+    + FullyQualifiedErrorId : MinGreaterThanOrEqualMax,Microsoft.PowerShell.Commands.GetRandomCommand
+Get-Random : The Minimum value (0) cannot be greater than or equal to the Maximum value (0).
+At C:\Users\Surface\OneDrive\SIRENSSD\sandbox.ps1:12 char:16
++         $pos = Get-Random -Minimum 0 -Maximum ($text.Length - 1)
++                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (:) [Get-Random], ArgumentException
+    + FullyQualifiedErrorId : MinGreaterThanOrEqualMax,Microsoft.PowerShell.Commands.GetRandomCommand
+
+SANDBOX :: ___M 52.98.219.206
+SANDBOX :: __XSTFJMK_RO 37.107.115.109
+SANDBOX :: _C__JA 62.71.195.243
+SANDBOX :: SW_AHVPRKUIMGZQ 170.211.97.76
+SANDBOX :: R_P_M_CNUSHLJ 71.169.175.67
+SANDBOX :: VJ_HOQAM_SZ 200.139.97.225
+SANDBOX :: JEHKYW_VX 137.77.158.172
+SANDBOX :: L__WHBU_ZPGA 107.212.188.225
+SANDBOX :: V_BTR__JZC 4.130.175.249
+SANDBOX :: __N_FVR 173.39.108.173
+SANDBOX :: _ZN 144.228.146.33
+SANDBOX :: __XA_RFHLWQ 156.175.17.95
+SANDBOX :: JHLMRYFINQV_ZOKUB 32.84.12.185
+SANDBOX :: XJL_RD 148.249.211.168
+SANDBOX :: __WI 0.249.68.215
+SANDBOX :: WEMDTLOVKYPS_BA 205.199.1.106
+SANDBOX :: W_VFC 138.225.238.39
+SANDBOX :: _ETPMZFW_RXS_VBQU 35.103.159.32
+SANDBOX :: I_J__YUMLOCBHS 61.1.178.227
+SANDBOX :: W__ARNXJQV 248.63.68.217
+SANDBOX :: KL_WFE__HCXUJTQ 60.62.140.22
+SANDBOX :: NK_OI 199.2.77.11
+SANDBOX :: CDY__HF_NU 174.6.248.179
+SANDBOX :: XP_Z_QYR 226.148.223.201
+SANDBOX :: ATO_MFSH_NY 227.40.150.186
+SANDBOX :: NX_R__UV 193.233.59.184
+SANDBOX :: _KXVBR__NSMQLY 181.236.124.146

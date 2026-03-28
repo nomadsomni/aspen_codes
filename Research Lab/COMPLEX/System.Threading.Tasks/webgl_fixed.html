@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>WebGL Node Matrix — FIXED</title>
+<style>
+  html, body {
+    margin: 0;
+    height: 100%;
+    overflow: hidden;
+    background: #1a1a1a;
+  }
+</style>
+</head>
+<body>
+
+<script src="https://unpkg.com/three@0.161.0/build/three.min.js"></script>
+<script src="https://unpkg.com/three@0.161.0/examples/js/controls/OrbitControls.js"></script>
+
+<script>
+// BASIC SCENE
+const scene = new THREE.Scene();
+scene.background = new THREE.Color(0x222222);
+
+const camera = new THREE.PerspectiveCamera(60, window.innerWidth/window.innerHeight, 0.1, 1000);
+camera.position.set(0, 10, 18);
+camera.lookAt(0, 0, 0);
+
+const renderer = new THREE.WebGLRenderer({ antialias: true });
+renderer.setSize(window.innerWidth, window.innerHeight);
+document.body.appendChild(renderer.domElement);
+
+const controls = new THREE.OrbitControls(camera, renderer.domElement);
+controls.enableDamping = true;
+
+// LIGHTS
+scene.add(new THREE.DirectionalLight(0xffffff, 1.4).position.set(5,10,5));
+scene.add(new THREE.AmbientLight(0xffffff, 0.4));
+
+// NODE POSITIONS
+const NODES = ["NOMAD","AVALANCHE","OASIS","PSYNC","COMPLEX","SANDBOX"];
+const radius = 6;
+const positions = {};
+
+NODES.forEach((name,i)=>{
+  const angle=(i/NODES.length)*Math.PI*2;
+  positions[name]=new THREE.Vector3(Math.cos(angle)*radius,0,Math.sin(angle)*radius);
+});
+
+// NODE SPHERES
+Object.entries(positions).forEach(([name,pos])=>{
+  const s=new THREE.Mesh(new THREE.SphereGeometry(0.6,32,32), new THREE.MeshStandardMaterial({color:0xffffff}));
+  s.position.copy(pos); scene.add(s);
+});
+
+// TRIADS
+const triads=[
+  ["NOMAD","AVALANCHE","PSYNC"],
+  ["OASIS","PSYNC","AVALANCHE"],
+  ["SANDBOX","OASIS","PSYNC"],
+  ["NOMAD","SANDBOX","AVALANCHE"],
+  ["PSYNC","OASIS","NOMAD"]
+];
+
+triads.forEach(([a,b,c])=>{
+  const pts=[positions[a],positions[b],positions[c],positions[a]];
+  const line=new THREE.Line(new THREE.BufferGeometry().setFromPoints(pts), new THREE.LineBasicMaterial({color:0x00ffff}));
+  scene.add(line);
+});
+
+// ANIMATION
+function animate(){
+  requestAnimationFrame(animate);
+  controls.update();
+  renderer.render(scene,camera);
+}
+animate();
+
+window.addEventListener("resize",()=>{
+  camera.aspect=window.innerWidth/window.innerHeight;
+  camera.updateProjectionMatrix();
+  renderer.setSize(window.innerWidth,window.innerHeight);
+});
+</script>
+
+</body>
+</html>

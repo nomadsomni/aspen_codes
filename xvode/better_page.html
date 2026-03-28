@@ -1,0 +1,1844 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Better Page</title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lobster&family=Noto+Sans:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    />
+    <style>
+      /*** VARIABLES START ***/
+
+      :root {
+        --dark-gray: #222831;
+        --gray: #393e46;
+        --orange: #f96d00;
+        --orange-opacity: rgba(249, 109, 0, 0.33);
+        --orange-no-opacity: rgba(249, 109, 0, 0);
+        --orange-dark: hsl(24, 52%, 29%);
+        --light-gray: #f2f2f2;
+        --pure-black: #000;
+        --pure-black-opacity: rgba(0, 0, 0, 0.5);
+        --blue: #00a7fc;
+        --gray-white: #f4f4f4;
+        --city-background: url('https://images.unsplash.com/photo-1588312744377-2adfb7b8578a?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+        --hero-background: url('https://images.unsplash.com/photo-1504805572947-34fad45aed93?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2607&q=80');
+        --font-logo: 'Lobster', sans-serif;
+        --font-page: 'Noto Sans', sans-serif;
+        --font-awesome: 'Font Awesome 5 Free';
+      }
+
+      /*** VARIABLES END ***/
+
+      /*** GLOBAL STYLES START ***/
+
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      html {
+        scroll-behavior: smooth;
+        font-size: 10px;
+      }
+
+      body.sticky {
+        padding-top: 100px;
+      }
+
+      /* LISTS */
+
+      ul {
+        list-style-position: inside;
+      }
+
+      .awesome-unorder {
+        list-style-type: none;
+        padding: 2rem 0;
+      }
+
+      .awesome-unorder > li {
+        padding: 1.5rem 0 1.5rem 3rem;
+        display: block;
+        position: relative;
+      }
+
+      .awesome-unorder > li::before {
+        font-family: var(--font-awesome);
+        content: '\f192';
+        font-size: 2rem;
+        color: var(--orange);
+        position: absolute;
+        top: 50%;
+        left: 0;
+        transform: translateY(-50%);
+      }
+
+      .section-apply .awesome-unorder > li::before {
+        color: var(--light-gray);
+      }
+
+      /* PARALLAX */
+
+      .parallax {
+        background: var(--dark-gray);
+        min-height: 10rem;
+        background-attachment: fixed;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+
+      /* CONTAINER */
+
+      .container {
+        margin: 0 auto;
+        padding: 0 2rem;
+        width: 100%;
+      }
+
+      @media (min-width: 576px) {
+        .container {
+          max-width: 540px;
+        }
+      }
+
+      @media (min-width: 768px) {
+        .container {
+          max-width: 720px;
+        }
+      }
+
+      @media (min-width: 992px) {
+        .container {
+          max-width: 960px;
+        }
+      }
+
+      @media (min-width: 1200px) {
+        .container {
+          max-width: 1140px;
+        }
+      }
+
+      @media (min-width: 1400px) {
+        .container {
+          max-width: 1320px;
+        }
+      }
+
+      /* FLEX HELPERS */
+
+      .d-flex {
+        display: flex;
+      }
+
+      .justify-content-between {
+        justify-content: space-between;
+      }
+
+      .align-items-center {
+        align-items: center;
+      }
+
+      /* OTHER HELPERS */
+
+      .section-padding {
+        padding: 10rem 2rem 15rem;
+      }
+
+      /* Reset styles for form elements */
+
+      /* Remove default padding and margin */
+      input,
+      textarea,
+      button,
+      select {
+        margin: 0;
+        padding: 0;
+        border: 0;
+        outline: none;
+        font-size: inherit;
+        font-family: inherit;
+      }
+
+      /* Remove default styles for WebKit browsers (Chrome, Safari) */
+      input::-webkit-input-placeholder,
+      textarea::-webkit-input-placeholder {
+        color: inherit;
+        opacity: 0.7;
+      }
+
+      /* Remove default styles for Firefox */
+      input:-moz-placeholder,
+      textarea:-moz-placeholder {
+        color: inherit;
+        opacity: 0.7;
+      }
+
+      /* Remove default styles for Internet Explorer */
+      input:-ms-input-placeholder,
+      textarea:-ms-input-placeholder {
+        color: inherit;
+        opacity: 0.7;
+      }
+
+      /* Remove default button styles */
+      button {
+        background: none;
+        border: none;
+        padding: 0;
+        cursor: pointer;
+      }
+
+      /*** GLOBAL STYLES END ***/
+
+      /*** TYPOGRAPHY START ***/
+
+      body {
+        font-family: var(--font-page);
+        color: var(--light-gray);
+        font-size: 2rem;
+        letter-spacing: 0.15rem;
+      }
+
+      .page-nav__logo {
+        font-family: var(--font-logo);
+        color: var(--orange);
+        font-size: 4rem;
+        letter-spacing: 3px;
+      }
+
+      .page-nav__nav-item a {
+        color: var(--light-gray);
+        font-size: 2rem;
+      }
+
+      .page__title {
+        font-size: 5rem;
+        font-style: italic;
+        letter-spacing: 0.44rem;
+        padding: 2rem 0 4rem;
+      }
+
+      .section__title {
+        padding: 2rem 0;
+        font-size: 3.5rem;
+      }
+
+      .section__subtitle {
+        position: relative;
+        font-size: 2.5rem;
+        color: var(--orange);
+        text-transform: uppercase;
+        letter-spacing: 0.25rem;
+        font-weight: 700;
+        display: inline-block;
+      }
+
+      .section__subtitle::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 0.2rem; /* Adjust the thickness of the underline as needed */
+        background: linear-gradient(
+          to right,
+          var(--orange),
+          var(--orange-no-opacity)
+        ); /* Use your desired gradient colors */
+        border-radius: 5px; /* Optional: add rounded corners to the underline */
+      }
+
+      .form__title {
+        font-size: 4rem;
+      }
+
+      .form__subtitle {
+        font-size: 2.5rem;
+      }
+
+      .form__header {
+        font-size: 2.5rem;
+        color: var(--dark-gray);
+        text-align: center;
+      }
+
+      p {
+        font-size: 2.2rem;
+        line-height: 3.3rem;
+        display: block;
+        max-width: 70%;
+        text-align: justify;
+      }
+
+      .para-standout {
+        color: var(--orange);
+        font-weight: 700;
+      }
+
+      strong {
+        font-family: var(--font-logo);
+        font-size: 4rem;
+        font-weight: 300;
+        letter-spacing: 0.4rem;
+        line-height: 7rem;
+      }
+
+      .section-cta .section__title {
+        font-size: 4.5rem;
+        padding-bottom: 5rem;
+      }
+
+      .section-cta .section__title,
+      .section-cta .section__subtitle {
+        text-shadow: 3px 3px 4px var(--pure-black);
+      }
+
+      .section-cta p {
+        max-width: 100%;
+        text-align: center;
+        text-shadow: 3px 3px 4px var(--pure-black);
+      }
+
+      .section-cta strong {
+        font-size: 3rem;
+      }
+
+      /*** TYPOGRAPHY END ***/
+
+      /*** NAVIGATION START ***/
+
+      .hamburger {
+        display: none;
+      }
+
+      .page-nav {
+        height: 10rem;
+        background: var(--dark-gray);
+        transition: all 0.44s ease;
+        box-shadow: 0px 0px 20px var(--pure-black-opacity);
+      }
+
+      .page-nav a {
+        text-decoration: none;
+        transition: all 0.15s ease;
+      }
+
+      .page-nav__logo,
+      .page-nav__nav-item a {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 10rem;
+      }
+
+      .page-nav__nav-list {
+        list-style: none;
+      }
+
+      .page-nav__nav-item a {
+        padding: 0 2rem;
+      }
+
+      .page-nav__nav-item a:hover {
+        background-color: var(--orange);
+        color: #fff;
+      }
+
+      .page-nav__logo {
+        transition: all 0.15s ease;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .page-nav__logo:hover {
+        color: var(--light-gray);
+        filter: drop-shadow(5px 5px 10px var(--orange));
+      }
+
+      /*** NAVIGATION END ***/
+
+      .section-about,
+      .section-benefits {
+        background: linear-gradient(
+          270deg,
+          var(--dark-gray),
+          var(--orange-dark),
+          var(--gray)
+        );
+        background-size: 600% 600%;
+
+        -webkit-animation: Breath 27s ease infinite;
+        -moz-animation: Breath 27s ease infinite;
+        animation: Breath 27s ease infinite;
+
+        box-shadow: 0px 15px 25px var(--pure-black-opacity);
+
+        position: relative;
+        z-index: 10;
+      }
+
+      .section-apply__content-items {
+        list-style-type: none;
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        margin-bottom: 5rem;
+      }
+      .section-apply__content-items__header .section__title {
+        text-align: center;
+        font-size: 4.5rem;
+      }
+
+      .section-apply__content-items li {
+        width: 30%;
+        margin: 2rem;
+        color: var(--dark-gray);
+        overflow: hidden;
+        position: relative;
+        box-shadow: 0 0 1.5rem var(--pure-black-opacity);
+      }
+
+      .section-apply__content-items li::before {
+        content: '';
+        display: block;
+        padding-bottom: 100%;
+      }
+
+      .section-apply__content-items .tile-content {
+        opacity: 0.75;
+        background: var(--light-gray);
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        transition: all 0.77s ease;
+        border-radius: 1.5rem;
+        overflow: hidden;
+        font-size: 3rem;
+        line-height: 10rem;
+        font-weight: bold;
+      }
+
+      .section-apply__content-items .tile-content:hover {
+        transform: translate(-50%, -50%) scale(0.85);
+        background: var(--orange);
+        opacity: 1;
+        color: var(--light-gray);
+      }
+
+      /* ICONS */
+
+      .section-apply__content-items .fab,
+      .section-apply__content-items .fas {
+        font-size: 15rem;
+      }
+
+      /* FORM */
+
+      .section-apply__content-container {
+        box-shadow: 0 0 1.5rem var(--pure-black-opacity);
+      }
+
+      .section-apply__content-container > * {
+        padding: 3rem;
+        transition: all 0.7s ease;
+      }
+
+      .section-apply__content-description {
+        background: var(--orange);
+        border-radius: 1.5rem 0 0 1.5rem;
+        width: 65%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+      }
+
+      .section-apply__form {
+        background: var(--light-gray);
+        width: 35%;
+      }
+
+      .section-apply__content-container.form-active
+        .section-apply__content-description {
+        border-radius: 0;
+        width: 45%;
+      }
+
+      .section-apply__content-container.form-active .section-apply__form {
+        border-radius: 0 1.5rem 1.5rem 0;
+        width: 55%;
+      }
+
+      /* FORM LAYOUT */
+
+      .section-apply__form {
+        background: var(--gray-white);
+        padding: 3rem;
+      }
+
+      .section-apply__form-header {
+        margin-bottom: 3rem;
+      }
+
+      .section-apply__form-content {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .form-group {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 2.5rem;
+      }
+
+      label {
+        font-weight: bold;
+        color: var(--dark-gray);
+        pointer-events: none;
+        transition: color 0.3s ease;
+      }
+
+      input,
+      textarea {
+        width: 100%;
+        padding: 1rem;
+        box-sizing: border-box;
+        border: 1px solid #ccc;
+        border-radius: 0.5rem;
+      }
+
+      .form-group:focus-within label {
+        color: var(--orange);
+      }
+
+      .button-container {
+        margin-top: 2.5rem;
+      }
+
+      .section-apply__content-description strong {
+        font-size: 2.2rem;
+      }
+
+      .section-apply__form-content form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .section-apply__form-content form > * {
+        width: 100%;
+      }
+
+      .section-apply__form-content button {
+        display: block;
+        margin: 0 auto;
+        width: 100%;
+        border: 2px solid var(--dark-gray);
+      }
+
+      /* JOB OFFERS */
+
+      .section-offers {
+        background-color: var(--dark-gray);
+      }
+
+      .accordion-wrap {
+        color: var(--dark-gray);
+        border-radius: 1.5rem 0 0 1.5rem;
+        overflow: hidden;
+        margin-top: 5rem;
+        box-shadow: 0 1rem 2rem var(--pure-black);
+      }
+
+      .accordion {
+        background-color: var(--light-gray);
+        color: var(--dark-gray);
+        cursor: pointer;
+        padding: 2.2rem;
+        width: 100%;
+        border: none;
+        text-align: left;
+        outline: none;
+        font-size: 1.8rem;
+        transition: all 0.3s ease;
+        border-radius: 0;
+      }
+
+      .active,
+      .accordion:hover {
+        background-color: var(--orange);
+        color: var(--light-gray);
+      }
+
+      .accordion:after {
+        content: '\002B';
+        color: var(--dark-gray);
+        font-weight: bold;
+        float: right;
+        margin-left: 5px;
+        font-size: 2.2rem;
+      }
+
+      .active:after {
+        content: '\2212';
+      }
+
+      .panel {
+        padding: 0 3rem;
+        background-color: var(--gray);
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.2s ease-out;
+        color: var(--light-gray);
+      }
+
+      .panel p {
+        padding: 2.5rem 0;
+      }
+
+      .panel a {
+        color: var(--orange);
+      }
+
+      .panel a:hover {
+        color: var(--light-gray);
+      }
+
+      .panel a:active {
+        color: var(--blue);
+      }
+
+      /* BENEFITS */
+
+      .section-benefits {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 2rem;
+      }
+
+      .section-benefits__items {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+      }
+
+      .section-benefits__items-item {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        margin-bottom: 2rem;
+      }
+
+      .section-benefits__image {
+        flex: 1;
+        margin-right: 5rem;
+      }
+
+      .section-benefits__description {
+        flex: 2;
+      }
+
+      /* Reverse order for even-numbered sections */
+      .section-benefits__items-item:nth-child(even) .section-benefits__image {
+        margin-right: 0;
+        margin-left: 5rem;
+      }
+
+      .section-benefits__items-item:nth-child(even)
+        .section-benefits__description {
+        order: -1;
+      }
+
+      .section-benefits__items-item:nth-child(even) {
+        margin-top: 10rem;
+      }
+
+      .section__subtitle {
+        margin-bottom: 1rem;
+      }
+
+      /* CTA */
+
+      .section-cta {
+        text-align: center;
+      }
+
+      .section-cta .button-container {
+        margin-top: 5rem;
+      }
+
+      /* FOOTER */
+
+      footer {
+        background: var(--gray);
+        padding: 20px;
+      }
+
+      .footer__content {
+        justify-content: center;
+        align-items: center;
+      }
+
+      .footer__col {
+        width: 100%;
+        max-width: 33.3%;
+      }
+
+      .footer__col-centered {
+        text-align: center;
+      }
+
+      .footer__col-right {
+        justify-content: end;
+      }
+
+      .footer__col-right > * {
+        margin: 0 1rem;
+        color: var(--light-gray);
+        font-size: 3.2rem;
+        transition: all 0.3s ease;
+      }
+
+      .footer__col-right > *:hover {
+        color: var(--orange);
+      }
+
+      .footer__col-right > *:active {
+        color: var(--blue);
+      }
+
+      /*** ANNOTATIONS START ***/
+
+      .section-improvements {
+        background: var(--dark-gray);
+      }
+
+      /*** ANNOTATIONS END ***/
+
+      /*** FIREWORKS START ***/
+
+      .section-apply .parallax {
+        background-image: var(--city-background);
+      }
+
+      .section-cta .parallax {
+        background-image: var(--city-background);
+      }
+
+      .hero {
+        position: relative;
+        width: 100%;
+        min-height: calc(100vh - 100px);
+        background-image: var(--hero-background);
+      }
+
+      .hero::before {
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: var(--dark-gray);
+        background: linear-gradient(
+          0deg,
+          var(--dark-gray) 0%,
+          var(--orange-opacity) 50%
+        );
+        content: '';
+      }
+
+      .page-nav.sticky {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        z-index: 1000;
+        box-shadow: 0px 13px 20px var(--pure-black-opacity);
+      }
+
+      @-webkit-keyframes Breath {
+        0% {
+          background-position: 0% 50%;
+        }
+        50% {
+          background-position: 100% 50%;
+        }
+        100% {
+          background-position: 0% 50%;
+        }
+      }
+      @-moz-keyframes Breath {
+        0% {
+          background-position: 0% 50%;
+        }
+        50% {
+          background-position: 100% 50%;
+        }
+        100% {
+          background-position: 0% 50%;
+        }
+      }
+      @keyframes Breath {
+        0% {
+          background-position: 0% 50%;
+        }
+        50% {
+          background-position: 100% 50%;
+        }
+        100% {
+          background-position: 0% 50%;
+        }
+      }
+
+      /* BUTTONS - source: https://codepen.io/yohaanchokhany/pen/wvGNzmw */
+
+      button {
+        cursor: pointer;
+        text-transform: uppercase;
+        width: 30rem;
+        height: 6.5rem;
+        position: relative;
+        border: solid var(--light-gray) 0.2rem;
+        z-index: 1;
+        transition: all 0.5s ease-in-out;
+        border-radius: 1rem;
+        font-size: 3rem;
+      }
+      button a {
+        text-decoration: none;
+        color: var(--dark-gray);
+        transition: all 0.5s ease-in-out;
+      }
+      button:focus {
+        outline: none;
+      }
+
+      .btn-20 {
+        overflow: hidden;
+        background-color: var(--orange);
+      }
+      .btn-20:before {
+        content: '';
+        position: absolute;
+        background: var(--light-gray);
+        width: 110%;
+        height: 30rem;
+        border-radius: 50%;
+        z-index: -1;
+        top: 50%;
+        left: 50%;
+        transform: translateX(-50%) translateY(-50%);
+        -webkit-transition: all 0.5s ease;
+        -moz-transition: all 1s ease;
+        -ms-transition: all 1s ease;
+        transition: all 0.5s ease;
+      }
+      .btn-20:hover:before {
+        width: 0%;
+        height: 0%;
+      }
+      .btn-20:hover,
+      .btn-20:hover a {
+        color: var(--light-gray);
+        border-color: var(--light-gray);
+      }
+      .btn-20:active:before {
+        background-color: #00a7fc;
+      }
+      .btn-20:active {
+        color: var(--light-gray);
+        background-color: var(--blue);
+        border-color: var(--light-gray);
+      }
+
+      /* BUTTON LAYOUT */
+
+      .section-about .button-container {
+        margin-top: 5rem;
+      }
+
+      /* VALIDATION */
+
+      .error-message {
+        color: red;
+        font-size: 1.6rem;
+        margin-top: 0.5rem;
+      }
+
+      /* MODAL */
+      .modal {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+        color: var(--dark-gray);
+        opacity: 0; /* Start with 0 opacity */
+        transition: opacity 0.3s ease; /* Add transition on opacity */
+      }
+
+      .modal-content {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 10px;
+        text-align: center;
+      }
+
+      .close-btn {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        font-size: 20px;
+        cursor: pointer;
+      }
+
+      /* Show modal with smooth transition */
+      .modal.show {
+        opacity: 1;
+      }
+      /*** FIREWORKS END ***/
+    </style>
+  </head>
+  <body>
+    <!-- HEADER SECTION START -->
+
+    <header>
+      <div class="hero parallax"></div>
+
+      <div class="page-nav">
+        <div
+          class="page-nav__content container d-flex justify-content-between align-items-center"
+        >
+          <a href="#" class="page-nav__logo">BETTERPAGE</a>
+          <nav class="page-nav__nav">
+            <ul class="page-nav__nav-list d-flex">
+              <li class="page-nav__nav-item">
+                <a href="#start-a-career">Start a career</a>
+              </li>
+              <li class="page-nav__nav-item">
+                <a href="#apply-for-job">Apply for Job</a>
+              </li>
+              <li class="page-nav__nav-item">
+                <a href="#job-offers">Job Offers</a>
+              </li>
+              <li class="page-nav__nav-item">
+                <a href="#benefits">Benefits</a>
+              </li>
+              <li class="page-nav__nav-item">
+                <a href="#call-to-action">Contact</a>
+              </li>
+            </ul>
+          </nav>
+
+          <div class="hamburger">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- HEADER SECTION END -->
+
+    <!-- ABOUT SECTION START -->
+
+    <section class="section-about" id="start-a-career">
+      <div class="section-about__content container section-padding">
+        <h3 class="section__subtitle">Start a career</h3>
+        <h1 class="page__title">
+          Prove your skills. <br />Do the task to the best of your ability
+        </h1>
+        <p class="para-standout">This page shows numerous errors:</p>
+        <ul class="awesome-unorder">
+          <li>
+            describe what needs to be improved and why (put a description in the
+            #annotations section),
+          </li>
+          <li>make improvements you described.</li>
+        </ul>
+        <p>
+          If candidate is not interested in this offer/page, we would like him
+          to check out other offers (we appreciate nice UI).
+        </p>
+        <p class="para-standout">
+          Add a new section to the page with links to other job offers, e.g.
+        </p>
+        <ul class="awesome-unorder">
+          <li>Junior Frontend Developer</li>
+          <li>Business Customer Support Specialist</li>
+          <li>Python Developer</li>
+          <li>DevOps</li>
+        </ul>
+        <p>You can use “Lorem ipsum” for descriptions.</p>
+        <p class="para-standout">Feel free to improve UI of this site.</p>
+        <p>Purpose of this site is:</p>
+        <ul class="awesome-unorder">
+          <li>present job offer to candidate,</li>
+          <li>desired action is applying a form by candidate.</li>
+        </ul>
+        <p><strong>Good Luck!</strong></p>
+        <div class="button-container">
+          <button class="btn-20">
+            <a href="#apply-for-job">Go to form</a>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT SECTION END -->
+
+    <!-- APPLY SECTION START -->
+
+    <section class="section-apply">
+      <div class="parallax">
+        <div class="section-apply__content container section-padding">
+          <div class="section-apply__content-items__header">
+            <h2 class="section__title">We use</h2>
+          </div>
+          <ul class="section-apply__content-items">
+            <li class="html-tile">
+              <div class="tile-content">
+                HTML
+                <i class="fab fa-html5"></i>
+              </div>
+            </li>
+            <li>
+              <div class="tile-content">
+                CSS/Sass
+                <div>
+                  <i class="fab fa-css3-alt"></i>
+                  <i class="fab fa-sass"></i>
+                </div>
+              </div>
+            </li>
+            <li>
+              <div class="tile-content">
+                JavaScript
+                <i class="fab fa-js"></i>
+              </div>
+            </li>
+            <li>
+              <div class="tile-content">
+                Design skills
+                <i class="fas fa-object-group"></i>
+              </div>
+            </li>
+            <li>
+              <div class="tile-content">
+                UI/UX
+                <i class="fab fa-figma"></i>
+              </div>
+            </li>
+            <li>
+              <div class="tile-content">
+                Aesthetic Skills
+                <i class="fas fa-palette"></i>
+              </div>
+            </li>
+          </ul>
+          <div
+            class="section-apply__content-container d-flex"
+            id="apply-for-job"
+          >
+            <div class="section-apply__content-description">
+              <div class="section-apply__content-header">
+                <h3 class="form__subtitle">Use your design skills</h3>
+                <h2 class="form__title">
+                  How you will design<br />the form for the user?
+                </h2>
+              </div>
+              <div class="section-apply__content-list">
+                <ul class="awesome-unorder">
+                  <li>Get user attention</li>
+                  <li>interest <strong>him</strong></li>
+                  <li>get the desire</li>
+                  <li><strong>Call to action</strong></li>
+                </ul>
+              </div>
+            </div>
+            <div class="section-apply__form" id="form">
+              <div class="section-apply__form-header">
+                <h3 class="form__header">Need a job? We need you!</h3>
+              </div>
+              <div class="section-apply__form-content">
+                <form id="jobForm">
+                  <div class="form-group">
+                    <label for="full-name">Full Name:</label>
+                    <input
+                      type="text"
+                      id="full-name"
+                      name="full-name"
+                      required
+                      minlength="5"
+                    />
+                    <div class="error-message" id="error-full-name"></div>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="e-mail">E-mail address:</label>
+                    <input type="email" id="e-mail" name="e-mail" required />
+                    <div class="error-message" id="error-e-mail"></div>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="phone">Phone number:</label>
+                    <input
+                      type="tel"
+                      id="phone"
+                      name="phone"
+                      pattern="[0-9]{3}-[0-9]{3}-[0-9]{3}"
+                      required
+                    />
+                    <div class="error-message" id="error-phone"></div>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="subject">Subject:</label>
+                    <textarea id="subject" name="subject"></textarea>
+                    <div class="error-message" id="error-subject"></div>
+                  </div>
+
+                  <div class="button-container">
+                    <button
+                      type="button"
+                      class="btn-20"
+                      onclick="validateForm()"
+                    >
+                      Join the crew
+                    </button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- APPLY SECTION END -->
+
+    <!-- JOB OFFERS SECTION START -->
+
+    <section class="section-offers" id="job-offers">
+      <div class="section-offers__content container section-padding">
+        <h3 class="section__subtitle">Haven't found anything for yourself?</h3>
+        <h2 class="section__title">
+          Check out other opportunities to join the team
+        </h2>
+        <p>
+          Below you will find our current job offers for other positions. Click
+          to see the details of the offer.
+        </p>
+        <div class="accordion-wrap">
+          <button class="accordion">Junior Frontend Developer</button>
+          <div class="panel">
+            <p>
+              Got a passion for pixels and a love for laughing in the face of
+              code challenges? We're on the hunt for a Junior Frontend Sorcerer
+              to join our magical team of tech enthusiasts. Bring your wand (or
+              laptop) and let's create web wizardry together!
+              <br />
+              <a
+                href="https://www.parleto.io/kariera/frontend-developer-gdansk-ukraine/"
+                target="_blank"
+                class="exclude-scroll"
+                >See the details</a
+              >
+            </p>
+          </div>
+
+          <button class="accordion">
+            Business Customer Support Specialist
+          </button>
+          <div class="panel">
+            <p>
+              Calling all problem-solving virtuosos! We're on the lookout for a
+              Business Customer Support Maestro to join our harmonious team of
+              support superheroes. If you're passionate about turning customer
+              issues into beautiful solutions and have a knack for transforming
+              frustrations into smiles, we want to hear your melody!
+              <br />
+              <a
+                href="https://www.parleto.io/kariera/specjalista-do-spraw-wsparcia-klienta-biznesowego/"
+                target="_blank"
+                class="exclude-scroll"
+                >See the details</a
+              >
+            </p>
+          </div>
+
+          <button class="accordion">Python Developer</button>
+          <div class="panel">
+            <p>
+              Are you a Python enthusiast with a knack for turning code dreams
+              into reality? We're in search of a Python Coding Ninja to join our
+              dynamic team of tech wizards. If you thrive on solving coding
+              puzzles, juggling algorithms, and turning caffeine into code, this
+              might be your dream dojo!
+              <br />
+              <a
+                href="https://www.parleto.io/kariera/python-developer-gdansk/"
+                target="_blank"
+                class="exclude-scroll"
+                >See the details</a
+              >
+            </p>
+          </div>
+
+          <button class="accordion">DevOps</button>
+          <div class="panel">
+            <p>
+              Are you a DevOps sorcerer with the magical ability to turn chaos
+              into harmony? We're seeking a DevOps Alchemist to join our
+              mystical team of tech enchanters. If you thrive on weaving
+              automation spells, orchestrating deployments, and making servers
+              dance to your tune, this might be your magical realm!
+              <br />
+              <a
+                href="https://www.parleto.io/kariera/administrator-systemow-devop-gdansk/"
+                target="_blank"
+                class="exclude-scroll"
+                >See the details</a
+              >
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- JOB OFFERS SECTION END -->
+
+    <!-- BENEFITS SECTION START -->
+
+    <section class="section-benefits" id="benefits">
+      <div class="section-benefits__content container section-padding">
+        <div class="section-benefits__items">
+          <div class="section-benefits__items-item">
+            <div class="section-benefits__image">
+              <img
+                src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHZpZXdCb3g9JzAgMCAyNCAyNCc+PHRpdGxlPm1vbml0b3ItZGFzaGJvYXJkPC90aXRsZT48cGF0aCBkPSdNMjEsMTZWNEgzVjE2SDIxTTIxLDJBMiwyIDAgMCwxIDIzLDRWMTZBMiwyIDAgMCwxIDIxLDE4SDE0VjIwSDE2VjIySDhWMjBIMTBWMThIM0MxLjg5LDE4IDEsMTcuMSAxLDE2VjRDMSwyLjg5IDEuODksMiAzLDJIMjFNNSw2SDE0VjExSDVWNk0xNSw2SDE5VjhIMTVWNk0xOSw5VjE0SDE1VjlIMTlNNSwxMkg5VjE0SDVWMTJNMTAsMTJIMTRWMTRIMTBWMTJaJy8+PC9zdmc+"
+                alt="screen icon"
+              />
+            </div>
+            <div class="section-benefits__description">
+              <h2 class="section__title">Expect</h2>
+              <h3 class="section__subtitle">Why it is worth working with us</h3>
+              <ul class="awesome-unorder">
+                <li>Work in a friendly and relaxed atmosphere</li>
+                <li>Opportunities to implement your own ideas</li>
+                <li>
+                  Stable employment based on the selected form of contract
+                  (after the trial period)
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="section-benefits__items-item">
+            <div class="section-benefits__image">
+              <img
+                src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHZpZXdCb3g9JzAgMCAyNCAyNCc+PHRpdGxlPm1vbml0b3ItZGFzaGJvYXJkPC90aXRsZT48cGF0aCBkPSdNMjEsMTZWNEgzVjE2SDIxTTIxLDJBMiwyIDAgMCwxIDIzLDRWMTZBMiwyIDAgMCwxIDIxLDE4SDE0VjIwSDE2VjIySDhWMjBIMTBWMThIM0MxLjg5LDE4IDEsMTcuMSAxLDE2VjRDMSwyLjg5IDEuODksMiAzLDJIMjFNNSw2SDE0VjExSDVWNk0xNSw2SDE5VjhIMTVWNk0xOSw5VjE0SDE1VjlIMTlNNSwxMkg5VjE0SDVWMTJNMTAsMTJIMTRWMTRIMTBWMTJaJy8+PC9zdmc+"
+                alt="screen icon"
+              />
+            </div>
+            <div class="section-benefits__description">
+              <h2 class="section__title">Added value</h2>
+              <h3 class="section__subtitle">Why it is worth working with us</h3>
+              <ul class="awesome-unorder">
+                <li>Our knowledge, training and sports package for balance</li>
+                <li>
+                  Support in choosing the optimal and satisfactory development
+                  path for you
+                </li>
+                <li>Clear and honest communication within the team</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- BENEFITS SECTION END -->
+
+    <!-- CTA SECTION START -->
+
+    <section class="section-cta" id="call-to-action">
+      <div class="parallax">
+        <div class="section-cta__content container section-padding">
+          <h3 class="section__subtitle">Have any questions?</h3>
+          <div class="section-cta__header">
+            <h2 class="section__title">Fill in the form!</h2>
+          </div>
+          <div class="section-cta__invitation">
+            <p>
+              <strong>Go to form...</strong><br />...and start working with us.
+            </p>
+          </div>
+          <div class="button-container">
+            <button class="btn-20">
+              <a href="#apply-for-job">Apply</a>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA SECTION END -->
+
+    <!-- FOOTER SECTION START -->
+
+    <footer>
+      <div class="footer__content container d-flex">
+        <div class="footer__col">
+          Jerzy Jarczyński<br />
+          Junior Full Stack Developer<br />
+          Kodilla Bootcamp Graduate
+        </div>
+        <div class="footer__col footer__col-centered">
+          Better Page | Recruitment task
+        </div>
+        <div class="footer__col d-flex footer__col-right">
+          <a
+            href="https://github.com/jerzy-jarczynski"
+            target="_blank"
+            class="exclude-scroll"
+          >
+            <i class="fab fa-github"></i>
+          </a>
+          <a
+            href="https://www.linkedin.com/in/jerzy-jarczynski/"
+            target="_blank"
+            class="exclude-scroll"
+          >
+            <i class="fab fa-linkedin"></i>
+          </a>
+          <a href="tel:+48692471855" class="exclude-scroll">
+            <i class="fas fa-phone"></i>
+          </a>
+          <a
+            href="mailto:jerzy.jarczynski@junior-dev.pl"
+            class="exclude-scroll"
+          >
+            <i class="fas fa-envelope"></i>
+          </a>
+        </div>
+      </div>
+    </footer>
+
+    <!-- FOOTER SECTION END -->
+
+    <!-- IMPROVEMENTS SECTION START -->
+
+    <section class="section-improvements" id="annotations">
+      <div class="section-improvements__content container section-padding">
+        <h2 class="section__title">Improvements</h2>
+        <div>
+          <h3 class="section__subtitle">Removing W3C errors and warnings</h3>
+          <ol class="awesome-order">
+            <li>
+              Adding lang attribute to html
+              <p style="font-size: 1.4rem">
+                The 'lang' attribute helps to improve accessibility. Search
+                engines use the 'lang' attribute to better understand the
+                language of the content. 'lang' attribute is crucial for
+                indicating the language of each page. Specifying the language
+                can enhance the overall user experience. The 'lang' attribute
+                can also be used in conjuction with CSS for language-specific
+                styling.
+              </p>
+            </li>
+            <li>
+              CSS instead SCSS in style tags
+              <p style="font-size: 1.4rem">
+                CSS is simpler and more straightforward than SCSS. Since SCSS
+                needs to be compiled into CSS before it's interpreted by the
+                browser, using plain CSS in style tags can eliminate the
+                compilation step, potentially leading to faster rendering times.
+                Using plain CSS ensures broader compatibility without relying on
+                a preprocessor. For small projects or quick edits, working
+                directly with CSS in style tags can be more convenient.
+              </p>
+            </li>
+            <li>
+              no legacy JavaScript
+              <p style="font-size: 1.4rem">
+                Avoiding legacy JavaScript reduces maintenance overhead,
+                improves performance, and ensures better compatibility with
+                modern web standards.
+              </p>
+            </li>
+            <li>
+              fixing typoos and html bugs
+              <p style="font-size: 1.4rem">
+                Fixing typos and HTML bugs enhances code accuracy and improves
+                website functionality.
+              </p>
+            </li>
+            <li>
+              fixing error in sizes attribute in img
+              <p style="font-size: 1.4rem">
+                Finally I've decided to resign from developing image with set of
+                sources.
+              </p>
+            </li>
+            <li>
+              missing src attribute in img
+              <p style="font-size: 1.4rem">
+                The src attribute in img tags is crucial for displaying images;
+                its absence results in a broken or missing image on the webpage.
+              </p>
+            </li>
+            <li>
+              missing alt attribute in img
+              <p style="font-size: 1.4rem">
+                Including the alt attribute in img tags is essential for
+                accessibility, providing text descriptions for images, aiding
+                users with disabilities and enhancing SEO.
+              </p>
+            </li>
+            <li>
+              duplicated id in input
+              <p style="font-size: 1.4rem">
+                Avoiding duplicated IDs in input elements is vital for
+                maintaining a valid HTML structure. Duplicate IDs can lead to
+                unpredictable behavior in scripts and hinder accessibility
+                features.
+              </p>
+            </li>
+            <li>
+              illegal character in img src
+              <p style="font-size: 1.4rem">
+                Using illegal characters in the src attribute of an img tag can
+                break the image link and prevent proper loading. Ensure the src
+                adheres to valid URL and file naming conventions.
+              </p>
+            </li>
+            <li>
+              fixing nesting errors with div and hr inside headers
+              <p style="font-size: 1.4rem">
+                Correcting nesting errors with div and hr inside headers ensures
+                proper HTML structure. Place them outside the header or use
+                appropriate container elements.
+              </p>
+            </li>
+          </ol>
+        </div>
+        <div>
+          <h3 class="section__subtitle">Fixing other bugs</h3>
+          <ol class="awesome-order">
+            <li>
+              headers hierarchy - only 1 h1 on the page
+              <p style="font-size: 1.4rem">
+                Maintain a proper headers hierarchy with only one h1 on the
+                page. Use h2, h3, etc., for subheadings to create a logical and
+                semantically correct structure.
+              </p>
+            </li>
+            <li>
+              <p>Add Responsive Web Design (RWD):</p>
+              <p style="font-size: 1.4rem">
+                Unfortunately, I ran out of time to implement Responsive Web
+                Design for the website. It currently works well on screens up to
+                1400px wide. I regret this oversight, especially since RWD poses
+                no challenge for me, whether in a mobile-first or desktop-first
+                approach. Initially, I intended to adopt a mobile-first strategy
+                but ended up focusing on desktop design. As proof of my
+                proficiency in RWD, here are projects adapted for smaller screen
+                widths:
+              </p>
+              <ul>
+                <li>
+                  <a href="https://codepen.io/jerzyjarczynski/pen/YzOgLRo"
+                    >Project 1</a
+                  >
+                </li>
+                <li>
+                  <a href="https://codepen.io/jerzyjarczynski/pen/PodPxam"
+                    >Project 2</a
+                  >
+                </li>
+                <li>
+                  <a href="https://codepen.io/jerzyjarczynski/pen/ExpRJeY"
+                    >Project 3</a
+                  >
+                </li>
+                <li>
+                  <a href="https://codepen.io/jerzyjarczynski/pen/zYJOOmG"
+                    >Project 4</a
+                  >
+                </li>
+              </ul>
+            </li>
+            <li>
+              remove !important styles
+              <p style="font-size: 1.4rem">
+                Removing !important styles enhances code maintainability and
+                flexibility by allowing styles to be overridden more easily. It
+                promotes a clearer and more predictable cascade in the
+                stylesheet.
+              </p>
+            </li>
+            <li>
+              unification of units
+              <p style="font-size: 1.4rem">
+                Due to a lack of time for refactoring, there might be occasional
+                pixels in the styles. However, overall, I attempted to adhere to
+                the convention of using rem where possible. Additional benefits
+                of unification of units include:
+              </p>
+              <ul>
+                <li>
+                  Consistency: Using a consistent unit like rem throughout the
+                  styles promotes a uniform and predictable appearance across
+                  the website.
+                </li>
+                <li>
+                  Scalability: rem is relative to the root font size, making it
+                  easier to scale elements proportionally by adjusting the root
+                  font size.
+                </li>
+                <li>
+                  Accessibility: Uniform units contribute to a more accessible
+                  design, accommodating users who may rely on text resizing or
+                  have different default font sizes set in their browsers.
+                </li>
+                <li>
+                  Maintenance: Unifying units simplifies code maintenance by
+                  reducing the need for unit conversions and making stylesheets
+                  more straightforward to understand.
+                </li>
+              </ul>
+            </li>
+            <li>
+              replace unnecessary grid with horizontal flex
+              <p style="font-size: 1.4rem">
+                Replacing unnecessary grid with horizontal flex offers
+                simplicity, reduces code complexity, and enhances performance.
+                It's advantageous for straightforward, one-dimensional layouts,
+                providing a more concise and easily maintainable solution.
+              </p>
+            </li>
+          </ol>
+        </div>
+        <div>
+          <h3 class="section__subtitle">Fireworks</h3>
+          <ol class="awesome-order">
+            <li>
+              sticky navbar
+              <p style="font-size: 1.4rem">
+                Applying a sticky navbar ensures that the navigation is always
+                visible on the page. In this case, the navigation bar
+                facilitates swift navigation between sections, which can be very
+                helpful. I didn't add an arrow directing to the top of the page;
+                the logo serves this function instead.
+              </p>
+            </li>
+            <li>
+              animated scroll to target section
+              <p style="font-size: 1.4rem">
+                Animated transitions between sections positively impact UX.
+                Navigation is not abrupt and sudden but smooth and calm,
+                striking a balance — swift enough for efficient access to the
+                desired section, yet not overly rapid.
+              </p>
+            </li>
+            <li>
+              parallax backgrounds
+              <p style="font-size: 1.4rem">
+                A parallax background is a simple and pleasant effect that adds
+                space and breathes life into the webpage. The photograph used on
+                the site is sourced from a free graphics bank and depicts a
+                cityscape at night. To the text on the parallax, I added a
+                text-shadow to enhance readability.
+              </p>
+            </li>
+            <li>
+              form validation
+              <p style="font-size: 1.4rem">
+                Form validation is fundamental in today's web development. Its
+                absence in more significant projects is impractical and risky.
+                An additional security measure is a captcha, which I didn't
+                implement. The form works, but it currently only sends data to
+                the browser console using console.log.
+              </p>
+            </li>
+            <li>
+              modal on form submit
+              <p style="font-size: 1.4rem">
+                A modal appearing after form submission positively enhances UX.
+                Due to time constraints, I didn't focus on its appearance, but
+                the modal opens and closes without errors in the console,
+                informing the user that their message has been sent.
+              </p>
+            </li>
+            <li>
+              accordion
+              <p style="font-size: 1.4rem">
+                The accordion is sourced from the W3Schools base, with minimal
+                modifications tailored to the color palette and overall style of
+                the page. I deemed it a good way to present a small number of
+                job offers in an engaging manner for the user.
+              </p>
+            </li>
+          </ol>
+        </div>
+        <div>
+          <h3 class="section__subtitle">Aesthetics</h3>
+          <ol class="awesome-order">
+            <li>
+              color pallete
+              <p style="font-size: 1.4rem">
+                I opted for a minimalist 4-color palette, utilizing it in a
+                versatile manner. I created gradients and ensured suitable
+                contrasts for readability, emphasizing important information. I
+                added additional colors and their variations to CSS variables as
+                needed.
+              </p>
+            </li>
+            <li>
+              coherent typography
+              <p style="font-size: 1.4rem">
+                I aimed to unify the typography by selecting two primary fonts
+                used throughout the entire website. I initially defined colors
+                and sizes globally, adjusting them as needed for specific
+                sections. This approach ensures consistency and harmony in the
+                text. The choice of fonts may not be the most deliberate; I
+                selected Lobster for its distinctiveness, using it to emphasize
+                the logo and strong elements on the page.
+              </p>
+            </li>
+            <li>
+              font awesome icons
+              <p style="font-size: 1.4rem">
+                I really enjoy using Font Awesome. The icons have a pleasing
+                aesthetic, and it's easy to apply suitable styles to them. The
+                extensive icon library makes it straightforward to find
+                something appropriate for the specific purpose of the
+                presentation.
+              </p>
+            </li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <!-- IMPROVEMENTS SECTION END -->
+
+    <!-- Modal -->
+    <div id="thankYouModal" class="modal">
+      <div class="modal-content">
+        <span class="close-btn" onclick="closeThankYouModal()">&times;</span>
+        <p>
+          Thank you for providing your contact data.<br /><br />
+          You can expect our response soon.
+        </p>
+      </div>
+    </div>
+
+    <!-- SCRIPTS START -->
+
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        const hero = document.querySelector('.hero');
+        const nav = document.querySelector('.page-nav');
+        const body = document.querySelector('body');
+
+        window.addEventListener('scroll', () => {
+          const scrollPosition = window.scrollY;
+          const heroBottom = hero.offsetHeight;
+
+          if (scrollPosition >= heroBottom) {
+            nav.classList.add('sticky');
+            body.classList.add('sticky');
+          } else {
+            nav.classList.remove('sticky');
+            body.classList.remove('sticky');
+          }
+        });
+
+        // Event delegation for cleaner code
+        document.querySelectorAll('a').forEach((link) => {
+          link.addEventListener('click', (event) => {
+            // Check if the link has the class "exclude-scroll"
+            if (!link.classList.contains('exclude-scroll')) {
+              event.preventDefault();
+
+              const targetId = link.getAttribute('href').substring(1);
+              const targetElement = document.getElementById(targetId);
+
+              if (targetElement) {
+                window.scroll({
+                  top: targetElement.offsetTop - 100,
+                  left: 0,
+                  behavior: 'smooth',
+                });
+              }
+            }
+          });
+        });
+
+        // Handling click on the logo
+        document
+          .querySelector('.page-nav__logo')
+          .addEventListener('click', (event) => {
+            event.preventDefault();
+            window.scroll({
+              top: 0,
+              left: 0,
+              behavior: 'smooth',
+            });
+          });
+
+        const formContainer = document.querySelector(
+          '.section-apply__content-container'
+        );
+
+        // Add event listeners to form inputs for focus and blur events
+        const formInputs = document.querySelectorAll(
+          '.section-apply__form input, .section-apply__form textarea'
+        );
+        formInputs.forEach((input) => {
+          input.addEventListener('focus', activateForm);
+          input.addEventListener('blur', deactivateForm);
+        });
+
+        function activateForm() {
+          formContainer.classList.add('form-active');
+        }
+
+        function deactivateForm() {
+          formContainer.classList.remove('form-active');
+        }
+      });
+
+      // ABOVE IS WORKING, DON'T TOUCH THIS
+
+      const validateForm = () => {
+        // Reset error messages
+        resetErrorMessages();
+
+        // Get form elements
+        const fullName = document.getElementById('full-name');
+        const email = document.getElementById('e-mail');
+        const phone = document.getElementById('phone');
+        const subject = document.getElementById('subject');
+
+        // Validate Full Name
+        if (fullName.value.length < 5) {
+          displayError(
+            'error-full-name',
+            'Full Name must be at least 5 characters'
+          );
+          return;
+        }
+
+        // Validate Email
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailRegex.test(email.value)) {
+          displayError('error-e-mail', 'Invalid email address');
+          return;
+        }
+
+        // Validate Phone
+        const phoneRegex = /^[0-9]{3}-[0-9]{3}-[0-9]{3}$/;
+        if (!phoneRegex.test(phone.value)) {
+          displayError(
+            'error-phone',
+            'Invalid phone number (use format: xxx-xxx-xxx)'
+          );
+          return;
+        }
+
+        // Form is valid, log form data and show modal
+        console.log('Form data:', {
+          fullName: fullName.value,
+          email: email.value,
+          phone: phone.value,
+          subject: subject.value,
+        });
+
+        // Form is valid, show modal
+        showThankYouModal();
+      };
+
+      const displayError = (elementId, errorMessage) => {
+        const errorElement = document.getElementById(elementId);
+        errorElement.innerHTML = errorMessage;
+      };
+
+      const resetErrorMessages = () => {
+        document.querySelectorAll('.error-message').forEach((element) => {
+          element.innerHTML = '';
+        });
+      };
+
+      const showThankYouModal = () => {
+        const modal = document.getElementById('thankYouModal');
+        modal.style.display = 'block';
+
+        // Use setTimeout to delay setting opacity to ensure transition
+        setTimeout(() => {
+          modal.classList.add('show');
+        }, 10);
+      };
+
+      const closeThankYouModal = () => {
+        const modal = document.getElementById('thankYouModal');
+        modal.classList.remove('show');
+
+        // Hide the modal after the transition is complete
+        setTimeout(() => {
+          modal.style.display = 'none';
+        }, 300);
+      };
+
+      const accordions = document.querySelectorAll('.accordion');
+
+      accordions.forEach((accordion) => {
+        accordion.addEventListener('click', function () {
+          this.classList.toggle('active');
+          const panel = this.nextElementSibling;
+          if (panel.style.maxHeight) {
+            panel.style.maxHeight = null;
+          } else {
+            panel.style.maxHeight = `${panel.scrollHeight}px`;
+          }
+        });
+      });
+    </script>
+
+    <!-- SCRIPTS END -->
+  </body>
+</html>

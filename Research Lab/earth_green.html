@@ -1,0 +1,196 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Green Earth</title>
+<style>
+  html, body {margin:0;height:100%;background:#000;}
+  canvas {width:100vw;height:100vh;display:block;}
+</style>
+</head>
+<body>
+<canvas id="gl"></canvas>
+<script>
+const canvas = document.getElementById("gl");
+const gl = canvas.getContext("webgl2",{antialias:true});
+
+function resize(){
+  const dpr = Math.min(window.devicePixelRatio,2);
+  canvas.width = canvas.clientWidth * dpr;
+  canvas.height = canvas.clientHeight * dpr;
+  gl.viewport(0,0,canvas.width,canvas.height);
+}
+window.addEventListener("resize",resize);
+resize();
+
+const vs = `#version 300 es
+layout(location=0) in vec3 aPos;
+layout(location=1) in vec3 aNor;
+
+uniform mat4 uProj;
+uniform mat4 uView;
+uniform mat4 uModel;
+
+out vec3 vNor;
+out vec3 vPos;
+
+void main(){
+  vec4 wp = uModel * vec4(aPos,1.0);
+  vPos = wp.xyz;
+  vNor = mat3(uModel) * aNor;
+  gl_Position = uProj * uView * wp;
+}`;
+
+const fs = `#version 300 es
+precision highp float;
+
+in vec3 vNor;
+in vec3 vPos;
+
+uniform vec3 uEye;
+
+out vec4 o;
+
+void main(){
+  vec3 N = normalize(vNor);
+
+  // Hemisphere lighting for Earth feeling
+  vec3 sky  = vec3(0.2,0.9,0.2);   // green tint
+  vec3 land = vec3(0.0,0.25,0.0);
+
+  float h = N.y * 0.5 + 0.5;
+  vec3 hemi = mix(land, sky, h);
+
+  // Slight directional light for realism
+  vec3 L = normalize(vec3(0.3,1.0,0.2));
+  float diff = max(dot(N,L),0.0);
+
+  // Very subtle specular
+  vec3 V = normalize(uEye - vPos);
+  vec3 H = normalize(L + V);
+  float spec = pow(max(dot(N,H),0.0), 64.0)*0.12;
+
+  vec3 col = hemi*0.7 + diff*0.9 + spec;
+
+  o = vec4(col,1.0);
+}`;
+
+function compile(type,src){
+  const s = gl.createShader(type);
+  gl.shaderSource(s,src);
+  gl.compileShader(s);
+  return s;
+}
+const p = gl.createProgram();
+gl.attachShader(p, compile(gl.VERTEX_SHADER,vs));
+gl.attachShader(p, compile(gl.FRAGMENT_SHADER,fs));
+gl.linkProgram(p);
+
+function sphere(r,lat,lon){
+  const pos=[], nor=[], idx=[];
+  for(let y=0;y<=lat;y++){
+    const v=y/lat; const a1=v*Math.PI;
+    for(let x=0;x<=lon;x++){
+      const u=x/lon; const a2=u*Math.PI*2;
+      const s=[Math.sin(a1)*Math.cos(a2),
+               Math.cos(a1),
+               Math.sin(a1)*Math.sin(a2)];
+      pos.push(s[0]*r, s[1]*r, s[2]*r);
+      nor.push(s[0], s[1], s[2]);
+    }
+  }
+  for(let y=0;y<lat;y++){
+    for(let x=0;x<lon;x++){
+      const i = y*(lon+1) + x;
+      idx.push(i, i+1, i+lon+1, i+1, i+lon+2, i+lon+1);
+    }
+  }
+  return {
+    pos:new Float32Array(pos),
+    nor:new Float32Array(nor),
+    idx:new Uint32Array(idx)
+  };
+}
+
+const earth = sphere(3.0, 48, 64);
+
+const vao = gl.createVertexArray();
+gl.bindVertexArray(vao);
+
+function buf(data,loc){
+  const b = gl.createBuffer();
+  gl.bindBuffer(gl.ARRAY_BUFFER,b);
+  gl.bufferData(gl.ARRAY_BUFFER,data,gl.STATIC_DRAW);
+  gl.enableVertexAttribArray(loc);
+  gl.vertexAttribPointer(loc,3,gl.FLOAT,false,0,0);
+}
+buf(earth.pos,0);
+buf(earth.nor,1);
+
+const ib = gl.createBuffer();
+gl.bindBuffer(gl.ELEMENT_ARRAY_BUFFER,ib);
+gl.bufferData(gl.ELEMENT_ARRAY_BUFFER,earth.idx,gl.STATIC_DRAW);
+gl.bindVertexArray(null);
+
+// Matrices
+function perspective(fovy,aspect,near,far){
+  const f=1/Math.tan(fovy/2), nf=1/(near-far);
+  return [
+    f/aspect,0,0,0,
+    0,f,0,0,
+    0,0,(far+near)*nf,-1,
+    0,0,(2*far*near)*nf,0
+  ];
+}
+function lookAt(e,c,u){
+  const z = norm(sub(e,c));
+  const x = norm(cross(u,z));
+  const y = cross(z,x);
+  return [
+    x[0],y[0],z[0],0,
+    x[1],y[1],z[1],0,
+    x[2],y[2],z[2],0,
+    -dot(x,e),-dot(y,e),-dot(z,e),1
+  ];
+}
+const add=(a,b)=>[a[0]+b[0],a[1]+b[1],a[2]+b[2]];
+const sub=(a,b)=>[a[0]-b[0],a[1]-b[1],a[2]-b[2]];
+const cross=(a,b)=>[a[1]*b[2]-a[2]*b[1], a[2]*b[0]-a[0]*b[2], a[0]*b[1]-a[1]*b[0]];
+const dot=(a,b)=>a[0]*b[0]+a[1]*b[1]+a[2]*b[2];
+const norm=a=>{const l=Math.hypot(a[0],a[1],a[2])||1;return[a[0]/l,a[1]/l,a[2]/l];};
+
+function rotY(a){
+  const c=Math.cos(a), s=Math.sin(a);
+  return [c,0,-s,0, 0,1,0,0, s,0,c,0, 0,0,0,1];
+}
+
+gl.enable(gl.DEPTH_TEST);
+
+function frame(t){
+  resize();
+  gl.clearColor(0,0,0,1);
+  gl.clear(gl.COLOR_BUFFER_BIT|gl.DEPTH_BUFFER_BIT);
+
+  const eye=[0,6,12];
+  const proj=perspective(55*Math.PI/180,canvas.width/canvas.height,0.1,1000);
+  const view=lookAt(eye,[0,1.5,0],[0,1,0]);
+
+  const rot = rotY(t*0.0003);
+  rot[13] = 1.3 + Math.sin(t*0.001)*0.3; // floating
+
+  gl.useProgram(p);
+  gl.bindVertexArray(vao);
+
+  gl.uniformMatrix4fv(gl.getUniformLocation(p,"uProj"),false,proj);
+  gl.uniformMatrix4fv(gl.getUniformLocation(p,"uView"),false,view);
+  gl.uniformMatrix4fv(gl.getUniformLocation(p,"uModel"),false,rot);
+  gl.uniform3f(gl.getUniformLocation(p,"uEye"),eye[0],eye[1],eye[2]);
+
+  gl.drawElements(gl.TRIANGLES, earth.idx.length, gl.UNSIGNED_INT, 0);
+  requestAnimationFrame(frame);
+}
+requestAnimationFrame(frame);
+</script>
+</body>
+</html>

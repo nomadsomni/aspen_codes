@@ -1,0 +1,27 @@
+﻿**********************
+Windows PowerShell transcript start
+Start time: 20250817023910
+Username: NOMAD\Surface
+RunAs User: NOMAD\Surface
+Configuration Name: 
+Machine: NOMAD (Microsoft Windows NT 10.0.22631.0)
+Host Application: powershell.exe Start-Process -FilePath 'C:\Users\Surface\AppData\Local\Temp\df8413747189eafdbbce5039d468985d\execute.bat' -WindowStyle hidden -Verb runAs
+Process ID: 8136
+PSVersion: 5.1.22621.5624
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.22621.5624
+BuildVersion: 10.0.22621.5624
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+Transcript started, output file is C:\Users\Surface\OneDrive\SIRENSSD\Research Lab\Records and logging\Session_2025-08-17_02-39-06.txt
+Session logging started. Log file: C:\Users\Surface\OneDrive\SIRENSSD\Research Lab\Records and logging\Session_2025-08-17_02-39-06.txt
+PS>Start-Process -FilePath 'C:\Users\Surface\AppData\Local\Temp\df8413747189eafdbbce5039d468985d\execute.bat' -WindowStyle hidden -Verb runAs
+PS>$global:?
+True
+**********************
+Windows PowerShell transcript end
+End time: 20250817023910
+**********************

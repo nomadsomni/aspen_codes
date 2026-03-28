@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<!-- saved from url=(0202)file:///C:/Users/Surface/AppData/Local/Temp/36376d70-e8d3-4e59-84f2-eec6fa0342e1_NomadAvalanchePsync_WebGL2_DE_NETWORK_TERMINAL_MODE_Full.zip.2e1/NomadAvalanchePsync_WebGL2_DE_NETWORK_TERMINAL_MODE.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<title>Nomad.Avalanche.Psync — DE:NETWORK TERMINAL MODE</title>
+<style>
+html,body{margin:0;height:100%;overflow:hidden;background:#050308;color:#f4e7c0;font-family:system-ui,-apple-system,"Segoe UI",sans-serif;}
+#gl{width:100vw;height:100vh;display:block;}
+#info{position:fixed;top:10px;left:50%;transform:translateX(-50%);padding:4px 10px;background:rgba(0,0,0,.7);border-radius:999px;font-size:10px;letter-spacing:.18em;text-transform:uppercase;white-space:nowrap;pointer-events:none;z-index:5;border:1px solid rgba(255,215,128,.45);color:#ffe6b8;}
+#terminal{position:fixed;left:18px;bottom:18px;width:320px;max-width:70vw;height:210px;background:rgba(3,2,1,.96);border-radius:12px;border:1px solid rgba(255,215,128,.45);box-shadow:0 18px 40px rgba(0,0,0,.85);display:flex;flex-direction:column;overflow:hidden;z-index:6;}
+#term-header{padding:4px 8px;border-bottom:1px solid rgba(255,215,128,.25);font-size:10px;text-transform:uppercase;letter-spacing:.16em;display:flex;justify-content:space-between;align-items:center;background:radial-gradient(circle at 0% 0%,rgba(255,210,120,.24),transparent);color:#ffe2a8;}
+#term-header span.dot{width:6px;height:6px;border-radius:999px;background:radial-gradient(circle,#ffd26e,#ff9b2f);box-shadow:0 0 8px rgba(255,191,86,.85);display:inline-block;}
+#term-out{flex:1;padding:5px 8px 3px;font-family:ui-monospace,Menlo,Consolas,monospace;font-size:10px;line-height:1.35;color:#f7e3ba;overflow-y:auto;white-space:pre-wrap;}
+.tline{margin-bottom:1px;}
+.tline.sys{color:#ffc870;}
+.tline.err{color:#ff8080;}
+.tline.inf{color:#c9ffe0;}
+.tline.echo{color:#f0d1a0;}
+#term-row{border-top:1px solid rgba(255,215,128,.25);padding:3px 6px 4px;display:flex;align-items:center;gap:4px;background:rgba(8,5,3,.98);}
+#term-prompt{font-family:ui-monospace,Menlo,Consolas,monospace;font-size:11px;color:#ffdca2;}
+#term-in{flex:1;background:transparent;border:none;outline:none;color:#ffeac0;font-family:ui-monospace,Menlo,Consolas,monospace;font-size:11px;}
+#term-in::placeholder{color:rgba(255,230,180,.45);}
+#hud{position:fixed;right:18px;bottom:18px;width:220px;max-width:55vw;background:rgba(7,4,2,.96);border-radius:14px;padding:8px 10px 8px;font-size:10px;line-height:1.35;box-shadow:0 14px 34px rgba(0,0,0,.75);border:1px solid rgba(255,210,120,.45);z-index:5;}
+#hud h3{margin:0 0 3px;font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:#f8e2a0;}
+#hud-line{font-family:ui-monospace,Menlo,Consolas,monospace;color:#ffe6b3;margin-bottom:4px;}
+#hud-speed{display:flex;align-items:center;gap:6px;}
+#hud-speed span{font-size:9px;text-transform:uppercase;letter-spacing:.14em;white-space:nowrap;color:#f1dec0;}
+#speed{flex:1;}
+#speed-val{font-family:ui-monospace,Menlo,Consolas,monospace;font-size:10px;min-width:32px;text-align:right;color:#ffe6b3;}
+</style>
+</head>
+<body>
+<canvas id="gl" width="1536" height="1024"></canvas>
+<div id="info">DE:NETWORK MATRIX · NOMAD / AVALANCHE / OASIS / PSYNC / COMPLEX / SANDBOX</div>
+
+<div id="terminal">
+  <div id="term-header">
+    <span>PSYNC//TERMINAL</span><span class="dot"></span>
+  </div>
+  <div id="term-out"><div class="tline sys">psync://de.network-terminal v1.0</div><div class="tline sys">type 'help' for routes.</div><div class="tline echo">&gt; triad</div><div class="tline sys">triad.random -&gt; NOMAD · OASIS · AVALANCHE</div><div class="tline echo">&gt; triad psync.complex.avalanche</div><div class="tline sys">triad: PSYNC · COMPLEX · AVALANCHE</div><div class="tline echo">&gt; triad psync.complex.nomad</div><div class="tline sys">triad: PSYNC · COMPLEX · NOMAD</div><div class="tline echo">&gt; triad psync.nomad.avalache</div><div class="tline err">triad: unknown 'psync.nomad.avalache'</div><div class="tline echo">&gt; select psync</div><div class="tline sys">select: PSYNC locked</div><div class="tline echo">&gt; triad</div><div class="tline sys">triad.random -&gt; COMPLEX · NOMAD · AVALANCHE</div><div class="tline echo">&gt; triad</div><div class="tline sys">triad.random -&gt; AVALANCHE · PSYNC · SANDBOX</div><div class="tline echo">&gt; triad avalanche.oasis.psync</div><div class="tline sys">triad: AVALANCHE · OASIS · PSYNC</div><div class="tline echo">&gt; speed 3</div><div class="tline sys">speed: set 3.00x</div><div class="tline echo">&gt; avalanche</div><div class="tline err">unknown: avalanche (type 'help')</div><div class="tline echo">&gt; avalanche.oasis.nomad</div><div class="tline err">unknown: avalanche.oasis.nomad (type 'help')</div><div class="tline echo">&gt; help</div><div class="tline sys">commands:</div><div class="tline inf">  help                 // this help</div><div class="tline inf">  clear                // clear output</div><div class="tline inf">  status               // network status</div><div class="tline inf">  select &lt;NODE&gt;        // NOMAD|AVALANCHE|OASIS|PSYNC|COMPLEX|SANDBOX</div><div class="tline inf">  triad                // random triad</div><div class="tline inf">  triad A.B.C          // specific triad</div><div class="tline inf">  speed &lt;v&gt;            // 0.2–3.0</div><div class="tline echo">&gt; select psync</div><div class="tline sys">select: PSYNC locked</div><div class="tline echo">&gt; speed 2</div><div class="tline sys">speed: set 2.00x</div><div class="tline echo">&gt; triad</div><div class="tline sys">triad.random -&gt; OASIS · PSYNC · SANDBOX</div><div class="tline echo">&gt; speed 3</div><div class="tline sys">speed: set 3.00x</div><div class="tline echo">&gt; triad psync.sandbox.nomad</div><div class="tline sys">triad: PSYNC · SANDBOX · NOMAD</div><div class="tline echo">&gt; triad psync.sandbox.avalanche</div><div class="tline sys">triad: PSYNC · SANDBOX · AVALANCHE</div></div>
+  <div id="term-row">
+    <span id="term-prompt">&gt;</span>
+    <input id="term-in" autocomplete="off" spellcheck="false" placeholder="type &#39;help&#39; for commands">
+  </div>
+</div>
+
+<div id="hud">
+  <h3>NETWORK STATE</h3>
+  <div id="hud-line">TRIAD: PSYNC · SANDBOX · AVALANCHE</div>
+  <div id="hud-speed">
+    <span>TRAFFIC</span>
+    <input id="speed" type="range" min="0.2" max="3" step="0.1" value="1">
+    <div id="speed-val">3.0x</div>
+  </div>
+</div>
+
+<script>
+(function(){
+  const canvas=document.getElementById("gl");
+  const gl=canvas.getContext("webgl2",{antialias:true,alpha:false});
+  if(!gl){alert("WebGL2 not supported");return;}
+
+  function resize(){
+    const dpr=Math.min(window.devicePixelRatio||1,2);
+    const w=Math.floor(canvas.clientWidth*dpr),h=Math.floor(canvas.clientHeight*dpr);
+    if(canvas.width!==w||canvas.height!==h){canvas.width=w;canvas.height=h;gl.viewport(0,0,w,h);}
+  }
+  window.addEventListener("resize",resize);resize();
+
+  function persp(fovy,aspect,near,far){
+    const f=1/Math.tan(fovy/2),nf=1/(near-far);
+    return new Float32Array([
+      f/aspect,0,0,0,
+      0,f,0,0,
+      0,0,(far+near)*nf,-1,
+      0,0,(2*far*near)*nf,0
+    ]);
+  }
+  function lookAt(ex,ey,ez,cx,cy,cz,ux,uy,uz){
+    let zx=ex-cx,zy=ey-cy,zz=ez-cz;
+    let len=Math.hypot(zx,zy,zz)||1;zx/=len;zy/=len;zz/=len;
+    let xx=uy*zz-uz*zy,xy=uz*zx-ux*zz,xz=ux*zy-uy*zx;
+    len=Math.hypot(xx,xy,xz)||1;xx/=len;xy/=len;xz/=len;
+    let yx=zy*xz-zz*xy,yy=zz*xx-zx*xz,yz=zx*xy-zy*xx;
+    return new Float32Array([
+      xx,yx,zx,0,
+      xy,yy,zy,0,
+      xz,yz,zz,0,
+      -(xx*ex+xy*ey+xz*ez),
+      -(yx*ex+yy*ey+yz*ez),
+      -(zx*ex+zy*ey+zz*ez),
+      1
+    ]);
+  }
+
+  const vs=`#version 300 es
+  layout(location=0) in vec3 aPos;
+  uniform mat4 uP,uV,uM;
+  out vec3 vPos;
+  void main(){
+    vec4 w=uM*vec4(aPos,1.0);
+    vPos=w.xyz;
+    gl_Position=uP*uV*w;
+  }`;
+  const fsLine=`#version 300 es
+  precision highp float;
+  in vec3 vPos;
+  uniform float uTime;
+  uniform vec3 uColor;
+  out vec4 o;
+  void main(){
+    float p=vPos.x*0.3+vPos.y*0.7+vPos.z*0.5;
+    float k=0.35+0.65*abs(sin(uTime*2.0+p*1.7));
+    o=vec4(uColor*k,1.0);
+  }`;
+  const fsNode=`#version 300 es
+  precision highp float;
+  in vec3 vPos;
+  uniform float uTime;
+  uniform vec3 uColor;
+  out vec4 o;
+  void main(){
+    float b=0.4+0.6*abs(sin(uTime*3.0+vPos.x*0.8));
+    o=vec4(uColor*b,1.0);
+  }`;
+
+  function compile(type,src){
+    const s=gl.createShader(type);gl.shaderSource(s,src);gl.compileShader(s);
+    if(!gl.getShaderParameter(s,gl.COMPILE_STATUS)){console.error(gl.getShaderInfoLog(s));throw new Error("shader");}
+    return s;
+  }
+  function program(vsSrc,fsSrc){
+    const p=gl.createProgram();
+    gl.attachShader(p,compile(gl.VERTEX_SHADER,vsSrc));
+    gl.attachShader(p,compile(gl.FRAGMENT_SHADER,fsSrc));
+    gl.linkProgram(p);
+    if(!gl.getProgramParameter(p,gl.LINK_STATUS)){console.error(gl.getProgramInfoLog(p));throw new Error("link");}
+    return p;
+  }
+
+  const progLine=program(vs,fsLine);
+  const progNode=program(vs,fsNode);
+
+  const NODE_NAMES=["NOMAD","AVALANCHE","OASIS","PSYNC","COMPLEX","SANDBOX"];
+  const NODE_COLOR=[1.0,0.88,0.55];
+  const RING=6.0;
+  const nodes=[];
+  for(let i=0;i<NODE_NAMES.length;i++){
+    const a=i/NODE_NAMES.length*Math.PI*2;
+    nodes.push({name:NODE_NAMES[i],pos:[Math.cos(a)*RING,0,Math.sin(a)*RING]});
+  }
+
+  const TRIADS=[
+    "NOMAD.AVALANCHE.PSYNC",
+    "NOMAD.OASIS.AVALANCHE",
+    "PSYNC.NOMAD.OASIS",
+    "AVALANCHE.PSYNC.SANDBOX",
+    "OASIS.PSYNC.SANDBOX",
+    "COMPLEX.NOMAD.AVALANCHE",
+    "PSYNC.COMPLEX.SANDBOX",
+    "SANDBOX.AVALANCHE.OASIS"
+  ];
+
+  function nodePos(name){
+    const n=nodes.find(n=>n.name===name);
+    return n?n.pos:null;
+  }
+
+  const ringVerts=[];
+  for(let i=0;i<nodes.length;i++){
+    const a=nodes[i].pos;
+    const b=nodes[(i+1)%nodes.length].pos;
+    ringVerts.push(a[0],a[1],a[2],b[0],b[1],b[2]);
+  }
+  const ringBuf=gl.createBuffer();
+  gl.bindBuffer(gl.ARRAY_BUFFER,ringBuf);
+  gl.bufferData(gl.ARRAY_BUFFER,new Float32Array(ringVerts),gl.STATIC_DRAW);
+
+  const coreVerts=[];
+  for(let i=0;i<nodes.length;i++){
+    const a=nodes[i].pos;
+    coreVerts.push(0,0,0,a[0],a[1],a[2]);
+  }
+  const coreBuf=gl.createBuffer();
+  gl.bindBuffer(gl.ARRAY_BUFFER,coreBuf);
+  gl.bufferData(gl.ARRAY_BUFFER,new Float32Array(coreVerts),gl.STATIC_DRAW);
+
+  const nodeVerts=[];
+  for(const n of nodes){
+    nodeVerts.push(n.pos[0],n.pos[1],n.pos[2]);
+  }
+  const nodeBuf=gl.createBuffer();
+  gl.bindBuffer(gl.ARRAY_BUFFER,nodeBuf);
+  gl.bufferData(gl.ARRAY_BUFFER,new Float32Array(nodeVerts),gl.STATIC_DRAW);
+
+  let triadActive=null;
+  let triadStr="—";
+  function setTriadFromString(s){
+    const up=s.toUpperCase();
+    const parts=up.split(".");
+    if(parts.length!==3)return false;
+    const pa=nodePos(parts[0]),pb=nodePos(parts[1]),pc=nodePos(parts[2]);
+    if(!pa||!pb||!pc)return false;
+    triadActive=[pa,pb,pc];
+    triadStr=parts.join(" · ");
+    hudLine.textContent="TRIAD: "+triadStr;
+    return true;
+  }
+  function randomTriad(){
+    const i=Math.floor(Math.random()*TRIADS.length);
+    const s=TRIADS[i];
+    setTriadFromString(s);
+    termPrint("triad.random -> "+s.replace(/\./g," · "),"sys");
+  }
+
+  const hudLine=document.getElementById("hud-line");
+  const speedSlider=document.getElementById("speed");
+  const speedVal=document.getElementById("speed-val");
+  let speed=1.0;
+  speedSlider.addEventListener("input",()=>{speed=parseFloat(speedSlider.value)||1.0;speedVal.textContent=speed.toFixed(1)+"x";});
+
+  // terminal
+  const termOut=document.getElementById("term-out");
+  const termIn=document.getElementById("term-in");
+  let hist=[],hIndex=0;
+
+  function termPrint(text,kind){
+    const d=document.createElement("div");
+    d.className="tline "+(kind||"");
+    d.textContent=text;
+    termOut.appendChild(d);
+    termOut.scrollTop=termOut.scrollHeight;
+  }
+
+  function termHelp(){
+    termPrint("commands:","sys");
+    termPrint("  help                 // this help","inf");
+    termPrint("  clear                // clear output","inf");
+    termPrint("  status               // network status","inf");
+    termPrint("  select <NODE>        // NOMAD|AVALANCHE|OASIS|PSYNC|COMPLEX|SANDBOX","inf");
+    termPrint("  triad                // random triad","inf");
+    termPrint("  triad A.B.C          // specific triad","inf");
+    termPrint("  speed <v>            // 0.2–3.0","inf");
+  }
+
+  let selected="NOMAD";
+
+  function status(){
+    termPrint("network.status {","sys");
+    termPrint("  selected: "+selected,"inf");
+    termPrint("  triad:    "+triadStr,"inf");
+    termPrint("  speed:    "+speed.toFixed(2)+"x","inf");
+    termPrint("}","sys");
+  }
+
+  function handle(cmdLine){
+    const line=cmdLine.trim();
+    if(!line)return;
+    termPrint("> "+line,"echo");
+    const parts=line.split(/\s+/);
+    const cmd=parts[0].toLowerCase();
+    const args=parts.slice(1);
+
+    if(cmd==="help"){termHelp();return;}
+    if(cmd==="clear"){termOut.innerHTML="";return;}
+    if(cmd==="status"){status();return;}
+    if(cmd==="select"){
+      if(!args[0]){termPrint("select: missing node","err");return;}
+      const n=args[0].toUpperCase();
+      if(!NODE_NAMES.includes(n)){termPrint("select: unknown node '"+n+"'","err");return;}
+      selected=n;
+      termPrint("select: "+n+" locked","sys");
+      return;
+    }
+    if(cmd==="triad"){
+      if(!args[0]){randomTriad();return;}
+      const ok=setTriadFromString(args[0]);
+      if(!ok){termPrint("triad: unknown '"+args[0]+"'","err");}
+      else termPrint("triad: "+triadStr,"sys");
+      return;
+    }
+    if(cmd==="speed"){
+      if(!args[0]){termPrint("speed: "+speed.toFixed(2)+"x","inf");return;}
+      let v=parseFloat(args[0]);
+      if(isNaN(v)){termPrint("speed: invalid '"+args[0]+"'","err");return;}
+      v=Math.max(0.2,Math.min(3.0,v));
+      speed=v;
+      speedSlider.value=String(v);
+      speedVal.textContent=v.toFixed(1)+"x";
+      termPrint("speed: set "+v.toFixed(2)+"x","sys");
+      return;
+    }
+
+    termPrint("unknown: "+cmd+" (type 'help')","err");
+  }
+
+  termIn.addEventListener("keydown",e=>{
+    if(e.key==="Enter"){
+      const v=termIn.value;
+      if(v.trim()){hist.push(v);hIndex=hist.length;}
+      handle(v);
+      termIn.value="";
+      e.preventDefault();
+    }else if(e.key==="ArrowUp"){
+      if(hist.length){hIndex=Math.max(0,hIndex-1);termIn.value=hist[hIndex]||"";termIn.setSelectionRange(termIn.value.length,termIn.value.length);}
+      e.preventDefault();
+    }else if(e.key==="ArrowDown"){
+      if(hist.length){hIndex=Math.min(hist.length,hIndex+1);termIn.value=hIndex===hist.length?"":hist[hIndex];termIn.setSelectionRange(termIn.value.length,termIn.value.length);}
+      e.preventDefault();
+    }
+  });
+
+  termPrint("psync://de.network-terminal v1.0","sys");
+  termPrint("type 'help' for routes.","sys");
+
+  gl.enable(gl.DEPTH_TEST);
+  gl.clearColor(0.01,0.005,0.02,1);
+
+  let start=performance.now();
+  function frame(now){
+    const t=(now-start)*0.001*speed;
+    resize();
+    gl.clear(gl.COLOR_BUFFER_BIT|gl.DEPTH_BUFFER_BIT);
+
+    const aspect=canvas.width/canvas.height;
+    const P=persp(50*Math.PI/180,aspect,0.1,100);
+    const eye=[Math.cos(t*0.2)*16,6+Math.sin(t*0.3)*2,Math.sin(t*0.2)*16];
+    const V=lookAt(eye[0],eye[1],eye[2],0,0,0,0,1,0);
+    const M=new Float32Array([
+      Math.cos(t*0.15),0,-Math.sin(t*0.15),0,
+      0,1,0,0,
+      Math.sin(t*0.15),0,Math.cos(t*0.15),0,
+      0,0,0,1
+    ]);
+
+    gl.useProgram(progLine);
+    let loc=gl.getUniformLocation(progLine,"uP");gl.uniformMatrix4fv(loc,false,P);
+    loc=gl.getUniformLocation(progLine,"uV");gl.uniformMatrix4fv(loc,false,V);
+    loc=gl.getUniformLocation(progLine,"uM");gl.uniformMatrix4fv(loc,false,M);
+    gl.uniform1f(gl.getUniformLocation(progLine,"uTime"),t);
+
+    gl.uniform3f(gl.getUniformLocation(progLine,"uColor"),0.8,0.66,0.36);
+    gl.bindBuffer(gl.ARRAY_BUFFER,ringBuf);
+    gl.enableVertexAttribArray(0);
+    gl.vertexAttribPointer(0,3,gl.FLOAT,false,0,0);
+    gl.drawArrays(gl.LINES,0,ringVerts.length/3);
+
+    gl.uniform3f(gl.getUniformLocation(progLine,"uColor"),0.7,0.55,0.32);
+    gl.bindBuffer(gl.ARRAY_BUFFER,coreBuf);
+    gl.vertexAttribPointer(0,3,gl.FLOAT,false,0,0);
+    gl.drawArrays(gl.LINES,0,coreVerts.length/3);
+
+    if(triadActive){
+      const triVerts=[
+        triadActive[0][0],triadActive[0][1],triadActive[0][2],
+        triadActive[1][0],triadActive[1][1],triadActive[1][2],
+        triadActive[2][0],triadActive[2][1],triadActive[2][2],
+        triadActive[0][0],triadActive[0][1],triadActive[0][2]
+      ];
+      const tb=gl.createBuffer();
+      gl.bindBuffer(gl.ARRAY_BUFFER,tb);
+      gl.bufferData(gl.ARRAY_BUFFER,new Float32Array(triVerts),gl.STREAM_DRAW);
+      const pulse=0.8+0.4*Math.sin(t*3.0);
+      gl.uniform3f(gl.getUniformLocation(progLine,"uColor"),1.0,0.9*pulse,0.6*pulse);
+      gl.vertexAttribPointer(0,3,gl.FLOAT,false,0,0);
+      gl.drawArrays(gl.LINE_STRIP,0,4);
+      gl.deleteBuffer(tb);
+    }
+
+    gl.useProgram(progNode);
+    gl.uniformMatrix4fv(gl.getUniformLocation(progNode,"uP"),false,P);
+    gl.uniformMatrix4fv(gl.getUniformLocation(progNode,"uV"),false,V);
+    gl.uniformMatrix4fv(gl.getUniformLocation(progNode,"uM"),false,M);
+    gl.uniform1f(gl.getUniformLocation(progNode,"uTime"),t);
+    const selIndex=NODE_NAMES.indexOf(selected);
+    gl.bindBuffer(gl.ARRAY_BUFFER,nodeBuf);
+    gl.enableVertexAttribArray(0);
+    gl.vertexAttribPointer(0,3,gl.FLOAT,false,0,0);
+    for(let i=0;i<nodes.length;i++){
+      const col=i===selIndex?[1.0,0.95,0.7]:NODE_COLOR;
+      gl.uniform3f(gl.getUniformLocation(progNode,"uColor"),col[0],col[1],col[2]);
+      gl.drawArrays(gl.POINTS,i,1);
+    }
+
+    requestAnimationFrame(frame);
+  }
+  gl.enable(gl.BLEND);
+  gl.blendFunc(gl.SRC_ALPHA,gl.ONE_MINUS_SRC_ALPHA);
+  requestAnimationFrame(frame);
+})();
+</script>
+
+
+</body></html>

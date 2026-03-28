@@ -1,0 +1,2200 @@
+﻿**********************
+Windows PowerShell transcript start
+Start time: 20251104062954
+Username: NOMAD\Surface
+RunAs User: NOMAD\Surface
+Configuration Name: 
+Machine: NOMAD (Microsoft Windows NT 10.0.22631.0)
+Host Application: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe
+Process ID: 17992
+PSVersion: 5.1.22621.5624
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.22621.5624
+BuildVersion: 10.0.22621.5624
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+Transcript started, output file is C:\Users\Surface\OneDrive\SIRENSSD\Research Lab\Records and logging\Session_2025-11-04_06-29-39.txt
+Session logging started. Log file: C:\Users\Surface\OneDrive\SIRENSSD\Research Lab\Records and logging\Session_2025-11-04_06-29-39.txt
+[38;2;243;174;53m[0m[48;2;243;174;53m[38;2;38;43;68m Surface [0m[38;2;243;174;53m[0m[0m[38;2;240;118;35;49m[7m[0m[48;2;240;118;35m[38;2;224;222;244m  ]8;;file:C:/Users/Surface/OneDrive/SIRENSSD\SIRENSSD]8;;\ [0m[48;2;243;174;53m[38;2;240;118;35m[0m[48;2;243;174;53m[38;2;38;43;68m ]8;;https://github.com/nomadsomni/aspen_codes.git\ ]8;;\ 888.000.555 ≡  ?35 ~2 -1 [0m[38;2;243;174;53m[0m[0m[38;2;75;149;233;49m[7m[0m[48;2;75;149;233m[38;2;224;222;244m  [0m[38;2;75;149;233m[0m]0;pwsh in SIRENSSD
+PS>']wpr 
+[PW
+]ER[P
+]wepr
+[]p
+]rPW
+]E[RP]WP]
+P]wpe
+r][p]rp]PRE][pwr
+][PW]ERP]werp]PWER]
+wepr]WPE]Rpwe
+r][p
+]erp
+]EPR
+]p]rp
+]PR]pw]ep]WPER
+][pw
+]pr]
+WPER
+]p
+]rp
+]WEPR
+]pw
+
+0-]w304-=\-2304\=-30\=03=4-0\2=3-40\=-0234\=-0\=-0\=-0-=0\-=]
+[p[p][p
+][p
+][wp
+][W3P][P4]
+[wp3
+]pw][p]
+ęS]FŚ[FpS[
+Ps[pfd
+[SP
+DPFpF]WC
+03
+]04-
+]-W304]
+-0
+]W-304
+]-03
+]023-=02-034-=\2304-203
+]-03
+]-230
+]-W]3-04
+]23;
+;
+2;3[;
+]-0W304]
+-0
+]-0W
+]-0
+]-w034-23\=-40\23-04=-03\-402\=3-04\-2034\-023-402034\-023-4030w0
+]-W0
+]-0
+w]-0
+]0W
+]3-0
+]-w0
+]-0W
+]3-0
+]-w03]-0W
+]-40
+]-w034
+]-W0
+]-0w
+]-0
+]-W03
+]-0w
+]-340]-0
+]34-0
+2]034
+]-024]
+-02
+]-
+304
+]2-03
+]-02
+]-40
+]2-ę[r]pwER[pwerĘp[er][WPEP
+[Ss:dL"s:dl":łsD":Fł":sldF":ŁSd"f:l'lf":L"F;l"sLDF":SLdF":ls":DLF":SLdF:śłe{rPW{Erp[WPER[wepr[WERwesL"S:ldf":sLF"ls"DF;L"S:lf":LS"ó3óW33-0]
+At line:81 char:38
++ [Ss:dL"s:dl":łsD":Fł":sldF":ŁSd"f:l'lf":L"F;l"sLDF":SLdF":ls":DLF":S ...
++                                      ~~~~~~~
+Unexpected token 'lf":L"F' in expression or statement.
+At line:81 char:38
++ [Ss:dL"s:dl":łsD":Fł":sldF":ŁSd"f:l'lf":L"F;l"sLDF":SLdF":ls":DLF":S
+ ...
++                                      ~~~~~~~
+Unexpected token 'lf":L"F' in expression or statement.
+    + CategoryInfo          : ParserError: (:) [], ParentContainsError
+   RecordException
+    + FullyQualifiedErrorId : UnexpectedToken
+
+[38;2;243;174;53m[0m[48;2;243;174;53m[38;2;38;43;68m Surface [0m[38;2;243;174;53m[0m[0m[38;2;240;118;35;49m[7m[0m[48;2;240;118;35m[38;2;224;222;244m  ]8;;file:C:/Users/Surface/OneDrive/SIRENSSD\SIRENSSD]8;;\ [0m[48;2;243;174;53m[38;2;240;118;35m[0m[48;2;243;174;53m[38;2;38;43;68m ]8;;https://github.com/nomadsomni/aspen_codes.git\ ]8;;\ 888.000.555 ≡  ?35 ~2 -1 [0m[38;2;243;174;53m[0m[0m[38;2;75;149;233;49m[7m[0m[48;2;75;149;233m[38;2;224;222;244m  [0m[38;2;75;149;233m[0m]0;pwsh in SIRENSSD
+PS>-wP-prp-WP
+-wP-prp-WP : The term '-wP-prp-WP' is not recognized as the name of a cmdlet, function, script file, or 
+operable program. Check the spelling of the name, or if a path was included, verify that the path is correct and try aga
+in.
+At line:1 char:1
++ -wP-prp-WP
++ ~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (-wP-prp-WP:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+-wP-prp-WP : The term '-wP-prp-WP' is not recognized as
+ the name of a cmdlet, function, script file, or operable program. Chec
+k the spelling of the name, or if a path was included, verify that the
+path is correct and try again.
+At line:1 char:1
++ -wP-prp-WP
++ ~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (-wP-prp-WP:Stri
+   ng) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+[38;2;243;174;53m[0m[48;2;243;174;53m[38;2;38;43;68m Surface [0m[38;2;243;174;53m[0m[0m[38;2;240;118;35;49m[7m[0m[48;2;240;118;35m[38;2;224;222;244m  ]8;;file:C:/Users/Surface/OneDrive/SIRENSSD\SIRENSSD]8;;\ [0m[48;2;243;174;53m[38;2;240;118;35m[0m[48;2;243;174;53m[38;2;38;43;68m ]8;;https://github.com/nomadsomni/aspen_codes.git\ ]8;;\ 888.000.555 ≡  ?35 ~2 -1 [0m[38;2;243;174;53m[0m[0m[38;2;216;30;91;49m[7m[0m[48;2;216;30;91m[38;2;224;222;244m  [0m[38;2;216;30;91m[0m]0;pwsh in SIRENSSD
+PS>]wP
+] : The term ']' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelli
+ng of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:1
++ ]wP
++ ~
+    + CategoryInfo          : ObjectNotFound: (]:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+] : The term ']' is not recognized as the name of a cmdlet, function, s
+cript file, or operable program. Check the spelling of the name, or if
+a path was included, verify that the path is correct and try again.
+At line:1 char:1
++ ]wP
++ ~
+    + CategoryInfo          : ObjectNotFound: (]:String) [], CommandNo
+   tFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+[38;2;243;174;53m[0m[48;2;243;174;53m[38;2;38;43;68m Surface [0m[38;2;243;174;53m[0m[0m[38;2;240;118;35;49m[7m[0m[48;2;240;118;35m[38;2;224;222;244m  ]8;;file:C:/Users/Surface/OneDrive/SIRENSSD\SIRENSSD]8;;\ [0m[48;2;243;174;53m[38;2;240;118;35m[0m[48;2;243;174;53m[38;2;38;43;68m ]8;;https://github.com/nomadsomni/aspen_codes.git\ ]8;;\ 888.000.555 ≡  ?35 ~2 -1 [0m[38;2;243;174;53m[0m[0m[38;2;216;30;91;49m[7m[0m[48;2;216;30;91m[38;2;224;222;244m  [0m[38;2;216;30;91m[0m]0;pwsh in SIRENSSD
+PS>3]Rp]w3]r-
+At line:1 char:2
++ 3]Rp]w3]r-
++  ~
+Unexpected token ']' in expression or statement.
+At line:1 char:2
++ 3]Rp]w3]r-
++  ~
+Unexpected token ']' in expression or statement.
+    + CategoryInfo          : ParserError: (:) [], ParentContainsError
+   RecordException
+    + FullyQualifiedErrorId : UnexpectedToken
+
+Select-Object : Property "InvocationInfo" cannot be found.
+At line:218 char:64
++ ... bject { $_ -ne $null } | Select-Object -ExpandProperty InvocationInfo
++                              ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (System.Manageme...ptions options):PSObject) [Select-Object], PSArgumentE
+xception
+    + FullyQualifiedErrorId : ExpandPropertyNotFound,Microsoft.PowerShell.Commands.SelectObjectCommand
+[38;2;243;174;53m[0m[48;2;243;174;53m[38;2;38;43;68m Surface [0m[38;2;243;174;53m[0m[0m[38;2;240;118;35;49m[7m[0m[48;2;240;118;35m[38;2;224;222;244m  ]8;;file:C:/Users/Surface/OneDrive/SIRENSSD\SIRENSSD]8;;\ [0m[48;2;243;174;53m[38;2;240;118;35m[0m[48;2;243;174;53m[38;2;38;43;68m ]8;;https://github.com/nomadsomni/aspen_codes.git\ ]8;;\ 888.000.555 ≡  ?35 ~2 -1 [0m[38;2;243;174;53m[0m[0m[38;2;216;30;91;49m[7m[0m[48;2;216;30;91m[38;2;224;222;244m  [0m[38;2;216;30;91m[0m]0;pwsh in SIRENSSD
+PS>WP]]-W034]
+WP]]-W034] : The term 'WP]]-W034]' is not recognized as the name of a cmdlet, function, script file, or operable program
+. Check the spelling of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:1
++ WP]]-W034]
++ ~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (WP]]-W034]:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+WP]]-W034] : The term 'WP]]-W034]' is not recogniz
+ed as the name of a cmdlet, function, script file,
+ or operable program. Check the spelling of the na
+me, or if a path was included, verify that the pat
+h is correct and try again.
+At line:1 char:1
++ WP]]-W034]
++ ~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (WP
+   ]]-W034]:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundExce
+   ption
+
+[38;2;243;174;53m[0m[48;2;243;174;53m[38;2;38;43;68m Surface [0m[38;2;243;174;53m[0m[0m[38;2;240;118;35;49m[7m[0m[48;2;240;118;35m[38;2;224;222;244m  ]8;;file:C:/Users/Surface/OneDrive/SIRENSSD\SIRENSSD]8;;\ [0m[48;2;243;174;53m[38;2;240;118;35m[0m[48;2;243;174;53m[38;2;38;43;68m ]8;;https://github.com/nomadsomni/aspen_codes.git\ ]8;;\ 888.000.555 ≡  ?35 ~2 -1 [0m[38;2;243;174;53m[0m[0m[38;2;216;30;91;49m[7m[0m[48;2;216;30;91m[38;2;224;222;244m  [0m[38;2;216;30;91m[0m]0;pwsh in SIRENSSD
+PS>-0w
+-0w : The term '-0w' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the sp
+elling of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:1
++ -0w
++ ~~~
+    + CategoryInfo          : ObjectNotFound: (-0w:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+-0w : The term '-0w' is not recognized as the name
+ of a cmdlet, function, script file, or operable p
+rogram. Check the spelling of the name, or if a pa
+th was included, verify that the path is correct a
+nd try again.
+At line:1 char:1
++ -0w
++ ~~~
+    + CategoryInfo          : ObjectNotFound: (-0
+   w:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundExce
+   ption
+
+[38;2;243;174;53m[0m[48;2;243;174;53m[38;2;38;43;68m Surface [0m[38;2;243;174;53m[0m[0m[38;2;240;118;35;49m[7m[0m[48;2;240;118;35m[38;2;224;222;244m  ]8;;file:C:/Users/Surface/OneDrive/SIRENSSD\SIRENSSD]8;;\ [0m[48;2;243;174;53m[38;2;240;118;35m[0m[48;2;243;174;53m[38;2;38;43;68m ]8;;https://github.com/nomadsomni/aspen_codes.git\ ]8;;\ 888.000.555 ≡  ?35 ~2 -1 [0m[38;2;243;174;53m[0m[0m[38;2;216;30;91;49m[7m[0m[48;2;216;30;91m[38;2;224;222;244m  [0m[38;2;216;30;91m[0m]0;pwsh in SIRENSSD
+PS>]-40
+>> TerminatingError(): "The pipeline has been stopped."
+Select-Object : Property "InvocationInfo" cannot be found.
+At line:218 char:64
++ ... bject { $_ -ne $null } | Select-Object -ExpandProperty InvocationInfo
++                              ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (System.Manageme...inputToProcess):PSObject) [Select-Object], PSArgumentE
+xception
+    + FullyQualifiedErrorId : ExpandPropertyNotFound,Microsoft.PowerShell.Commands.SelectObjectCommand
+[38;2;243;174;53m[0m[48;2;243;174;53m[38;2;38;43;68m Surface [0m[38;2;243;174;53m[0m[0m[38;2;240;118;35;49m[7m[0m[48;2;240;118;35m[38;2;224;222;244m  ]8;;file:C:/Users/Surface/OneDrive/SIRENSSD\SIRENSSD]8;;\ [0m[48;2;243;174;53m[38;2;240;118;35m[0m[48;2;243;174;53m[38;2;38;43;68m ]8;;https://github.com/nomadsomni/aspen_codes.git\ ]8;;\ 888.000.555 ≡  ?35 ~2 -1 [0m[38;2;243;174;53m[0m[0m[38;2;216;30;91;49m[7m[0m[48;2;216;30;91m[38;2;224;222;244m  [0m[38;2;216;30;91m[0m]0;pwsh in SIRENSSD
+PS>]W-00
+] : The term ']' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelli
+ng of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:1
++ ]W-00
++ ~
+    + CategoryInfo          : ObjectNotFound: (]:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+] : The term ']' is not recognized as the name of a cmdlet, function, s
+cript file, or operable program. Check the spelling of the name, or if
+a path was included, verify that the path is correct and try again.
+At line:1 char:1
++ ]W-00
++ ~
+    + CategoryInfo          : ObjectNotFound: (]:String) [], CommandNo
+   tFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+[38;2;243;174;53m[0m[48;2;243;174;53m[38;2;38;43;68m Surface [0m[38;2;243;174;53m[0m[0m[38;2;240;118;35;49m[7m[0m[48;2;240;118;35m[38;2;224;222;244m  ]8;;file:C:/Users/Surface/OneDrive/SIRENSSD\SIRENSSD]8;;\ [0m[48;2;243;174;53m[38;2;240;118;35m[0m[48;2;243;174;53m[38;2;38;43;68m ]8;;https://github.com/nomadsomni/aspen_codes.git\ ]8;;\ 888.000.555 ≡  ?35 ~2 -1 [0m[38;2;243;174;53m[0m[0m[38;2;216;30;91;49m[7m[0m[48;2;216;30;91m[38;2;224;222;244m  [0m[38;2;216;30;91m[0m]0;pwsh in SIRENSSD
+PS>]w-03
+] : The term ']' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelli
+ng of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:1
++ ]w-03
++ ~
+    + CategoryInfo          : ObjectNotFound: (]:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+] : The term ']' is not recognized as the name of a cmdlet, function, s
+cript file, or operable program. Check the spelling of the name, or if
+a path was included, verify that the path is correct and try again.
+At line:1 char:1
++ ]w-03
++ ~
+    + CategoryInfo          : ObjectNotFound: (]:String) [], CommandNo
+   tFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+[38;2;243;174;53m[0m[48;2;243;174;53m[38;2;38;43;68m Surface [0m[38;2;243;174;53m[0m[0m[38;2;240;118;35;49m[7m[0m[48;2;240;118;35m[38;2;224;222;244m  ]8;;file:C:/Users/Surface/OneDrive/SIRENSSD\SIRENSSD]8;;\ [0m[48;2;243;174;53m[38;2;240;118;35m[0m[48;2;243;174;53m[38;2;38;43;68m ]8;;https://github.com/nomadsomni/aspen_codes.git\ ]8;;\ 888.000.555 ≡  ?35 ~2 -1 [0m[38;2;243;174;53m[0m[0m[38;2;216;30;91;49m[7m[0m[48;2;216;30;91m[38;2;224;222;244m  [0m[38;2;216;30;91m[0m]0;pwsh in SIRENSSD
+PS>]0W-0\20]-0]-30
+] : The term ']' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelli
+ng of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:1
++ ]0W-0\20]-0]-30
++ ~
+    + CategoryInfo          : ObjectNotFound: (]:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+] : The term ']' is not recognized as the name of a cmdlet, function, s
+cript file, or operable program. Check the spelling of the name, or if
+a path was included, verify that the path is correct and try again.
+At line:1 char:1
++ ]0W-0\20]-0]-30
++ ~
+    + CategoryInfo          : ObjectNotFound: (]:String) [], CommandNo
+   tFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+[38;2;243;174;53m[0m[48;2;243;174;53m[38;2;38;43;68m Surface [0m[38;2;243;174;53m[0m[0m[38;2;240;118;35;49m[7m[0m[48;2;240;118;35m[38;2;224;222;244m  ]8;;file:C:/Users/Surface/OneDrive/SIRENSSD\SIRENSSD]8;;\ [0m[48;2;243;174;53m[38;2;240;118;35m[0m[48;2;243;174;53m[38;2;38;43;68m ]8;;https://github.com/nomadsomni/aspen_codes.git\ ]8;;\ 888.000.555 ≡  ?35 ~2 -1 [0m[38;2;243;174;53m[0m[0m[38;2;216;30;91;49m[7m[0m[48;2;216;30;91m[38;2;224;222;244m  [0m[38;2;216;30;91m[0m]0;pwsh in SIRENSSD
+PS>]W-0]w-0
+] : The term ']' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelli
+ng of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:1
++ ]W-0]w-0
++ ~
+    + CategoryInfo          : ObjectNotFound: (]:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+] : The term ']' is not recognized as the name of a cmdlet, function, s
+cript file, or operable program. Check the spelling of the name, or if
+a path was included, verify that the path is correct and try again.
+At line:1 char:1
++ ]W-0]w-0
++ ~
+    + CategoryInfo          : ObjectNotFound: (]:String) [], CommandNo
+   tFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+[38;2;243;174;53m[0m[48;2;243;174;53m[38;2;38;43;68m Surface [0m[38;2;243;174;53m[0m[0m[38;2;240;118;35;49m[7m[0m[48;2;240;118;35m[38;2;224;222;244m  ]8;;file:C:/Users/Surface/OneDrive/SIRENSSD\SIRENSSD]8;;\ [0m[48;2;243;174;53m[38;2;240;118;35m[0m[48;2;243;174;53m[38;2;38;43;68m ]8;;https://github.com/nomadsomni/aspen_codes.git\ ]8;;\ 888.000.555 ≡  ?35 ~2 -1 [0m[38;2;243;174;53m[0m[0m[38;2;216;30;91;49m[7m[0m[48;2;216;30;91m[38;2;224;222;244m  [0m[38;2;216;30;91m[0m]0;pwsh in SIRENSSD
+PS>]-W0]-0w
+] : The term ']' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelli
+ng of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:1
++ ]-W0]-0w
++ ~
+    + CategoryInfo          : ObjectNotFound: (]:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+] : The term ']' is not recognized as the name of a cmdlet, function, s
+cript file, or operable program. Check the spelling of the name, or if
+a path was included, verify that the path is correct and try again.
+At line:1 char:1
++ ]-W0]-0w
++ ~
+    + CategoryInfo          : ObjectNotFound: (]:String) [], CommandNo
+   tFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+[38;2;243;174;53m[0m[48;2;243;174;53m[38;2;38;43;68m Surface [0m[38;2;243;174;53m[0m[0m[38;2;240;118;35;49m[7m[0m[48;2;240;118;35m[38;2;224;222;244m  ]8;;file:C:/Users/Surface/OneDrive/SIRENSSD\SIRENSSD]8;;\ [0m[48;2;243;174;53m[38;2;240;118;35m[0m[48;2;243;174;53m[38;2;38;43;68m ]8;;https://github.com/nomadsomni/aspen_codes.git\ ]8;;\ 888.000.555 ≡  ?35 ~2 -1 [0m[38;2;243;174;53m[0m[0m[38;2;216;30;91;49m[7m[0m[48;2;216;30;91m[38;2;224;222;244m  [0m[38;2;216;30;91m[0m]0;pwsh in SIRENSSD
+PS>]-0
+] : The term ']' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelli
+ng of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:1
++ ]-0
++ ~
+    + CategoryInfo          : ObjectNotFound: (]:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+] : The term ']' is not recognized as the name of a cmdlet, function, s
+cript file, or operable program. Check the spelling of the name, or if
+a path was included, verify that the path is correct and try again.
+At line:1 char:1
++ ]-0
++ ~
+    + CategoryInfo          : ObjectNotFound: (]:String) [], CommandNo
+   tFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+[38;2;243;174;53m[0m[48;2;243;174;53m[38;2;38;43;68m Surface [0m[38;2;243;174;53m[0m[0m[38;2;240;118;35;49m[7m[0m[48;2;240;118;35m[38;2;224;222;244m  ]8;;file:C:/Users/Surface/OneDrive/SIRENSSD\SIRENSSD]8;;\ [0m[48;2;243;174;53m[38;2;240;118;35m[0m[48;2;243;174;53m[38;2;38;43;68m ]8;;https://github.com/nomadsomni/aspen_codes.git\ ]8;;\ 888.000.555 ≡  ?35 ~2 -1 [0m[38;2;243;174;53m[0m[0m[38;2;216;30;91;49m[7m[0m[48;2;216;30;91m[38;2;224;222;244m  [0m[38;2;216;30;91m[0m]0;pwsh in SIRENSSD
+PS>W]-0
+W]-0 : The term 'W]-0' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the 
+spelling of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:1
++ W]-0
++ ~~~~
+    + CategoryInfo          : ObjectNotFound: (W]-0:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+W]-0 : The term 'W]-0' is not recognized as the na
+me of a cmdlet, function, script file, or operable
+ program. Check the spelling of the name, or if a
+path was included, verify that the path is correct
+ and try again.
+At line:1 char:1
++ W]-0
++ ~~~~
+    + CategoryInfo          : ObjectNotFound: (W]
+   -0:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundExce
+   ption
+
+[38;2;243;174;53m[0m[48;2;243;174;53m[38;2;38;43;68m Surface [0m[38;2;243;174;53m[0m[0m[38;2;240;118;35;49m[7m[0m[48;2;240;118;35m[38;2;224;222;244m  ]8;;file:C:/Users/Surface/OneDrive/SIRENSSD\SIRENSSD]8;;\ [0m[48;2;243;174;53m[38;2;240;118;35m[0m[48;2;243;174;53m[38;2;38;43;68m ]8;;https://github.com/nomadsomni/aspen_codes.git\ ]8;;\ 888.000.555 ≡  ?35 ~2 -1 [0m[38;2;243;174;53m[0m[0m[38;2;216;30;91;49m[7m[0m[48;2;216;30;91m[38;2;224;222;244m  [0m[38;2;216;30;91m[0m]0;pwsh in SIRENSSD
+PS>]-w0]-0W
+] : The term ']' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelli
+ng of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:1
++ ]-w0]-0W
++ ~
+    + CategoryInfo          : ObjectNotFound: (]:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+] : The term ']' is not recognized as the name of
+a cmdlet, function, script file, or operable progr
+am. Check the spelling of the name, or if a path w
+as included, verify that the path is correct and t
+ry again.
+At line:1 char:1
++ ]-w0]-0W
++ ~
+    + CategoryInfo          : ObjectNotFound: (]:
+   String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundExce
+   ption
+
+[38;2;243;174;53m[0m[48;2;243;174;53m[38;2;38;43;68m Surface [0m[38;2;243;174;53m[0m[0m[38;2;240;118;35;49m[7m[0m[48;2;240;118;35m[38;2;224;222;244m  ]8;;file:C:/Users/Surface/OneDrive/SIRENSSD\SIRENSSD]8;;\ [0m[48;2;243;174;53m[38;2;240;118;35m[0m[48;2;243;174;53m[38;2;38;43;68m ]8;;https://github.com/nomadsomni/aspen_codes.git\ ]8;;\ 888.000.555 ≡  ?35 ~2 -1 [0m[38;2;243;174;53m[0m[0m[38;2;216;30;91;49m[7m[0m[48;2;216;30;91m[38;2;224;222;244m  [0m[38;2;216;30;91m[0m]0;pwsh in SIRENSSD
+PS>]-0
+] : The term ']' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelli
+ng of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:1
++ ]-0
++ ~
+    + CategoryInfo          : ObjectNotFound: (]:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+] : The term ']' is not recognized as the name of
+a cmdlet, function, script file, or operable progr
+am. Check the spelling of the name, or if a path w
+as included, verify that the path is correct and t
+ry again.
+At line:1 char:1
++ ]-0
++ ~
+    + CategoryInfo          : ObjectNotFound: (]:
+   String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundExce
+   ption
+
+[38;2;243;174;53m[0m[48;2;243;174;53m[38;2;38;43;68m Surface [0m[38;2;243;174;53m[0m[0m[38;2;240;118;35;49m[7m[0m[48;2;240;118;35m[38;2;224;222;244m  ]8;;file:C:/Users/Surface/OneDrive/SIRENSSD\SIRENSSD]8;;\ [0m[48;2;243;174;53m[38;2;240;118;35m[0m[48;2;243;174;53m[38;2;38;43;68m ]8;;https://github.com/nomadsomni/aspen_codes.git\ ]8;;\ 888.000.555 ≡  ?35 ~2 -1 [0m[38;2;243;174;53m[0m[0m[38;2;216;30;91;49m[7m[0m[48;2;216;30;91m[38;2;224;222;244m  [0m[38;2;216;30;91m[0m]0;pwsh in SIRENSSD
+PS>]-w0
+] : The term ']' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelli
+ng of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:1
++ ]-w0
++ ~
+    + CategoryInfo          : ObjectNotFound: (]:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+] : The term ']' is not recognized as the name of
+a cmdlet, function, script file, or operable progr
+am. Check the spelling of the name, or if a path w
+as included, verify that the path is correct and t
+ry again.
+At line:1 char:1
++ ]-w0
++ ~
+    + CategoryInfo          : ObjectNotFound: (]:
+   String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundExce
+   ption
+
+[38;2;243;174;53m[0m[48;2;243;174;53m[38;2;38;43;68m Surface [0m[38;2;243;174;53m[0m[0m[38;2;240;118;35;49m[7m[0m[48;2;240;118;35m[38;2;224;222;244m  ]8;;file:C:/Users/Surface/OneDrive/SIRENSSD\SIRENSSD]8;;\ [0m[48;2;243;174;53m[38;2;240;118;35m[0m[48;2;243;174;53m[38;2;38;43;68m ]8;;https://github.com/nomadsomni/aspen_codes.git\ ]8;;\ 888.000.555 ≡  ?35 ~2 -1 [0m[38;2;243;174;53m[0m[0m[38;2;216;30;91;49m[7m[0m[48;2;216;30;91m[38;2;224;222;244m  [0m[38;2;216;30;91m[0m]0;pwsh in SIRENSSD
+PS>]-0W
+] : The term ']' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelli
+ng of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:1
++ ]-0W
++ ~
+    + CategoryInfo          : ObjectNotFound: (]:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+] : The term ']' is not recognized as the name of
+a cmdlet, function, script file, or operable progr
+am. Check the spelling of the name, or if a path w
+as included, verify that the path is correct and t
+ry again.
+At line:1 char:1
++ ]-0W
++ ~
+    + CategoryInfo          : ObjectNotFound: (]:
+   String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundExce
+   ption
+
+[38;2;243;174;53m[0m[48;2;243;174;53m[38;2;38;43;68m Surface [0m[38;2;243;174;53m[0m[0m[38;2;240;118;35;49m[7m[0m[48;2;240;118;35m[38;2;224;222;244m  ]8;;file:C:/Users/Surface/OneDrive/SIRENSSD\SIRENSSD]8;;\ [0m[48;2;243;174;53m[38;2;240;118;35m[0m[48;2;243;174;53m[38;2;38;43;68m ]8;;https://github.com/nomadsomni/aspen_codes.git\ ]8;;\ 888.000.555 ≡  ?35 ~2 -1 [0m[38;2;243;174;53m[0m[0m[38;2;216;30;91;49m[7m[0m[48;2;216;30;91m[38;2;224;222;244m  [0m[38;2;216;30;91m[0m]0;pwsh in SIRENSSD
+PS>]3-0w]-30
+] : The term ']' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelli
+ng of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:1
++ ]3-0w]-30
++ ~
+    + CategoryInfo          : ObjectNotFound: (]:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+] : The term ']' is not recognized as the name of
+a cmdlet, function, script file, or operable progr
+am. Check the spelling of the name, or if a path w
+as included, verify that the path is correct and t
+ry again.
+At line:1 char:1
++ ]3-0w]-30
++ ~
+    + CategoryInfo          : ObjectNotFound: (]:
+   String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundExce
+   ption
+
+[38;2;243;174;53m[0m[48;2;243;174;53m[38;2;38;43;68m Surface [0m[38;2;243;174;53m[0m[0m[38;2;240;118;35;49m[7m[0m[48;2;240;118;35m[38;2;224;222;244m  ]8;;file:C:/Users/Surface/OneDrive/SIRENSSD\SIRENSSD]8;;\ [0m[48;2;243;174;53m[38;2;240;118;35m[0m[48;2;243;174;53m[38;2;38;43;68m ]8;;https://github.com/nomadsomni/aspen_codes.git\ ]8;;\ 888.000.555 ≡  ?35 ~2 -1 [0m[38;2;243;174;53m[0m[0m[38;2;216;30;91;49m[7m[0m[48;2;216;30;91m[38;2;224;222;244m  [0m[38;2;216;30;91m[0m]0;pwsh in SIRENSSD
+PS>]-0
+] : The term ']' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelli
+ng of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:1
++ ]-0
++ ~
+    + CategoryInfo          : ObjectNotFound: (]:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+] : The term ']' is not recognized as the name of
+a cmdlet, function, script file, or operable progr
+am. Check the spelling of the name, or if a path w
+as included, verify that the path is correct and t
+ry again.
+At line:1 char:1
++ ]-0
++ ~
+    + CategoryInfo          : ObjectNotFound: (]:
+   String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundExce
+   ption
+
+[38;2;243;174;53m[0m[48;2;243;174;53m[38;2;38;43;68m Surface [0m[38;2;243;174;53m[0m[0m[38;2;240;118;35;49m[7m[0m[48;2;240;118;35m[38;2;224;222;244m  ]8;;file:C:/Users/Surface/OneDrive/SIRENSSD\SIRENSSD]8;;\ [0m[48;2;243;174;53m[38;2;240;118;35m[0m[48;2;243;174;53m[38;2;38;43;68m ]8;;https://github.com/nomadsomni/aspen_codes.git\ ]8;;\ 888.000.555 ≡  ?35 ~2 -1 [0m[38;2;243;174;53m[0m[0m[38;2;216;30;91;49m[7m[0m[48;2;216;30;91m[38;2;224;222;244m  [0m[38;2;216;30;91m[0m]0;pwsh in SIRENSSD
+PS>3]-0
+At line:1 char:2
++ 3]-0
++  ~
+Unexpected token ']' in expression or statement.
+At line:1 char:2
++ 3]-0
++  ~
+Unexpected token ']' in expression or statement.
+    + CategoryInfo          : ParserError: (:) []
+   , ParentContainsErrorRecordException
+    + FullyQualifiedErrorId : UnexpectedToken
+
+Select-Object : Property "InvocationInfo" cannot be found.
+At line:218 char:64
++ ... bject { $_ -ne $null } | Select-Object -ExpandProperty InvocationInfo
++                              ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (System.Manageme...ptions options):PSObject) [Select-Object], PSArgumentE
+xception
+    + FullyQualifiedErrorId : ExpandPropertyNotFound,Microsoft.PowerShell.Commands.SelectObjectCommand
+[38;2;243;174;53m[0m[48;2;243;174;53m[38;2;38;43;68m Surface [0m[38;2;243;174;53m[0m[0m[38;2;240;118;35;49m[7m[0m[48;2;240;118;35m[38;2;224;222;244m  ]8;;file:C:/Users/Surface/OneDrive/SIRENSSD\SIRENSSD]8;;\ [0m[48;2;243;174;53m[38;2;240;118;35m[0m[48;2;243;174;53m[38;2;38;43;68m ]8;;https://github.com/nomadsomni/aspen_codes.git\ ]8;;\ 888.000.555 ≡  ?35 ~2 -1 [0m[38;2;243;174;53m[0m[0m[38;2;216;30;91;49m[7m[0m[48;2;216;30;91m[38;2;224;222;244m  [0m[38;2;216;30;91m[0m]0;pwsh in SIRENSSD
+PS>w]-0]-0W
+w]-0]-0W : The term 'w]-0]-0W' is not recognized as the name of a cmdlet, function, script file, or operable program. Ch
+eck the spelling of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:1
++ w]-0]-0W
++ ~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (w]-0]-0W:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+w]-0]-0W : The term 'w]-0]-0W' is not recognized a
+s the name of a cmdlet, function, script file, or
+operable program. Check the spelling of the name,
+or if a path was included, verify that the path is
+ correct and try again.
+At line:1 char:1
++ w]-0]-0W
++ ~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (w]
+   -0]-0W:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundExce
+   ption
+
+[38;2;243;174;53m[0m[48;2;243;174;53m[38;2;38;43;68m Surface [0m[38;2;243;174;53m[0m[0m[38;2;240;118;35;49m[7m[0m[48;2;240;118;35m[38;2;224;222;244m  ]8;;file:C:/Users/Surface/OneDrive/SIRENSSD\SIRENSSD]8;;\ [0m[48;2;243;174;53m[38;2;240;118;35m[0m[48;2;243;174;53m[38;2;38;43;68m ]8;;https://github.com/nomadsomni/aspen_codes.git\ ]8;;\ 888.000.555 ≡  ?35 ~2 -1 [0m[38;2;243;174;53m[0m[0m[38;2;216;30;91;49m[7m[0m[48;2;216;30;91m[38;2;224;222;244m  [0m[38;2;216;30;91m[0m]0;pwsh in SIRENSSD
+PS>]4-0w
+] : The term ']' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelli
+ng of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:1
++ ]4-0w
++ ~
+    + CategoryInfo          : ObjectNotFound: (]:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+] : The term ']' is not recognized as the name of
+a cmdlet, function, script file, or operable progr
+am. Check the spelling of the name, or if a path w
+as included, verify that the path is correct and t
+ry again.
+At line:1 char:1
++ ]4-0w
++ ~
+    + CategoryInfo          : ObjectNotFound: (]:
+   String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundExce
+   ption
+
+[38;2;243;174;53m[0m[48;2;243;174;53m[38;2;38;43;68m Surface [0m[38;2;243;174;53m[0m[0m[38;2;240;118;35;49m[7m[0m[48;2;240;118;35m[38;2;224;222;244m  ]8;;file:C:/Users/Surface/OneDrive/SIRENSSD\SIRENSSD]8;;\ [0m[48;2;243;174;53m[38;2;240;118;35m[0m[48;2;243;174;53m[38;2;38;43;68m ]8;;https://github.com/nomadsomni/aspen_codes.git\ ]8;;\ 888.000.555 ≡  ?35 ~2 -1 [0m[38;2;243;174;53m[0m[0m[38;2;216;30;91;49m[7m[0m[48;2;216;30;91m[38;2;224;222;244m  [0m[38;2;216;30;91m[0m]0;pwsh in SIRENSSD
+PS>]-30
+] : The term ']' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelli
+ng of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:1
++ ]-30
++ ~
+    + CategoryInfo          : ObjectNotFound: (]:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+] : The term ']' is not recognized as the name of
+a cmdlet, function, script file, or operable progr
+am. Check the spelling of the name, or if a path w
+as included, verify that the path is correct and t
+ry again.
+At line:1 char:1
++ ]-30
++ ~
+    + CategoryInfo          : ObjectNotFound: (]:
+   String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundExce
+   ption
+
+[38;2;243;174;53m[0m[48;2;243;174;53m[38;2;38;43;68m Surface [0m[38;2;243;174;53m[0m[0m[38;2;240;118;35;49m[7m[0m[48;2;240;118;35m[38;2;224;222;244m  ]8;;file:C:/Users/Surface/OneDrive/SIRENSSD\SIRENSSD]8;;\ [0m[48;2;243;174;53m[38;2;240;118;35m[0m[48;2;243;174;53m[38;2;38;43;68m ]8;;https://github.com/nomadsomni/aspen_codes.git\ ]8;;\ 888.000.555 ≡  ?35 ~2 -1 [0m[38;2;243;174;53m[0m[0m[38;2;216;30;91;49m[7m[0m[48;2;216;30;91m[38;2;224;222;244m  [0m[38;2;216;30;91m[0m]0;pwsh in SIRENSSD
+PS>]-W0]-0w]-0
+] : The term ']' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelli
+ng of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:1
++ ]-W0]-0w]-0
++ ~
+    + CategoryInfo          : ObjectNotFound: (]:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+] : The term ']' is not recognized as the name of
+a cmdlet, function, script file, or operable progr
+am. Check the spelling of the name, or if a path w
+as included, verify that the path is correct and t
+ry again.
+At line:1 char:1
++ ]-W0]-0w]-0
++ ~
+    + CategoryInfo          : ObjectNotFound: (]:
+   String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundExce
+   ption
+
+[38;2;243;174;53m[0m[48;2;243;174;53m[38;2;38;43;68m Surface [0m[38;2;243;174;53m[0m[0m[38;2;240;118;35;49m[7m[0m[48;2;240;118;35m[38;2;224;222;244m  ]8;;file:C:/Users/Surface/OneDrive/SIRENSSD\SIRENSSD]8;;\ [0m[48;2;243;174;53m[38;2;240;118;35m[0m[48;2;243;174;53m[38;2;38;43;68m ]8;;https://github.com/nomadsomni/aspen_codes.git\ ]8;;\ 888.000.555 ≡  ?35 ~2 -1 [0m[38;2;243;174;53m[0m[0m[38;2;216;30;91;49m[7m[0m[48;2;216;30;91m[38;2;224;222;244m  [0m[38;2;216;30;91m[0m]0;pwsh in SIRENSSD
+PS>]W-0
+] : The term ']' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelli
+ng of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:1
++ ]W-0
++ ~
+    + CategoryInfo          : ObjectNotFound: (]:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+] : The term ']' is not recognized as the name of
+a cmdlet, function, script file, or operable progr
+am. Check the spelling of the name, or if a path w
+as included, verify that the path is correct and t
+ry again.
+At line:1 char:1
++ ]W-0
++ ~
+    + CategoryInfo          : ObjectNotFound: (]:
+   String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundExce
+   ption
+
+[38;2;243;174;53m[0m[48;2;243;174;53m[38;2;38;43;68m Surface [0m[38;2;243;174;53m[0m[0m[38;2;240;118;35;49m[7m[0m[48;2;240;118;35m[38;2;224;222;244m  ]8;;file:C:/Users/Surface/OneDrive/SIRENSSD\SIRENSSD]8;;\ [0m[48;2;243;174;53m[38;2;240;118;35m[0m[48;2;243;174;53m[38;2;38;43;68m ]8;;https://github.com/nomadsomni/aspen_codes.git\ ]8;;\ 888.000.555 ≡  ?35 ~2 -1 [0m[38;2;243;174;53m[0m[0m[38;2;216;30;91;49m[7m[0m[48;2;216;30;91m[38;2;224;222;244m  [0m[38;2;216;30;91m[0m]0;pwsh in SIRENSSD
+PS>]-w0]-0W
+] : The term ']' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelli
+ng of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:1
++ ]-w0]-0W
++ ~
+    + CategoryInfo          : ObjectNotFound: (]:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+] : The term ']' is not recognized as the name of
+a cmdlet, function, script file, or operable progr
+am. Check the spelling of the name, or if a path w
+as included, verify that the path is correct and t
+ry again.
+At line:1 char:1
++ ]-w0]-0W
++ ~
+    + CategoryInfo          : ObjectNotFound: (]:
+   String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundExce
+   ption
+
+[38;2;243;174;53m[0m[48;2;243;174;53m[38;2;38;43;68m Surface [0m[38;2;243;174;53m[0m[0m[38;2;240;118;35;49m[7m[0m[48;2;240;118;35m[38;2;224;222;244m  ]8;;file:C:/Users/Surface/OneDrive/SIRENSSD\SIRENSSD]8;;\ [0m[48;2;243;174;53m[38;2;240;118;35m[0m[48;2;243;174;53m[38;2;38;43;68m ]8;;https://github.com/nomadsomni/aspen_codes.git\ ]8;;\ 888.000.555 ≡  ?35 ~2 -1 [0m[38;2;243;174;53m[0m[0m[38;2;216;30;91;49m[7m[0m[48;2;216;30;91m[38;2;224;222;244m  [0m[38;2;216;30;91m[0m]0;pwsh in SIRENSSD
+PS>]-0
+] : The term ']' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelli
+ng of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:1
++ ]-0
++ ~
+    + CategoryInfo          : ObjectNotFound: (]:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+] : The term ']' is not recognized as the name of
+a cmdlet, function, script file, or operable progr
+am. Check the spelling of the name, or if a path w
+as included, verify that the path is correct and t
+ry again.
+At line:1 char:1
++ ]-0
++ ~
+    + CategoryInfo          : ObjectNotFound: (]:
+   String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundExce
+   ption
+
+[38;2;243;174;53m[0m[48;2;243;174;53m[38;2;38;43;68m Surface [0m[38;2;243;174;53m[0m[0m[38;2;240;118;35;49m[7m[0m[48;2;240;118;35m[38;2;224;222;244m  ]8;;file:C:/Users/Surface/OneDrive/SIRENSSD\SIRENSSD]8;;\ [0m[48;2;243;174;53m[38;2;240;118;35m[0m[48;2;243;174;53m[38;2;38;43;68m ]8;;https://github.com/nomadsomni/aspen_codes.git\ ]8;;\ 888.000.555 ≡  ?35 ~2 -1 [0m[38;2;243;174;53m[0m[0m[38;2;216;30;91;49m[7m[0m[48;2;216;30;91m[38;2;224;222;244m  [0m[38;2;216;30;91m[0m]0;pwsh in SIRENSSD
+PS>w]-0
+w]-0 : The term 'w]-0' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the 
+spelling of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:1
++ w]-0
++ ~~~~
+    + CategoryInfo          : ObjectNotFound: (w]-0:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+w]-0 : The term 'w]-0' is not recognized as the na
+me of a cmdlet, function, script file, or operable
+ program. Check the spelling of the name, or if a
+path was included, verify that the path is correct
+ and try again.
+At line:1 char:1
++ w]-0
++ ~~~~
+    + CategoryInfo          : ObjectNotFound: (w]
+   -0:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundExce
+   ption
+
+[38;2;243;174;53m[0m[48;2;243;174;53m[38;2;38;43;68m Surface [0m[38;2;243;174;53m[0m[0m[38;2;240;118;35;49m[7m[0m[48;2;240;118;35m[38;2;224;222;244m  ]8;;file:C:/Users/Surface/OneDrive/SIRENSSD\SIRENSSD]8;;\ [0m[48;2;243;174;53m[38;2;240;118;35m[0m[48;2;243;174;53m[38;2;38;43;68m ]8;;https://github.com/nomadsomni/aspen_codes.git\ ]8;;\ 888.000.555 ≡  ?35 ~2 -1 [0m[38;2;243;174;53m[0m[0m[38;2;216;30;91;49m[7m[0m[48;2;216;30;91m[38;2;224;222;244m  [0m[38;2;216;30;91m[0m]0;pwsh in SIRENSSD
+PS>]-W0
+] : The term ']' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelli
+ng of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:1
++ ]-W0
++ ~
+    + CategoryInfo          : ObjectNotFound: (]:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+] : The term ']' is not recognized as the name of
+a cmdlet, function, script file, or operable progr
+am. Check the spelling of the name, or if a path w
+as included, verify that the path is correct and t
+ry again.
+At line:1 char:1
++ ]-W0
++ ~
+    + CategoryInfo          : ObjectNotFound: (]:
+   String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundExce
+   ption
+
+[38;2;243;174;53m[0m[48;2;243;174;53m[38;2;38;43;68m Surface [0m[38;2;243;174;53m[0m[0m[38;2;240;118;35;49m[7m[0m[48;2;240;118;35m[38;2;224;222;244m  ]8;;file:C:/Users/Surface/OneDrive/SIRENSSD\SIRENSSD]8;;\ [0m[48;2;243;174;53m[38;2;240;118;35m[0m[48;2;243;174;53m[38;2;38;43;68m ]8;;https://github.com/nomadsomni/aspen_codes.git\ ]8;;\ 888.000.555 ≡  ?35 ~2 -1 [0m[38;2;243;174;53m[0m[0m[38;2;216;30;91;49m[7m[0m[48;2;216;30;91m[38;2;224;222;244m  [0m[38;2;216;30;91m[0m]0;pwsh in SIRENSSD
+PS>]-0w
+] : The term ']' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelli
+ng of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:1
++ ]-0w
++ ~
+    + CategoryInfo          : ObjectNotFound: (]:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+] : The term ']' is not recognized as the name of
+a cmdlet, function, script file, or operable progr
+am. Check the spelling of the name, or if a path w
+as included, verify that the path is correct and t
+ry again.
+At line:1 char:1
++ ]-0w
++ ~
+    + CategoryInfo          : ObjectNotFound: (]:
+   String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundExce
+   ption
+
+[38;2;243;174;53m[0m[48;2;243;174;53m[38;2;38;43;68m Surface [0m[38;2;243;174;53m[0m[0m[38;2;240;118;35;49m[7m[0m[48;2;240;118;35m[38;2;224;222;244m  ]8;;file:C:/Users/Surface/OneDrive/SIRENSSD\SIRENSSD]8;;\ [0m[48;2;243;174;53m[38;2;240;118;35m[0m[48;2;243;174;53m[38;2;38;43;68m ]8;;https://github.com/nomadsomni/aspen_codes.git\ ]8;;\ 888.000.555 ≡  ?35 ~2 -1 [0m[38;2;243;174;53m[0m[0m[38;2;216;30;91;49m[7m[0m[48;2;216;30;91m[38;2;224;222;244m  [0m[38;2;216;30;91m[0m]0;pwsh in SIRENSSD
+PS>]-0W]-30
+] : The term ']' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelli
+ng of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:1
++ ]-0W]-30
++ ~
+    + CategoryInfo          : ObjectNotFound: (]:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+] : The term ']' is not recognized as the name of
+a cmdlet, function, script file, or operable progr
+am. Check the spelling of the name, or if a path w
+as included, verify that the path is correct and t
+ry again.
+At line:1 char:1
++ ]-0W]-30
++ ~
+    + CategoryInfo          : ObjectNotFound: (]:
+   String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundExce
+   ption
+
+[38;2;243;174;53m[0m[48;2;243;174;53m[38;2;38;43;68m Surface [0m[38;2;243;174;53m[0m[0m[38;2;240;118;35;49m[7m[0m[48;2;240;118;35m[38;2;224;222;244m  ]8;;file:C:/Users/Surface/OneDrive/SIRENSSD\SIRENSSD]8;;\ [0m[48;2;243;174;53m[38;2;240;118;35m[0m[48;2;243;174;53m[38;2;38;43;68m ]8;;https://github.com/nomadsomni/aspen_codes.git\ ]8;;\ 888.000.555 ≡  ?35 ~2 -1 [0m[38;2;243;174;53m[0m[0m[38;2;216;30;91;49m[7m[0m[48;2;216;30;91m[38;2;224;222;244m  [0m[38;2;216;30;91m[0m]0;pwsh in SIRENSSD
+PS>]-w0
+] : The term ']' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelli
+ng of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:1
++ ]-w0
++ ~
+    + CategoryInfo          : ObjectNotFound: (]:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+] : The term ']' is not recognized as the name of
+a cmdlet, function, script file, or operable progr
+am. Check the spelling of the name, or if a path w
+as included, verify that the path is correct and t
+ry again.
+At line:1 char:1
++ ]-w0
++ ~
+    + CategoryInfo          : ObjectNotFound: (]:
+   String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundExce
+   ption
+
+[38;2;243;174;53m[0m[48;2;243;174;53m[38;2;38;43;68m Surface [0m[38;2;243;174;53m[0m[0m[38;2;240;118;35;49m[7m[0m[48;2;240;118;35m[38;2;224;222;244m  ]8;;file:C:/Users/Surface/OneDrive/SIRENSSD\SIRENSSD]8;;\ [0m[48;2;89;201;165m[38;2;240;118;35m[0m[48;2;89;201;165m[38;2;38;43;68m ]8;;https://github.com/nomadsomni/aspen_codes.git\ ]8;;\  ≢ [0m[38;2;89;201;165m[0m[0m[38;2;216;30;91;49m[7m[0m[48;2;216;30;91m[38;2;224;222;244m  [0m[38;2;216;30;91m[0m]0;pwsh in SIRENSSD
+PS>]-03
+] : The term ']' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelli
+ng of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:1
++ ]-03
++ ~
+    + CategoryInfo          : ObjectNotFound: (]:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+] : The term ']' is not recognized as the name of
+a cmdlet, function, script file, or operable progr
+am. Check the spelling of the name, or if a path w
+as included, verify that the path is correct and t
+ry again.
+At line:1 char:1
++ ]-03
++ ~
+    + CategoryInfo          : ObjectNotFound: (]:
+   String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundExce
+   ption
+
+[38;2;243;174;53m[0m[48;2;243;174;53m[38;2;38;43;68m Surface [0m[38;2;243;174;53m[0m[0m[38;2;240;118;35;49m[7m[0m[48;2;240;118;35m[38;2;224;222;244m  ]8;;file:C:/Users/Surface/OneDrive/SIRENSSD\SIRENSSD]8;;\ [0m[48;2;89;201;165m[38;2;240;118;35m[0m[48;2;89;201;165m[38;2;38;43;68m ]8;;https://github.com/nomadsomni/aspen_codes.git\ ]8;;\  ≢ [0m[38;2;89;201;165m[0m[0m[38;2;216;30;91;49m[7m[0m[48;2;216;30;91m[38;2;224;222;244m  [0m[38;2;216;30;91m[0m]0;pwsh in SIRENSSD
+PS>]-0w
+] : The term ']' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelli
+ng of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:1
++ ]-0w
++ ~
+    + CategoryInfo          : ObjectNotFound: (]:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+] : The term ']' is not recognized as the name of
+a cmdlet, function, script file, or operable progr
+am. Check the spelling of the name, or if a path w
+as included, verify that the path is correct and t
+ry again.
+At line:1 char:1
++ ]-0w
++ ~
+    + CategoryInfo          : ObjectNotFound: (]:
+   String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundExce
+   ption
+
+[38;2;243;174;53m[0m[48;2;243;174;53m[38;2;38;43;68m Surface [0m[38;2;243;174;53m[0m[0m[38;2;240;118;35;49m[7m[0m[48;2;240;118;35m[38;2;224;222;244m  ]8;;file:C:/Users/Surface/OneDrive/SIRENSSD\SIRENSSD]8;;\ [0m[48;2;89;201;165m[38;2;240;118;35m[0m[48;2;89;201;165m[38;2;38;43;68m ]8;;https://github.com/nomadsomni/aspen_codes.git\ ]8;;\  ≢ [0m[38;2;89;201;165m[0m[0m[38;2;216;30;91;49m[7m[0m[48;2;216;30;91m[38;2;224;222;244m  [0m[38;2;216;30;91m[0m]0;pwsh in SIRENSSD
+PS>]-0
+] : The term ']' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelli
+ng of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:1
++ ]-0
++ ~
+    + CategoryInfo          : ObjectNotFound: (]:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+] : The term ']' is not recognized as the name of
+a cmdlet, function, script file, or operable progr
+am. Check the spelling of the name, or if a path w
+as included, verify that the path is correct and t
+ry again.
+At line:1 char:1
++ ]-0
++ ~
+    + CategoryInfo          : ObjectNotFound: (]:
+   String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundExce
+   ption
+
+[38;2;243;174;53m[0m[48;2;243;174;53m[38;2;38;43;68m Surface [0m[38;2;243;174;53m[0m[0m[38;2;240;118;35;49m[7m[0m[48;2;240;118;35m[38;2;224;222;244m  ]8;;file:C:/Users/Surface/OneDrive/SIRENSSD\SIRENSSD]8;;\ [0m[48;2;243;174;53m[38;2;240;118;35m[0m[48;2;243;174;53m[38;2;38;43;68m ]8;;https://github.com/nomadsomni/aspen_codes.git\ ]8;;\ 888.000.555 ≡  ?35 ~2 -1 [0m[38;2;243;174;53m[0m[0m[38;2;216;30;91;49m[7m[0m[48;2;216;30;91m[38;2;224;222;244m  [0m[38;2;216;30;91m[0m]0;pwsh in SIRENSSD
+PS>]-W3-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""-q]-40]
+] : The term ']' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelli
+ng of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:1
++ ]-W3-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""" ...
++ ~
+    + CategoryInfo          : ObjectNotFound: (]:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+] : The term ']' is not recognized as the name of
+a cmdlet, function, script file, or operable progr
+am. Check the spelling of the name, or if a path w
+as included, verify that the path is correct and t
+ry again.
+At line:1 char:1
++ ]-W3-"""""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""" ...
++ ~
+    + CategoryInfo          : ObjectNotFound: (]:
+   String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundExce
+   ption
+
+[38;2;243;174;53m[0m[48;2;243;174;53m[38;2;38;43;68m Surface [0m[38;2;243;174;53m[0m[0m[38;2;240;118;35;49m[7m[0m[48;2;240;118;35m[38;2;224;222;244m  ]8;;file:C:/Users/Surface/OneDrive/SIRENSSD\SIRENSSD]8;;\ [0m[48;2;243;174;53m[38;2;240;118;35m[0m[48;2;243;174;53m[38;2;38;43;68m ]8;;https://github.com/nomadsomni/aspen_codes.git\ ]8;;\ 888.000.555 ≡  ?35 ~2 -1 [0m[38;2;243;174;53m[0m[0m[38;2;216;30;91;49m[7m[0m[48;2;216;30;91m[38;2;224;222;244m  [0m[38;2;216;30;91m[0m]0;pwsh in SIRENSSD
+PS>-W0
+-W0 : The term '-W0' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the sp
+elling of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:1
++ -W0
++ ~~~
+    + CategoryInfo          : ObjectNotFound: (-W0:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+-W0 : The term '-W0' is not recognized as the name
+ of a cmdlet, function, script file, or operable p
+rogram. Check the spelling of the name, or if a pa
+th was included, verify that the path is correct a
+nd try again.
+At line:1 char:1
++ -W0
++ ~~~
+    + CategoryInfo          : ObjectNotFound: (-W
+   0:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundExce
+   ption
+
+[38;2;243;174;53m[0m[48;2;243;174;53m[38;2;38;43;68m Surface [0m[38;2;243;174;53m[0m[0m[38;2;240;118;35;49m[7m[0m[48;2;240;118;35m[38;2;224;222;244m  ]8;;file:C:/Users/Surface/OneDrive/SIRENSSD\SIRENSSD]8;;\ [0m[48;2;243;174;53m[38;2;240;118;35m[0m[48;2;243;174;53m[38;2;38;43;68m ]8;;https://github.com/nomadsomni/aspen_codes.git\ ]8;;\ 888.000.555 ≡  ?35 ~2 -1 [0m[38;2;243;174;53m[0m[0m[38;2;216;30;91;49m[7m[0m[48;2;216;30;91m[38;2;224;222;244m  [0m[38;2;216;30;91m[0m]0;pwsh in SIRENSSD
+PS>]-0
+] : The term ']' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelli
+ng of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:1
++ ]-0
++ ~
+    + CategoryInfo          : ObjectNotFound: (]:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+] : The term ']' is not recognized as the name of
+a cmdlet, function, script file, or operable progr
+am. Check the spelling of the name, or if a path w
+as included, verify that the path is correct and t
+ry again.
+At line:1 char:1
++ ]-0
++ ~
+    + CategoryInfo          : ObjectNotFound: (]:
+   String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundExce
+   ption
+
+[38;2;243;174;53m[0m[48;2;243;174;53m[38;2;38;43;68m Surface [0m[38;2;243;174;53m[0m[0m[38;2;240;118;35;49m[7m[0m[48;2;240;118;35m[38;2;224;222;244m  ]8;;file:C:/Users/Surface/OneDrive/SIRENSSD\SIRENSSD]8;;\ [0m[48;2;243;174;53m[38;2;240;118;35m[0m[48;2;243;174;53m[38;2;38;43;68m ]8;;https://github.com/nomadsomni/aspen_codes.git\ ]8;;\ 888.000.555 ≡  ?35 ~2 -1 [0m[38;2;243;174;53m[0m[0m[38;2;216;30;91;49m[7m[0m[48;2;216;30;91m[38;2;224;222;244m  [0m[38;2;216;30;91m[0m]0;pwsh in SIRENSSD
+PS>]-0W
+] : The term ']' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelli
+ng of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:1
++ ]-0W
++ ~
+    + CategoryInfo          : ObjectNotFound: (]:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+] : The term ']' is not recognized as the name of
+a cmdlet, function, script file, or operable progr
+am. Check the spelling of the name, or if a path w
+as included, verify that the path is correct and t
+ry again.
+At line:1 char:1
++ ]-0W
++ ~
+    + CategoryInfo          : ObjectNotFound: (]:
+   String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundExce
+   ption
+
+[38;2;243;174;53m[0m[48;2;243;174;53m[38;2;38;43;68m Surface [0m[38;2;243;174;53m[0m[0m[38;2;240;118;35;49m[7m[0m[48;2;240;118;35m[38;2;224;222;244m  ]8;;file:C:/Users/Surface/OneDrive/SIRENSSD\SIRENSSD]8;;\ [0m[48;2;243;174;53m[38;2;240;118;35m[0m[48;2;243;174;53m[38;2;38;43;68m ]8;;https://github.com/nomadsomni/aspen_codes.git\ ]8;;\ 888.000.555 ≡  ?35 ~2 -1 [0m[38;2;243;174;53m[0m[0m[38;2;216;30;91;49m[7m[0m[48;2;216;30;91m[38;2;224;222;244m  [0m[38;2;216;30;91m[0m]0;pwsh in SIRENSSD
+PS>]-0w
+] : The term ']' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelli
+ng of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:1
++ ]-0w
++ ~
+    + CategoryInfo          : ObjectNotFound: (]:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+] : The term ']' is not recognized as the name of
+a cmdlet, function, script file, or operable progr
+am. Check the spelling of the name, or if a path w
+as included, verify that the path is correct and t
+ry again.
+At line:1 char:1
++ ]-0w
++ ~
+    + CategoryInfo          : ObjectNotFound: (]:
+   String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundExce
+   ption
+
+[38;2;243;174;53m[0m[48;2;243;174;53m[38;2;38;43;68m Surface [0m[38;2;243;174;53m[0m[0m[38;2;240;118;35;49m[7m[0m[48;2;240;118;35m[38;2;224;222;244m  ]8;;file:C:/Users/Surface/OneDrive/SIRENSSD\SIRENSSD]8;;\ [0m[48;2;243;174;53m[38;2;240;118;35m[0m[48;2;243;174;53m[38;2;38;43;68m ]8;;https://github.com/nomadsomni/aspen_codes.git\ ]8;;\ 888.000.555 ≡  ?35 ~2 -1 [0m[38;2;243;174;53m[0m[0m[38;2;216;30;91;49m[7m[0m[48;2;216;30;91m[38;2;224;222;244m  [0m[38;2;216;30;91m[0m]0;pwsh in SIRENSSD
+PS>]-0W
+] : The term ']' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelli
+ng of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:1
++ ]-0W
++ ~
+    + CategoryInfo          : ObjectNotFound: (]:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+] : The term ']' is not recognized as the name of
+a cmdlet, function, script file, or operable progr
+am. Check the spelling of the name, or if a path w
+as included, verify that the path is correct and t
+ry again.
+At line:1 char:1
++ ]-0W
++ ~
+    + CategoryInfo          : ObjectNotFound: (]:
+   String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundExce
+   ption
+
+[38;2;243;174;53m[0m[48;2;243;174;53m[38;2;38;43;68m Surface [0m[38;2;243;174;53m[0m[0m[38;2;240;118;35;49m[7m[0m[48;2;240;118;35m[38;2;224;222;244m  ]8;;file:C:/Users/Surface/OneDrive/SIRENSSD\SIRENSSD]8;;\ [0m[48;2;243;174;53m[38;2;240;118;35m[0m[48;2;243;174;53m[38;2;38;43;68m ]8;;https://github.com/nomadsomni/aspen_codes.git\ ]8;;\ 888.000.555 ≡  ?35 ~2 -1 [0m[38;2;243;174;53m[0m[0m[38;2;216;30;91;49m[7m[0m[48;2;216;30;91m[38;2;224;222;244m  [0m[38;2;216;30;91m[0m]0;pwsh in SIRENSSD
+PS>]-
+] : The term ']' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelli
+ng of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:1
++ ]-
++ ~
+    + CategoryInfo          : ObjectNotFound: (]:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+] : The term ']' is not recognized as the name of
+a cmdlet, function, script file, or operable progr
+am. Check the spelling of the name, or if a path w
+as included, verify that the path is correct and t
+ry again.
+At line:1 char:1
++ ]-
++ ~
+    + CategoryInfo          : ObjectNotFound: (]:
+   String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundExce
+   ption
+
+[38;2;243;174;53m[0m[48;2;243;174;53m[38;2;38;43;68m Surface [0m[38;2;243;174;53m[0m[0m[38;2;240;118;35;49m[7m[0m[48;2;240;118;35m[38;2;224;222;244m  ]8;;file:C:/Users/Surface/OneDrive/SIRENSSD\SIRENSSD]8;;\ [0m[48;2;243;174;53m[38;2;240;118;35m[0m[48;2;243;174;53m[38;2;38;43;68m ]8;;https://github.com/nomadsomni/aspen_codes.git\ ]8;;\ 888.000.555 ≡  ?35 ~2 -1 [0m[38;2;243;174;53m[0m[0m[38;2;216;30;91;49m[7m[0m[48;2;216;30;91m[38;2;224;222;244m  [0m[38;2;216;30;91m[0m]0;pwsh in SIRENSSD
+PS>w]-340]
+w]-340] : The term 'w]-340]' is not recognized as the name of a cmdlet, function, script file, or operable program. Chec
+k the spelling of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:1
++ w]-340]
++ ~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (w]-340]:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+w]-340] : The term 'w]-340]' is not recognized as
+the name of a cmdlet, function, script file, or op
+erable program. Check the spelling of the name, or
+ if a path was included, verify that the path is c
+orrect and try again.
+At line:1 char:1
++ w]-340]
++ ~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (w]
+   -340]:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundExce
+   ption
+
+[38;2;243;174;53m[0m[48;2;243;174;53m[38;2;38;43;68m Surface [0m[38;2;243;174;53m[0m[0m[38;2;240;118;35;49m[7m[0m[48;2;240;118;35m[38;2;224;222;244m  ]8;;file:C:/Users/Surface/OneDrive/SIRENSSD\SIRENSSD]8;;\ [0m[48;2;243;174;53m[38;2;240;118;35m[0m[48;2;243;174;53m[38;2;38;43;68m ]8;;https://github.com/nomadsomni/aspen_codes.git\ ]8;;\ 888.000.555 ≡  ?35 ~2 -1 [0m[38;2;243;174;53m[0m[0m[38;2;216;30;91;49m[7m[0m[48;2;216;30;91m[38;2;224;222;244m  [0m[38;2;216;30;91m[0m]0;pwsh in SIRENSSD
+PS>-0W]
+-0W] : The term '-0W]' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the 
+spelling of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:1
++ -0W]
++ ~~~~
+    + CategoryInfo          : ObjectNotFound: (-0W]:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+-0W] : The term '-0W]' is not recognized as the na
+me of a cmdlet, function, script file, or operable
+ program. Check the spelling of the name, or if a
+path was included, verify that the path is correct
+ and try again.
+At line:1 char:1
++ -0W]
++ ~~~~
+    + CategoryInfo          : ObjectNotFound: (-0
+   W]:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundExce
+   ption
+
+[38;2;243;174;53m[0m[48;2;243;174;53m[38;2;38;43;68m Surface [0m[38;2;243;174;53m[0m[0m[38;2;240;118;35;49m[7m[0m[48;2;240;118;35m[38;2;224;222;244m  ]8;;file:C:/Users/Surface/OneDrive/SIRENSSD\SIRENSSD]8;;\ [0m[48;2;243;174;53m[38;2;240;118;35m[0m[48;2;243;174;53m[38;2;38;43;68m ]8;;https://github.com/nomadsomni/aspen_codes.git\ ]8;;\ 888.000.555 ≡  ?35 ~2 -1 [0m[38;2;243;174;53m[0m[0m[38;2;216;30;91;49m[7m[0m[48;2;216;30;91m[38;2;224;222;244m  [0m[38;2;216;30;91m[0m]0;pwsh in SIRENSSD
+PS>-340w]0
+-340w]0 : The term '-340w]0' is not recognized as the name of a cmdlet, function, script file, or operable program. Chec
+k the spelling of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:1
++ -340w]0
++ ~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (-340w]0:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+-340w]0 : The term '-340w]0' is not recognized as
+the name of a cmdlet, function, script file, or op
+erable program. Check the spelling of the name, or
+ if a path was included, verify that the path is c
+orrect and try again.
+At line:1 char:1
++ -340w]0
++ ~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (-3
+   40w]0:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundExce
+-340w]0 : The term '-340w]0' is not recognized as
+-340w]0 : The term '-340w]0' is not recognized as
+-340w]0 : The term '-340w]0' is not recognized as
+-340w]0 : The term '-340w]0' is not recognized as
+-340w]0 : The term '-340w]0' is not recognized as
+-340w]0 : The term '-340w]0' is not recognized as
+-340w]0 : The term '-340w]0' is not recognized as
+-340w]0 : The term '-340w]0' is not recognized as
+-340w]0 : The term '-340w]0' is not recognized as
+-340w]0 : The term '-340w]0' is not recognized as
+-340w]0 : The term '-340w]0' is not recognized as
+-340w]0 : The term '-340w]0' is not recognized as
+-340w]0 : The term '-340w]0' is not recognized as
+-340w]0 : The term '-340w]0' is not recognized as
+-340w]0 : The term '-340w]0' is not recognized as
+-340w]0 : The term '-340w]0' is not recognized as
+-340w]0 : The term '-340w]0' is not recognized as
+-340w]0 : The term '-340w]0' is not recognized as
+-340w]0 : The term '-340w]0' is not recognized as
+-340w]0 : The term '-340w]0' is not recognized as
+-340w]0 : The term '-340w]0' is not recognized as
+-340w]0 : The term '-340w]0' is not recognized as
+-340w]0 : The term '-340w]0' is not recognized as
+-340w]0 : The term '-340w]0' is not recognized as
+-340w]0 : The term '-340w]0' is not recognized as
+-340w]0 : The term '-340w]0' is not recognized as
+-340w]0 : The term '-340w]0' is not recognized as
+-340w]0 : The term '-340w]0' is not recognized as
+-340w]0 : The term '-340w]0' is not recognized as
+-340w]0 : The term '-340w]0' is not recognized as
+-340w]0 : The term '-340w]0' is not recognized as
+-340w]0 : The term '-340w]0' is not recognized as
+-340w]0 : The term '-340w]0' is not recognized as
+-340w]0 : The term '-340w]0' is not recognized as
+-340w]0 : The term '-340w]0' is not recognized as
+-340w]0 : The term '-340w]0' is not recognized as
+-340w]0 : The term '-340w]0' is not recognized as
+-340w]0 : The term '-340w]0' is not recognized as
+-340w]0 : The term '-340w]0' is not recognized as
+-340w]0 : The term '-340w]0' is not recognized as
+-340w]0 : The term '-340w]0' is not recognized as
+-340w]0 : The term '-340w]0' is not recognized as
+-340w]0 : The term '-340w]0' is not recognized as
+-340w]0 : The term '-340w]0' is not recognized as
+-340w]0 : The term '-340w]0' is not recognized as
+-340w]0 : The term '-340w]0' is not recognized as
+-340w]0 : The term '-340w]0' is not recognized as
+-340w]0 : The term '-340w]0' is not recognized as
+-340w]0 : The term '-340w]0' is not recognized as
+-340w]0 : The term '-340w]0' is not recognized as
+-340w]0 : The term '-340w]0' is not recognized as
+-340w]0 : The term '-340w]0' is not recognized as
+-340w]0 : The term '-340w]0' is not recognized as
+-340w]0 : The term '-340w]0' is not recognized as
+-340w]0 : The term '-340w]0' is not recognized as
+-340w]0 : The term '-340w]0' is not recognized as
+-340w]0 : The term '-340w]0' is not recognized as
+-340w]0 : The term '-340w]0' is not recognized as
+-340w]0 : The term '-340w]0' is not recognized as
+-340w]0 : The term '-340w]0' is not recognized as
+-340w]0 : The term '-340w]0' is not recognized as
+-340w]0 : The term '-340w]0' is not recognized as
+-340w]0 : The term '-340w]0' is not recognized as
+-340w]0 : The term '-340w]0' is not recognized as
+-340w]0 : The term '-340w]0' is not recognized as
+-340w]0 : The term '-340w]0' is not recognized as
+-340w]0 : The term '-340w]0' is not recognized as
+-340w]0 : The term '-340w]0' is not recognized as
+-340w]0 : The term '-340w]0' is not recognized as
+-340w]0 : The term '-340w]0' is not recognized as
+-340w]0 : The term '-340w]0' is not recognized as
+-340w]0 : The term '-340w]0' is not recognized as
+-340w]0 : The term '-340w]0' is not recognized as
+-340w]0 : The term '-340w]0' is not recognized as
+-340w]0 : The term '-340w]0' is not recognized as
+-340w]0 : The term '-340w]0' is not recognized as
+-340w]0 : The term '-340w]0' is not recognized as
+-340w]0 : The term '-340w]0' is not recognized as
+-340w]0 : The term '-340w]0' is not recognized as
+-340w]0 : The te-340w]0 : The term '-340w]0' is not recognized as
+the name of a cmdlet, function, script file, or op
+erable program. Check the spelling of the name, or
+ if a path was included, verify that the path is c
+orrect and try again.
+At line:1 char:1
++ -340w]0
++ ~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (-3
+   40w]0:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundExce
+   ption
+
+[38;2;243;174;53m[0m[48;2;243;174;53m[38;2;38;43;68m Surface [0m[38;2;243;174;53m[0m[0m[38;2;240;118;35;49m[7m[0m[48;2;240;118;35m[38;2;224;222;244m  ]8;;file:C:/Users/Surface/OneDrive/SIRENSSD\SIRENSSD]8;;\ [0m[48;2;243;174;53m[38;2;240;118;35m[0m[48;2;243;174;53m[38;2;38;43;68m ]8;;https://github.com/nomadsomni/aspen_codes.git\ ]8;;\ 888.000.555 ≡  ?35 ~2 -1 [0m[38;2;243;174;53m[0m[0m[38;2;216;30;91;49m[7m[0m[48;2;216;30;91m[38;2;224;222;244m  [0m[38;2;216;30;91m[0m]0;pwsh in SIRENSSD
+PS>]-W0]-w0]
+] : The term ']' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelli
+ng of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:1
++ ]-W0]-w0]
++ ~
+    + CategoryInfo          : ObjectNotFound: (]:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+] : The term ']' is not recognized as the name of
+a cmdlet, function, script file, or operable progr
+am. Check the spelling of the name, or if a path w
+as included, verify that the path is correct and t
+ry again.
+At line:1 char:1
++ ]-W0]-w0]
++ ~
+    + CategoryInfo          : ObjectNotFound: (]:
+   String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundExce
+   ption
+
+[38;2;243;174;53m[0m[48;2;243;174;53m[38;2;38;43;68m Surface [0m[38;2;243;174;53m[0m[0m[38;2;240;118;35;49m[7m[0m[48;2;240;118;35m[38;2;224;222;244m  ]8;;file:C:/Users/Surface/OneDrive/SIRENSSD\SIRENSSD]8;;\ [0m[48;2;243;174;53m[38;2;240;118;35m[0m[48;2;243;174;53m[38;2;38;43;68m ]8;;https://github.com/nomadsomni/aspen_codes.git\ ]8;;\ 888.000.555 ≡  ?35 ~2 -1 [0m[38;2;243;174;53m[0m[0m[38;2;216;30;91;49m[7m[0m[48;2;216;30;91m[38;2;224;222;244m  [0m[38;2;216;30;91m[0m]0;pwsh in SIRENSSD
+PS>W-03
+W-03 : The term 'W-03' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the 
+spelling of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:1
++ W-03
++ ~~~~
+    + CategoryInfo          : ObjectNotFound: (W-03:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+W-03 : The term 'W-03' is not recognized as the na
+me of a cmdlet, function, script file, or operable
+ program. Check the spelling of the name, or if a
+path was included, verify that the path is correct
+ and try again.
+At line:1 char:1
++ W-03
++ ~~~~
+    + CategoryInfo          : ObjectNotFound: (W-
+   03:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundExce
+   ption
+
+[38;2;243;174;53m[0m[48;2;243;174;53m[38;2;38;43;68m Surface [0m[38;2;243;174;53m[0m[0m[38;2;240;118;35;49m[7m[0m[48;2;240;118;35m[38;2;224;222;244m  ]8;;file:C:/Users/Surface/OneDrive/SIRENSSD\SIRENSSD]8;;\ [0m[48;2;243;174;53m[38;2;240;118;35m[0m[48;2;243;174;53m[38;2;38;43;68m ]8;;https://github.com/nomadsomni/aspen_codes.git\ ]8;;\ 888.000.555 ≡  ?35 ~2 -1 [0m[38;2;243;174;53m[0m[0m[38;2;216;30;91;49m[7m[0m[48;2;216;30;91m[38;2;224;222;244m  [0m[38;2;216;30;91m[0m]0;pwsh in SIRENSSD
+PS>]-0]
+] : The term ']' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelli
+ng of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:1
++ ]-0]
++ ~
+    + CategoryInfo          : ObjectNotFound: (]:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+] : The term ']' is not recognized as the name of
+a cmdlet, function, script file, or operable progr
+am. Check the spelling of the name, or if a path w
+as included, verify that the path is correct and t
+ry again.
+At line:1 char:1
++ ]-0]
++ ~
+    + CategoryInfo          : ObjectNotFound: (]:
+   String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundExce
+   ption
+
+[38;2;243;174;53m[0m[48;2;243;174;53m[38;2;38;43;68m Surface [0m[38;2;243;174;53m[0m[0m[38;2;240;118;35;49m[7m[0m[48;2;240;118;35m[38;2;224;222;244m  ]8;;file:C:/Users/Surface/OneDrive/SIRENSSD\SIRENSSD]8;;\ [0m[48;2;243;174;53m[38;2;240;118;35m[0m[48;2;243;174;53m[38;2;38;43;68m ]8;;https://github.com/nomadsomni/aspen_codes.git\ ]8;;\ 888.000.555 ≡  ?35 ~2 -1 [0m[38;2;243;174;53m[0m[0m[38;2;216;30;91;49m[7m[0m[48;2;216;30;91m[38;2;224;222;244m  [0m[38;2;216;30;91m[0m]0;pwsh in SIRENSSD
+PS>-0]
+At line:1 char:3
++ -0]
++   ~
+Unexpected token ']' in expression or statement.
+At line:1 char:3
++ -0]
++   ~
+Unexpected token ']' in expression or statement.
+    + CategoryInfo          : ParserError: (:) []
+   , ParentContainsErrorRecordException
+    + FullyQualifiedErrorId : UnexpectedToken
+
+Select-Object : Property "InvocationInfo" cannot be found.
+At line:218 char:64
++ ... bject { $_ -ne $null } | Select-Object -ExpandProperty InvocationInfo
++                              ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (System.Manageme...ptions options):PSObject) [Select-Object], PSArgumentE
+xception
+    + FullyQualifiedErrorId : ExpandPropertyNotFound,Microsoft.PowerShell.Commands.SelectObjectCommand
+[38;2;243;174;53m[0m[48;2;243;174;53m[38;2;38;43;68m Surface [0m[38;2;243;174;53m[0m[0m[38;2;240;118;35;49m[7m[0m[48;2;240;118;35m[38;2;224;222;244m  ]8;;file:C:/Users/Surface/OneDrive/SIRENSSD\SIRENSSD]8;;\ [0m[48;2;243;174;53m[38;2;240;118;35m[0m[48;2;243;174;53m[38;2;38;43;68m ]8;;https://github.com/nomadsomni/aspen_codes.git\ ]8;;\ 888.000.555 ≡  ?35 ~2 -1 [0m[38;2;243;174;53m[0m[0m[38;2;216;30;91;49m[7m[0m[48;2;216;30;91m[38;2;224;222;244m  [0m[38;2;216;30;91m[0m]0;pwsh in SIRENSSD
+PS>-0
+0
+[38;2;243;174;53m[0m[48;2;243;174;53m[38;2;38;43;68m Surface [0m[38;2;243;174;53m[0m[0m[38;2;240;118;35;49m[7m[0m[48;2;240;118;35m[38;2;224;222;244m  ]8;;file:C:/Users/Surface/OneDrive/SIRENSSD\SIRENSSD]8;;\ [0m[48;2;243;174;53m[38;2;240;118;35m[0m[48;2;243;174;53m[38;2;38;43;68m ]8;;https://github.com/nomadsomni/aspen_codes.git\ ]8;;\ 888.000.555 ≡  ?35 ~2 -1 [0m[38;2;243;174;53m[0m[0m[38;2;75;149;233;49m[7m[0m[48;2;75;149;233m[38;2;224;222;244m  [0m[38;2;75;149;233m[0m]0;pwsh in SIRENSSD
+PS>]-0]-0]
+] : The term ']' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelli
+ng of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:1
++ ]-0]-0]
++ ~
+    + CategoryInfo          : ObjectNotFound: (]:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+] : The term ']' is not recognized as the name of
+a cmdlet, function, script file, or operable progr
+am. Check the spelling of the name, or if a path w
+as included, verify that the path is correct and t
+ry again.
+At line:1 char:1
++ ]-0]-0]
++ ~
+    + CategoryInfo          : ObjectNotFound: (]:
+   String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundExce
+   ption
+
+[38;2;243;174;53m[0m[48;2;243;174;53m[38;2;38;43;68m Surface [0m[38;2;243;174;53m[0m[0m[38;2;240;118;35;49m[7m[0m[48;2;240;118;35m[38;2;224;222;244m  ]8;;file:C:/Users/Surface/OneDrive/SIRENSSD\SIRENSSD]8;;\ [0m[48;2;243;174;53m[38;2;240;118;35m[0m[48;2;243;174;53m[38;2;38;43;68m ]8;;https://github.com/nomadsomni/aspen_codes.git\ ]8;;\ 888.000.555 ≡  ?35 ~2 -1 [0m[38;2;243;174;53m[0m[0m[38;2;216;30;91;49m[7m[0m[48;2;216;30;91m[38;2;224;222;244m  [0m[38;2;216;30;91m[0m]0;pwsh in SIRENSSD
+PS>-0]
+At line:1 char:3
++ -0]
++   ~
+Unexpected token ']' in expression or statement.
+At line:1 char:3
++ -0]
++   ~
+Unexpected token ']' in expression or statement.
+    + CategoryInfo          : ParserError: (:) []
+   , ParentContainsErrorRecordException
+    + FullyQualifiedErrorId : UnexpectedToken
+
+Select-Object : Property "InvocationInfo" cannot be found.
+At line:218 char:64
++ ... bject { $_ -ne $null } | Select-Object -ExpandProperty InvocationInfo
++                              ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (System.Manageme...ptions options):PSObject) [Select-Object], PSArgumentE
+xception
+    + FullyQualifiedErrorId : ExpandPropertyNotFound,Microsoft.PowerShell.Commands.SelectObjectCommand
+[38;2;243;174;53m[0m[48;2;243;174;53m[38;2;38;43;68m Surface [0m[38;2;243;174;53m[0m[0m[38;2;240;118;35;49m[7m[0m[48;2;240;118;35m[38;2;224;222;244m  ]8;;file:C:/Users/Surface/OneDrive/SIRENSSD\SIRENSSD]8;;\ [0m[48;2;243;174;53m[38;2;240;118;35m[0m[48;2;243;174;53m[38;2;38;43;68m ]8;;https://github.com/nomadsomni/aspen_codes.git\ ]8;;\ 888.000.555 ≡  ?35 ~2 -1 [0m[38;2;243;174;53m[0m[0m[38;2;216;30;91;49m[7m[0m[48;2;216;30;91m[38;2;224;222;244m  [0m[38;2;216;30;91m[0m]0;pwsh in SIRENSSD
+PS>-0
+0
+[38;2;243;174;53m[0m[48;2;243;174;53m[38;2;38;43;68m Surface [0m[38;2;243;174;53m[0m[0m[38;2;240;118;35;49m[7m[0m[48;2;240;118;35m[38;2;224;222;244m  ]8;;file:C:/Users/Surface/OneDrive/SIRENSSD\SIRENSSD]8;;\ [0m[48;2;243;174;53m[38;2;240;118;35m[0m[48;2;243;174;53m[38;2;38;43;68m ]8;;https://github.com/nomadsomni/aspen_codes.git\ ]8;;\ 888.000.555 ≡  ?35 ~2 -1 [0m[38;2;243;174;53m[0m[0m[38;2;75;149;233;49m[7m[0m[48;2;75;149;233m[38;2;224;222;244m  [0m[38;2;75;149;233m[0m]0;pwsh in SIRENSSD
+PS>w]-30W0
+w]-30W0 : The term 'w]-30W0' is not recognized as the name of a cmdlet, function, script file, or operable program. Chec
+k the spelling of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:1
++ w]-30W0
++ ~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (w]-30W0:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+w]-30W0 : The term 'w]-30W0' is not recognized as
+the name of a cmdlet, function, script file, or op
+erable program. Check the spelling of the name, or
+ if a path was included, verify that the path is c
+orrect and try again.
+At line:1 char:1
++ w]-30W0
++ ~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (w]
+   -30W0:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundExce
+   ption
+
+[38;2;243;174;53m[0m[48;2;243;174;53m[38;2;38;43;68m Surface [0m[38;2;243;174;53m[0m[0m[38;2;240;118;35;49m[7m[0m[48;2;240;118;35m[38;2;224;222;244m  ]8;;file:C:/Users/Surface/OneDrive/SIRENSSD\SIRENSSD]8;;\ [0m[48;2;243;174;53m[38;2;240;118;35m[0m[48;2;243;174;53m[38;2;38;43;68m ]8;;https://github.com/nomadsomni/aspen_codes.git\ ]8;;\ 888.000.555 ≡  ?35 ~2 -1 [0m[38;2;243;174;53m[0m[0m[38;2;216;30;91;49m[7m[0m[48;2;216;30;91m[38;2;224;222;244m  [0m[38;2;216;30;91m[0m]0;pwsh in SIRENSSD
+PS>]-0
+] : The term ']' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelli
+ng of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:1
++ ]-0
++ ~
+    + CategoryInfo          : ObjectNotFound: (]:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+] : The term ']' is not recognized as the name of
+a cmdlet, function, script file, or operable progr
+am. Check the spelling of the name, or if a path w
+as included, verify that the path is correct and t
+ry again.
+At line:1 char:1
++ ]-0
++ ~
+    + CategoryInfo          : ObjectNotFound: (]:
+   String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundExce
+   ption
+
+[38;2;243;174;53m[0m[48;2;243;174;53m[38;2;38;43;68m Surface [0m[38;2;243;174;53m[0m[0m[38;2;240;118;35;49m[7m[0m[48;2;240;118;35m[38;2;224;222;244m  ]8;;file:C:/Users/Surface/OneDrive/SIRENSSD\SIRENSSD]8;;\ [0m[48;2;243;174;53m[38;2;240;118;35m[0m[48;2;243;174;53m[38;2;38;43;68m ]8;;https://github.com/nomadsomni/aspen_codes.git\ ]8;;\ 888.000.555 ≡  ?35 ~2 -1 [0m[38;2;243;174;53m[0m[0m[38;2;216;30;91;49m[7m[0m[48;2;216;30;91m[38;2;224;222;244m  [0m[38;2;216;30;91m[0m]0;pwsh in SIRENSSD
+PS>]w-
+] : The term ']' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelli
+ng of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:1
++ ]w-
++ ~
+    + CategoryInfo          : ObjectNotFound: (]:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+] : The term ']' is not recognized as the name of
+a cmdlet, function, script file, or operable progr
+am. Check the spelling of the name, or if a path w
+as included, verify that the path is correct and t
+ry again.
+At line:1 char:1
++ ]w-
++ ~
+    + CategoryInfo          : ObjectNotFound: (]:
+   String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundExce
+   ption
+
+[38;2;243;174;53m[0m[48;2;243;174;53m[38;2;38;43;68m Surface [0m[38;2;243;174;53m[0m[0m[38;2;240;118;35;49m[7m[0m[48;2;240;118;35m[38;2;224;222;244m  ]8;;file:C:/Users/Surface/OneDrive/SIRENSSD\SIRENSSD]8;;\ [0m[48;2;243;174;53m[38;2;240;118;35m[0m[48;2;243;174;53m[38;2;38;43;68m ]8;;https://github.com/nomadsomni/aspen_codes.git\ ]8;;\ 888.000.555 ≡  ?35 ~2 -1 [0m[38;2;243;174;53m[0m[0m[38;2;216;30;91;49m[7m[0m[48;2;216;30;91m[38;2;224;222;244m  [0m[38;2;216;30;91m[0m]0;pwsh in SIRENSSD
+PS>]-0w-]]
+] : The term ']' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelli
+ng of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:1
++ ]-0w-]]
++ ~
+    + CategoryInfo          : ObjectNotFound: (]:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+] : The term ']' is not recognized as the name of
+a cmdlet, function, script file, or operable progr
+am. Check the spelling of the name, or if a path w
+as included, verify that the path is correct and t
+ry again.
+At line:1 char:1
++ ]-0w-]]
++ ~
+    + CategoryInfo          : ObjectNotFound: (]:
+   String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundExce
+   ption
+
+[38;2;243;174;53m[0m[48;2;243;174;53m[38;2;38;43;68m Surface [0m[38;2;243;174;53m[0m[0m[38;2;240;118;35;49m[7m[0m[48;2;240;118;35m[38;2;224;222;244m  ]8;;file:C:/Users/Surface/OneDrive/SIRENSSD\SIRENSSD]8;;\ [0m[48;2;243;174;53m[38;2;240;118;35m[0m[48;2;243;174;53m[38;2;38;43;68m ]8;;https://github.com/nomadsomni/aspen_codes.git\ ]8;;\ 888.000.555 ≡  ?35 ~2 -1 [0m[38;2;243;174;53m[0m[0m[38;2;216;30;91;49m[7m[0m[48;2;216;30;91m[38;2;224;222;244m  [0m[38;2;216;30;91m[0m]0;pwsh in SIRENSSD
+PS>-0]
+At line:1 char:3
++ -0]
++   ~
+Unexpected token ']' in expression or statement.
+At line:1 char:3
++ -0]
++   ~
+Unexpected token ']' in expression or statement.
+    + CategoryInfo          : ParserError: (:) []
+   , ParentContainsErrorRecordException
+    + FullyQualifiedErrorId : UnexpectedToken
+
+Select-Object : Property "InvocationInfo" cannot be found.
+At line:218 char:64
++ ... bject { $_ -ne $null } | Select-Object -ExpandProperty InvocationInfo
++                              ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (System.Manageme...ptions options):PSObject) [Select-Object], PSArgumentE
+xception
+    + FullyQualifiedErrorId : ExpandPropertyNotFound,Microsoft.PowerShell.Commands.SelectObjectCommand
+[38;2;243;174;53m[0m[48;2;243;174;53m[38;2;38;43;68m Surface [0m[38;2;243;174;53m[0m[0m[38;2;240;118;35;49m[7m[0m[48;2;240;118;35m[38;2;224;222;244m  ]8;;file:C:/Users/Surface/OneDrive/SIRENSSD\SIRENSSD]8;;\ [0m[48;2;243;174;53m[38;2;240;118;35m[0m[48;2;243;174;53m[38;2;38;43;68m ]8;;https://github.com/nomadsomni/aspen_codes.git\ ]8;;\ 888.000.555 ≡  ?35 ~2 -1 [0m[38;2;243;174;53m[0m[0m[38;2;216;30;91;49m[7m[0m[48;2;216;30;91m[38;2;224;222;244m  [0m[38;2;216;30;91m[0m]0;pwsh in SIRENSSD
+PS>w0]W
+w0]W : The term 'w0]W' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the 
+spelling of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:1
++ w0]W
++ ~~~~
+    + CategoryInfo          : ObjectNotFound: (w0]W:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+w0]W : The term 'w0]W' is not recognized as the na
+me of a cmdlet, function, script file, or operable
+ program. Check the spelling of the name, or if a
+path was included, verify that the path is correct
+ and try again.
+At line:1 char:1
++ w0]W
++ ~~~~
+    + CategoryInfo          : ObjectNotFound: (w0
+   ]W:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundExce
+   ption
+
+[38;2;243;174;53m[0m[48;2;243;174;53m[38;2;38;43;68m Surface [0m[38;2;243;174;53m[0m[0m[38;2;240;118;35;49m[7m[0m[48;2;240;118;35m[38;2;224;222;244m  ]8;;file:C:/Users/Surface/OneDrive/SIRENSSD\SIRENSSD]8;;\ [0m[48;2;243;174;53m[38;2;240;118;35m[0m[48;2;243;174;53m[38;2;38;43;68m ]8;;https://github.com/nomadsomni/aspen_codes.git\ ]8;;\ 888.000.555 ≡  ?35 ~2 -1 [0m[38;2;243;174;53m[0m[0m[38;2;216;30;91;49m[7m[0m[48;2;216;30;91m[38;2;224;222;244m  [0m[38;2;216;30;91m[0m]0;pwsh in SIRENSSD
+PS>]-0w
+] : The term ']' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelli
+ng of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:1
++ ]-0w
++ ~
+    + CategoryInfo          : ObjectNotFound: (]:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+] : The term ']' is not recognized as the name of
+a cmdlet, function, script file, or operable progr
+am. Check the spelling of the name, or if a path w
+as included, verify that the path is correct and t
+ry again.
+At line:1 char:1
++ ]-0w
++ ~
+    + CategoryInfo          : ObjectNotFound: (]:
+   String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundExce
+   ption
+
+[38;2;243;174;53m[0m[48;2;243;174;53m[38;2;38;43;68m Surface [0m[38;2;243;174;53m[0m[0m[38;2;240;118;35;49m[7m[0m[48;2;240;118;35m[38;2;224;222;244m  ]8;;file:C:/Users/Surface/OneDrive/SIRENSSD\SIRENSSD]8;;\ [0m[48;2;243;174;53m[38;2;240;118;35m[0m[48;2;243;174;53m[38;2;38;43;68m ]8;;https://github.com/nomadsomni/aspen_codes.git\ ]8;;\ 888.000.555 ≡  ?35 ~2 -1 [0m[38;2;243;174;53m[0m[0m[38;2;216;30;91;49m[7m[0m[48;2;216;30;91m[38;2;224;222;244m  [0m[38;2;216;30;91m[0m]0;pwsh in SIRENSSD
+PS>-0]
+At line:1 char:3
++ -0]
++   ~
+Unexpected token ']' in expression or statement.
+At line:1 char:3
++ -0]
++   ~
+Unexpected token ']' in expression or statement.
+    + CategoryInfo          : ParserError: (:) []
+   , ParentContainsErrorRecordException
+    + FullyQualifiedErrorId : UnexpectedToken
+
+Select-Object : Property "InvocationInfo" cannot be found.
+At line:218 char:64
++ ... bject { $_ -ne $null } | Select-Object -ExpandProperty InvocationInfo
++                              ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (System.Manageme...ptions options):PSObject) [Select-Object], PSArgumentE
+xception
+    + FullyQualifiedErrorId : ExpandPropertyNotFound,Microsoft.PowerShell.Commands.SelectObjectCommand
+[38;2;243;174;53m[0m[48;2;243;174;53m[38;2;38;43;68m Surface [0m[38;2;243;174;53m[0m[0m[38;2;240;118;35;49m[7m[0m[48;2;240;118;35m[38;2;224;222;244m  ]8;;file:C:/Users/Surface/OneDrive/SIRENSSD\SIRENSSD]8;;\ [0m[48;2;243;174;53m[38;2;240;118;35m[0m[48;2;243;174;53m[38;2;38;43;68m ]8;;https://github.com/nomadsomni/aspen_codes.git\ ]8;;\ 888.000.555 ≡  ?35 ~2 -1 [0m[38;2;243;174;53m[0m[0m[38;2;216;30;91;49m[7m[0m[48;2;216;30;91m[38;2;224;222;244m  [0m[38;2;216;30;91m[0m]0;pwsh in SIRENSSD
+PS>w03
+w03 : The term 'w03' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the sp
+elling of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:1
++ w03
++ ~~~
+    + CategoryInfo          : ObjectNotFound: (w03:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+w03 : The term 'w03' is not recognized as the name
+ of a cmdlet, function, script file, or operable p
+rogram. Check the spelling of the name, or if a pa
+th was included, verify that the path is correct a
+nd try again.
+At line:1 char:1
++ w03
++ ~~~
+    + CategoryInfo          : ObjectNotFound: (w0
+   3:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundExce
+   ption
+
+[38;2;243;174;53m[0m[48;2;243;174;53m[38;2;38;43;68m Surface [0m[38;2;243;174;53m[0m[0m[38;2;240;118;35;49m[7m[0m[48;2;240;118;35m[38;2;224;222;244m  ]8;;file:C:/Users/Surface/OneDrive/SIRENSSD\SIRENSSD]8;;\ [0m[48;2;243;174;53m[38;2;240;118;35m[0m[48;2;243;174;53m[38;2;38;43;68m ]8;;https://github.com/nomadsomni/aspen_codes.git\ ]8;;\ 888.000.555 ≡  ?35 ~2 -1 [0m[38;2;243;174;53m[0m[0m[38;2;216;30;91;49m[7m[0m[48;2;216;30;91m[38;2;224;222;244m  [0m[38;2;216;30;91m[0m]0;pwsh in SIRENSSD
+PS>]-]
+] : The term ']' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelli
+ng of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:1
++ ]-]
++ ~
+    + CategoryInfo          : ObjectNotFound: (]:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+] : The term ']' is not recognized as the name of
+a cmdlet, function, script file, or operable progr
+am. Check the spelling of the name, or if a path w
+as included, verify that the path is correct and t
+ry again.
+At line:1 char:1
++ ]-]
++ ~
+    + CategoryInfo          : ObjectNotFound: (]:
+   String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundExce
+   ption
+
+[38;2;243;174;53m[0m[48;2;243;174;53m[38;2;38;43;68m Surface [0m[38;2;243;174;53m[0m[0m[38;2;240;118;35;49m[7m[0m[48;2;240;118;35m[38;2;224;222;244m  ]8;;file:C:/Users/Surface/OneDrive/SIRENSSD\SIRENSSD]8;;\ [0m[48;2;243;174;53m[38;2;240;118;35m[0m[48;2;243;174;53m[38;2;38;43;68m ]8;;https://github.com/nomadsomni/aspen_codes.git\ ]8;;\ 888.000.555 ≡  ?35 ~2 -1 [0m[38;2;243;174;53m[0m[0m[38;2;216;30;91;49m[7m[0m[48;2;216;30;91m[38;2;224;222;244m  [0m[38;2;216;30;91m[0m]0;pwsh in SIRENSSD
+PS>-03
+-3
+[38;2;243;174;53m[0m[48;2;243;174;53m[38;2;38;43;68m Surface [0m[38;2;243;174;53m[0m[0m[38;2;240;118;35;49m[7m[0m[48;2;240;118;35m[38;2;224;222;244m  ]8;;file:C:/Users/Surface/OneDrive/SIRENSSD\SIRENSSD]8;;\ [0m[48;2;243;174;53m[38;2;240;118;35m[0m[48;2;243;174;53m[38;2;38;43;68m ]8;;https://github.com/nomadsomni/aspen_codes.git\ ]8;;\ 888.000.555 ≡  ?35 ~2 -1 [0m[38;2;243;174;53m[0m[0m[38;2;75;149;233;49m[7m[0m[48;2;75;149;233m[38;2;224;222;244m  [0m[38;2;75;149;233m[0m]0;pwsh in SIRENSSD
+PS>]W0-3]-
+] : The term ']' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelli
+ng of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:1
++ ]W0-3]-
++ ~
+    + CategoryInfo          : ObjectNotFound: (]:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+] : The term ']' is not recognized as the name of
+a cmdlet, function, script file, or operable progr
+am. Check the spelling of the name, or if a path w
+as included, verify that the path is correct and t
+ry again.
+At line:1 char:1
++ ]W0-3]-
++ ~
+    + CategoryInfo          : ObjectNotFound: (]:
+   String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundExce
+   ption
+
+[38;2;243;174;53m[0m[48;2;243;174;53m[38;2;38;43;68m Surface [0m[38;2;243;174;53m[0m[0m[38;2;240;118;35;49m[7m[0m[48;2;240;118;35m[38;2;224;222;244m  ]8;;file:C:/Users/Surface/OneDrive/SIRENSSD\SIRENSSD]8;;\ [0m[48;2;243;174;53m[38;2;240;118;35m[0m[48;2;243;174;53m[38;2;38;43;68m ]8;;https://github.com/nomadsomni/aspen_codes.git\ ]8;;\ 888.000.555 ≡  ?35 ~2 -1 [0m[38;2;243;174;53m[0m[0m[38;2;216;30;91;49m[7m[0m[48;2;216;30;91m[38;2;224;222;244m  [0m[38;2;216;30;91m[0m]0;pwsh in SIRENSSD
+PS>0
+0
+[38;2;243;174;53m[0m[48;2;243;174;53m[38;2;38;43;68m Surface [0m[38;2;243;174;53m[0m[0m[38;2;240;118;35;49m[7m[0m[48;2;240;118;35m[38;2;224;222;244m  ]8;;file:C:/Users/Surface/OneDrive/SIRENSSD\SIRENSSD]8;;\ [0m[48;2;243;174;53m[38;2;240;118;35m[0m[48;2;243;174;53m[38;2;38;43;68m ]8;;https://github.com/nomadsomni/aspen_codes.git\ ]8;;\ 888.000.555 ≡  ?35 ~2 -1 [0m[38;2;243;174;53m[0m[0m[38;2;75;149;233;49m[7m[0m[48;2;75;149;233m[38;2;224;222;244m  [0m[38;2;75;149;233m[0m]0;pwsh in SIRENSSD
+PS>]-0]-
+] : The term ']' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelli
+ng of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:1
++ ]-0]-
++ ~
+    + CategoryInfo          : ObjectNotFound: (]:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+] : The term ']' is not recognized as the name of
+a cmdlet, function, script file, or operable progr
+am. Check the spelling of the name, or if a path w
+as included, verify that the path is correct and t
+ry again.
+At line:1 char:1
++ ]-0]-
++ ~
+    + CategoryInfo          : ObjectNotFound: (]:
+   String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundExce
+   ption
+
+[38;2;243;174;53m[0m[48;2;243;174;53m[38;2;38;43;68m Surface [0m[38;2;243;174;53m[0m[0m[38;2;240;118;35;49m[7m[0m[48;2;240;118;35m[38;2;224;222;244m  ]8;;file:C:/Users/Surface/OneDrive/SIRENSSD\SIRENSSD]8;;\ [0m[48;2;243;174;53m[38;2;240;118;35m[0m[48;2;243;174;53m[38;2;38;43;68m ]8;;https://github.com/nomadsomni/aspen_codes.git\ ]8;;\ 888.000.555 ≡  ?35 ~2 -1 [0m[38;2;243;174;53m[0m[0m[38;2;216;30;91;49m[7m[0m[48;2;216;30;91m[38;2;224;222;244m  [0m[38;2;216;30;91m[0m]0;pwsh in SIRENSSD
+PS>W030
+W030 : The term 'W030' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the 
+spelling of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:1
++ W030
++ ~~~~
+    + CategoryInfo          : ObjectNotFound: (W030:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+W030 : The term 'W030' is not recognized as the na
+me of a cmdlet, function, script file, or operable
+ program. Check the spelling of the name, or if a
+path was included, verify that the path is correct
+ and try again.
+At line:1 char:1
++ W030
++ ~~~~
+    + CategoryInfo          : ObjectNotFound: (W0
+   30:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundExce
+   ption
+
+[38;2;243;174;53m[0m[48;2;243;174;53m[38;2;38;43;68m Surface [0m[38;2;243;174;53m[0m[0m[38;2;240;118;35;49m[7m[0m[48;2;240;118;35m[38;2;224;222;244m  ]8;;file:C:/Users/Surface/OneDrive/SIRENSSD\SIRENSSD]8;;\ [0m[48;2;243;174;53m[38;2;240;118;35m[0m[48;2;243;174;53m[38;2;38;43;68m ]8;;https://github.com/nomadsomni/aspen_codes.git\ ]8;;\ 888.000.555 ≡  ?35 ~2 -1 [0m[38;2;243;174;53m[0m[0m[38;2;216;30;91;49m[7m[0m[48;2;216;30;91m[38;2;224;222;244m  [0m[38;2;216;30;91m[0m]0;pwsh in SIRENSSD
+PS>]-0w
+] : The term ']' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelli
+ng of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:1
++ ]-0w
++ ~
+    + CategoryInfo          : ObjectNotFound: (]:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+] : The term ']' is not recognized as the name of
+a cmdlet, function, script file, or operable progr
+am. Check the spelling of the name, or if a path w
+as included, verify that the path is correct and t
+ry again.
+At line:1 char:1
++ ]-0w
++ ~
+    + CategoryInfo          : ObjectNotFound: (]:
+   String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundExce
+   ption
+
+[38;2;243;174;53m[0m[48;2;243;174;53m[38;2;38;43;68m Surface [0m[38;2;243;174;53m[0m[0m[38;2;240;118;35;49m[7m[0m[48;2;240;118;35m[38;2;224;222;244m  ]8;;file:C:/Users/Surface/OneDrive/SIRENSSD\SIRENSSD]8;;\ [0m[48;2;243;174;53m[38;2;240;118;35m[0m[48;2;243;174;53m[38;2;38;43;68m ]8;;https://github.com/nomadsomni/aspen_codes.git\ ]8;;\ 888.000.555 ≡  ?35 ~2 -1 [0m[38;2;243;174;53m[0m[0m[38;2;216;30;91;49m[7m[0m[48;2;216;30;91m[38;2;224;222;244m  [0m[38;2;216;30;91m[0m]0;pwsh in SIRENSSD
+PS>]-0]
+] : The term ']' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelli
+ng of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:1
++ ]-0]
++ ~
+    + CategoryInfo          : ObjectNotFound: (]:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+] : The term ']' is not recognized as the name of
+a cmdlet, function, script file, or operable progr
+am. Check the spelling of the name, or if a path w
+as included, verify that the path is correct and t
+ry again.
+At line:1 char:1
++ ]-0]
++ ~
+    + CategoryInfo          : ObjectNotFound: (]:
+   String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundExce
+   ption
+
+[38;2;243;174;53m[0m[48;2;243;174;53m[38;2;38;43;68m Surface [0m[38;2;243;174;53m[0m[0m[38;2;240;118;35;49m[7m[0m[48;2;240;118;35m[38;2;224;222;244m  ]8;;file:C:/Users/Surface/OneDrive/SIRENSSD\SIRENSSD]8;;\ [0m[48;2;243;174;53m[38;2;240;118;35m[0m[48;2;243;174;53m[38;2;38;43;68m ]8;;https://github.com/nomadsomni/aspen_codes.git\ ]8;;\ 888.000.555 ≡  ?35 ~2 -1 [0m[38;2;243;174;53m[0m[0m[38;2;216;30;91;49m[7m[0m[48;2;216;30;91m[38;2;224;222;244m  [0m[38;2;216;30;91m[0m]0;pwsh in SIRENSSD
+PS>W-30]
+W-30] : The term 'W-30]' is not recognized as the name of a cmdlet, function, script file, or operable program. Check th
+e spelling of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:1
++ W-30]
++ ~~~~~
+    + CategoryInfo          : ObjectNotFound: (W-30]:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+W-30] : The term 'W-30]' is not recognized as the
+name of a cmdlet, function, script file, or operab
+le program. Check the spelling of the name, or if
+a path was included, verify that the path is corre
+ct and try again.
+At line:1 char:1
++ W-30]
++ ~~~~~
+    + CategoryInfo          : ObjectNotFound: (W-
+   30]:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundExce
+   ption
+
+[38;2;243;174;53m[0m[48;2;243;174;53m[38;2;38;43;68m Surface [0m[38;2;243;174;53m[0m[0m[38;2;240;118;35;49m[7m[0m[48;2;240;118;35m[38;2;224;222;244m  ]8;;file:C:/Users/Surface/OneDrive/SIRENSSD\SIRENSSD]8;;\ [0m[48;2;243;174;53m[38;2;240;118;35m[0m[48;2;243;174;53m[38;2;38;43;68m ]8;;https://github.com/nomadsomni/aspen_codes.git\ ]8;;\ 888.000.555 ≡  ?35 ~2 -1 [0m[38;2;243;174;53m[0m[0m[38;2;216;30;91;49m[7m[0m[48;2;216;30;91m[38;2;224;222;244m  [0m[38;2;216;30;91m[0m]0;pwsh in SIRENSSD
+PS>-0W
+-0W : The term '-0W' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the sp
+elling of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:1
++ -0W
++ ~~~
+    + CategoryInfo          : ObjectNotFound: (-0W:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+-0W : The term '-0W' is not recognized as the name
+ of a cmdlet, function, script file, or operable p
+rogram. Check the spelling of the name, or if a pa
+th was included, verify that the path is correct a
+nd try again.
+At line:1 char:1
++ -0W
++ ~~~
+    + CategoryInfo          : ObjectNotFound: (-0
+   W:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundExce
+   ption
+
+[38;2;243;174;53m[0m[48;2;243;174;53m[38;2;38;43;68m Surface [0m[38;2;243;174;53m[0m[0m[38;2;240;118;35;49m[7m[0m[48;2;240;118;35m[38;2;224;222;244m  ]8;;file:C:/Users/Surface/OneDrive/SIRENSSD\SIRENSSD]8;;\ [0m[48;2;243;174;53m[38;2;240;118;35m[0m[48;2;243;174;53m[38;2;38;43;68m ]8;;https://github.com/nomadsomni/aspen_codes.git\ ]8;;\ 888.000.555 ≡  ?35 ~2 -1 [0m[38;2;243;174;53m[0m[0m[38;2;216;30;91;49m[7m[0m[48;2;216;30;91m[38;2;224;222;244m  [0m[38;2;216;30;91m[0m]0;pwsh in SIRENSSD
+PS>]-40
+] : The term ']' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelli
+ng of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:1
++ ]-40
++ ~
+    + CategoryInfo          : ObjectNotFound: (]:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+] : The term ']' is not recognized as the name of
+a cmdlet, function, script file, or operable progr
+am. Check the spelling of the name, or if a path w
+as included, verify that the path is correct and t
+ry again.
+At line:1 char:1
++ ]-40
++ ~
+    + CategoryInfo          : ObjectNotFound: (]:
+   String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundExce
+   ption
+
+[38;2;243;174;53m[0m[48;2;243;174;53m[38;2;38;43;68m Surface [0m[38;2;243;174;53m[0m[0m[38;2;240;118;35;49m[7m[0m[48;2;240;118;35m[38;2;224;222;244m  ]8;;file:C:/Users/Surface/OneDrive/SIRENSSD\SIRENSSD]8;;\ [0m[48;2;243;174;53m[38;2;240;118;35m[0m[48;2;243;174;53m[38;2;38;43;68m ]8;;https://github.com/nomadsomni/aspen_codes.git\ ]8;;\ 888.000.555 ≡  ?35 ~2 -1 [0m[38;2;243;174;53m[0m[0m[38;2;216;30;91;49m[7m[0m[48;2;216;30;91m[38;2;224;222;244m  [0m[38;2;216;30;91m[0m]0;pwsh in SIRENSSD
+PS>]-0
+] : The term ']' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelli
+ng of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:1
++ ]-0
++ ~
+    + CategoryInfo          : ObjectNotFound: (]:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+] : The term ']' is not recognized as the name of
+a cmdlet, function, script file, or operable progr
+am. Check the spelling of the name, or if a path w
+as included, verify that the path is correct and t
+ry again.
+At line:1 char:1
++ ]-0
++ ~
+    + CategoryInfo          : ObjectNotFound: (]:
+   String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundExce
+   ption
+
+[38;2;243;174;53m[0m[48;2;243;174;53m[38;2;38;43;68m Surface [0m[38;2;243;174;53m[0m[0m[38;2;240;118;35;49m[7m[0m[48;2;240;118;35m[38;2;224;222;244m  ]8;;file:C:/Users/Surface/OneDrive/SIRENSSD\SIRENSSD]8;;\ [0m[48;2;243;174;53m[38;2;240;118;35m[0m[48;2;243;174;53m[38;2;38;43;68m ]8;;https://github.com/nomadsomni/aspen_codes.git\ ]8;;\ 888.000.555 ≡  ?35 ~2 -1 [0m[38;2;243;174;53m[0m[0m[38;2;216;30;91;49m[7m[0m[48;2;216;30;91m[38;2;224;222;244m  [0m[38;2;216;30;91m[0m]0;pwsh in SIRENSSD
+PS>]0
+] : The term ']' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelli
+ng of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:1
++ ]0
++ ~
+    + CategoryInfo          : ObjectNotFound: (]:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+] : The term ']' is not recognized as the name of
+a cmdlet, function, script file, or operable progr
+am. Check the spelling of the name, or if a path w
+as included, verify that the path is correct and t
+ry again.
+At line:1 char:1
++ ]0
++ ~
+    + CategoryInfo          : ObjectNotFound: (]:
+   String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundExce
+   ption
+
+[38;2;243;174;53m[0m[48;2;243;174;53m[38;2;38;43;68m Surface [0m[38;2;243;174;53m[0m[0m[38;2;240;118;35;49m[7m[0m[48;2;240;118;35m[38;2;224;222;244m  ]8;;file:C:/Users/Surface/OneDrive/SIRENSSD\SIRENSSD]8;;\ [0m[48;2;243;174;53m[38;2;240;118;35m[0m[48;2;243;174;53m[38;2;38;43;68m ]8;;https://github.com/nomadsomni/aspen_codes.git\ ]8;;\ 888.000.555 ≡  ?35 ~2 -1 [0m[38;2;243;174;53m[0m[0m[38;2;216;30;91;49m[7m[0m[48;2;216;30;91m[38;2;224;222;244m  [0m[38;2;216;30;91m[0m]0;pwsh in SIRENSSD
+PS>3]W]
+At line:1 char:2
++ 3]W]
++  ~
+Unexpected token ']' in expression or statement.
+At line:1 char:2
++ 3]W]
++  ~
+Unexpected token ']' in expression or statement.
+    + CategoryInfo          : ParserError: (:) []
+   , ParentContainsErrorRecordException
+    + FullyQualifiedErrorId : UnexpectedToken
+
+Select-Object : Property "InvocationInfo" cannot be found.
+At line:218 char:64
++ ... bject { $_ -ne $null } | Select-Object -ExpandProperty InvocationInfo
++                              ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (System.Manageme...ptions options):PSObject) [Select-Object], PSArgumentE
+xception
+    + FullyQualifiedErrorId : ExpandPropertyNotFound,Microsoft.PowerShell.Commands.SelectObjectCommand
+[38;2;243;174;53m[0m[48;2;243;174;53m[38;2;38;43;68m Surface [0m[38;2;243;174;53m[0m[0m[38;2;240;118;35;49m[7m[0m[48;2;240;118;35m[38;2;224;222;244m  ]8;;file:C:/Users/Surface/OneDrive/SIRENSSD\SIRENSSD]8;;\ [0m[48;2;243;174;53m[38;2;240;118;35m[0m[48;2;243;174;53m[38;2;38;43;68m ]8;;https://github.com/nomadsomni/aspen_codes.git\ ]8;;\ 888.000.555 ≡  ?35 ~2 -1 [0m[38;2;243;174;53m[0m[0m[38;2;216;30;91;49m[7m[0m[48;2;216;30;91m[38;2;224;222;244m  [0m[38;2;216;30;91m[0m]0;pwsh in SIRENSSD
+PS>-30]
+At line:1 char:4
++ -30]
++    ~
+Unexpected token ']' in expression or statement.
+At line:1 char:4
++ -30]
++    ~
+Unexpected token ']' in expression or statement.
+    + CategoryInfo          : ParserError: (:) []
+   , ParentContainsErrorRecordException
+    + FullyQualifiedErrorId : UnexpectedToken
+
+Select-Object : Property "InvocationInfo" cannot be found.
+At line:218 char:64
++ ... bject { $_ -ne $null } | Select-Object -ExpandProperty InvocationInfo
++                              ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (System.Manageme...ptions options):PSObject) [Select-Object], PSArgumentE
+xception
+    + FullyQualifiedErrorId : ExpandPropertyNotFound,Microsoft.PowerShell.Commands.SelectObjectCommand
+[38;2;243;174;53m[0m[48;2;243;174;53m[38;2;38;43;68m Surface [0m[38;2;243;174;53m[0m[0m[38;2;240;118;35;49m[7m[0m[48;2;240;118;35m[38;2;224;222;244m  ]8;;file:C:/Users/Surface/OneDrive/SIRENSSD\SIRENSSD]8;;\ [0m[48;2;243;174;53m[38;2;240;118;35m[0m[48;2;243;174;53m[38;2;38;43;68m ]8;;https://github.com/nomadsomni/aspen_codes.git\ ]8;;\ 888.000.555 ≡  ?35 ~2 -1 [0m[38;2;243;174;53m[0m[0m[38;2;216;30;91;49m[7m[0m[48;2;216;30;91m[38;2;224;222;244m  [0m[38;2;216;30;91m[0m]0;pwsh in SIRENSSD
+PS>-w0]
+-w0] : The term '-w0]' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the 
+spelling of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:1
++ -w0]
++ ~~~~
+    + CategoryInfo          : ObjectNotFound: (-w0]:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+-w0] : The term '-w0]' is not recognized as the na
+me of a cmdlet, function, script file, or operable
+ program. Check the spelling of the name, or if a
+path was included, verify that the path is correct
+ and try again.
+At line:1 char:1
++ -w0]
++ ~~~~
+    + CategoryInfo          : ObjectNotFound: (-w
+   0]:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundExce
+   ption
+
+[38;2;243;174;53m[0m[48;2;243;174;53m[38;2;38;43;68m Surface [0m[38;2;243;174;53m[0m[0m[38;2;240;118;35;49m[7m[0m[48;2;240;118;35m[38;2;224;222;244m  ]8;;file:C:/Users/Surface/OneDrive/SIRENSSD\SIRENSSD]8;;\ [0m[48;2;243;174;53m[38;2;240;118;35m[0m[48;2;243;174;53m[38;2;38;43;68m ]8;;https://github.com/nomadsomni/aspen_codes.git\ ]8;;\ 888.000.555 ≡  ?35 ~2 -1 [0m[38;2;243;174;53m[0m[0m[38;2;216;30;91;49m[7m[0m[48;2;216;30;91m[38;2;224;222;244m  [0m[38;2;216;30;91m[0m]0;pwsh in SIRENSSD
+PS>-W]-
+-W]- : The term '-W]-' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the 
+spelling of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:1
++ -W]-
++ ~~~~
+    + CategoryInfo          : ObjectNotFound: (-W]-:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+-W]- : The term '-W]-' is not recognized as the na
+me of a cmdlet, function, script file, or operable
+ program. Check the spelling of the name, or if a
+path was included, verify that the path is correct
+ and try again.
+At line:1 char:1
++ -W]-
++ ~~~~
+    + CategoryInfo          : ObjectNotFound: (-W
+   ]-:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundExce
+   ption
+
+[38;2;243;174;53m[0m[48;2;243;174;53m[38;2;38;43;68m Surface [0m[38;2;243;174;53m[0m[0m[38;2;240;118;35;49m[7m[0m[48;2;240;118;35m[38;2;224;222;244m  ]8;;file:C:/Users/Surface/OneDrive/SIRENSSD\SIRENSSD]8;;\ [0m[48;2;243;174;53m[38;2;240;118;35m[0m[48;2;243;174;53m[38;2;38;43;68m ]8;;https://github.com/nomadsomni/aspen_codes.git\ ]8;;\ 888.000.555 ≡  ?35 ~2 -1 [0m[38;2;243;174;53m[0m[0m[38;2;216;30;91;49m[7m[0m[48;2;216;30;91m[38;2;224;222;244m  [0m[38;2;216;30;91m[0m]0;pwsh in SIRENSSD
+PS>30w000
+30w000 : The term '30w000' is not recognized as the name of a cmdlet, function, script file, or operable program. Check 
+the spelling of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:1
++ 30w000
++ ~~~~~~
+    + CategoryInfo          : ObjectNotFound: (30w000:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+30w000 : The term '30w000' is not recognized as th
+e name of a cmdlet, function, script file, or oper
+able program. Check the spelling of the name, or i
+f a path was included, verify that the path is cor
+rect and try again.
+At line:1 char:1
++ 30w000
++ ~~~~~~
+    + CategoryInfo          : ObjectNotFound: (30
+   w000:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundExce
+   ption
+
+[38;2;243;174;53m[0m[48;2;243;174;53m[38;2;38;43;68m Surface [0m[38;2;243;174;53m[0m[0m[38;2;240;118;35;49m[7m[0m[48;2;240;118;35m[38;2;224;222;244m  ]8;;file:C:/Users/Surface/OneDrive/SIRENSSD\SIRENSSD]8;;\ [0m[48;2;243;174;53m[38;2;240;118;35m[0m[48;2;243;174;53m[38;2;38;43;68m ]8;;https://github.com/nomadsomni/aspen_codes.git\ ]8;;\ 888.000.555 ≡  ?35 ~2 -1 [0m[38;2;243;174;53m[0m[0m[38;2;216;30;91;49m[7m[0m[48;2;216;30;91m[38;2;224;222;244m  [0m[38;2;216;30;91m[0m]0;pwsh in SIRENSSD
+PS>00000000000000000000000000000000000000000000000000000000000000000000000000]]]]]]]]]]]]]]]]]]]]]]]]]]0
+At line:1 char:75
++ ... 000000000000000000000000000000000000000000000000000000000000]]]]]]]]] ...
++                                                                 ~
+Unexpected token ']' in expression or statement.
+At line:1 char:75
++ ... 00000000000000000000000000000000000000000000
+0000000000000000]]]]]]]]] ...
++
+                ~
+Unexpected token ']' in expression or statement.
+    + CategoryInfo          : ParserError: (:) []
+   , ParentContainsErrorRecordException
+    + FullyQualifiedErrorId : UnexpectedToken
+
+Select-Object : Property "InvocationInfo" cannot be found.
+At line:218 char:64
++ ... bject { $_ -ne $null } | Select-Object -ExpandProperty InvocationInfo
++                              ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (System.Manageme...ptions options):PSObject) [Select-Object], PSArgumentE
+xception
+    + FullyQualifiedErrorId : ExpandPropertyNotFound,Microsoft.PowerShell.Commands.SelectObjectCommand
+[38;2;243;174;53m[0m[48;2;243;174;53m[38;2;38;43;68m Surface [0m[38;2;243;174;53m[0m[0m[38;2;240;118;35;49m[7m[0m[48;2;240;118;35m[38;2;224;222;244m  ]8;;file:C:/Users/Surface/OneDrive/SIRENSSD\SIRENSSD]8;;\ [0m[48;2;243;174;53m[38;2;240;118;35m[0m[48;2;243;174;53m[38;2;38;43;68m ]8;;https://github.com/nomadsomni/aspen_codes.git\ ]8;;\ 888.000.555 ≡  ?35 ~2 -1 [0m[38;2;243;174;53m[0m[0m[38;2;216;30;91;49m[7m[0m[48;2;216;30;91m[38;2;224;222;244m  [0m[38;2;216;30;91m[0m]0;pwsh in SIRENSSD
+PS>]w-0
+] : The term ']' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelli
+ng of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:1
++ ]w-0
++ ~
+    + CategoryInfo          : ObjectNotFound: (]:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+] : The term ']' is not recognized as the name of
+a cmdlet, function, script file, or operable progr
+am. Check the spelling of the name, or if a path w
+as included, verify that the path is correct and t
+ry again.
+At line:1 char:1
++ ]w-0
++ ~
+    + CategoryInfo          : ObjectNotFound: (]:
+   String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundExce
+   ption
+
+[38;2;243;174;53m[0m[48;2;243;174;53m[38;2;38;43;68m Surface [0m[38;2;243;174;53m[0m[0m[38;2;240;118;35;49m[7m[0m[48;2;240;118;35m[38;2;224;222;244m  ]8;;file:C:/Users/Surface/OneDrive/SIRENSSD\SIRENSSD]8;;\ [0m[48;2;243;174;53m[38;2;240;118;35m[0m[48;2;243;174;53m[38;2;38;43;68m ]8;;https://github.com/nomadsomni/aspen_codes.git\ ]8;;\ 888.000.555 ≡  ?35 ~2 -1 [0m[38;2;243;174;53m[0m[0m[38;2;216;30;91;49m[7m[0m[48;2;216;30;91m[38;2;224;222;244m  [0m[38;2;216;30;91m[0m]0;pwsh in SIRENSSD
+PS>]-W0
+] : The term ']' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelli
+ng of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:1
++ ]-W0
++ ~
+    + CategoryInfo          : ObjectNotFound: (]:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+] : The term ']' is not recognized as the name of
+a cmdlet, function, script file, or operable progr
+am. Check the spelling of the name, or if a path w
+as included, verify that the path is correct and t
+ry again.
+At line:1 char:1
++ ]-W0
++ ~
+    + CategoryInfo          : ObjectNotFound: (]:
+   String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundExce
+   ption
+
+[38;2;243;174;53m[0m[48;2;243;174;53m[38;2;38;43;68m Surface [0m[38;2;243;174;53m[0m[0m[38;2;240;118;35;49m[7m[0m[48;2;240;118;35m[38;2;224;222;244m  ]8;;file:C:/Users/Surface/OneDrive/SIRENSSD\SIRENSSD]8;;\ [0m[48;2;243;174;53m[38;2;240;118;35m[0m[48;2;243;174;53m[38;2;38;43;68m ]8;;https://github.com/nomadsomni/aspen_codes.git\ ]8;;\ 888.000.555 ≡  ?35 ~2 -1 [0m[38;2;243;174;53m[0m[0m[38;2;216;30;91;49m[7m[0m[48;2;216;30;91m[38;2;224;222;244m  [0m[38;2;216;30;91m[0m]0;pwsh in SIRENSSD
+PS>]-w
+] : The term ']' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelli
+ng of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:1
++ ]-w
++ ~
+    + CategoryInfo          : ObjectNotFound: (]:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+] : The term ']' is not recognized as the name of
+a cmdlet, function, script file, or operable progr
+am. Check the spelling of the name, or if a path w
+as included, verify that the path is correct and t
+ry again.
+At line:1 char:1
++ ]-w
++ ~
+    + CategoryInfo          : ObjectNotFound: (]:
+   String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundExce
+   ption
+
+[38;2;243;174;53m[0m[48;2;243;174;53m[38;2;38;43;68m Surface [0m[38;2;243;174;53m[0m[0m[38;2;240;118;35;49m[7m[0m[48;2;240;118;35m[38;2;224;222;244m  ]8;;file:C:/Users/Surface/OneDrive/SIRENSSD\SIRENSSD]8;;\ [0m[48;2;243;174;53m[38;2;240;118;35m[0m[48;2;243;174;53m[38;2;38;43;68m ]8;;https://github.com/nomadsomni/aspen_codes.git\ ]8;;\ 888.000.555 ≡  ?35 ~2 -1 [0m[38;2;243;174;53m[0m[0m[38;2;216;30;91;49m[7m[0m[48;2;216;30;91m[38;2;224;222;244m  [0m[38;2;216;30;91m[0m]0;pwsh in SIRENSSD
+PS>]-0
+] : The term ']' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelli
+ng of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:1
++ ]-0
++ ~
+    + CategoryInfo          : ObjectNotFound: (]:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+] : The term ']' is not recognized as the name of
+a cmdlet, function, script file, or operable progr
+am. Check the spelling of the name, or if a path w
+as included, verify that the path is correct and t
+ry again.
+At line:1 char:1
++ ]-0
++ ~
+    + CategoryInfo          : ObjectNotFound: (]:
+   String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundExce
+   ption
+
+[38;2;243;174;53m[0m[48;2;243;174;53m[38;2;38;43;68m Surface [0m[38;2;243;174;53m[0m[0m[38;2;240;118;35;49m[7m[0m[48;2;240;118;35m[38;2;224;222;244m  ]8;;file:C:/Users/Surface/OneDrive/SIRENSSD\SIRENSSD]8;;\ [0m[48;2;243;174;53m[38;2;240;118;35m[0m[48;2;243;174;53m[38;2;38;43;68m ]8;;https://github.com/nomadsomni/aspen_codes.git\ ]8;;\ 888.000.555 ≡  ?35 ~2 -1 [0m[38;2;243;174;53m[0m[0m[38;2;216;30;91;49m[7m[0m[48;2;216;30;91m[38;2;224;222;244m  [0m[38;2;216;30;91m[0m]0;pwsh in SIRENSSD
+PS>]w-30]-
+] : The term ']' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelli
+ng of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:1
++ ]w-30]-
++ ~
+    + CategoryInfo          : ObjectNotFound: (]:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+] : The term ']' is not recognized as the name of
+a cmdlet, function, script file, or operable progr
+am. Check the spelling of the name, or if a path w
+as included, verify that the path is correct and t
+ry again.
+At line:1 char:1
++ ]w-30]-
++ ~
+    + CategoryInfo          : ObjectNotFound: (]:
+   String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundExce
+   ption
+
+[38;2;243;174;53m[0m[48;2;243;174;53m[38;2;38;43;68m Surface [0m[38;2;243;174;53m[0m[0m[38;2;240;118;35;49m[7m[0m[48;2;240;118;35m[38;2;224;222;244m  ]8;;file:C:/Users/Surface/OneDrive/SIRENSSD\SIRENSSD]8;;\ [0m[48;2;243;174;53m[38;2;240;118;35m[0m[48;2;243;174;53m[38;2;38;43;68m ]8;;https://github.com/nomadsomni/aspen_codes.git\ ]8;;\ 888.000.555 ≡  ?35 ~2 -1 [0m[38;2;243;174;53m[0m[0m[38;2;216;30;91;49m[7m[0m[48;2;216;30;91m[38;2;224;222;244m  [0m[38;2;216;30;91m[0m]0;pwsh in SIRENSSD
+PS>w0
+w0 : The term 'w0' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spel
+ling of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:1
++ w0
++ ~~
+    + CategoryInfo          : ObjectNotFound: (w0:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+w0 : The term 'w0' is not recognized as the name o
+f a cmdlet, function, script file, or operable pro
+gram. Check the spelling of the name, or if a path
+ was included, verify that the path is correct and
+ try again.
+At line:1 char:1
++ w0
++ ~~
+    + CategoryInfo          : ObjectNotFound: (w0
+   :String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundExce
+   ption
+
+[38;2;243;174;53m[0m[48;2;243;174;53m[38;2;38;43;68m Surface [0m[38;2;243;174;53m[0m[0m[38;2;240;118;35;49m[7m[0m[48;2;240;118;35m[38;2;224;222;244m  ]8;;file:C:/Users/Surface/OneDrive/SIRENSSD\SIRENSSD]8;;\ [0m[48;2;243;174;53m[38;2;240;118;35m[0m[48;2;243;174;53m[38;2;38;43;68m ]8;;https://github.com/nomadsomni/aspen_codes.git\ ]8;;\ 888.000.555 ≡  ?35 ~2 -1 [0m[38;2;243;174;53m[0m[0m[38;2;216;30;91;49m[7m[0m[48;2;216;30;91m[38;2;224;222;244m  [0m[38;2;216;30;91m[0m]0;pwsh in SIRENSSD
+PS>]-W0
+] : The term ']' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelli
+ng of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:1
++ ]-W0
++ ~
+    + CategoryInfo          : ObjectNotFound: (]:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+] : The term ']' is not recognized as the name of
+a cmdlet, function, script file, or operable progr
+am. Check the spelling of the name, or if a path w
+as included, verify that the path is correct and t
+ry again.
+At line:1 char:1
++ ]-W0
++ ~
+    + CategoryInfo          : ObjectNotFound: (]:
+   String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundExce
+   ption
+
+[38;2;243;174;53m[0m[48;2;243;174;53m[38;2;38;43;68m Surface [0m[38;2;243;174;53m[0m[0m[38;2;240;118;35;49m[7m[0m[48;2;240;118;35m[38;2;224;222;244m  ]8;;file:C:/Users/Surface/OneDrive/SIRENSSD\SIRENSSD]8;;\ [0m[48;2;243;174;53m[38;2;240;118;35m[0m[48;2;243;174;53m[38;2;38;43;68m ]8;;https://github.com/nomadsomni/aspen_codes.git\ ]8;;\ 888.000.555 ≡  ?35 ~2 -1 [0m[38;2;243;174;53m[0m[0m[38;2;216;30;91;49m[7m[0m[48;2;216;30;91m[38;2;224;222;244m  [0m[38;2;216;30;91m[0m]0;pwsh in SIRENSSD
+PS>W]]]-]0]0
+W]]]-]0]0 : The term 'W]]]-]0]0' is not recognized as the name of a cmdlet, function, script file, or operable program. 
+Check the spelling of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:1
++ W]]]-]0]0
++ ~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (W]]]-]0]0:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+W]]]-]0]0 : The term 'W]]]-]0]0' is not recognized
+ as the name of a cmdlet, function, script file, o
+r operable program. Check the spelling of the name
+, or if a path was included, verify that the path
+is correct and try again.
+At line:1 char:1
++ W]]]-]0]0
++ ~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (W]
+   ]]-]0]0:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundExce
+   ption
+
+[38;2;243;174;53m[0m[48;2;243;174;53m[38;2;38;43;68m Surface [0m[38;2;243;174;53m[0m[0m[38;2;240;118;35;49m[7m[0m[48;2;240;118;35m[38;2;224;222;244m  ]8;;file:C:/Users/Surface/OneDrive/SIRENSSD\SIRENSSD]8;;\ [0m[48;2;243;174;53m[38;2;240;118;35m[0m[48;2;243;174;53m[38;2;38;43;68m ]8;;https://github.com/nomadsomni/aspen_codes.git\ ]8;;\ 888.000.555 ≡  ?35 ~2 -1 [0m[38;2;243;174;53m[0m[0m[38;2;216;30;91;49m[7m[0m[48;2;216;30;91m[38;2;224;222;244m  [0m[38;2;216;30;91m[0m]0;pwsh in SIRENSSD
+PS>]0-
+] : The term ']' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelli
+ng of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:1
++ ]0-
++ ~
+    + CategoryInfo          : ObjectNotFound: (]:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+] : The term ']' is not recognized as the name of
+a cmdlet, function, script file, or operable progr
+am. Check the spelling of the name, or if a path w
+as included, verify that the path is correct and t
+ry again.
+At line:1 char:1
++ ]0-
++ ~
+    + CategoryInfo          : ObjectNotFound: (]:
+   String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundExce
+   ption
+
+[38;2;243;174;53m[0m[48;2;243;174;53m[38;2;38;43;68m Surface [0m[38;2;243;174;53m[0m[0m[38;2;240;118;35;49m[7m[0m[48;2;240;118;35m[38;2;224;222;244m  ]8;;file:C:/Users/Surface/OneDrive/SIRENSSD\SIRENSSD]8;;\ [0m[48;2;243;174;53m[38;2;240;118;35m[0m[48;2;243;174;53m[38;2;38;43;68m ]8;;https://github.com/nomadsomni/aspen_codes.git\ ]8;;\ 888.000.555 ≡  ?35 ~2 -1 [0m[38;2;243;174;53m[0m[0m[38;2;216;30;91;49m[7m[0m[48;2;216;30;91m[38;2;224;222;244m  [0m[38;2;216;30;91m[0m]0;pwsh in SIRENSSD
+PS>3]-]]]0
+At line:1 char:2
++ 3]-]]]0
++  ~
+Unexpected token ']' in expression or statement.
+At line:1 char:2
++ 3]-]]]0
++  ~
+Unexpected token ']' in expression or statement.
+    + CategoryInfo          : ParserError: (:) []
+   , ParentContainsErrorRecordException
+    + FullyQualifiedErrorId : UnexpectedToken
+
+Select-Object : Property "InvocationInfo" cannot be found.
+At line:218 char:64
++ ... bject { $_ -ne $null } | Select-Object -ExpandProperty InvocationInfo
++                              ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (System.Manageme...ptions options):PSObject) [Select-Object], PSArgumentE
+xception
+    + FullyQualifiedErrorId : ExpandPropertyNotFound,Microsoft.PowerShell.Commands.SelectObjectCommand
+[38;2;243;174;53m[0m[48;2;243;174;53m[38;2;38;43;68m Surface [0m[38;2;243;174;53m[0m[0m[38;2;240;118;35;49m[7m[0m[48;2;240;118;35m[38;2;224;222;244m  ]8;;file:C:/Users/Surface/OneDrive/SIRENSSD\SIRENSSD]8;;\ [0m[48;2;243;174;53m[38;2;240;118;35m[0m[48;2;243;174;53m[38;2;38;43;68m ]8;;https://github.com/nomadsomni/aspen_codes.git\ ]8;;\ 888.000.555 ≡  ?35 ~2 -1 [0m[38;2;243;174;53m[0m[0m[38;2;216;30;91;49m[7m[0m[48;2;216;30;91m[38;2;224;222;244m  [0m[38;2;216;30;91m[0m]0;pwsh in SIRENSSD
+PS>]-0]
+] : The term ']' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelli
+ng of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:1
++ ]-0]
++ ~
+    + CategoryInfo          : ObjectNotFound: (]:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+] : The term ']' is not recognized as the name of
+a cmdlet, function, script file, or operable progr
+am. Check the spelling of the name, or if a path w
+as included, verify that the path is correct and t
+ry again.
+At line:1 char:1
++ ]-0]
++ ~
+    + CategoryInfo          : ObjectNotFound: (]:
+   String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundExce
+   ption
+
+[38;2;243;174;53m[0m[48;2;243;174;53m[38;2;38;43;68m Surface [0m[38;2;243;174;53m[0m[0m[38;2;240;118;35;49m[7m[0m[48;2;240;118;35m[38;2;224;222;244m  ]8;;file:C:/Users/Surface/OneDrive/SIRENSSD\SIRENSSD]8;;\ [0m[48;2;243;174;53m[38;2;240;118;35m[0m[48;2;243;174;53m[38;2;38;43;68m ]8;;https://github.com/nomadsomni/aspen_codes.git\ ]8;;\ 888.000.555 ≡  ?35 ~2 -1 [0m[38;2;243;174;53m[0m[0m[38;2;216;30;91;49m[7m[0m[48;2;216;30;91m[38;2;224;222;244m  [0m[38;2;216;30;91m[0m]0;pwsh in SIRENSSD
+PS>0]-30
+At line:1 char:2
++ 0]-30
++  ~
+Unexpected token ']' in expression or statement.
+At line:1 char:2
++ 0]-30
++  ~
+Unexpected token ']' in expression or statement.
+    + CategoryInfo          : ParserError: (:) []
+   , ParentContainsErrorRecordException
+    + FullyQualifiedErrorId : UnexpectedToken
+
+Select-Object : Property "InvocationInfo" cannot be found.
+At line:218 char:64
++ ... bject { $_ -ne $null } | Select-Object -ExpandProperty InvocationInfo
++                              ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (System.Manageme...ptions options):PSObject) [Select-Object], PSArgumentE
+xception
+    + FullyQualifiedErrorId : ExpandPropertyNotFound,Microsoft.PowerShell.Commands.SelectObjectCommand
+[38;2;243;174;53m[0m[48;2;243;174;53m[38;2;38;43;68m Surface [0m[38;2;243;174;53m[0m[0m[38;2;240;118;35;49m[7m[0m[48;2;240;118;35m[38;2;224;222;244m  ]8;;file:C:/Users/Surface/OneDrive/SIRENSSD\SIRENSSD]8;;\ [0m[48;2;243;174;53m[38;2;240;118;35m[0m[48;2;243;174;53m[38;2;38;43;68m ]8;;https://github.com/nomadsomni/aspen_codes.git\ ]8;;\ 888.000.555 ≡  ?35 ~2 -1 [0m[38;2;243;174;53m[0m[0m[38;2;216;30;91;49m[7m[0m[48;2;216;30;91m[38;2;224;222;244m  [0m[38;2;216;30;91m[0m]0;pwsh in SIRENSSD
+PS>]-0]0
+] : The term ']' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelli
+ng of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:1
++ ]-0]0
++ ~
+    + CategoryInfo          : ObjectNotFound: (]:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+] : The term ']' is not recognized as the name of
+a cmdlet, function, script file, or operable progr
+am. Check the spelling of the name, or if a path w
+as included, verify that the path is correct and t
+ry again.
+At line:1 char:1
++ ]-0]0
++ ~
+    + CategoryInfo          : ObjectNotFound: (]:
+   String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundExce
+   ption
+
+[38;2;243;174;53m[0m[48;2;243;174;53m[38;2;38;43;68m Surface [0m[38;2;243;174;53m[0m[0m[38;2;240;118;35;49m[7m[0m[48;2;240;118;35m[38;2;224;222;244m  ]8;;file:C:/Users/Surface/OneDrive/SIRENSSD\SIRENSSD]8;;\ [0m[48;2;243;174;53m[38;2;240;118;35m[0m[48;2;243;174;53m[38;2;38;43;68m ]8;;https://github.com/nomadsomni/aspen_codes.git\ ]8;;\ 888.000.555 ≡  ?35 ~2 -1 [0m[38;2;243;174;53m[0m[0m[38;2;216;30;91;49m[7m[0m[48;2;216;30;91m[38;2;224;222;244m  [0m[38;2;216;30;91m[0m]0;pwsh in SIRENSSD
+PS>]W-03
+] : The term ']' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelli
+ng of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:1
++ ]W-03
++ ~
+    + CategoryInfo          : ObjectNotFound: (]:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+] : The term ']' is not recognized as the name of
+a cmdlet, function, script file, or operable progr
+am. Check the spelling of the name, or if a path w
+as included, verify that the path is correct and t
+ry again.
+At line:1 char:1
++ ]W-03
++ ~
+    + CategoryInfo          : ObjectNotFound: (]:
+   String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundExce
+   ption
+
+[38;2;243;174;53m[0m[48;2;243;174;53m[38;2;38;43;68m Surface [0m[38;2;243;174;53m[0m[0m[38;2;240;118;35;49m[7m[0m[48;2;240;118;35m[38;2;224;222;244m  ]8;;file:C:/Users/Surface/OneDrive/SIRENSSD\SIRENSSD]8;;\ [0m[48;2;243;174;53m[38;2;240;118;35m[0m[48;2;243;174;53m[38;2;38;43;68m ]8;;https://github.com/nomadsomni/aspen_codes.git\ ]8;;\ 888.000.555 ≡  ?35 ~2 -1 [0m[38;2;243;174;53m[0m[0m[38;2;216;30;91;49m[7m[0m[48;2;216;30;91m[38;2;224;222;244m  [0m[38;2;216;30;91m[0m]0;pwsh in SIRENSSD
+PS>]-0w]4-0W
+] : The term ']' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelli
+ng of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:1
++ ]-0w]4-0W
++ ~
+    + CategoryInfo          : ObjectNotFound: (]:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+] : The term ']' is not recognized as the name of
+a cmdlet, function, script file, or operable progr
+am. Check the spelling of the name, or if a path w
+as included, verify that the path is correct and t
+ry again.
+At line:1 char:1
++ ]-0w]4-0W
++ ~
+    + CategoryInfo          : ObjectNotFound: (]:
+   String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundExce
+   ption
+
+[38;2;243;174;53m[0m[48;2;243;174;53m[38;2;38;43;68m Surface [0m[38;2;243;174;53m[0m[0m[38;2;240;118;35;49m[7m[0m[48;2;240;118;35m[38;2;224;222;244m  ]8;;file:C:/Users/Surface/OneDrive/SIRENSSD\SIRENSSD]8;;\ [0m[48;2;243;174;53m[38;2;240;118;35m[0m[48;2;243;174;53m[38;2;38;43;68m ]8;;https://github.com/nomadsomni/aspen_codes.git\ ]8;;\ 888.000.555 ≡  ?35 ~2 -1 [0m[38;2;243;174;53m[0m[0m[38;2;216;30;91;49m[7m[0m[48;2;216;30;91m[38;2;224;222;244m  [0m[38;2;216;30;91m[0m]0;pwsh in SIRENSSD

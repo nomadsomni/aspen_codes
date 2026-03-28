@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Inferno Complex</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    :root {
+      --inferno-bg: #05030a;
+      --inferno-accent: #ffb347;
+      --inferno-accent-strong: #ff6b1a;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      min-height: 100vh;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text",
+                   "Segoe UI", sans-serif;
+      background: radial-gradient(circle at top, #160816 0, #050308 55%, #020108 100%);
+      color: #f8f5ff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+    }
+
+    .inferno-section {
+      position: relative;
+      width: min(1100px, 100%);
+      aspect-ratio: 16 / 9;
+      border-radius: 1.75rem;
+      overflow: hidden;
+      background: radial-gradient(circle at top, #290b0f 0, #050308 55%, #020108 100%);
+      box-shadow:
+        0 0 0 1px rgba(255, 120, 40, 0.18),
+        0 25px 70px rgba(0, 0, 0, 0.85),
+        0 18px 40px rgba(255, 120, 40, 0.12);
+      display: grid;
+      grid-template-columns: minmax(0, 2.1fr) minmax(0, 1.2fr);
+      gap: 0;
+    }
+
+    .inferno-canvas-wrap {
+      position: relative;
+      overflow: hidden;
+    }
+
+    #infernoCanvas {
+      width: 100%;
+      height: 100%;
+      display: block;
+    }
+
+    .inferno-meta {
+      position: relative;
+      padding: 1.75rem 1.75rem 1.75rem 1.25rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      backdrop-filter: blur(22px);
+      background: radial-gradient(circle at top left,
+                  rgba(255, 115, 42, 0.15) 0,
+                  rgba(5, 3, 15, 0.96) 40%,
+                  rgba(3, 2, 10, 0.98) 100%);
+      border-left: 1px solid rgba(255, 160, 80, 0.22);
+    }
+
+    .inferno-label {
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.22em;
+      color: rgba(255, 195, 150, 0.7);
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+    }
+
+    .inferno-label-dot {
+      width: 0.45rem;
+      height: 0.45rem;
+      border-radius: 999px;
+      background: radial-gradient(circle at 30% 30%, #fff 0, #ffb347 35%, #ff6b1a 100%);
+      box-shadow: 0 0 8px rgba(255, 140, 60, 0.9);
+      animation: inferno-pulse 1.6s ease-in-out infinite;
+    }
+
+    .inferno-title {
+      font-size: clamp(1.6rem, 1.1rem + 1.3vw, 2.2rem);
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      font-weight: 600;
+      display: flex;
+      flex-direction: column;
+      gap: 0.15rem;
+    }
+
+    .inferno-title span:first-child {
+      font-size: 0.9rem;
+      letter-spacing: 0.3em;
+      color: rgba(255, 210, 170, 0.75);
+    }
+
+    .inferno-title-main {
+      background: linear-gradient(120deg, #fff3df 0, #ffd1a1 40%, #ff7a2a 80%);
+      -webkit-background-clip: text;
+      color: transparent;
+    }
+
+    .inferno-description {
+      font-size: 0.86rem;
+      line-height: 1.6;
+      color: rgba(255, 230, 210, 0.8);
+      max-width: 30rem;
+    }
+
+    .inferno-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.45rem;
+      margin-top: 0.25rem;
+    }
+
+    .inferno-tag {
+      font-size: 0.7rem;
+      padding: 0.35rem 0.7rem;
+      border-radius: 999px;
+      border: 1px solid rgba(255, 150, 90, 0.4);
+      background: radial-gradient(circle at top left,
+        rgba(255, 180, 120, 0.18),
+        rgba(20, 10, 5, 0.7));
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: rgba(255, 220, 190, 0.9);
+      white-space: nowrap;
+    }
+
+    .inferno-metrics {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 0.75rem;
+      margin-top: 0.75rem;
+      font-size: 0.75rem;
+    }
+
+    .inferno-metric {
+      padding: 0.65rem 0.7rem;
+      border-radius: 0.9rem;
+      border: 1px solid rgba(255, 150, 80, 0.3);
+      background: radial-gradient(circle at top,
+        rgba(255, 150, 80, 0.09),
+        rgba(13, 7, 10, 0.7));
+    }
+
+    .inferno-metric-label {
+      font-size: 0.65rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: rgba(255, 215, 190, 0.65);
+    }
+
+    .inferno-metric-value {
+      font-size: 0.95rem;
+      margin-top: 0.15rem;
+      color: rgba(255, 240, 220, 0.95);
+    }
+
+    .inferno-cta-row {
+      margin-top: auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.75rem;
+    }
+
+    .inferno-cta-main {
+      padding: 0.6rem 1.2rem;
+      border-radius: 999px;
+      border: 1px solid rgba(255, 150, 80, 0.45);
+      background: radial-gradient(circle at 20% 0,
+                  rgba(255, 190, 120, 0.3),
+                  rgba(15, 7, 2, 0.85));
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      cursor: default;
+      box-shadow:
+        0 0 18px rgba(255, 140, 60, 0.65),
+        0 0 1px rgba(255, 255, 255, 0.3);
+    }
+
+    .inferno-cta-main span:last-child {
+      font-size: 0.9rem;
+      opacity: 0.8;
+    }
+
+    .inferno-cta-sub {
+      font-size: 0.7rem;
+      color: rgba(255, 210, 185, 0.8);
+      text-align: right;
+      max-width: 10rem;
+    }
+
+    .inferno-cta-sub span {
+      color: rgba(255, 163, 100, 0.98);
+    }
+
+    /* Hover-ish delight for when this sits on a portfolio card */
+    .inferno-section:hover .inferno-canvas-wrap::after {
+      opacity: 1;
+    }
+
+    .inferno-canvas-wrap::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      background: radial-gradient(circle at top,
+                  rgba(255, 140, 60, 0.22),
+                  transparent 55%);
+      mix-blend-mode: screen;
+      opacity: 0.15;
+      transition: opacity 260ms ease-out;
+    }
+
+    @keyframes inferno-pulse {
+      0%, 100% { transform: scale(1); opacity: 0.9; }
+      50% { transform: scale(1.25); opacity: 1; }
+    }
+
+    /* Mobile */
+    @media (max-width: 768px) {
+      body {
+        padding: 1rem;
+      }
+
+      .inferno-section {
+        grid-template-columns: minmax(0, 1fr);
+        grid-template-rows: 1.2fr auto;
+        aspect-ratio: 10 / 13;
+      }
+
+      .inferno-meta {
+        padding: 1.3rem 1.2rem 1.25rem;
+        border-left: none;
+        border-top: 1px solid rgba(255, 160, 90, 0.35);
+      }
+
+      .inferno-metrics {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .inferno-cta-row {
+        margin-top: 1rem;
+        align-items: flex-start;
+      }
+    }
+  </style>
+</head>
+<body>
+  <section class="inferno-section" id="inferno-complex">
+    <div class="inferno-canvas-wrap">
+      <canvas id="infernoCanvas"></canvas>
+    </div>
+
+    <aside class="inferno-meta">
+      <div class="inferno-label">
+        <span class="inferno-label-dot"></span>
+        <span>Realtime Visual System</span>
+      </div>
+
+      <div class="inferno-title">
+        <span>Experimental Gridspace</span>
+        <span class="inferno-title-main">Inferno Complex</span>
+      </div>
+
+      <p class="inferno-description">
+        A responsive, shader-style gridscape rendered in vanilla HTML5 canvas.
+        Simulates a falling-into-the-void perspective with
+        <strong>fiery depth, flicker, and noise</strong>,
+        suitable as a live hero visual on a portfolio or case study page.
+      </p>
+
+      <div class="inferno-tags">
+        <span class="inferno-tag">HTML Canvas</span>
+        <span class="inferno-tag">Generative</span>
+        <span class="inferno-tag">Realtime</span>
+        <span class="inferno-tag">Neon Inferno</span>
+      </div>
+
+      <div class="inferno-metrics">
+        <div class="inferno-metric">
+          <div class="inferno-metric-label">Tech Stack</div>
+          <div class="inferno-metric-value">HTML / CSS / JS</div>
+        </div>
+        <div class="inferno-metric">
+          <div class="inferno-metric-label">Runtime</div>
+          <div class="inferno-metric-value">60 FPS target</div>
+        </div>
+        <div class="inferno-metric">
+          <div class="inferno-metric-label">Interaction</div>
+          <div class="inferno-metric-value">Cursor-reactive horizon</div>
+        </div>
+        <div class="inferno-metric">
+          <div class="inferno-metric-label">Role</div>
+          <div class="inferno-metric-value">Concept &amp; Dev</div>
+        </div>
+      </div>
+
+      <div class="inferno-cta-row">
+        <div class="inferno-cta-main">
+          <span>Live Render</span>
+          <span>Inferno Complex</span>
+        </div>
+        <div class="inferno-cta-sub">
+          Optimised, dependency-free.
+          <span>&lt;canvas&gt;</span> only.
+        </div>
+      </div>
+    </aside>
+  </section>
+
+  <script>
+    (function () {
+      const canvas = document.getElementById("infernoCanvas");
+      const ctx = canvas.getContext("2d");
+      const dpr = window.devicePixelRatio || 1;
+
+      let width = 0;
+      let height = 0;
+      let pointerX = 0.5; // 0..1
+      let pointerY = 0.3;
+
+      function resize() {
+        const rect = canvas.getBoundingClientRect();
+        width = rect.width;
+        height = rect.height;
+
+        canvas.width = width * dpr;
+        canvas.height = height * dpr;
+        ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+      }
+
+      // Basic pointer reaction
+      canvas.addEventListener("pointermove", (e) => {
+        const rect = canvas.getBoundingClientRect();
+        pointerX = (e.clientX - rect.left) / rect.width;
+        pointerY = (e.clientY - rect.top) / rect.height;
+      });
+
+      window.addEventListener("resize", resize);
+      resize();
+
+      function drawBackground() {
+        const gradient = ctx.createLinearGradient(0, 0, 0, height);
+        gradient.addColorStop(0, "#160614");
+        gradient.addColorStop(0.25, "#2a0607");
+        gradient.addColorStop(0.55, "#190203");
+        gradient.addColorStop(1, "#030008");
+        ctx.fillStyle = gradient;
+        ctx.fillRect(0, 0, width, height);
+
+        // subtle vertical "raining walls"
+        const columns = 18;
+        const t = performance.now() * 0.00035;
+
+        ctx.save();
+        ctx.globalCompositeOperation = "screen";
+        for (let i = 0; i < columns; i++) {
+          const colX = (i / (columns - 1)) * width;
+          const phase = (i * 0.37 + t * 0.8) % 1;
+          const stretch = height * 0.6;
+          const startY = -stretch + phase * (height + stretch * 1.5);
+
+          const g = ctx.createLinearGradient(colX, startY, colX, startY + stretch);
+          g.addColorStop(0, "rgba(255, 120, 40, 0)");
+          g.addColorStop(0.2, "rgba(255, 160, 80, 0.08)");
+          g.addColorStop(0.6, "rgba(255, 220, 200, 0.15)");
+          g.addColorStop(1, "rgba(255, 90, 30, 0)");
+          ctx.fillStyle = g;
+          ctx.fillRect(colX - 1, startY, 2, stretch);
+        }
+        ctx.restore();
+      }
+
+      function drawGrid() {
+        const t = performance.now() * 0.0012;
+        const horizonY = height * (0.18 + pointerY * 0.18);
+        const vanishX = width * (0.3 + pointerX * 0.4);
+
+        ctx.save();
+        ctx.lineCap = "round";
+        ctx.shadowColor = "rgba(255, 140, 60, 0.85)";
+        ctx.shadowBlur = 12;
+
+        // horizontal slices
+        const rows = 18;
+        for (let i = 1; i <= rows; i++) {
+          const p = i / rows;
+          const curve = p * p;
+          const y = height - curve * (height - horizonY);
+
+          const spanFactor = 1 - p * 0.72;
+          const halfWidth = (width * 0.8 * spanFactor) / 2;
+          const x1 = vanishX - halfWidth;
+          const x2 = vanishX + halfWidth;
+
+          const flicker = 0.55 + 0.45 * Math.sin(t * 2.4 + i * 1.1);
+          const alpha = 0.35 + 0.4 * flicker;
+          ctx.strokeStyle = "rgba(255, 170, 90," + alpha.toFixed(3) + ")";
+          ctx.lineWidth = 1.4 - p * 0.7;
+
+          ctx.beginPath();
+          ctx.moveTo(x1, y);
+          ctx.lineTo(x2, y);
+          ctx.stroke();
+        }
+
+        // vertical rays
+        const columns = 20;
+        for (let j = -columns; j <= columns; j++) {
+          const baseSpread = width * 0.055;
+          const bottomX = vanishX + baseSpread * j * 1.08;
+          const yBottom = height + 20;
+
+          const flicker = 0.5 + 0.5 * Math.sin(t * 1.8 + j * 0.9);
+          const alpha = 0.25 + 0.35 * flicker;
+          ctx.strokeStyle = "rgba(255, 200, 150," + alpha.toFixed(3) + ")";
+          ctx.lineWidth = 0.9;
+
+          ctx.beginPath();
+          ctx.moveTo(bottomX, yBottom);
+          ctx.lineTo(vanishX, horizonY);
+          ctx.stroke();
+        }
+
+        ctx.restore();
+      }
+
+      function drawOrb() {
+        const t = performance.now() * 0.001;
+        const orbX = width * 0.5 + Math.sin(t * 1.3) * width * 0.05;
+        const orbY = height * 0.23 + Math.cos(t * 1.1) * height * 0.02;
+        const radius = Math.min(width, height) * 0.085;
+
+        ctx.save();
+        ctx.globalCompositeOperation = "screen";
+
+        // outer glow
+        const gradOuter = ctx.createRadialGradient(
+          orbX, orbY, radius * 0.3,
+          orbX, orbY, radius * 2.1
+        );
+        gradOuter.addColorStop(0, "rgba(255, 200, 160, 0.18)");
+        gradOuter.addColorStop(0.5, "rgba(255, 130, 60, 0.12)");
+        gradOuter.addColorStop(1, "rgba(255, 60, 10, 0)");
+        ctx.fillStyle = gradOuter;
+        ctx.beginPath();
+        ctx.arc(orbX, orbY, radius * 2.2, 0, Math.PI * 2);
+        ctx.fill();
+
+        // core
+        const gradCore = ctx.createRadialGradient(
+          orbX - radius * 0.45, orbY - radius * 0.45, radius * 0.1,
+          orbX, orbY, radius
+        );
+        gradCore.addColorStop(0, "rgba(255, 255, 255, 1)");
+        gradCore.addColorStop(0.3, "rgba(255, 210, 170, 1)");
+        gradCore.addColorStop(0.65, "rgba(255, 140, 60, 0.9)");
+        gradCore.addColorStop(1, "rgba(255, 80, 20, 0.05)");
+        ctx.fillStyle = gradCore;
+        ctx.beginPath();
+        ctx.arc(orbX, orbY, radius, 0, Math.PI * 2);
+        ctx.fill();
+
+        // subtle wireframe-ish latitude/longitude rings
+        ctx.lineWidth = 0.7;
+        ctx.strokeStyle = "rgba(60, 12, 0, 0.55)";
+        const rings = 6;
+        for (let i = 1; i < rings; i++) {
+          const p = i / rings;
+          const ry = radius * Math.sqrt(1 - (2 * p - 1) ** 2);
+          ctx.beginPath();
+          ctx.ellipse(orbX, orbY, radius, ry, 0, 0, Math.PI * 2);
+          ctx.stroke();
+        }
+
+        const meridians = 7;
+        for (let j = 0; j < meridians; j++) {
+          const angle = (j / meridians) * Math.PI;
+          const sx = orbX + radius * Math.cos(angle);
+          const sy = orbY + radius * Math.sin(angle);
+          const ex = orbX + radius * Math.cos(angle + Math.PI);
+          const ey = orbY + radius * Math.sin(angle + Math.PI);
+          ctx.beginPath();
+          ctx.moveTo(sx, sy);
+          ctx.lineTo(ex, ey);
+          ctx.stroke();
+        }
+
+        ctx.restore();
+      }
+
+      function drawNoise() {
+        const t = performance.now() * 0.0012;
+        const count = 40;
+        ctx.save();
+        ctx.globalCompositeOperation = "screen";
+        for (let i = 0; i < count; i++) {
+          const x = Math.random() * width;
+          const y = Math.random() * height;
+          const flicker = 0.3 + Math.random() * 0.7;
+          const size = 1 + Math.random() * 2;
+          const alpha = 0.09 + 0.12 * Math.sin(t * 4 + i);
+          ctx.fillStyle = "rgba(255, 180, 120," + alpha.toFixed(3) + ")";
+          ctx.fillRect(x, y, size, size);
+        }
+        ctx.restore();
+      }
+
+      function loop() {
+        drawBackground();
+        drawGrid();
+        drawOrb();
+        drawNoise();
+        requestAnimationFrame(loop);
+      }
+
+      loop();
+    })();
+  </script>
+</body>
+</html>

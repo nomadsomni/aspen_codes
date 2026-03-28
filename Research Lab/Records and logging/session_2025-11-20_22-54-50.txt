@@ -1,0 +1,66 @@
+**********************
+PowerShell transcript start
+Start time: 20251120225450
+Username: NOMAD\Surface
+RunAs User: NOMAD\Surface
+Configuration Name: 
+Machine: NOMAD (Microsoft Windows NT 10.0.22631.0)
+Host Application: C:\Program Files\PowerShell\7-preview\pwsh.dll
+Process ID: 17040
+PSVersion: 7.6.0-preview.5
+PSEdition: Core
+GitCommitId: 7.6.0-preview.5
+OS: Microsoft Windows 10.0.22631
+Platform: Win32NT
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1, 6.0, 7.0
+PSRemotingProtocolVersion: 2.4
+SerializationVersion: 1.1.0.1
+WSManStackVersion: 3.0
+**********************
+aspen_codes:: session launched.
+
+
+
+
+
+
+➤ code aspen_codes::session_started.ps1
+
+
+
+➤ .//logsession
+aspen_codes:: session launched.
+
+
+➤ stop-transcript
+Transcript stopped, output file is C:\Users\Surface\OneDrive\SIRENSSD\Research Lab\Records and logging\aspen_codes:session_2025-11-20_22-59-56.txt
+
+
+➤ .//logsession
+aspen_codes:: session launched.
+
+
+➤ stop-transcript
+Transcript stopped, output file is C:\Users\Surface\OneDrive\SIRENSSD\Research Lab\Records and logging\aspen_codes:session_2025-11-20_23-00-56.txt
+
+
+➤ code $profile
+
+
+
+➤ code $profile
+
+
+
+➤ code $profile
+
+
+
+➤ start-Process pwsh
+
+
+➤ stop-transcript
+**********************
+PowerShell transcript end
+End time: 20251120230335
+**********************

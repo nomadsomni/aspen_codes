@@ -1,0 +1,1490 @@
+﻿**********************
+Windows PowerShell transcript start
+Start time: 20250714233214
+Username: NOMAD\Surface
+RunAs User: NOMAD\Surface
+Configuration Name: 
+Machine: NOMAD (Microsoft Windows NT 10.0.22631.0)
+Host Application: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe
+Process ID: 11648
+PSVersion: 5.1.22621.5624
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.22621.5624
+BuildVersion: 10.0.22621.5624
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+Transcript started, output file is C:\Users\Surface\OneDrive\SIRENSSD\Research Lab\Records and logging\Session_2025-07-14_23-32-08.txt
+Session logging started. Log file: C:\Users\Surface\OneDrive\SIRENSSD\Research Lab\Records and logging\Session_2025-07-14_23-32-08.txt
+[38;2;243;174;53m[0m[48;2;243;174;53m[38;2;38;43;68m Surface [0m[38;2;243;174;53m[0m[0m[38;2;240;118;35;49m[7m[0m[48;2;240;118;35m[38;2;224;222;244m  ]8;;file:C:/Users/Surface/OneDrive/SIRENSSD\SIRENSSD]8;;\ [0m[48;2;89;201;165m[38;2;240;118;35m[0m[48;2;89;201;165m[38;2;38;43;68m ]8;;https://github.com/nomadsomni/aspen_codes.git\ ]8;;\  ≢ [0m[48;2;243;174;53m[38;2;89;201;165m[0m[48;2;243;174;53m[38;2;224;222;244m  [0m[38;2;243;174;53m[0m[0m[38;2;75;149;233;49m[7m[0m[48;2;75;149;233m[38;2;224;222;244m  [0m[38;2;75;149;233m[0m]0;pwsh in SIRENSSD 7                                                                                                                                                           [38;2;89;201;165m [0m[38;2;224;222;244min [38;2;75;149;233m[1mpwsh[22m[38;2;224;222;244m [0m[38;2;224;222;244mat [38;2;75;149;233m[1m23:32:20[22m[0m8
+[38;2;243;174;53m[0m[48;2;243;174;53m[38;2;38;43;68m Surface [0m[38;2;243;174;53m[0m[0m[38;2;240;118;35;49m[7m[0m[48;2;240;118;35m[38;2;224;222;244m  ]8;;file:C:/Users/Surface/OneDrive/SIRENSSD\SIRENSSD]8;;\ [0m[48;2;243;174;53m[38;2;240;118;35m[0m[48;2;243;174;53m[38;2;38;43;68m ]8;;https://github.com/nomadsomni/aspen_codes.git\ ]8;;\ 888.000.555 ≡  ?31 ~2 -1 [0m[48;2;243;174;53m[38;2;243;174;53m[0m[48;2;243;174;53m[38;2;224;222;244m  [0m[38;2;243;174;53m[0m[0m[38;2;75;149;233;49m[7m[0m[48;2;75;149;233m[38;2;224;222;244m  [0m[38;2;75;149;233m[0m]0;pwsh in SIRENSSD 7                                                                                                                                    [38;2;89;201;165m [0m[38;2;224;222;244min [38;2;75;149;233m[1mpwsh[22m[38;2;224;222;244m [0m[38;2;224;222;244mat [38;2;75;149;233m[1m00:29:55[22m[0m8
+[38;2;243;174;53m[0m[48;2;243;174;53m[38;2;38;43;68m Surface [0m[38;2;243;174;53m[0m[0m[38;2;240;118;35;49m[7m[0m[48;2;240;118;35m[38;2;224;222;244m  ]8;;file:C:/Users/Surface/OneDrive/SIRENSSD\SIRENSSD]8;;\ [0m[48;2;243;174;53m[38;2;240;118;35m[0m[48;2;243;174;53m[38;2;38;43;68m ]8;;https://github.com/nomadsomni/aspen_codes.git\ ]8;;\ 888.000.555 ≡  ?31 ~2 -1 [0m[48;2;243;174;53m[38;2;243;174;53m[0m[48;2;243;174;53m[38;2;224;222;244m  [0m[38;2;243;174;53m[0m[0m[38;2;75;149;233;49m[7m[0m[48;2;75;149;233m[38;2;224;222;244m  [0m[38;2;75;149;233m[0m]0;pwsh in SIRENSSD 7                                                                                                                                    [38;2;89;201;165m [0m[38;2;224;222;244min [38;2;75;149;233m[1mpwsh[22m[38;2;224;222;244m [0m[38;2;224;222;244mat [38;2;75;149;233m[1m00:29:56[22m[0m8
+[38;2;243;174;53m[0m[48;2;243;174;53m[38;2;38;43;68m Surface [0m[38;2;243;174;53m[0m[0m[38;2;240;118;35;49m[7m[0m[48;2;240;118;35m[38;2;224;222;244m  ]8;;file:C:/Users/Surface/OneDrive/SIRENSSD\SIRENSSD]8;;\ [0m[48;2;243;174;53m[38;2;240;118;35m[0m[48;2;243;174;53m[38;2;38;43;68m ]8;;https://github.com/nomadsomni/aspen_codes.git\ ]8;;\ 888.000.555 ≡  ?31 ~2 -1 [0m[48;2;243;174;53m[38;2;243;174;53m[0m[48;2;243;174;53m[38;2;224;222;244m  [0m[38;2;243;174;53m[0m[0m[38;2;75;149;233;49m[7m[0m[48;2;75;149;233m[38;2;224;222;244m  [0m[38;2;75;149;233m[0m]0;pwsh in SIRENSSD 7                                                                                                                                    [38;2;89;201;165m [0m[38;2;224;222;244min [38;2;75;149;233m[1mpwsh[22m[38;2;224;222;244m [0m[38;2;224;222;244mat [38;2;75;149;233m[1m00:29:56[22m[0m8
+PS>Wep'
+w3'4)#$
+{W)#$W#)$
+{w)#$
+{)W
+#{$)
+w{#04
+{w03
+$0W
+#{$)W
+#{)$V]
+2-30
+]-2034-]v
+W0-34Vw03
+W0V]-2304]-023
+]v-40]2-304-02]
+304v]
+-034]V-023]-4b90 [23
+923[059
+[4059
+[0459
+[0459
+ [0495[0
+9
+4M5-]
+203]v02m3
+v-40
+]-2304V]-
+2034-,2]340
+]-2304]
+v-0
+]-E0
+]S-}_
+r}_s)er}_
+s)e}
+r_)s}
+e_r)}<se)r}
+_)s}_
+)e}$eV0
+At line:2 char:5
++ w3'4)#$
++     ~
+Unexpected token ')' in expression or statement.
+
+At line:3 char:1
++ {W)#$W#)$
++ ~
+Missing closing '}' in statement block or type definition.
+
+At line:3 char:3
++ {W)#$W#)$
++   ~
+Unexpected token ')' in expression or statement.
+
+At line:4 char:1
++ {w)#$
++ ~
+Missing closing '}' in statement block or type definition.
+
+At line:4 char:3
++ {w)#$
++   ~
+Unexpected token ')' in expression or statement.
+
+At line:5 char:1
++ {)W
++ ~
+Missing closing '}' in statement block or type definition.
+
+At line:5 char:2
++ {)W
++  ~
+Unexpected token ')' in expression or statement.
+
+At line:18 char:5
++ -034]V-023]-4b90 [23
++     ~
+Unexpected token ']' in expression or statement.
+
+At line:20 char:2
++ [4059
++  ~
+Missing type name after '['.
+
+At line:21 char:2
++ [0459
++  ~
+Missing type name after '['.
+
+Not all parse errors were reported.  Correct the reported errors and try again.
+At line:2 char:5
++ w3'4)#$
++     ~
+Unexpected token ')' in expression or statement.
+
+At line:3 char:1
++ {W)#$W#)$
++ ~
+Missing closing '}' in statement block or type definition.
+
+At line:3 char:3
++ {W)#$W#)$
++   ~
+Unexpected token ')' in expression or statement.
+
+At line:4 char:1
++ {w)#$
++ ~
+Missing closing '}' in statement block or type definition.
+
+At line:4 char:3
++ {w)#$
++   ~
+Unexpected token ')' in expression or statement.
+
+At line:5 char:1
++ {)W
++ ~
+Missing closing '}' in statement block or type definition.
+
+At line:5 char:2
++ {)W
++  ~
+Unexpected token ')' in expression or statement.
+
+At line:18 char:5
++ -034]V-023]-4b90 [23
++     ~
+Unexpected token ']' in expression or statement.
+
+At line:20 char:2
++ [4059
++  ~
+Missing type name after '['.
+
+At line:21 char:2
++ [0459
++  ~
+Missing type name after '['.
+
+Not all parse errors were reported.  Correct the reported errors and try again.
+    + CategoryInfo          : ParserError: (:) [], ParentContainsErrorRecordException
+    + FullyQualifiedErrorId : UnexpectedToken
+
+[38;2;243;174;53m[0m[48;2;243;174;53m[38;2;38;43;68m Surface [0m[38;2;243;174;53m[0m[0m[38;2;240;118;35;49m[7m[0m[48;2;240;118;35m[38;2;224;222;244m  ]8;;file:C:/Users/Surface/OneDrive/SIRENSSD\SIRENSSD]8;;\ [0m[48;2;243;174;53m[38;2;240;118;35m[0m[48;2;243;174;53m[38;2;38;43;68m ]8;;https://github.com/nomadsomni/aspen_codes.git\ ]8;;\ 888.000.555 ≡  ?31 ~2 -1 [0m[48;2;243;174;53m[38;2;243;174;53m[0m[48;2;243;174;53m[38;2;224;222;244m  [0m[38;2;243;174;53m[0m[0m[38;2;75;149;233;49m[7m[0m[48;2;75;149;233m[38;2;224;222;244m  [0m[38;2;75;149;233m[0m]0;pwsh in SIRENSSD 7                                                                                                                                    [38;2;89;201;165m [0m[38;2;224;222;244min [38;2;75;149;233m[1mpwsh[22m[38;2;224;222;244m [0m[38;2;224;222;244mat [38;2;75;149;233m[1m00:30:12[22m[0m8
+PS>]-0w3]-40
+] : The term ']' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelli
+ng of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:1
++ ]-0w3]-40
++ ~
+    + CategoryInfo          : ObjectNotFound: (]:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+] : The term ']' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelling of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:1
++ ]-0w3]-40
++ ~
+    + CategoryInfo          : ObjectNotFound: (]:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+[38;2;243;174;53m[0m[48;2;243;174;53m[38;2;38;43;68m Surface [0m[38;2;243;174;53m[0m[0m[38;2;240;118;35;49m[7m[0m[48;2;240;118;35m[38;2;224;222;244m  ]8;;file:C:/Users/Surface/OneDrive/SIRENSSD\SIRENSSD]8;;\ [0m[48;2;243;174;53m[38;2;240;118;35m[0m[48;2;243;174;53m[38;2;38;43;68m ]8;;https://github.com/nomadsomni/aspen_codes.git\ ]8;;\ 888.000.555 ≡  ?31 ~2 -1 [0m[48;2;243;174;53m[38;2;243;174;53m[0m[48;2;243;174;53m[38;2;224;222;244m  [0m[38;2;243;174;53m[0m[0m[38;2;216;30;91;49m[7m[0m[48;2;216;30;91m[38;2;224;222;244m  [0m[38;2;216;30;91m[0m]0;pwsh in SIRENSSD 7                                                                                                                                    [38;2;89;201;165m [0m[38;2;224;222;244min [38;2;75;149;233m[1mpwsh[22m[38;2;224;222;244m [0m[38;2;224;222;244mat [38;2;75;149;233m[1m00:30:24[22m[0m8
+PS>]23-04]v-023]-40V]2-304]v-023]
+] : The term ']' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelli
+ng of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:1
++ ]23-04]v-023]-40V]2-304]v-023]
++ ~
+    + CategoryInfo          : ObjectNotFound: (]:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+] : The term ']' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelling of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:1
++ ]23-04]v-023]-40V]2-304]v-023]
++ ~
+    + CategoryInfo          : ObjectNotFound: (]:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+[38;2;243;174;53m[0m[48;2;243;174;53m[38;2;38;43;68m Surface [0m[38;2;243;174;53m[0m[0m[38;2;240;118;35;49m[7m[0m[48;2;240;118;35m[38;2;224;222;244m  ]8;;file:C:/Users/Surface/OneDrive/SIRENSSD\SIRENSSD]8;;\ [0m[48;2;243;174;53m[38;2;240;118;35m[0m[48;2;243;174;53m[38;2;38;43;68m ]8;;https://github.com/nomadsomni/aspen_codes.git\ ]8;;\ 888.000.555 ≡  ?31 ~2 -1 [0m[48;2;243;174;53m[38;2;243;174;53m[0m[48;2;243;174;53m[38;2;224;222;244m  [0m[38;2;243;174;53m[0m[0m[38;2;216;30;91;49m[7m[0m[48;2;216;30;91m[38;2;224;222;244m  [0m[38;2;216;30;91m[0m]0;pwsh in SIRENSSD 7                                                                                                                                    [38;2;89;201;165m [0m[38;2;224;222;244min [38;2;75;149;233m[1mpwsh[22m[38;2;224;222;244m [0m[38;2;224;222;244mat [38;2;75;149;233m[1m00:30:34[22m[0m8
+PS>-40]203
+At line:1 char:4
++ -40]203
++    ~
+Unexpected token ']' in expression or statement.
+At line:1 char:4
++ -40]203
++    ~
+Unexpected token ']' in expression or statement.
+    + CategoryInfo          : ParserError: (:) [], ParentContainsErrorRecordException
+    + FullyQualifiedErrorId : UnexpectedToken
+
+Select-Object : Property "InvocationInfo" cannot be found.
+At line:218 char:64
++ ... bject { $_ -ne $null } | Select-Object -ExpandProperty InvocationInfo
++                              ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (System.Manageme...ptions options):PSObject) [Select-Object], PSArgumentE
+xception
+    + FullyQualifiedErrorId : ExpandPropertyNotFound,Microsoft.PowerShell.Commands.SelectObjectCommand
+[38;2;243;174;53m[0m[48;2;243;174;53m[38;2;38;43;68m Surface [0m[38;2;243;174;53m[0m[0m[38;2;240;118;35;49m[7m[0m[48;2;240;118;35m[38;2;224;222;244m  ]8;;file:C:/Users/Surface/OneDrive/SIRENSSD\SIRENSSD]8;;\ [0m[48;2;243;174;53m[38;2;240;118;35m[0m[48;2;243;174;53m[38;2;38;43;68m ]8;;https://github.com/nomadsomni/aspen_codes.git\ ]8;;\ 888.000.555 ≡  ?31 ~2 -1 [0m[48;2;243;174;53m[38;2;243;174;53m[0m[48;2;243;174;53m[38;2;224;222;244m  [0m[38;2;243;174;53m[0m[0m[38;2;216;30;91;49m[7m[0m[48;2;216;30;91m[38;2;224;222;244m  [0m[38;2;216;30;91m[0m]0;pwsh in SIRENSSD 7                                                                                                                                    [38;2;89;201;165m [0m[38;2;224;222;244min [38;2;75;149;233m[1mpwsh[22m[38;2;224;222;244m [0m[38;2;224;222;244mat [38;2;75;149;233m[1m00:30:37[22m[0m8
+PS>]-4v0]
+] : The term ']' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelli
+ng of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:1
++ ]-4v0]
++ ~
+    + CategoryInfo          : ObjectNotFound: (]:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+] : The term ']' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelling of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:1
++ ]-4v0]
++ ~
+    + CategoryInfo          : ObjectNotFound: (]:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+[38;2;243;174;53m[0m[48;2;243;174;53m[38;2;38;43;68m Surface [0m[38;2;243;174;53m[0m[0m[38;2;240;118;35;49m[7m[0m[48;2;240;118;35m[38;2;224;222;244m  ]8;;file:C:/Users/Surface/OneDrive/SIRENSSD\SIRENSSD]8;;\ [0m[48;2;243;174;53m[38;2;240;118;35m[0m[48;2;243;174;53m[38;2;38;43;68m ]8;;https://github.com/nomadsomni/aspen_codes.git\ ]8;;\ 888.000.555 ≡  ?31 ~2 -1 [0m[48;2;243;174;53m[38;2;243;174;53m[0m[48;2;243;174;53m[38;2;224;222;244m  [0m[38;2;243;174;53m[0m[0m[38;2;216;30;91;49m[7m[0m[48;2;216;30;91m[38;2;224;222;244m  [0m[38;2;216;30;91m[0m]0;pwsh in SIRENSSD 7                                                                                                                                    [38;2;89;201;165m [0m[38;2;224;222;244min [38;2;75;149;233m[1mpwsh[22m[38;2;224;222;244m [0m[38;2;224;222;244mat [38;2;75;149;233m[1m00:30:47[22m[0m8
+PS>2-3w30
+At line:1 char:3
++ 2-3w30
++   ~
+You must provide a value expression following the '-' operator.
+
+At line:1 char:3
++ 2-3w30
++   ~~~~
+Unexpected token '3w30' in expression or statement.
+At line:1 char:3
++ 2-3w30
++   ~
+You must provide a value expression following the '-' operator.
+
+At line:1 char:3
++ 2-3w30
++   ~~~~
+Unexpected token '3w30' in expression or statement.
+    + CategoryInfo          : ParserError: (:) [], ParentContainsErrorRecordException
+    + FullyQualifiedErrorId : ExpectedValueExpression
+
+Select-Object : Property "InvocationInfo" cannot be found.
+At line:218 char:64
++ ... bject { $_ -ne $null } | Select-Object -ExpandProperty InvocationInfo
++                              ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (System.Manageme...ptions options):PSObject) [Select-Object], PSArgumentE
+xception
+    + FullyQualifiedErrorId : ExpandPropertyNotFound,Microsoft.PowerShell.Commands.SelectObjectCommand
+[38;2;243;174;53m[0m[48;2;243;174;53m[38;2;38;43;68m Surface [0m[38;2;243;174;53m[0m[0m[38;2;240;118;35;49m[7m[0m[48;2;240;118;35m[38;2;224;222;244m  ]8;;file:C:/Users/Surface/OneDrive/SIRENSSD\SIRENSSD]8;;\ [0m[48;2;243;174;53m[38;2;240;118;35m[0m[48;2;243;174;53m[38;2;38;43;68m ]8;;https://github.com/nomadsomni/aspen_codes.git\ ]8;;\ 888.000.555 ≡  ?31 ~2 -1 [0m[48;2;243;174;53m[38;2;243;174;53m[0m[48;2;243;174;53m[38;2;224;222;244m  [0m[38;2;243;174;53m[0m[0m[38;2;216;30;91;49m[7m[0m[48;2;216;30;91m[38;2;224;222;244m  [0m[38;2;216;30;91m[0m]0;pwsh in SIRENSSD 7                                                                                                                                    [38;2;89;201;165m [0m[38;2;224;222;244min [38;2;75;149;233m[1mpwsh[22m[38;2;224;222;244m [0m[38;2;224;222;244mat [38;2;75;149;233m[1m00:30:50[22m[0m8
+PS>]
+] : The term ']' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelli
+ng of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:1
++ ]
++ ~
+    + CategoryInfo          : ObjectNotFound: (]:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+] : The term ']' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelling of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:1
++ ]
++ ~
+    + CategoryInfo          : ObjectNotFound: (]:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+[38;2;243;174;53m[0m[48;2;243;174;53m[38;2;38;43;68m Surface [0m[38;2;243;174;53m[0m[0m[38;2;240;118;35;49m[7m[0m[48;2;240;118;35m[38;2;224;222;244m  ]8;;file:C:/Users/Surface/OneDrive/SIRENSSD\SIRENSSD]8;;\ [0m[48;2;243;174;53m[38;2;240;118;35m[0m[48;2;243;174;53m[38;2;38;43;68m ]8;;https://github.com/nomadsomni/aspen_codes.git\ ]8;;\ 888.000.555 ≡  ?31 ~2 -1 [0m[48;2;243;174;53m[38;2;243;174;53m[0m[48;2;243;174;53m[38;2;224;222;244m  [0m[38;2;243;174;53m[0m[0m[38;2;216;30;91;49m[7m[0m[48;2;216;30;91m[38;2;224;222;244m  [0m[38;2;216;30;91m[0m]0;pwsh in SIRENSSD 7                                                                                                                                    [38;2;89;201;165m [0m[38;2;224;222;244min [38;2;75;149;233m[1mpwsh[22m[38;2;224;222;244m [0m[38;2;224;222;244mat [38;2;75;149;233m[1m00:31:00[22m[0m8
+PS>3-3
+w}_#0C}_w#)
+At line:2 char:2
++ w}_#0C}_w#)
++  ~
+Unexpected token '}' in expression or statement.
+
+At line:2 char:7
++ w}_#0C}_w#)
++       ~
+Unexpected token '}' in expression or statement.
+
+At line:2 char:11
++ w}_#0C}_w#)
++           ~
+Unexpected token ')' in expression or statement.
+At line:2 char:2
++ w}_#0C}_w#)
++  ~
+Unexpected token '}' in expression or statement.
+
+At line:2 char:7
++ w}_#0C}_w#)
++       ~
+Unexpected token '}' in expression or statement.
+
+At line:2 char:11
++ w}_#0C}_w#)
++           ~
+Unexpected token ')' in expression or statement.
+    + CategoryInfo          : ParserError: (:) [], ParentContainsErrorRecordException
+    + FullyQualifiedErrorId : UnexpectedToken
+
+Select-Object : Property "InvocationInfo" cannot be found.
+At line:218 char:64
++ ... bject { $_ -ne $null } | Select-Object -ExpandProperty InvocationInfo
++                              ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (System.Manageme...ptions options):PSObject) [Select-Object], PSArgumentE
+xception
+    + FullyQualifiedErrorId : ExpandPropertyNotFound,Microsoft.PowerShell.Commands.SelectObjectCommand
+[38;2;243;174;53m[0m[48;2;243;174;53m[38;2;38;43;68m Surface [0m[38;2;243;174;53m[0m[0m[38;2;240;118;35;49m[7m[0m[48;2;240;118;35m[38;2;224;222;244m  ]8;;file:C:/Users/Surface/OneDrive/SIRENSSD\SIRENSSD]8;;\ [0m[48;2;243;174;53m[38;2;240;118;35m[0m[48;2;243;174;53m[38;2;38;43;68m ]8;;https://github.com/nomadsomni/aspen_codes.git\ ]8;;\ 888.000.555 ≡  ?31 ~2 -1 [0m[48;2;243;174;53m[38;2;243;174;53m[0m[48;2;243;174;53m[38;2;224;222;244m  [0m[38;2;243;174;53m[0m[0m[38;2;216;30;91;49m[7m[0m[48;2;216;30;91m[38;2;224;222;244m  [0m[38;2;216;30;91m[0m]0;pwsh in SIRENSSD 7                                                                                                                                    [38;2;89;201;165m [0m[38;2;224;222;244min [38;2;75;149;233m[1mpwsh[22m[38;2;224;222;244m [0m[38;2;224;222;244mat [38;2;75;149;233m[1m00:31:41[22m[0m8
+PS>]C-w)#
+At line:1 char:5
++ ]C-w)#
++     ~
+Unexpected token ')' in expression or statement.
+At line:1 char:5
++ ]C-w)#
++     ~
+Unexpected token ')' in expression or statement.
+    + CategoryInfo          : ParserError: (:) [], ParentContainsErrorRecordException
+    + FullyQualifiedErrorId : UnexpectedToken
+
+Select-Object : Property "InvocationInfo" cannot be found.
+At line:218 char:64
++ ... bject { $_ -ne $null } | Select-Object -ExpandProperty InvocationInfo
++                              ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (System.Manageme...ptions options):PSObject) [Select-Object], PSArgumentE
+xception
+    + FullyQualifiedErrorId : ExpandPropertyNotFound,Microsoft.PowerShell.Commands.SelectObjectCommand
+[38;2;243;174;53m[0m[48;2;243;174;53m[38;2;38;43;68m Surface [0m[38;2;243;174;53m[0m[0m[38;2;240;118;35;49m[7m[0m[48;2;240;118;35m[38;2;224;222;244m  ]8;;file:C:/Users/Surface/OneDrive/SIRENSSD\SIRENSSD]8;;\ [0m[48;2;243;174;53m[38;2;240;118;35m[0m[48;2;243;174;53m[38;2;38;43;68m ]8;;https://github.com/nomadsomni/aspen_codes.git\ ]8;;\ 888.000.555 ≡  ?31 ~2 -1 [0m[48;2;243;174;53m[38;2;243;174;53m[0m[48;2;243;174;53m[38;2;224;222;244m  [0m[38;2;243;174;53m[0m[0m[38;2;216;30;91;49m[7m[0m[48;2;216;30;91m[38;2;224;222;244m  [0m[38;2;216;30;91m[0m]0;pwsh in SIRENSSD 7                                                                                                                                    [38;2;89;201;165m [0m[38;2;224;222;244min [38;2;75;149;233m[1mpwsh[22m[38;2;224;222;244m [0m[38;2;224;222;244mat [38;2;75;149;233m[1m00:31:44[22m[0m8
+PS>]Cw#C203]C-0@}#_c)@]
+At line:1 char:14
++ ]Cw#C203]C-0@}#_c)@]
++              ~
+Unexpected token '}' in expression or statement.
+At line:1 char:14
++ ]Cw#C203]C-0@}#_c)@]
++              ~
+Unexpected token '}' in expression or statement.
+    + CategoryInfo          : ParserError: (:) [], ParentContainsErrorRecordException
+    + FullyQualifiedErrorId : UnexpectedToken
+
+Select-Object : Property "InvocationInfo" cannot be found.
+At line:218 char:64
++ ... bject { $_ -ne $null } | Select-Object -ExpandProperty InvocationInfo
++                              ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (System.Manageme...ptions options):PSObject) [Select-Object], PSArgumentE
+xception
+    + FullyQualifiedErrorId : ExpandPropertyNotFound,Microsoft.PowerShell.Commands.SelectObjectCommand
+[38;2;243;174;53m[0m[48;2;243;174;53m[38;2;38;43;68m Surface [0m[38;2;243;174;53m[0m[0m[38;2;240;118;35;49m[7m[0m[48;2;240;118;35m[38;2;224;222;244m  ]8;;file:C:/Users/Surface/OneDrive/SIRENSSD\SIRENSSD]8;;\ [0m[48;2;243;174;53m[38;2;240;118;35m[0m[48;2;243;174;53m[38;2;38;43;68m ]8;;https://github.com/nomadsomni/aspen_codes.git\ ]8;;\ 888.000.555 ≡  ?31 ~2 -1 [0m[48;2;243;174;53m[38;2;243;174;53m[0m[48;2;243;174;53m[38;2;224;222;244m  [0m[38;2;243;174;53m[0m[0m[38;2;216;30;91;49m[7m[0m[48;2;216;30;91m[38;2;224;222;244m  [0m[38;2;216;30;91m[0m]0;pwsh in SIRENSSD 7                                                                                                                                    [38;2;89;201;165m [0m[38;2;224;222;244min [38;2;75;149;233m[1mpwsh[22m[38;2;224;222;244m [0m[38;2;224;222;244mat [38;2;75;149;233m[1m00:31:50[22m[0m8
+PS>0-0c30C}C0]C@}_C3c}@#}-0C]-23C
+}_@c)#}_@#)c}_@)#
+At line:1 char:3
++ 0-0c30C}C0]C@}_C3c}@#}-0C]-23C
++   ~
+You must provide a value expression following the '-' operator.
+
+At line:1 char:3
++ 0-0c30C}C0]C@}_C3c}@#}-0C]-23C
++   ~~~~~
+Unexpected token '0c30C' in expression or statement.
+
+At line:1 char:8
++ 0-0c30C}C0]C@}_C3c}@#}-0C]-23C
++        ~
+Unexpected token '}' in expression or statement.
+
+At line:1 char:14
++ 0-0c30C}C0]C@}_C3c}@#}-0C]-23C
++              ~
+Unexpected token '}' in expression or statement.
+
+At line:1 char:19
++ 0-0c30C}C0]C@}_C3c}@#}-0C]-23C
++                   ~
+Unexpected token '}' in expression or statement.
+
+At line:1 char:20
++ 0-0c30C}C0]C@}_C3c}@#}-0C]-23C
++                    ~
+Unrecognized token in source text.
+
+At line:2 char:1
++ }_@c)#}_@#)c}_@)#
++ ~
+Unexpected token '}' in expression or statement.
+
+At line:2 char:5
++ }_@c)#}_@#)c}_@)#
++     ~
+Unexpected token ')' in expression or statement.
+At line:1 char:3
++ 0-0c30C}C0]C@}_C3c}@#}-0C]-23C
++   ~
+You must provide a value expression following the '-' operator.
+
+At line:1 char:3
++ 0-0c30C}C0]C@}_C3c}@#}-0C]-23C
++   ~~~~~
+Unexpected token '0c30C' in expression or statement.
+
+At line:1 char:8
++ 0-0c30C}C0]C@}_C3c}@#}-0C]-23C
++        ~
+Unexpected token '}' in expression or statement.
+
+At line:1 char:14
++ 0-0c30C}C0]C@}_C3c}@#}-0C]-23C
++              ~
+Unexpected token '}' in expression or statement.
+
+At line:1 char:19
++ 0-0c30C}C0]C@}_C3c}@#}-0C]-23C
++                   ~
+Unexpected token '}' in expression or statement.
+
+At line:1 char:20
++ 0-0c30C}C0]C@}_C3c}@#}-0C]-23C
++                    ~
+Unrecognized token in source text.
+
+At line:2 char:1
++ }_@c)#}_@#)c}_@)#
++ ~
+Unexpected token '}' in expression or statement.
+
+At line:2 char:5
++ }_@c)#}_@#)c}_@)#
++     ~
+Unexpected token ')' in expression or statement.
+    + CategoryInfo          : ParserError: (:) [], ParentContainsErrorRecordException
+    + FullyQualifiedErrorId : ExpectedValueExpression
+
+Select-Object : Property "InvocationInfo" cannot be found.
+At line:218 char:64
++ ... bject { $_ -ne $null } | Select-Object -ExpandProperty InvocationInfo
++                              ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (System.Manageme...ptions options):PSObject) [Select-Object], PSArgumentE
+xception
+    + FullyQualifiedErrorId : ExpandPropertyNotFound,Microsoft.PowerShell.Commands.SelectObjectCommand
+[38;2;243;174;53m[0m[48;2;243;174;53m[38;2;38;43;68m Surface [0m[38;2;243;174;53m[0m[0m[38;2;240;118;35;49m[7m[0m[48;2;240;118;35m[38;2;224;222;244m  ]8;;file:C:/Users/Surface/OneDrive/SIRENSSD\SIRENSSD]8;;\ [0m[48;2;243;174;53m[38;2;240;118;35m[0m[48;2;243;174;53m[38;2;38;43;68m ]8;;https://github.com/nomadsomni/aspen_codes.git\ ]8;;\ 888.000.555 ≡  ?31 ~2 -1 [0m[48;2;243;174;53m[38;2;243;174;53m[0m[48;2;243;174;53m[38;2;224;222;244m  [0m[38;2;243;174;53m[0m[0m[38;2;216;30;91;49m[7m[0m[48;2;216;30;91m[38;2;224;222;244m  [0m[38;2;216;30;91m[0m]0;pwsh in SIRENSSD 7                                                                                                                                    [38;2;89;201;165m [0m[38;2;224;222;244min [38;2;75;149;233m[1mpwsh[22m[38;2;224;222;244m [0m[38;2;224;222;244mat [38;2;75;149;233m[1m00:31:56[22m[0m8
+PS>]-C)@
+}#_c)@}#@)#}
+_c@c)}w_#cw#}_)@}#_)}#_)cw}_#)c}_@)#}
+$c_@)#
+}_C0w
+}#_)cw
+}_#04C
+At line:1 char:4
++ ]-C)@
++    ~
+Unexpected token ')' in expression or statement.
+
+At line:1 char:5
++ ]-C)@
++     ~
+Unrecognized token in source text.
+
+At line:2 char:1
++ }#_c)@}#@)#}
++ ~
+Unexpected token '}' in expression or statement.
+
+At line:3 char:5
++ _c@c)}w_#cw#}_)@}#_)}#_)cw}_#)c}_@)#}
++     ~
+Unexpected token ')' in expression or statement.
+
+At line:3 char:6
++ _c@c)}w_#cw#}_)@}#_)}#_)cw}_#)c}_@)#}
++      ~
+Unexpected token '}' in expression or statement.
+
+At line:3 char:13
++ _c@c)}w_#cw#}_)@}#_)}#_)cw}_#)c}_@)#}
++             ~
+Unexpected token '}' in expression or statement.
+
+At line:3 char:15
++ _c@c)}w_#cw#}_)@}#_)}#_)cw}_#)c}_@)#}
++               ~
+Unexpected token ')' in expression or statement.
+
+At line:3 char:16
++ _c@c)}w_#cw#}_)@}#_)}#_)cw}_#)c}_@)#}
++                ~
+Unrecognized token in source text.
+
+At line:3 char:17
++ _c@c)}w_#cw#}_)@}#_)}#_)cw}_#)c}_@)#}
++                 ~
+Unexpected token '}' in expression or statement.
+
+At line:4 char:4
++ $c_@)#
++    ~
+Unrecognized token in source text.
+
+Not all parse errors were reported.  Correct the reported errors and try again.
+At line:1 char:4
++ ]-C)@
++    ~
+Unexpected token ')' in expression or statement.
+
+At line:1 char:5
++ ]-C)@
++     ~
+Unrecognized token in source text.
+
+At line:2 char:1
++ }#_c)@}#@)#}
++ ~
+Unexpected token '}' in expression or statement.
+
+At line:3 char:5
++ _c@c)}w_#cw#}_)@}#_)}#_)cw}_#)c}_@)#}
++     ~
+Unexpected token ')' in expression or statement.
+
+At line:3 char:6
++ _c@c)}w_#cw#}_)@}#_)}#_)cw}_#)c}_@)#}
++      ~
+Unexpected token '}' in expression or statement.
+
+At line:3 char:13
++ _c@c)}w_#cw#}_)@}#_)}#_)cw}_#)c}_@)#}
++             ~
+Unexpected token '}' in expression or statement.
+
+At line:3 char:15
++ _c@c)}w_#cw#}_)@}#_)}#_)cw}_#)c}_@)#}
++               ~
+Unexpected token ')' in expression or statement.
+
+At line:3 char:16
++ _c@c)}w_#cw#}_)@}#_)}#_)cw}_#)c}_@)#}
++                ~
+Unrecognized token in source text.
+
+At line:3 char:17
++ _c@c)}w_#cw#}_)@}#_)}#_)cw}_#)c}_@)#}
++                 ~
+Unexpected token '}' in expression or statement.
+
+At line:4 char:4
++ $c_@)#
++    ~
+Unrecognized token in source text.
+
+Not all parse errors were reported.  Correct the reported errors and try again.
+    + CategoryInfo          : ParserError: (:) [], ParentContainsErrorRecordException
+    + FullyQualifiedErrorId : UnexpectedToken
+
+Select-Object : Property "InvocationInfo" cannot be found.
+At line:218 char:64
++ ... bject { $_ -ne $null } | Select-Object -ExpandProperty InvocationInfo
++                              ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (System.Manageme...ptions options):PSObject) [Select-Object], PSArgumentE
+xception
+    + FullyQualifiedErrorId : ExpandPropertyNotFound,Microsoft.PowerShell.Commands.SelectObjectCommand
+[38;2;243;174;53m[0m[48;2;243;174;53m[38;2;38;43;68m Surface [0m[38;2;243;174;53m[0m[0m[38;2;240;118;35;49m[7m[0m[48;2;240;118;35m[38;2;224;222;244m  ]8;;file:C:/Users/Surface/OneDrive/SIRENSSD\SIRENSSD]8;;\ [0m[48;2;243;174;53m[38;2;240;118;35m[0m[48;2;243;174;53m[38;2;38;43;68m ]8;;https://github.com/nomadsomni/aspen_codes.git\ ]8;;\ 888.000.555 ≡  ?31 ~2 -1 [0m[48;2;243;174;53m[38;2;243;174;53m[0m[48;2;243;174;53m[38;2;224;222;244m  [0m[38;2;243;174;53m[0m[0m[38;2;216;30;91;49m[7m[0m[48;2;216;30;91m[38;2;224;222;244m  [0m[38;2;216;30;91m[0m]0;pwsh in SIRENSSD 7                                                                                                                                    [38;2;89;201;165m [0m[38;2;224;222;244min [38;2;75;149;233m[1mpwsh[22m[38;2;224;222;244m [0m[38;2;224;222;244mat [38;2;75;149;233m[1m00:32:02[22m[0m8
+PS>]-w)#
+At line:1 char:4
++ ]-w)#
++    ~
+Unexpected token ')' in expression or statement.
+At line:1 char:4
++ ]-w)#
++    ~
+Unexpected token ')' in expression or statement.
+    + CategoryInfo          : ParserError: (:) [], ParentContainsErrorRecordException
+    + FullyQualifiedErrorId : UnexpectedToken
+
+Select-Object : Property "InvocationInfo" cannot be found.
+At line:218 char:64
++ ... bject { $_ -ne $null } | Select-Object -ExpandProperty InvocationInfo
++                              ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (System.Manageme...ptions options):PSObject) [Select-Object], PSArgumentE
+xception
+    + FullyQualifiedErrorId : ExpandPropertyNotFound,Microsoft.PowerShell.Commands.SelectObjectCommand
+[38;2;243;174;53m[0m[48;2;243;174;53m[38;2;38;43;68m Surface [0m[38;2;243;174;53m[0m[0m[38;2;240;118;35;49m[7m[0m[48;2;240;118;35m[38;2;224;222;244m  ]8;;file:C:/Users/Surface/OneDrive/SIRENSSD\SIRENSSD]8;;\ [0m[48;2;243;174;53m[38;2;240;118;35m[0m[48;2;243;174;53m[38;2;38;43;68m ]8;;https://github.com/nomadsomni/aspen_codes.git\ ]8;;\ 888.000.555 ≡  ?31 ~2 -1 [0m[48;2;243;174;53m[38;2;243;174;53m[0m[48;2;243;174;53m[38;2;224;222;244m  [0m[38;2;243;174;53m[0m[0m[38;2;216;30;91;49m[7m[0m[48;2;216;30;91m[38;2;224;222;244m  [0m[38;2;216;30;91m[0m]0;pwsh in SIRENSSD 7                                                                                                                                    [38;2;89;201;165m [0m[38;2;224;222;244min [38;2;75;149;233m[1mpwsh[22m[38;2;224;222;244m [0m[38;2;224;222;244mat [38;2;75;149;233m[1m00:32:06[22m[0m8
+PS>]4C-0W]3C))c}
+$@_)c
+At line:1 char:10
++ ]4C-0W]3C))c}
++          ~
+Unexpected token ')' in expression or statement.
+
+At line:1 char:11
++ ]4C-0W]3C))c}
++           ~
+Unexpected token ')' in expression or statement.
+
+At line:1 char:13
++ ]4C-0W]3C))c}
++             ~
+Unexpected token '}' in expression or statement.
+
+At line:2 char:4
++ $@_)c
++    ~
+Unexpected token ')' in expression or statement.
+At line:1 char:10
++ ]4C-0W]3C))c}
++          ~
+Unexpected token ')' in expression or statement.
+
+At line:1 char:11
++ ]4C-0W]3C))c}
++           ~
+Unexpected token ')' in expression or statement.
+
+At line:1 char:13
++ ]4C-0W]3C))c}
++             ~
+Unexpected token '}' in expression or statement.
+
+At line:2 char:4
++ $@_)c
++    ~
+Unexpected token ')' in expression or statement.
+    + CategoryInfo          : ParserError: (:) [], ParentContainsErrorRecordException
+    + FullyQualifiedErrorId : UnexpectedToken
+
+Select-Object : Property "InvocationInfo" cannot be found.
+At line:218 char:64
++ ... bject { $_ -ne $null } | Select-Object -ExpandProperty InvocationInfo
++                              ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (System.Manageme...ptions options):PSObject) [Select-Object], PSArgumentE
+xception
+    + FullyQualifiedErrorId : ExpandPropertyNotFound,Microsoft.PowerShell.Commands.SelectObjectCommand
+[38;2;243;174;53m[0m[48;2;243;174;53m[38;2;38;43;68m Surface [0m[38;2;243;174;53m[0m[0m[38;2;240;118;35;49m[7m[0m[48;2;240;118;35m[38;2;224;222;244m  ]8;;file:C:/Users/Surface/OneDrive/SIRENSSD\SIRENSSD]8;;\ [0m[48;2;243;174;53m[38;2;240;118;35m[0m[48;2;243;174;53m[38;2;38;43;68m ]8;;https://github.com/nomadsomni/aspen_codes.git\ ]8;;\ 888.000.555 ≡  ?31 ~2 -1 [0m[48;2;243;174;53m[38;2;243;174;53m[0m[48;2;243;174;53m[38;2;224;222;244m  [0m[38;2;243;174;53m[0m[0m[38;2;216;30;91;49m[7m[0m[48;2;216;30;91m[38;2;224;222;244m  [0m[38;2;216;30;91m[0m]0;pwsh in SIRENSSD 7                                                                                                                                    [38;2;89;201;165m [0m[38;2;224;222;244min [38;2;75;149;233m[1mpwsh[22m[38;2;224;222;244m [0m[38;2;224;222;244mat [38;2;75;149;233m[1m00:32:09[22m[0m8
+PS>]_w)#}
+_@)}_c)@}#_c$}_w#
+]C-)}_#C]2-0C]02
+At line:1 char:4
++ ]_w)#}
++    ~
+Unexpected token ')' in expression or statement.
+
+At line:2 char:3
++ _@)}_c)@}#_c$}_w#
++   ~
+Unexpected token ')' in expression or statement.
+
+At line:2 char:4
++ _@)}_c)@}#_c$}_w#
++    ~
+Unexpected token '}' in expression or statement.
+
+At line:2 char:7
++ _@)}_c)@}#_c$}_w#
++       ~
+Unexpected token ')' in expression or statement.
+
+At line:2 char:8
++ _@)}_c)@}#_c$}_w#
++        ~
+Unrecognized token in source text.
+
+At line:2 char:9
++ _@)}_c)@}#_c$}_w#
++         ~
+Unexpected token '}' in expression or statement.
+
+At line:3 char:4
++ ]C-)}_#C]2-0C]02
++    ~
+Unexpected token ')' in expression or statement.
+
+At line:3 char:5
++ ]C-)}_#C]2-0C]02
++     ~
+Unexpected token '}' in expression or statement.
+At line:1 char:4
++ ]_w)#}
++    ~
+Unexpected token ')' in expression or statement.
+
+At line:2 char:3
++ _@)}_c)@}#_c$}_w#
++   ~
+Unexpected token ')' in expression or statement.
+
+At line:2 char:4
++ _@)}_c)@}#_c$}_w#
++    ~
+Unexpected token '}' in expression or statement.
+
+At line:2 char:7
++ _@)}_c)@}#_c$}_w#
++       ~
+Unexpected token ')' in expression or statement.
+
+At line:2 char:8
++ _@)}_c)@}#_c$}_w#
++        ~
+Unrecognized token in source text.
+
+At line:2 char:9
++ _@)}_c)@}#_c$}_w#
++         ~
+Unexpected token '}' in expression or statement.
+
+At line:3 char:4
++ ]C-)}_#C]2-0C]02
++    ~
+Unexpected token ')' in expression or statement.
+
+At line:3 char:5
++ ]C-)}_#C]2-0C]02
++     ~
+Unexpected token '}' in expression or statement.
+    + CategoryInfo          : ParserError: (:) [], ParentContainsErrorRecordException
+    + FullyQualifiedErrorId : UnexpectedToken
+
+Select-Object : Property "InvocationInfo" cannot be found.
+At line:218 char:64
++ ... bject { $_ -ne $null } | Select-Object -ExpandProperty InvocationInfo
++                              ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (System.Manageme...ptions options):PSObject) [Select-Object], PSArgumentE
+xception
+    + FullyQualifiedErrorId : ExpandPropertyNotFound,Microsoft.PowerShell.Commands.SelectObjectCommand
+[38;2;243;174;53m[0m[48;2;243;174;53m[38;2;38;43;68m Surface [0m[38;2;243;174;53m[0m[0m[38;2;240;118;35;49m[7m[0m[48;2;240;118;35m[38;2;224;222;244m  ]8;;file:C:/Users/Surface/OneDrive/SIRENSSD\SIRENSSD]8;;\ [0m[48;2;243;174;53m[38;2;240;118;35m[0m[48;2;243;174;53m[38;2;38;43;68m ]8;;https://github.com/nomadsomni/aspen_codes.git\ ]8;;\ 888.000.555 ≡  ?31 ~2 -1 [0m[48;2;243;174;53m[38;2;243;174;53m[0m[48;2;243;174;53m[38;2;224;222;244m  [0m[38;2;243;174;53m[0m[0m[38;2;216;30;91;49m[7m[0m[48;2;216;30;91m[38;2;224;222;244m  [0m[38;2;216;30;91m[0m]0;pwsh in SIRENSSD 7                                                                                                                                    [38;2;89;201;165m [0m[38;2;224;222;244min [38;2;75;149;233m[1mpwsh[22m[38;2;224;222;244m [0m[38;2;224;222;244mat [38;2;75;149;233m[1m00:32:13[22m[0m8
+PS>]3-C02]
+] : The term ']' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelli
+ng of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:1
++ ]3-C02]
++ ~
+    + CategoryInfo          : ObjectNotFound: (]:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+] : The term ']' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelling of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:1
++ ]3-C02]
++ ~
+    + CategoryInfo          : ObjectNotFound: (]:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+[38;2;243;174;53m[0m[48;2;243;174;53m[38;2;38;43;68m Surface [0m[38;2;243;174;53m[0m[0m[38;2;240;118;35;49m[7m[0m[48;2;240;118;35m[38;2;224;222;244m  ]8;;file:C:/Users/Surface/OneDrive/SIRENSSD\SIRENSSD]8;;\ [0m[48;2;243;174;53m[38;2;240;118;35m[0m[48;2;243;174;53m[38;2;38;43;68m ]8;;https://github.com/nomadsomni/aspen_codes.git\ ]8;;\ 888.000.555 ≡  ?31 ~2 -1 [0m[48;2;243;174;53m[38;2;243;174;53m[0m[48;2;243;174;53m[38;2;224;222;244m  [0m[38;2;243;174;53m[0m[0m[38;2;216;30;91;49m[7m[0m[48;2;216;30;91m[38;2;224;222;244m  [0m[38;2;216;30;91m[0m]0;pwsh in SIRENSSD 7                                                                                                                                    [38;2;89;201;165m [0m[38;2;224;222;244min [38;2;75;149;233m[1mpwsh[22m[38;2;224;222;244m [0m[38;2;224;222;244mat [38;2;75;149;233m[1m00:32:23[22m[0m8
+PS>3-C0]_c)
+@}_)C4]
+At line:1 char:2
++ 3-C0]_c)
++  ~~
+Unexpected token '-C' in expression or statement.
+
+At line:1 char:4
++ 3-C0]_c)
++    ~~~~
+Unexpected token '0]_c' in expression or statement.
+
+At line:1 char:5
++ 3-C0]_c)
++     ~
+Unexpected token ']' in expression or statement.
+
+At line:1 char:8
++ 3-C0]_c)
++        ~
+Unexpected token ')' in expression or statement.
+
+At line:2 char:1
++ @}_)C4]
++ ~
+Unrecognized token in source text.
+
+At line:2 char:2
++ @}_)C4]
++  ~
+Unexpected token '}' in expression or statement.
+
+At line:2 char:4
++ @}_)C4]
++    ~
+Unexpected token ')' in expression or statement.
+At line:1 char:2
++ 3-C0]_c)
++  ~~
+Unexpected token '-C' in expression or statement.
+
+At line:1 char:4
++ 3-C0]_c)
++    ~~~~
+Unexpected token '0]_c' in expression or statement.
+
+At line:1 char:5
++ 3-C0]_c)
++     ~
+Unexpected token ']' in expression or statement.
+
+At line:1 char:8
++ 3-C0]_c)
++        ~
+Unexpected token ')' in expression or statement.
+
+At line:2 char:1
++ @}_)C4]
++ ~
+Unrecognized token in source text.
+
+At line:2 char:2
++ @}_)C4]
++  ~
+Unexpected token '}' in expression or statement.
+
+At line:2 char:4
++ @}_)C4]
++    ~
+Unexpected token ')' in expression or statement.
+    + CategoryInfo          : ParserError: (:) [], ParentContainsErrorRecordException
+    + FullyQualifiedErrorId : UnexpectedToken
+
+Select-Object : Property "InvocationInfo" cannot be found.
+At line:218 char:64
++ ... bject { $_ -ne $null } | Select-Object -ExpandProperty InvocationInfo
++                              ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (System.Manageme...ptions options):PSObject) [Select-Object], PSArgumentE
+xception
+    + FullyQualifiedErrorId : ExpandPropertyNotFound,Microsoft.PowerShell.Commands.SelectObjectCommand
+[38;2;243;174;53m[0m[48;2;243;174;53m[38;2;38;43;68m Surface [0m[38;2;243;174;53m[0m[0m[38;2;240;118;35;49m[7m[0m[48;2;240;118;35m[38;2;224;222;244m  ]8;;file:C:/Users/Surface/OneDrive/SIRENSSD\SIRENSSD]8;;\ [0m[48;2;243;174;53m[38;2;240;118;35m[0m[48;2;243;174;53m[38;2;38;43;68m ]8;;https://github.com/nomadsomni/aspen_codes.git\ ]8;;\ 888.000.555 ≡  ?31 ~2 -1 [0m[48;2;243;174;53m[38;2;243;174;53m[0m[48;2;243;174;53m[38;2;224;222;244m  [0m[38;2;243;174;53m[0m[0m[38;2;216;30;91;49m[7m[0m[48;2;216;30;91m[38;2;224;222;244m  [0m[38;2;216;30;91m[0m]0;pwsh in SIRENSSD 7                                                                                                                                    [38;2;89;201;165m [0m[38;2;224;222;244min [38;2;75;149;233m[1mpwsh[22m[38;2;224;222;244m [0m[38;2;224;222;244mat [38;2;75;149;233m[1m00:32:27[22m[0m8
+PS>-)@
+}_c)@
+}#-C0}_)c]
+At line:1 char:2
++ -)@
++  ~
+Missing expression after unary operator '-'.
+
+At line:1 char:2
++ -)@
++  ~
+Unexpected token ')' in expression or statement.
+
+At line:1 char:3
++ -)@
++   ~
+Unrecognized token in source text.
+
+At line:2 char:1
++ }_c)@
++ ~
+Unexpected token '}' in expression or statement.
+
+At line:2 char:4
++ }_c)@
++    ~
+Unexpected token ')' in expression or statement.
+
+At line:2 char:5
++ }_c)@
++     ~
+Unrecognized token in source text.
+
+At line:3 char:1
++ }#-C0}_)c]
++ ~
+Unexpected token '}' in expression or statement.
+At line:1 char:2
++ -)@
++  ~
+Missing expression after unary operator '-'.
+
+At line:1 char:2
++ -)@
++  ~
+Unexpected token ')' in expression or statement.
+
+At line:1 char:3
++ -)@
++   ~
+Unrecognized token in source text.
+
+At line:2 char:1
++ }_c)@
++ ~
+Unexpected token '}' in expression or statement.
+
+At line:2 char:4
++ }_c)@
++    ~
+Unexpected token ')' in expression or statement.
+
+At line:2 char:5
++ }_c)@
++     ~
+Unrecognized token in source text.
+
+At line:3 char:1
++ }#-C0}_)c]
++ ~
+Unexpected token '}' in expression or statement.
+    + CategoryInfo          : ParserError: (:) [], ParentContainsErrorRecordException
+    + FullyQualifiedErrorId : MissingExpressionAfterOperator
+
+Select-Object : Property "InvocationInfo" cannot be found.
+At line:218 char:64
++ ... bject { $_ -ne $null } | Select-Object -ExpandProperty InvocationInfo
++                              ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (System.Manageme...ptions options):PSObject) [Select-Object], PSArgumentE
+xception
+    + FullyQualifiedErrorId : ExpandPropertyNotFound,Microsoft.PowerShell.Commands.SelectObjectCommand
+[38;2;243;174;53m[0m[48;2;243;174;53m[38;2;38;43;68m Surface [0m[38;2;243;174;53m[0m[0m[38;2;240;118;35;49m[7m[0m[48;2;240;118;35m[38;2;224;222;244m  ]8;;file:C:/Users/Surface/OneDrive/SIRENSSD\SIRENSSD]8;;\ [0m[48;2;243;174;53m[38;2;240;118;35m[0m[48;2;243;174;53m[38;2;38;43;68m ]8;;https://github.com/nomadsomni/aspen_codes.git\ ]8;;\ 888.000.555 ≡  ?31 ~2 -1 [0m[48;2;243;174;53m[38;2;243;174;53m[0m[48;2;243;174;53m[38;2;224;222;244m  [0m[38;2;243;174;53m[0m[0m[38;2;216;30;91;49m[7m[0m[48;2;216;30;91m[38;2;224;222;244m  [0m[38;2;216;30;91m[0m]0;pwsh in SIRENSSD 7                                                                                                                                    [38;2;89;201;165m [0m[38;2;224;222;244min [38;2;75;149;233m[1mpwsh[22m[38;2;224;222;244m [0m[38;2;224;222;244mat [38;2;75;149;233m[1m00:32:30[22m[0m8
+PS>2-30C]
+At line:1 char:3
++ 2-30C]
++   ~
+You must provide a value expression following the '-' operator.
+
+At line:1 char:3
++ 2-30C]
++   ~~~~
+Unexpected token '30C]' in expression or statement.
+At line:1 char:3
++ 2-30C]
++   ~
+You must provide a value expression following the '-' operator.
+
+At line:1 char:3
++ 2-30C]
++   ~~~~
+Unexpected token '30C]' in expression or statement.
+    + CategoryInfo          : ParserError: (:) [], ParentContainsErrorRecordException
+    + FullyQualifiedErrorId : ExpectedValueExpression
+
+Select-Object : Property "InvocationInfo" cannot be found.
+At line:218 char:64
++ ... bject { $_ -ne $null } | Select-Object -ExpandProperty InvocationInfo
++                              ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (System.Manageme...ptions options):PSObject) [Select-Object], PSArgumentE
+xception
+    + FullyQualifiedErrorId : ExpandPropertyNotFound,Microsoft.PowerShell.Commands.SelectObjectCommand
+[38;2;243;174;53m[0m[48;2;243;174;53m[38;2;38;43;68m Surface [0m[38;2;243;174;53m[0m[0m[38;2;240;118;35;49m[7m[0m[48;2;240;118;35m[38;2;224;222;244m  ]8;;file:C:/Users/Surface/OneDrive/SIRENSSD\SIRENSSD]8;;\ [0m[48;2;243;174;53m[38;2;240;118;35m[0m[48;2;243;174;53m[38;2;38;43;68m ]8;;https://github.com/nomadsomni/aspen_codes.git\ ]8;;\ 888.000.555 ≡  ?31 ~2 -1 [0m[48;2;243;174;53m[38;2;243;174;53m[0m[48;2;243;174;53m[38;2;224;222;244m  [0m[38;2;243;174;53m[0m[0m[38;2;216;30;91;49m[7m[0m[48;2;216;30;91m[38;2;224;222;244m  [0m[38;2;216;30;91m[0m]0;pwsh in SIRENSSD 7                                                                                                                                    [38;2;89;201;165m [0m[38;2;224;222;244min [38;2;75;149;233m[1mpwsh[22m[38;2;224;222;244m [0m[38;2;224;222;244mat [38;2;75;149;233m[1m00:32:34[22m[0m8
+PS>-)}c_)@#
+}0C}_@)}c_@)}#
+_C40}@_3C0C]_}c_@)]-C)}c_)@}#_04
+At line:1 char:2
++ -)}c_)@#
++  ~
+Missing expression after unary operator '-'.
+
+At line:1 char:2
++ -)}c_)@#
++  ~
+Unexpected token ')' in expression or statement.
+
+At line:1 char:3
++ -)}c_)@#
++   ~
+Unexpected token '}' in expression or statement.
+
+At line:1 char:6
++ -)}c_)@#
++      ~
+Unexpected token ')' in expression or statement.
+
+At line:1 char:7
++ -)}c_)@#
++       ~
+Unrecognized token in source text.
+
+At line:2 char:1
++ }0C}_@)}c_@)}#
++ ~
+Unexpected token '}' in expression or statement.
+
+At line:2 char:4
++ }0C}_@)}c_@)}#
++    ~
+Unexpected token '}' in expression or statement.
+
+At line:2 char:7
++ }0C}_@)}c_@)}#
++       ~
+Unexpected token ')' in expression or statement.
+
+At line:2 char:8
++ }0C}_@)}c_@)}#
++        ~
+Unexpected token '}' in expression or statement.
+
+At line:2 char:12
++ }0C}_@)}c_@)}#
++            ~
+Unexpected token ')' in expression or statement.
+
+Not all parse errors were reported.  Correct the reported errors and try again.
+At line:1 char:2
++ -)}c_)@#
++  ~
+Missing expression after unary operator '-'.
+
+At line:1 char:2
++ -)}c_)@#
++  ~
+Unexpected token ')' in expression or statement.
+
+At line:1 char:3
++ -)}c_)@#
++   ~
+Unexpected token '}' in expression or statement.
+
+At line:1 char:6
++ -)}c_)@#
++      ~
+Unexpected token ')' in expression or statement.
+
+At line:1 char:7
++ -)}c_)@#
++       ~
+Unrecognized token in source text.
+
+At line:2 char:1
++ }0C}_@)}c_@)}#
++ ~
+Unexpected token '}' in expression or statement.
+
+At line:2 char:4
++ }0C}_@)}c_@)}#
++    ~
+Unexpected token '}' in expression or statement.
+
+At line:2 char:7
++ }0C}_@)}c_@)}#
++       ~
+Unexpected token ')' in expression or statement.
+
+At line:2 char:8
++ }0C}_@)}c_@)}#
++        ~
+Unexpected token '}' in expression or statement.
+
+At line:2 char:12
++ }0C}_@)}c_@)}#
++            ~
+Unexpected token ')' in expression or statement.
+
+Not all parse errors were reported.  Correct the reported errors and try again.
+    + CategoryInfo          : ParserError: (:) [], ParentContainsErrorRecordException
+    + FullyQualifiedErrorId : MissingExpressionAfterOperator
+
+Select-Object : Property "InvocationInfo" cannot be found.
+At line:218 char:64
++ ... bject { $_ -ne $null } | Select-Object -ExpandProperty InvocationInfo
++                              ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (System.Manageme...ptions options):PSObject) [Select-Object], PSArgumentE
+xception
+    + FullyQualifiedErrorId : ExpandPropertyNotFound,Microsoft.PowerShell.Commands.SelectObjectCommand
+[38;2;243;174;53m[0m[48;2;243;174;53m[38;2;38;43;68m Surface [0m[38;2;243;174;53m[0m[0m[38;2;240;118;35;49m[7m[0m[48;2;240;118;35m[38;2;224;222;244m  ]8;;file:C:/Users/Surface/OneDrive/SIRENSSD\SIRENSSD]8;;\ [0m[48;2;243;174;53m[38;2;240;118;35m[0m[48;2;243;174;53m[38;2;38;43;68m ]8;;https://github.com/nomadsomni/aspen_codes.git\ ]8;;\ 888.000.555 ≡  ?31 ~2 -1 [0m[48;2;243;174;53m[38;2;243;174;53m[0m[48;2;243;174;53m[38;2;224;222;244m  [0m[38;2;243;174;53m[0m[0m[38;2;216;30;91;49m[7m[0m[48;2;216;30;91m[38;2;224;222;244m  [0m[38;2;216;30;91m[0m]0;pwsh in SIRENSSD 7                                                                                                                                    [38;2;89;201;165m [0m[38;2;224;222;244min [38;2;75;149;233m[1mpwsh[22m[38;2;224;222;244m [0m[38;2;224;222;244mat [38;2;75;149;233m[1m00:32:37[22m[0m8
+PS>]-0}_)@c}_@)#
+}_)c}_@#)}
+_@)c$}_@)#
+)
+}C-0}_#0@
+}_)#$c}_@)}3-4C0})2]3
+At line:1 char:4
++ ]-0}_)@c}_@)#
++    ~
+Unexpected token '}' in expression or statement.
+
+At line:1 char:6
++ ]-0}_)@c}_@)#
++      ~
+Unexpected token ')' in expression or statement.
+
+At line:1 char:9
++ ]-0}_)@c}_@)#
++         ~
+Unexpected token '}' in expression or statement.
+
+At line:1 char:12
++ ]-0}_)@c}_@)#
++            ~
+Unexpected token ')' in expression or statement.
+
+At line:2 char:1
++ }_)c}_@#)}
++ ~
+Unexpected token '}' in expression or statement.
+
+At line:2 char:3
++ }_)c}_@#)}
++   ~
+Unexpected token ')' in expression or statement.
+
+At line:2 char:5
++ }_)c}_@#)}
++     ~
+Unexpected token '}' in expression or statement.
+
+At line:2 char:9
++ }_)c}_@#)}
++         ~
+Unexpected token ')' in expression or statement.
+
+At line:2 char:10
++ }_)c}_@#)}
++          ~
+Unexpected token '}' in expression or statement.
+
+At line:3 char:3
++ _@)c$}_@)#
++   ~
+Unexpected token ')' in expression or statement.
+
+Not all parse errors were reported.  Correct the reported errors and try again.
+At line:1 char:4
++ ]-0}_)@c}_@)#
++    ~
+Unexpected token '}' in expression or statement.
+
+At line:1 char:6
++ ]-0}_)@c}_@)#
++      ~
+Unexpected token ')' in expression or statement.
+
+At line:1 char:9
++ ]-0}_)@c}_@)#
++         ~
+Unexpected token '}' in expression or statement.
+
+At line:1 char:12
++ ]-0}_)@c}_@)#
++            ~
+Unexpected token ')' in expression or statement.
+
+At line:2 char:1
++ }_)c}_@#)}
++ ~
+Unexpected token '}' in expression or statement.
+
+At line:2 char:3
++ }_)c}_@#)}
++   ~
+Unexpected token ')' in expression or statement.
+
+At line:2 char:5
++ }_)c}_@#)}
++     ~
+Unexpected token '}' in expression or statement.
+
+At line:2 char:9
++ }_)c}_@#)}
++         ~
+Unexpected token ')' in expression or statement.
+
+At line:2 char:10
++ }_)c}_@#)}
++          ~
+Unexpected token '}' in expression or statement.
+
+At line:3 char:3
++ _@)c$}_@)#
++   ~
+Unexpected token ')' in expression or statement.
+
+Not all parse errors were reported.  Correct the reported errors and try again.
+    + CategoryInfo          : ParserError: (:) [], ParentContainsErrorRecordException
+    + FullyQualifiedErrorId : UnexpectedToken
+
+Select-Object : Property "InvocationInfo" cannot be found.
+At line:218 char:64
++ ... bject { $_ -ne $null } | Select-Object -ExpandProperty InvocationInfo
++                              ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (System.Manageme...ptions options):PSObject) [Select-Object], PSArgumentE
+xception
+    + FullyQualifiedErrorId : ExpandPropertyNotFound,Microsoft.PowerShell.Commands.SelectObjectCommand
+[38;2;243;174;53m[0m[48;2;243;174;53m[38;2;38;43;68m Surface [0m[38;2;243;174;53m[0m[0m[38;2;240;118;35;49m[7m[0m[48;2;240;118;35m[38;2;224;222;244m  ]8;;file:C:/Users/Surface/OneDrive/SIRENSSD\SIRENSSD]8;;\ [0m[48;2;243;174;53m[38;2;240;118;35m[0m[48;2;243;174;53m[38;2;38;43;68m ]8;;https://github.com/nomadsomni/aspen_codes.git\ ]8;;\ 888.000.555 ≡  ?31 ~2 -1 [0m[48;2;243;174;53m[38;2;243;174;53m[0m[48;2;243;174;53m[38;2;224;222;244m  [0m[38;2;243;174;53m[0m[0m[38;2;216;30;91;49m[7m[0m[48;2;216;30;91m[38;2;224;222;244m  [0m[38;2;216;30;91m[0m]0;pwsh in SIRENSSD 7                                                                                                                                    [38;2;89;201;165m [0m[38;2;224;222;244min [38;2;75;149;233m[1mpwsh[22m[38;2;224;222;244m [0m[38;2;224;222;244mat [38;2;75;149;233m[1m00:32:41[22m[0m8
+PS>C-0}_)c}_@)#]-0C}@_#0C]
+At line:1 char:4
++ C-0}_)c}_@)#]-0C}@_#0C]
++    ~
+Unexpected token '}' in expression or statement.
+
+At line:1 char:6
++ C-0}_)c}_@)#]-0C}@_#0C]
++      ~
+Unexpected token ')' in expression or statement.
+
+At line:1 char:8
++ C-0}_)c}_@)#]-0C}@_#0C]
++        ~
+Unexpected token '}' in expression or statement.
+
+At line:1 char:11
++ C-0}_)c}_@)#]-0C}@_#0C]
++           ~
+Unexpected token ')' in expression or statement.
+At line:1 char:4
++ C-0}_)c}_@)#]-0C}@_#0C]
++    ~
+Unexpected token '}' in expression or statement.
+
+At line:1 char:6
++ C-0}_)c}_@)#]-0C}@_#0C]
++      ~
+Unexpected token ')' in expression or statement.
+
+At line:1 char:8
++ C-0}_)c}_@)#]-0C}@_#0C]
++        ~
+Unexpected token '}' in expression or statement.
+
+At line:1 char:11
++ C-0}_)c}_@)#]-0C}@_#0C]
++           ~
+Unexpected token ')' in expression or statement.
+    + CategoryInfo          : ParserError: (:) [], ParentContainsErrorRecordException
+    + FullyQualifiedErrorId : UnexpectedToken
+
+Select-Object : Property "InvocationInfo" cannot be found.
+At line:218 char:64
++ ... bject { $_ -ne $null } | Select-Object -ExpandProperty InvocationInfo
++                              ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (System.Manageme...ptions options):PSObject) [Select-Object], PSArgumentE
+xception
+    + FullyQualifiedErrorId : ExpandPropertyNotFound,Microsoft.PowerShell.Commands.SelectObjectCommand
+[38;2;243;174;53m[0m[48;2;243;174;53m[38;2;38;43;68m Surface [0m[38;2;243;174;53m[0m[0m[38;2;240;118;35;49m[7m[0m[48;2;240;118;35m[38;2;224;222;244m  ]8;;file:C:/Users/Surface/OneDrive/SIRENSSD\SIRENSSD]8;;\ [0m[48;2;243;174;53m[38;2;240;118;35m[0m[48;2;243;174;53m[38;2;38;43;68m ]8;;https://github.com/nomadsomni/aspen_codes.git\ ]8;;\ 888.000.555 ≡  ?31 ~2 -1 [0m[48;2;243;174;53m[38;2;243;174;53m[0m[48;2;243;174;53m[38;2;224;222;244m  [0m[38;2;243;174;53m[0m[0m[38;2;216;30;91;49m[7m[0m[48;2;216;30;91m[38;2;224;222;244m  [0m[38;2;216;30;91m[0m]0;pwsh in SIRENSSD 7                                                                                                                                    [38;2;89;201;165m [0m[38;2;224;222;244min [38;2;75;149;233m[1mpwsh[22m[38;2;224;222;244m [0m[38;2;224;222;244mat [38;2;75;149;233m[1m00:32:44[22m[0m8
+PS>-@)#}_c)}
+@#)}c_@)#}-0C}@_)#_@#}_c)@}_#c)@}
+#_c)}@_#)c}_)@#
+}C4@)}#_c)}
+@_)$c}_)@#}
+_c)@})c}@)#}
+_c)@}#_)c}_@#)}
+_c)@#})c}@_#)c})@)c}@_#]
+At line:1 char:2
++ -@)#}_c)}
++  ~
+Unrecognized token in source text.
+
+At line:1 char:2
++ -@)#}_c)}
++  ~
+Missing expression after unary operator '-'.
+
+At line:1 char:2
++ -@)#}_c)}
++  ~
+Unexpected token '@' in expression or statement.
+
+At line:1 char:3
++ -@)#}_c)}
++   ~
+Unexpected token ')' in expression or statement.
+
+At line:2 char:1
++ @#)}c_@)#}-0C}@_)#_@#}_c)@}_#c)@}
++ ~
+Unrecognized token in source text.
+
+At line:4 char:1
++ }C4@)}#_c)}
++ ~
+Unexpected token '}' in expression or statement.
+
+At line:4 char:5
++ }C4@)}#_c)}
++     ~
+Unexpected token ')' in expression or statement.
+
+At line:4 char:6
++ }C4@)}#_c)}
++      ~
+Unexpected token '}' in expression or statement.
+
+At line:5 char:3
++ @_)$c}_)@#}
++   ~
+Unexpected token ')' in expression or statement.
+
+At line:5 char:6
++ @_)$c}_)@#}
++      ~
+Unexpected token '}' in expression or statement.
+
+Not all parse errors were reported.  Correct the reported errors and try again.
+At line:1 char:2
++ -@)#}_c)}
++  ~
+Unrecognized token in source text.
+
+At line:1 char:2
++ -@)#}_c)}
++  ~
+Missing expression after unary operator '-'.
+
+At line:1 char:2
++ -@)#}_c)}
++  ~
+Unexpected token '@' in expression or statement.
+
+At line:1 char:3
++ -@)#}_c)}
++   ~
+Unexpected token ')' in expression or statement.
+
+At line:2 char:1
++ @#)}c_@)#}-0C}@_)#_@#}_c)@}_#c)@}
++ ~
+Unrecognized token in source text.
+
+At line:4 char:1
++ }C4@)}#_c)}
++ ~
+Unexpected token '}' in expression or statement.
+
+At line:4 char:5
++ }C4@)}#_c)}
++     ~
+Unexpected token ')' in expression or statement.
+
+At line:4 char:6
++ }C4@)}#_c)}
++      ~
+Unexpected token '}' in expression or statement.
+
+At line:5 char:3
++ @_)$c}_)@#}
++   ~
+Unexpected token ')' in expression or statement.
+
+At line:5 char:6
++ @_)$c}_)@#}
++      ~
+Unexpected token '}' in expression or statement.
+
+Not all parse errors were reported.  Correct the reported errors and try again.
+    + CategoryInfo          : ParserError: (:) [], ParentContainsErrorRecordException
+    + FullyQualifiedErrorId : UnrecognizedToken
+
+Select-Object : Property "InvocationInfo" cannot be found.
+At line:218 char:64
++ ... bject { $_ -ne $null } | Select-Object -ExpandProperty InvocationInfo
++                              ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (System.Manageme...ptions options):PSObject) [Select-Object], PSArgumentE
+xception
+    + FullyQualifiedErrorId : ExpandPropertyNotFound,Microsoft.PowerShell.Commands.SelectObjectCommand
+[38;2;243;174;53m[0m[48;2;243;174;53m[38;2;38;43;68m Surface [0m[38;2;243;174;53m[0m[0m[38;2;240;118;35;49m[7m[0m[48;2;240;118;35m[38;2;224;222;244m  ]8;;file:C:/Users/Surface/OneDrive/SIRENSSD\SIRENSSD]8;;\ [0m[48;2;243;174;53m[38;2;240;118;35m[0m[48;2;243;174;53m[38;2;38;43;68m ]8;;https://github.com/nomadsomni/aspen_codes.git\ ]8;;\ 888.000.555 ≡  ?31 ~2 -1 [0m[48;2;243;174;53m[38;2;243;174;53m[0m[48;2;243;174;53m[38;2;224;222;244m  [0m[38;2;243;174;53m[0m[0m[38;2;216;30;91;49m[7m[0m[48;2;216;30;91m[38;2;224;222;244m  [0m[38;2;216;30;91m[0m]0;pwsh in SIRENSSD 7                                                                                                                                    [38;2;89;201;165m [0m[38;2;224;222;244min [38;2;75;149;233m[1mpwsh[22m[38;2;224;222;244m [0m[38;2;224;222;244mat [38;2;75;149;233m[1m00:32:48[22m[0m8
+PS>C-)@c}_)
+}c_)@})c}
+_)}
+_c)3]_@)
+}_c)@}
+_#)
+}c_)@}#_)c}_@)
+}_)3]
+At line:1 char:3
++ C-)@c}_)
++   ~
+Unexpected token ')' in expression or statement.
+
+At line:1 char:6
++ C-)@c}_)
++      ~
+Unexpected token '}' in expression or statement.
+
+At line:1 char:8
++ C-)@c}_)
++        ~
+Unexpected token ')' in expression or statement.
+
+At line:2 char:1
++ }c_)@})c}
++ ~
+Unexpected token '}' in expression or statement.
+
+At line:2 char:4
++ }c_)@})c}
++    ~
+Unexpected token ')' in expression or statement.
+
+At line:2 char:5
++ }c_)@})c}
++     ~
+Unrecognized token in source text.
+
+At line:2 char:6
++ }c_)@})c}
++      ~
+Unexpected token '}' in expression or statement.
+
+At line:2 char:7
++ }c_)@})c}
++       ~
+Unexpected token ')' in expression or statement.
+
+At line:2 char:9
++ }c_)@})c}
++         ~
+Unexpected token '}' in expression or statement.
+
+At line:3 char:2
++ _)}
++  ~
+Unexpected token ')' in expression or statement.
+
+Not all parse errors were reported.  Correct the reported errors and try again.
+At line:1 char:3
++ C-)@c}_)
++   ~
+Unexpected token ')' in expression or statement.
+
+At line:1 char:6
++ C-)@c}_)
++      ~
+Unexpected token '}' in expression or statement.
+
+At line:1 char:8
++ C-)@c}_)
++        ~
+Unexpected token ')' in expression or statement.
+
+At line:2 char:1
++ }c_)@})c}
++ ~
+Unexpected token '}' in expression or statement.
+
+At line:2 char:4
++ }c_)@})c}
++    ~
+Unexpected token ')' in expression or statement.
+
+At line:2 char:5
++ }c_)@})c}
++     ~
+Unrecognized token in source text.
+
+At line:2 char:6
++ }c_)@})c}
++      ~
+Unexpected token '}' in expression or statement.
+
+At line:2 char:7
++ }c_)@})c}
++       ~
+Unexpected token ')' in expression or statement.
+
+At line:2 char:9
++ }c_)@})c}
++         ~
+Unexpected token '}' in expression or statement.
+
+At line:3 char:2
++ _)}
++  ~
+Unexpected token ')' in expression or statement.
+
+Not all parse errors were reported.  Correct the reported errors and try again.
+    + CategoryInfo          : ParserError: (:) [], ParentContainsErrorRecordException
+    + FullyQualifiedErrorId : UnexpectedToken
+
+Select-Object : Property "InvocationInfo" cannot be found.
+At line:218 char:64
++ ... bject { $_ -ne $null } | Select-Object -ExpandProperty InvocationInfo
++                              ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (System.Manageme...ptions options):PSObject) [Select-Object], PSArgumentE
+xception
+    + FullyQualifiedErrorId : ExpandPropertyNotFound,Microsoft.PowerShell.Commands.SelectObjectCommand
+[38;2;243;174;53m[0m[48;2;243;174;53m[38;2;38;43;68m Surface [0m[38;2;243;174;53m[0m[0m[38;2;240;118;35;49m[7m[0m[48;2;240;118;35m[38;2;224;222;244m  ]8;;file:C:/Users/Surface/OneDrive/SIRENSSD\SIRENSSD]8;;\ [0m[48;2;243;174;53m[38;2;240;118;35m[0m[48;2;243;174;53m[38;2;38;43;68m ]8;;https://github.com/nomadsomni/aspen_codes.git\ ]8;;\ 888.000.555 ≡  ?31 ~2 -1 [0m[48;2;243;174;53m[38;2;243;174;53m[0m[48;2;243;174;53m[38;2;224;222;244m  [0m[38;2;243;174;53m[0m[0m[38;2;216;30;91;49m[7m[0m[48;2;216;30;91m[38;2;224;222;244m  [0m[38;2;216;30;91m[0m]0;pwsh in SIRENSSD 7                                                                                                                                    [38;2;89;201;165m [0m[38;2;224;222;244min [38;2;75;149;233m[1mpwsh[22m[38;2;224;222;244m [0m[38;2;224;222;244mat [38;2;75;149;233m[1m00:32:51[22m[0m8
+PS>W-]
+W-] : The term 'W-]' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the sp
+elling of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:1
++ W-]
++ ~~~
+    + CategoryInfo          : ObjectNotFound: (W-]:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+W-] : The term 'W-]' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelling of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:1
++ W-]
++ ~~~
+    + CategoryInfo          : ObjectNotFound: (W-]:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+[38;2;243;174;53m[0m[48;2;243;174;53m[38;2;38;43;68m Surface [0m[38;2;243;174;53m[0m[0m[38;2;240;118;35;49m[7m[0m[48;2;240;118;35m[38;2;224;222;244m  ]8;;file:C:/Users/Surface/OneDrive/SIRENSSD\SIRENSSD]8;;\ [0m[48;2;243;174;53m[38;2;240;118;35m[0m[48;2;243;174;53m[38;2;38;43;68m ]8;;https://github.com/nomadsomni/aspen_codes.git\ ]8;;\ 888.000.555 ≡  ?31 ~2 -1 [0m[48;2;243;174;53m[38;2;243;174;53m[0m[48;2;243;174;53m[38;2;224;222;244m  [0m[38;2;243;174;53m[0m[0m[38;2;216;30;91;49m[7m[0m[48;2;216;30;91m[38;2;224;222;244m  [0m[38;2;216;30;91m[0m]0;pwsh in SIRENSSD 7                                                                                                                                    [38;2;89;201;165m [0m[38;2;224;222;244min [38;2;75;149;233m[1mpwsh[22m[38;2;224;222;244m [0m[38;2;224;222;244mat [38;2;75;149;233m[1m00:32:58[22m[0m8

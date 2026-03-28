@@ -1,0 +1,68 @@
+﻿**********************
+Windows PowerShell transcript start
+Start time: 20251114001253
+Username: NOMAD\Surface
+RunAs User: NOMAD\Surface
+Configuration Name: 
+Machine: NOMAD (Microsoft Windows NT 10.0.22631.0)
+Host Application: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe
+Process ID: 45984
+PSVersion: 5.1.22621.5624
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.22621.5624
+BuildVersion: 10.0.22621.5624
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+Transcript started, output file is C:\Users\Surface\OneDrive\SIRENSSD\Research Lab\Records and logging\Session_2025-11-14_00-12-44.txt
+Session logging started. Log file: C:\Users\Surface\OneDrive\SIRENSSD\Research Lab\Records and logging\Session_2025-11-14_00-12-44.txt
+[38;2;243;174;53m[0m[48;2;243;174;53m[38;2;38;43;68m Surface [0m[38;2;243;174;53m[0m[0m[38;2;240;118;35;49m[7m[0m[48;2;240;118;35m[38;2;224;222;244m  ]8;;file:C:/Users/Surface/OneDrive/SIRENSSD\SIRENSSD]8;;\ [0m[48;2;243;174;53m[38;2;240;118;35m[0m[48;2;243;174;53m[38;2;38;43;68m ]8;;https://github.com/nomadsomni/aspen_codes.git\ ]8;;\ 888.000.555 ≡  ?35 ~2 -1 [0m[48;2;243;174;53m[38;2;243;174;53m[0m[48;2;243;174;53m[38;2;224;222;244m  [0m[38;2;243;174;53m[0m[0m[38;2;75;149;233;49m[7m[0m[48;2;75;149;233m[38;2;224;222;244m  [0m[38;2;75;149;233m[0m]0;pwsh in SIRENSSD
+PS>TerminatingError(): "Exception calling "InvokePrompt" with "0" argument(s): "Wartość musi być większa lub równa zero i mniejsza od rozmiaru buforu konsoli w tym wymiarze.
+Nazwa parametru: top
+Rzeczywista wartość to -92.""
+PS>TerminatingError(): "Exception calling "InvokePrompt" with "0" argument(s): "Wartość musi być większa lub równa zero i mniejsza od rozmiaru buforu konsoli w tym wymiarze.
+Nazwa parametru: top
+Rzeczywista wartość to -93.""
+PS>TerminatingError(): "Exception calling "InvokePrompt" with "0" argument(s): "Wartość musi być większa lub równa zero i mniejsza od rozmiaru buforu konsoli w tym wymiarze.
+Nazwa parametru: top
+Rzeczywista wartość to -95.""
+PS>TerminatingError(): "Exception calling "InvokePrompt" with "0" argument(s): "Wartość musi być większa lub równa zero i mniejsza od rozmiaru buforu konsoli w tym wymiarze.
+Nazwa parametru: top
+Rzeczywista wartość to -95.""
+PS>TerminatingError(): "Exception calling "InvokePrompt" with "0" argument(s): "Wartość musi być większa lub równa zero i mniejsza od rozmiaru buforu konsoli w tym wymiarze.
+Nazwa parametru: top
+Rzeczywista wartość to -97.""
+PS>TerminatingError(): "Exception calling "InvokePrompt" with "0" argument(s): "Wartość musi być większa lub równa zero i mniejsza od rozmiaru buforu konsoli w tym wymiarze.
+Nazwa parametru: top
+Rzeczywista wartość to -192.""
+PS>TerminatingError(): "Exception calling "InvokePrompt" with "0" argument(s): "Wartość musi być większa lub równa zero i mniejsza od rozmiaru buforu konsoli w tym wymiarze.
+Nazwa parametru: top
+Rzeczywista wartość to -193.""
+PS>TerminatingError(): "Exception calling "InvokePrompt" with "0" argument(s): "Wartość musi być większa lub równa zero i mniejsza od rozmiaru buforu konsoli w tym wymiarze.
+Nazwa parametru: top
+Rzeczywista wartość to -100.""
+PS>TerminatingError(): "Exception calling "InvokePrompt" with "0" argument(s): "Wartość musi być większa lub równa zero i mniejsza od rozmiaru buforu konsoli w tym wymiarze.
+Nazwa parametru: top
+Rzeczywista wartość to -101.""
+Exception calling "ReadLine" with "2" argument(s): "Wartość musi być większa lub równa zero i mniejsza od rozmiaru bufor
+u konsoli w tym wymiarze.
+Nazwa parametru: top
+Rzeczywista wartość to 7."
+At C:\Program Files\WindowsPowerShell\Modules\PSReadLine\2.0.0\PSReadLine.psm1:4 char:5
++     [Microsoft.PowerShell.PSConsoleReadLine]::ReadLine($host.Runspace ...
++     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (:) [], MethodInvocationException
+    + FullyQualifiedErrorId : ArgumentOutOfRangeException
+PS>ęŁŚĘLSfpŚPEFLSFSPEFSŚf'lfsf'p"LF"ŚELFŚLESEFS"EOF"PSÓĘFPŚÓĘF"PÓŚĘFPOŚĘPofŚEFOSEPOfPWOePoPRowpEOrPoweRPowpeOR"PwoeR"POWe"pROWP"eor"pOWErp"owE"Pro"pwEOR"pwoeR"POe"PROwp'eor"PWEOr"pwoe"RPOWe"pROW"peor"PWOer"PowEPro"wpEOR"pwoeRPOwpEORpwoeRPoWPEORPwoerp'oW'POR'pwoer'pOE"pRO"WPeor"pOErpowE"PRo"wpEOR"pwoe"RPOw"epOR'pwoe'rpOW"pEOR'wpoer"POWE"PRO"WPeor"pWOEr"powE"ProWPOER"powe"RPoW'EPOR"Poe"RPoWEPOR"wpoer"POWEPROW"Peor"pOW'PROw'peor'PWOER'Pow'epro"wpEOR"Poweprowp"EOR'poERP"OW"peROP"pWeoP"Row"PEóoerÓe"prooer"PwOErPo"PoerwpeRO"PwoeproP'EROpwoeowEPRÓwpeóPWOEoWĘPOwpeorPÓePRoPeroWOERPówPWEORPOwerpow"pOERpwoeR"PoPEROPWoer"PWOE"rpow"Peor"PWOEr"PoĘProEOR"oer"POEr"PóęrpoęRO"WPĘRoęp"rOoerOERÓw"peorOER'POęo'OER"pOw'epóWOĘÓ"Pwoer"PoPWOER'powero'pwoer"poW"PERO"pwoeR"POWPERO"PwoerwERwperóW"pEROWoerWOEr"póweproWĘÓwpoer'pOWEEOĘSD":ASLD":ŻL:"LCLZ"ŹĆŻŁŁĆŻŁŹ"CPDLCS"PDcŚPDCŚ"CŚŁCPSDLPŚLDC"LS"PĆLSDPcLSP"DlcSPDLcpŚLDĆLSDP"ćlSCLŚdSLD'ćS:A::
+The string is missing the terminator: '.
+Exception calling "ReadLine" with "2" argument(s): "Wartość musi być większa lub równa zero i mniejsza od rozmiaru bufor
+u konsoli w tym wymiarze.
+Nazwa parametru: top
+Rzeczywista wartość to 6."
+At C:\Program Files\WindowsPowerShell\Modules\PSReadLine\2.0.0\PSReadLine.psm1:4 char:5
++     [Microsoft.PowerShell.PSConsoleReadLine]::ReadLine($host.Runspace ...
++     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (:) [], MethodInvocationException
+    + FullyQualifiedErrorId : ArgumentOutOfRangeException

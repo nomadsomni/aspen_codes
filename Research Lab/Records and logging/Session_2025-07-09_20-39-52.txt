@@ -1,0 +1,41 @@
+﻿**********************
+Windows PowerShell transcript start
+Start time: 20250709203952
+Username: NOMAD\Surface
+RunAs User: NOMAD\Surface
+Configuration Name: 
+Machine: NOMAD (Microsoft Windows NT 10.0.22631.0)
+Host Application: powershell.exe -Command Get-WmiObject Win32_Process | Where-Object {
+    $_.Name -eq 'deno.exe' -and
+    $_.CommandLine -match '^(?:\"[^\"]+\"|\S+)\s+lsp\b'
+} | ForEach-Object {
+  if ($_.Terminate()) {
+    Write-Host 'Terminated:' $_.ProcessId
+  }
+}
+Process ID: 1776
+PSVersion: 5.1.22621.5624
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.22621.5624
+BuildVersion: 10.0.22621.5624
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+Transcript started, output file is C:\Users\Surface\OneDrive\SIRENSSD\Research Lab\Records and logging\Session_2025-07-09_20-39-52.txt
+Session logging started. Log file: C:\Users\Surface\OneDrive\SIRENSSD\Research Lab\Records and logging\Session_2025-07-09_20-39-52.txt
+PS>Get-WmiObject Win32_Process | Where-Object {
+    $_.Name -eq 'deno.exe' -and
+    $_.CommandLine -match '^(?:\"[^\"]+\"|\S+)\s+lsp\b'
+} | ForEach-Object {
+  if ($_.Terminate()) {
+    Write-Host 'Terminated:' $_.ProcessId
+  }
+}
+PS>$global:?
+True
+**********************
+Windows PowerShell transcript end
+End time: 20250709203952
+**********************
