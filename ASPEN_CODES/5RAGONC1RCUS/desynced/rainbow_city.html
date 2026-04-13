@@ -1,0 +1,679 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>5RAGONC1RCUS - Rainbow City</title>
+<style>
+  :root {
+    --bg-1: #0a0710;
+    --bg-2: #140b1d;
+    --grid: rgba(193, 143, 255, 0.12);
+    --violet: #b77cff;
+    --pink: #ff68cf;
+    --yellow: #ffd84f;
+    --text: #eadbff;
+  }
+  html, body {
+    margin: 0;
+    height: 100%;
+    background:
+      radial-gradient(900px 620px at 18% 18%, rgba(255, 104, 207, 0.11), transparent 58%),
+      radial-gradient(960px 760px at 78% 86%, rgba(255, 216, 79, 0.10), transparent 60%),
+      linear-gradient(180deg, rgba(183, 124, 255, 0.06), transparent 30%),
+      linear-gradient(160deg, var(--bg-1), var(--bg-2));
+    overflow: hidden;
+  }
+  canvas {
+    width: 100vw;
+    height: 100vh;
+    display: block;
+  }
+  .hud {
+    position: fixed;
+    left: 12px;
+    top: 12px;
+    max-width: 360px;
+    padding: 10px 12px;
+    color: var(--text);
+    background: rgba(18, 10, 28, 0.58);
+    border: 1px solid rgba(183, 124, 255, 0.36);
+    border-radius: 12px;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    font: 12px/1.45 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    user-select: none;
+  }
+  .hud b { color: #ffd7f5; }
+  .hud .keys { opacity: 0.78; }
+  .hud .palette {
+    display: flex;
+    gap: 10px;
+    margin-top: 7px;
+    opacity: 0.9;
+  }
+  .hud .swatch { display: inline-flex; align-items: center; gap: 6px; }
+  .hud .dot {
+    width: 9px;
+    height: 9px;
+    border-radius: 999px;
+    box-shadow: 0 0 12px currentColor;
+  }
+  .terminal {
+    position: fixed;
+    right: 14px;
+    bottom: 14px;
+    width: 320px;
+    background: rgba(12, 7, 20, 0.62);
+    border: 1px solid rgba(183, 124, 255, 0.34);
+    border-radius: 12px;
+    color: var(--text);
+    font: 12px/1.45 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    padding: 10px 12px;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    user-select: none;
+  }
+  .terminal .title { color: #ffcdf1; margin-bottom: 6px; }
+  .terminal .ok { color: #ffd84f; }
+  .terminal .dim { opacity: 0.65; }
+  .warn {
+    position: fixed;
+    left: 12px;
+    bottom: 12px;
+    color: #ffd1e5;
+    font: 12px/1.4 system-ui, sans-serif;
+    opacity: 0.9;
+  }
+</style>
+</head>
+<body>
+<canvas id="gl"></canvas>
+<div class="hud">
+  5RAGONC1RCUS - <b>Rainbow City</b> - block mesh + tri-tower uplinks
+  <div class="keys">[SPACE] toggle camera rail - Drag to orbit - Scroll to zoom</div>
+  <div class="keys" id="status">STATUS: aligning spectrum routes...</div>
+  <div class="palette">
+    <span class="swatch" style="color:#ff68cf"><span class="dot" style="background:#ff68cf"></span>pink spine</span>
+    <span class="swatch" style="color:#ffd84f"><span class="dot" style="background:#ffd84f"></span>yellow relay</span>
+    <span class="swatch" style="color:#b77cff"><span class="dot" style="background:#b77cff"></span>violet mesh</span>
+  </div>
+</div>
+<div class="terminal" id="terminal">
+  <div class="title">OS CONSOLE // RAINBOW DISTRIBUTION GRID</div>
+  <div class="line ok">boot: ok</div>
+  <div class="line">city links: <span id="t-city">----</span></div>
+  <div class="line">tower uplinks: <span id="t-uplink">----</span></div>
+  <div class="line">packet load: <span id="t-traffic">----</span></div>
+  <div class="line">color sync: <span id="t-sync">----</span></div>
+  <div class="line dim">kernel: cirrus-5 spectrum</div>
+</div>
+<div class="warn" id="warn"></div>
+<script>
+(function(){
+  const canvas = document.getElementById("gl");
+  const gl = canvas.getContext("webgl2", { antialias: true, alpha: false });
+  if (!gl) {
+    document.getElementById("warn").textContent = "WebGL2 not available in this browser.";
+    return;
+  }
+
+  function resize() {
+    const dpr = Math.min(window.devicePixelRatio || 1, 2);
+    const w = Math.floor(canvas.clientWidth * dpr);
+    const h = Math.floor(canvas.clientHeight * dpr);
+    if (canvas.width !== w || canvas.height !== h) {
+      canvas.width = w;
+      canvas.height = h;
+      gl.viewport(0, 0, w, h);
+    }
+  }
+  window.addEventListener("resize", resize);
+  resize();
+
+  const V3 = {
+    sub: (a, b) => [a[0] - b[0], a[1] - b[1], a[2] - b[2]],
+    dot: (a, b) => a[0] * b[0] + a[1] * b[1] + a[2] * b[2],
+    cross: (a, b) => [a[1] * b[2] - a[2] * b[1], a[2] * b[0] - a[0] * b[2], a[0] * b[1] - a[1] * b[0]],
+    norm: (a) => {
+      const l = Math.hypot(a[0], a[1], a[2]) || 1;
+      return [a[0] / l, a[1] / l, a[2] / l];
+    }
+  };
+
+  function mat4Perspective(fovy, aspect, near, far) {
+    const f = 1 / Math.tan(fovy / 2);
+    const nf = 1 / (near - far);
+    return [f / aspect, 0, 0, 0, 0, f, 0, 0, 0, 0, (far + near) * nf, -1, 0, 0, (2 * far * near) * nf, 0];
+  }
+  function mat4LookAt(eye, center, up) {
+    const z = V3.norm(V3.sub(eye, center));
+    const x = V3.norm(V3.cross(up, z));
+    const y = V3.cross(z, x);
+    return [
+      x[0], y[0], z[0], 0,
+      x[1], y[1], z[1], 0,
+      x[2], y[2], z[2], 0,
+      -V3.dot(x, eye), -V3.dot(y, eye), -V3.dot(z, eye), 1
+    ];
+  }
+
+  function compile(type, src) {
+    const s = gl.createShader(type);
+    gl.shaderSource(s, src);
+    gl.compileShader(s);
+    if (!gl.getShaderParameter(s, gl.COMPILE_STATUS)) {
+      throw new Error(gl.getShaderInfoLog(s));
+    }
+    return s;
+  }
+  function program(vs, fs) {
+    const p = gl.createProgram();
+    gl.attachShader(p, compile(gl.VERTEX_SHADER, vs));
+    gl.attachShader(p, compile(gl.FRAGMENT_SHADER, fs));
+    gl.linkProgram(p);
+    if (!gl.getProgramParameter(p, gl.LINK_STATUS)) {
+      throw new Error(gl.getProgramInfoLog(p));
+    }
+    return p;
+  }
+
+  const vsLit = `#version 300 es
+  layout(location=0) in vec3 aPos;
+  layout(location=1) in vec3 aNor;
+  uniform mat4 uProj, uView, uModel;
+  out vec3 vNor;
+  out vec3 vPos;
+  void main(){
+    vec4 wp = uModel * vec4(aPos,1.0);
+    vPos = wp.xyz;
+    vNor = mat3(uModel) * aNor;
+    gl_Position = uProj * uView * wp;
+  }`;
+  const fsLit = `#version 300 es
+  precision highp float;
+  in vec3 vNor;
+  in vec3 vPos;
+  out vec4 o;
+  uniform vec3 uEye;
+  uniform vec3 uColor;
+  uniform vec3 uEmissive;
+  uniform float uEmissiveStrength;
+  uniform float uAlpha;
+  void main(){
+    vec3 N = normalize(vNor);
+    vec3 sky = vec3(0.30, 0.16, 0.42);
+    vec3 ground = vec3(0.02, 0.01, 0.05);
+    float h = N.y*0.5+0.5;
+    vec3 hemi = mix(ground, sky, h);
+    vec3 L = normalize(vec3(0.3,1.0,0.2));
+    float diff = max(dot(N, L), 0.0);
+    vec3 V = normalize(uEye - vPos);
+    vec3 H = normalize(L + V);
+    float spec = pow(max(dot(N, H), 0.0), 64.0)*0.34;
+    vec3 col = uColor * (hemi*0.62 + diff*0.88) + spec;
+    col += uEmissive * uEmissiveStrength;
+    o = vec4(col, uAlpha);
+  }`;
+
+  const vsLine = `#version 300 es
+  layout(location=0) in vec3 aPos;
+  uniform mat4 uProj, uView;
+  void main(){ gl_Position = uProj * uView * vec4(aPos,1.0); }`;
+  const fsLine = `#version 300 es
+  precision highp float;
+  out vec4 o;
+  uniform vec3 uColor;
+  uniform float uAlpha;
+  void main(){ o = vec4(uColor, uAlpha); }`;
+
+  const vsFlow = `#version 300 es
+  layout(location=0) in vec3 aStart;
+  layout(location=1) in vec3 aEnd;
+  layout(location=2) in float aSeed;
+  layout(location=3) in float aRate;
+  uniform mat4 uProj, uView;
+  uniform float uTime;
+  uniform float uSync;
+  uniform float uSize;
+  out float vAlpha;
+  void main(){
+    float t = fract(uTime * aRate + aSeed + uSync);
+    vec3 p = mix(aStart, aEnd, t);
+    gl_Position = uProj * uView * vec4(p, 1.0);
+    float head = smoothstep(0.0, 0.14, t);
+    float tail = 1.0 - smoothstep(0.68, 1.0, t);
+    float pulse = 0.82 + 0.18 * sin(aSeed * 18.0 + uTime * 6.0 + t * 20.0);
+    vAlpha = head * tail * pulse;
+    gl_PointSize = uSize * (0.8 + vAlpha * 1.5);
+  }`;
+  const fsFlow = `#version 300 es
+  precision highp float;
+  uniform vec3 uColor;
+  in float vAlpha;
+  out vec4 o;
+  void main(){
+    float d = length(gl_PointCoord - vec2(0.5));
+    float core = smoothstep(0.34, 0.0, d);
+    float halo = smoothstep(0.52, 0.18, d);
+    vec3 c = mix(uColor * 0.72, vec3(1.0), core * 0.35);
+    o = vec4(c, halo * vAlpha);
+  }`;
+
+  const progLit = program(vsLit, fsLit);
+  const progLine = program(vsLine, fsLine);
+  const progFlow = program(vsFlow, fsFlow);
+
+  function box(w, h, d) {
+    const x = w / 2, y = h / 2, z = d / 2;
+    const pos = [
+      -x,-y, z,  x,-y, z,  x, y, z, -x, y, z,
+       x,-y,-z, -x,-y,-z, -x, y,-z, x, y,-z,
+      -x,-y,-z, -x,-y, z, -x, y, z, -x, y,-z,
+       x,-y, z,  x,-y,-z,  x, y,-z,  x, y, z,
+      -x, y, z,  x, y, z,  x, y,-z, -x, y,-z,
+      -x,-y,-z,  x,-y,-z,  x,-y, z, -x,-y, z
+    ];
+    const nor = [
+       0,0,1, 0,0,1, 0,0,1, 0,0,1,
+       0,0,-1,0,0,-1,0,0,-1,0,0,-1,
+      -1,0,0,-1,0,0,-1,0,0,-1,0,0,
+       1,0,0, 1,0,0, 1,0,0, 1,0,0,
+       0,1,0, 0,1,0, 0,1,0, 0,1,0,
+       0,-1,0,0,-1,0,0,-1,0,0,-1,0
+    ];
+    const idx = [];
+    for (let f = 0; f < 6; f++) {
+      const o = f * 4;
+      idx.push(o + 0, o + 1, o + 2, o + 0, o + 2, o + 3);
+    }
+    return { pos: new Float32Array(pos), nor: new Float32Array(nor), idx: new Uint16Array(idx) };
+  }
+
+  function makeMesh(geo) {
+    const vao = gl.createVertexArray();
+    gl.bindVertexArray(vao);
+    const vboP = gl.createBuffer();
+    gl.bindBuffer(gl.ARRAY_BUFFER, vboP);
+    gl.bufferData(gl.ARRAY_BUFFER, geo.pos, gl.STATIC_DRAW);
+    gl.enableVertexAttribArray(0);
+    gl.vertexAttribPointer(0, 3, gl.FLOAT, false, 0, 0);
+    const vboN = gl.createBuffer();
+    gl.bindBuffer(gl.ARRAY_BUFFER, vboN);
+    gl.bufferData(gl.ARRAY_BUFFER, geo.nor, gl.STATIC_DRAW);
+    gl.enableVertexAttribArray(1);
+    gl.vertexAttribPointer(1, 3, gl.FLOAT, false, 0, 0);
+    const ibo = gl.createBuffer();
+    gl.bindBuffer(gl.ELEMENT_ARRAY_BUFFER, ibo);
+    gl.bufferData(gl.ELEMENT_ARRAY_BUFFER, geo.idx, gl.STATIC_DRAW);
+    gl.bindVertexArray(null);
+    return { vao, count: geo.idx.length };
+  }
+  function makeLines(positions) {
+    const vao = gl.createVertexArray();
+    gl.bindVertexArray(vao);
+    const vbo = gl.createBuffer();
+    gl.bindBuffer(gl.ARRAY_BUFFER, vbo);
+    gl.bufferData(gl.ARRAY_BUFFER, positions, gl.STATIC_DRAW);
+    gl.enableVertexAttribArray(0);
+    gl.vertexAttribPointer(0, 3, gl.FLOAT, false, 0, 0);
+    gl.bindVertexArray(null);
+    return { vao, count: positions.length / 3 };
+  }
+  function makeFlows(starts, ends, seeds, rates) {
+    const vao = gl.createVertexArray();
+    gl.bindVertexArray(vao);
+    const attrs = [
+      { data: starts, loc: 0, size: 3 },
+      { data: ends, loc: 1, size: 3 },
+      { data: seeds, loc: 2, size: 1 },
+      { data: rates, loc: 3, size: 1 }
+    ];
+    for (const attr of attrs) {
+      const b = gl.createBuffer();
+      gl.bindBuffer(gl.ARRAY_BUFFER, b);
+      gl.bufferData(gl.ARRAY_BUFFER, attr.data, gl.STATIC_DRAW);
+      gl.enableVertexAttribArray(attr.loc);
+      gl.vertexAttribPointer(attr.loc, attr.size, gl.FLOAT, false, 0, 0);
+    }
+    gl.bindVertexArray(null);
+    return { vao, count: seeds.length };
+  }
+
+  const towerMesh = makeMesh(box(2.8, 14, 2.8));
+  const midMesh = makeMesh(box(3.2, 7, 3.2));
+  const shopMesh = makeMesh(box(3.6, 2.0, 3.6));
+
+  const buildings = [];
+  function ringBuildings(count, radius, y, scale, height) {
+    for (let i = 0; i < count; i++) {
+      const a = i / count * Math.PI * 2;
+      const x = Math.cos(a) * radius;
+      const z = Math.sin(a) * radius;
+      const s = scale * (0.8 + 0.4 * Math.sin(a * 2.5 + 1.1));
+      const h = height * (0.7 + 0.6 * Math.sin(a * 1.7 + 0.6));
+      buildings.push({ pos: [x, y + h / 2, z], scale: [s, h, s], type: "tower" });
+    }
+  }
+  ringBuildings(18, 20, 0, 1.0, 14);
+  ringBuildings(14, 30, 0, 0.9, 12);
+  for (let i = 0; i < 20; i++) {
+    const a = i / 20 * Math.PI * 2;
+    const r = 38 + (i % 2) * 4;
+    const x = Math.cos(a) * r;
+    const z = Math.sin(a) * r;
+    buildings.push({ pos: [x, 3.5, z], scale: [1.0, 7, 1.0], type: "mid" });
+  }
+  for (let i = 0; i < 26; i++) {
+    const a = i / 26 * Math.PI * 2;
+    const r = 12 + (i % 3) * 4;
+    const x = Math.cos(a) * r;
+    const z = Math.sin(a) * r;
+    buildings.push({ pos: [x, 1.0, z], scale: [1.0, 2.0, 1.0], type: "shop" });
+  }
+
+  const nodes = buildings.map((b) => [b.pos[0], b.pos[1], b.pos[2]]);
+  const edges = [];
+  for (let i = 0; i < nodes.length; i++) {
+    const dists = [];
+    for (let j = 0; j < nodes.length; j++) {
+      if (i === j) continue;
+      const a = nodes[i], b = nodes[j];
+      dists.push({ j, d: Math.hypot(a[0] - b[0], a[1] - b[1], a[2] - b[2]) });
+    }
+    dists.sort((x, y) => x.d - y.d);
+    for (let n = 0; n < 3; n++) {
+      const j = dists[n].j;
+      if (i < j) edges.push([i, j]);
+    }
+  }
+
+  const linePos = new Float32Array(edges.length * 6);
+  let lp = 0;
+  for (const [i, j] of edges) {
+    const a = nodes[i], b = nodes[j];
+    linePos[lp++] = a[0]; linePos[lp++] = a[1]; linePos[lp++] = a[2];
+    linePos[lp++] = b[0]; linePos[lp++] = b[1]; linePos[lp++] = b[2];
+  }
+  const netLines = makeLines(linePos);
+
+  function buildFlowData(nodeSource, edgeList, copies, baseRate, rateBoost) {
+    const count = edgeList.length * copies;
+    const starts = new Float32Array(count * 3);
+    const ends = new Float32Array(count * 3);
+    const seeds = new Float32Array(count);
+    const rates = new Float32Array(count);
+    let p = 0;
+    for (const [i, j] of edgeList) {
+      const a = nodeSource[i];
+      const b = nodeSource[j];
+      const len = Math.hypot(a[0] - b[0], a[1] - b[1], a[2] - b[2]);
+      const rate = baseRate + (1.0 / (0.6 + len)) * rateBoost;
+      for (let k = 0; k < copies; k++) {
+        starts[p * 3 + 0] = a[0]; starts[p * 3 + 1] = a[1]; starts[p * 3 + 2] = a[2];
+        ends[p * 3 + 0] = b[0]; ends[p * 3 + 1] = b[1]; ends[p * 3 + 2] = b[2];
+        seeds[p] = Math.random();
+        rates[p] = rate + k * 0.018;
+        p++;
+      }
+    }
+    return makeFlows(starts, ends, seeds, rates);
+  }
+  const cityFlows = buildFlowData(nodes, edges, 3, 0.18, 0.28);
+
+  function nearestBuildingIndices(origin, count, minDist) {
+    return nodes
+      .map((node, index) => ({ index, d: Math.hypot(node[0] - origin[0], node[2] - origin[2]) }))
+      .filter((item) => item.d > minDist)
+      .sort((a, b) => a.d - b.d)
+      .slice(0, count)
+      .map((item) => item.index);
+  }
+
+  function createTowerNetwork(config) {
+    const columns = [
+      [-10, -10], [0, -12], [10, -10],
+      [-12, 0], [0, 0], [12, 0],
+      [-10, 10], [0, 12], [10, 10]
+    ];
+    const levels = 7;
+    const stepY = 6.5;
+    const nodes3d = [];
+    for (let level = 0; level < levels; level++) {
+      for (const [x, z] of columns) {
+        nodes3d.push([
+          config.origin[0] + x,
+          5 + level * stepY,
+          config.origin[2] + z
+        ]);
+      }
+    }
+    function idx(level, col) { return level * columns.length + col; }
+    const edges3d = [];
+    for (let level = 0; level < levels; level++) {
+      for (let col = 0; col < columns.length; col++) {
+        if (level < levels - 1) edges3d.push([idx(level, col), idx(level + 1, col)]);
+      }
+      for (let rowStart = 0; rowStart < columns.length; rowStart += 3) {
+        edges3d.push([idx(level, rowStart), idx(level, rowStart + 1)]);
+        edges3d.push([idx(level, rowStart + 1), idx(level, rowStart + 2)]);
+      }
+      for (let col = 0; col < 3; col++) {
+        edges3d.push([idx(level, col), idx(level, col + 3)]);
+        edges3d.push([idx(level, col + 3), idx(level, col + 6)]);
+      }
+    }
+
+    const lineData = new Float32Array(edges3d.length * 6);
+    let p = 0;
+    for (const [i, j] of edges3d) {
+      const a = nodes3d[i], b = nodes3d[j];
+      lineData[p++] = a[0]; lineData[p++] = a[1]; lineData[p++] = a[2];
+      lineData[p++] = b[0]; lineData[p++] = b[1]; lineData[p++] = b[2];
+    }
+
+    const buildingTargets = nearestBuildingIndices(config.origin, 12, 16);
+    const linkEdges = buildingTargets.map((buildingIndex, i) => [buildingIndex, idx(0, i % 6)]);
+    const linkData = new Float32Array(linkEdges.length * 6);
+    let lp2 = 0;
+    for (const [buildingIndex, towerIndex] of linkEdges) {
+      const a = nodes[buildingIndex];
+      const b = nodes3d[towerIndex];
+      linkData[lp2++] = a[0]; linkData[lp2++] = a[1]; linkData[lp2++] = a[2];
+      linkData[lp2++] = b[0]; linkData[lp2++] = b[1]; linkData[lp2++] = b[2];
+    }
+
+    return {
+      config,
+      lines: makeLines(lineData),
+      flows: buildFlowData(nodes3d, edges3d, 8, 0.32, 0.60),
+      linkLines: makeLines(linkData),
+      linkFlows: (() => {
+        const count = linkEdges.length * 10;
+        const starts = new Float32Array(count * 3);
+        const ends = new Float32Array(count * 3);
+        const seeds = new Float32Array(count);
+        const rates = new Float32Array(count);
+        let fp = 0;
+        for (const [buildingIndex, towerIndex] of linkEdges) {
+          const a = nodes[buildingIndex];
+          const b = nodes3d[towerIndex];
+          const rate = 0.42 + Math.random() * 0.08;
+          for (let k = 0; k < 10; k++) {
+            starts[fp * 3 + 0] = a[0]; starts[fp * 3 + 1] = a[1]; starts[fp * 3 + 2] = a[2];
+            ends[fp * 3 + 0] = b[0]; ends[fp * 3 + 1] = b[1]; ends[fp * 3 + 2] = b[2];
+            seeds[fp] = Math.random();
+            rates[fp] = rate + k * 0.014;
+            fp++;
+          }
+        }
+        return makeFlows(starts, ends, seeds, rates);
+      })(),
+      uplinks: linkEdges.length
+    };
+  }
+
+  const towerNetworks = [
+    createTowerNetwork({ name: "pink spine", origin: [-48, 0, -8], color: [1.0, 0.41, 0.81], beam: [1.0, 0.58, 0.86] }),
+    createTowerNetwork({ name: "yellow relay", origin: [0, 0, 42], color: [1.0, 0.86, 0.31], beam: [1.0, 0.93, 0.60] }),
+    createTowerNetwork({ name: "violet mesh", origin: [48, 0, -6], color: [0.72, 0.49, 1.0], beam: [0.86, 0.70, 1.0] })
+  ];
+
+  gl.enable(gl.DEPTH_TEST);
+  gl.enable(gl.CULL_FACE);
+  gl.clearColor(0.039, 0.027, 0.063, 1);
+
+  let yaw = 0.65, pitch = 0.34, dist = 118;
+  let isDown = false, px = 0, py = 0;
+  let autoCam = true;
+
+  canvas.addEventListener("mousedown", (e) => { isDown = true; px = e.clientX; py = e.clientY; });
+  window.addEventListener("mouseup", () => { isDown = false; });
+  window.addEventListener("mousemove", (e) => {
+    if (!isDown) return;
+    autoCam = false;
+    const dx = (e.clientX - px) / canvas.clientWidth;
+    const dy = (e.clientY - py) / canvas.clientHeight;
+    yaw -= dx * 3.0;
+    pitch -= dy * 2.0;
+    pitch = Math.max(-1.1, Math.min(1.1, pitch));
+    px = e.clientX;
+    py = e.clientY;
+  }, { passive: true });
+  canvas.addEventListener("wheel", (e) => {
+    dist *= (1 + Math.sign(e.deltaY) * 0.06);
+    dist = Math.max(26, Math.min(220, dist));
+    e.preventDefault();
+  }, { passive: false });
+  window.addEventListener("keydown", (e) => {
+    if (e.code === "Space") {
+      autoCam = !autoCam;
+      e.preventDefault();
+    }
+  });
+
+  function getEye(t) {
+    if (!autoCam) {
+      const cx = 0, cy = 12, cz = 0;
+      return [
+        cx + dist * Math.cos(pitch) * Math.cos(yaw),
+        cy + dist * Math.sin(pitch),
+        cz + dist * Math.cos(pitch) * Math.sin(yaw)
+      ];
+    }
+    const k = t * 0.07;
+    const r = 118 + 12 * Math.sin(k * 1.1);
+    const h = 20 + 7 * Math.sin(k * 1.35 + 0.8);
+    return [Math.cos(k) * r, h, Math.sin(k) * r];
+  }
+
+  function setMat(p, name, m) { gl.uniformMatrix4fv(gl.getUniformLocation(p, name), false, m); }
+  function setVec3(p, name, v) { gl.uniform3f(gl.getUniformLocation(p, name), v[0], v[1], v[2]); }
+  function setF(p, name, v) { gl.uniform1f(gl.getUniformLocation(p, name), v); }
+
+  function drawMesh(mesh, model, color, emissive, emissiveStrength, alpha, eye, proj, view) {
+    gl.useProgram(progLit);
+    setMat(progLit, "uProj", proj);
+    setMat(progLit, "uView", view);
+    setMat(progLit, "uModel", model);
+    setVec3(progLit, "uColor", color);
+    setVec3(progLit, "uEmissive", emissive);
+    setF(progLit, "uEmissiveStrength", emissiveStrength);
+    setF(progLit, "uAlpha", alpha);
+    setVec3(progLit, "uEye", eye);
+    gl.bindVertexArray(mesh.vao);
+    gl.drawElements(gl.TRIANGLES, mesh.count, gl.UNSIGNED_SHORT, 0);
+  }
+
+  function drawFlowLayer(layer, proj, view, time, sync, color, size) {
+    gl.useProgram(progFlow);
+    setMat(progFlow, "uProj", proj);
+    setMat(progFlow, "uView", view);
+    setF(progFlow, "uTime", time);
+    setF(progFlow, "uSync", sync);
+    setF(progFlow, "uSize", size);
+    setVec3(progFlow, "uColor", color);
+    gl.bindVertexArray(layer.vao);
+    gl.drawArrays(gl.POINTS, 0, layer.count);
+  }
+
+  const statusEl = document.getElementById("status");
+  const tCity = document.getElementById("t-city");
+  const tUplink = document.getElementById("t-uplink");
+  const tTraffic = document.getElementById("t-traffic");
+  const tSync = document.getElementById("t-sync");
+  const totalUplinks = towerNetworks.reduce((sum, tower) => sum + tower.uplinks, 0);
+
+  let start = performance.now();
+  function frame(now) {
+    resize();
+    const t = (now - start) * 0.001;
+
+    gl.clear(gl.COLOR_BUFFER_BIT | gl.DEPTH_BUFFER_BIT);
+
+    const aspect = canvas.width / canvas.height;
+    const proj = mat4Perspective(55 * Math.PI / 180, aspect, 0.1, 1200);
+    const eye = getEye(t);
+    const view = mat4LookAt(eye, [0, 10, 0], [0, 1, 0]);
+
+    gl.enable(gl.BLEND);
+    gl.blendFunc(gl.SRC_ALPHA, gl.ONE_MINUS_SRC_ALPHA);
+
+    for (const b of buildings) {
+      const s = b.scale;
+      const model = [s[0],0,0,0, 0,s[1],0,0, 0,0,s[2],0, b.pos[0],b.pos[1],b.pos[2],1];
+      const baseCol = b.type === "shop" ? [0.14, 0.08, 0.20] : (b.type === "mid" ? [0.11, 0.07, 0.18] : [0.10, 0.06, 0.16]);
+      const emissive = b.type === "shop" ? [1.0, 0.86, 0.32] : [0.86, 0.55, 1.0];
+      const pulse = 0.12 + 0.07 * Math.sin(t * 1.1 + b.pos[0] * 0.06);
+      drawMesh(b.type === "shop" ? shopMesh : (b.type === "mid" ? midMesh : towerMesh), model, baseCol, emissive, pulse, 0.42, eye, proj, view);
+    }
+
+    gl.useProgram(progLine);
+    setMat(progLine, "uProj", proj);
+    setMat(progLine, "uView", view);
+
+    setVec3(progLine, "uColor", [0.33, 0.22, 0.62]);
+    setF(progLine, "uAlpha", 0.46);
+    gl.bindVertexArray(netLines.vao);
+    gl.drawArrays(gl.LINES, 0, netLines.count);
+
+    for (const tower of towerNetworks) {
+      setVec3(progLine, "uColor", tower.config.color);
+      setF(progLine, "uAlpha", 0.22);
+      gl.bindVertexArray(tower.lines.vao);
+      gl.drawArrays(gl.LINES, 0, tower.lines.count);
+
+      setVec3(progLine, "uColor", tower.config.beam);
+      setF(progLine, "uAlpha", 0.42);
+      gl.bindVertexArray(tower.linkLines.vao);
+      gl.drawArrays(gl.LINES, 0, tower.linkLines.count);
+    }
+
+    gl.blendFunc(gl.SRC_ALPHA, gl.ONE);
+    const sync = Math.sin(t * 0.9) * 0.5 + 0.5;
+    drawFlowLayer(cityFlows, proj, view, t, sync * 0.32, [0.73, 0.50, 1.0], 4.2);
+    for (let i = 0; i < towerNetworks.length; i++) {
+      const tower = towerNetworks[i];
+      drawFlowLayer(tower.flows, proj, view, t * (1.1 + i * 0.08), 0.14 + sync * 0.12, tower.config.color, 6.4);
+      drawFlowLayer(tower.linkFlows, proj, view, t * (1.0 + i * 0.07), 0.26 + sync * 0.18, tower.config.beam, 7.3);
+    }
+    gl.disable(gl.BLEND);
+
+    const traffic = 46 + 34 * (0.5 + 0.5 * Math.sin(t * 0.7 + 0.4));
+    const syncPct = Math.round((0.42 + sync * 0.58) * 100);
+    const towerLoad = 68 + 26 * Math.sin(t * 0.5 + 0.8);
+    if (statusEl) {
+      statusEl.textContent = "STATUS: spectrum sync " + syncPct + "% - city traffic " + traffic.toFixed(0) + "% - tower load " + towerLoad.toFixed(0) + "%";
+    }
+    if (tCity) tCity.textContent = String(edges.length);
+    if (tUplink) tUplink.textContent = String(totalUplinks);
+    if (tTraffic) tTraffic.textContent = traffic.toFixed(0) + "%";
+    if (tSync) tSync.textContent = syncPct + "%";
+
+    requestAnimationFrame(frame);
+  }
+  requestAnimationFrame(frame);
+})();
+</script>
+</body>
+</html>
