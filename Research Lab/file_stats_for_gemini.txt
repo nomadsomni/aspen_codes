@@ -1,0 +1,40 @@
+Use the following local file statistics to analyze the workspace and suggest cleanup priorities.
+
+Root: C:\Users\Surface\OneDrive\SIRENSSD\Research Lab
+Generated at: 2026-04-23 22:11:52
+Files: 458
+Directories: 30
+Total size: 110.81 MiB
+Average file size: 247.74 KiB
+
+Top extensions:
+- .txt: 300 files, 104.14 MiB
+- .html: 115 files, 1.58 MiB
+- .zip: 26 files, 0.40 MiB
+- .jpg: 4 files, 0.31 MiB
+- .ps1: 3 files, 0.02 MiB
+- .png: 2 files, 4.33 MiB
+- .css: 2 files, 0.00 MiB
+- .js: 1 files, 0.01 MiB
+
+Top folders by size:
+- Records and logging: 300 files, 104.13 MiB
+- COMPLEX: 127 files, 3.11 MiB
+- [root]: 12 files, 2.79 MiB
+- Files: 7 files, 0.26 MiB
+- photos: 2 files, 0.22 MiB
+- 5RAGONC1RCUS_INFERNO: 7 files, 0.19 MiB
+- Ai Pictures: 2 files, 0.09 MiB
+- final_portfolio_pack: 1 files, 0.02 MiB
+
+Largest files:
+- Records and logging\Session_2025-11-14_03-39-36.txt: 18.92 MiB, modified 2025-11-17 15:23
+- Records and logging\Session_2025-07-09_20-43-42.txt: 14.54 MiB, modified 2025-07-11 17:45
+- Records and logging\Session_2025-11-18_21-21-43.txt: 12.19 MiB, modified 2025-11-19 19:47
+- Records and logging\Session_2025-11-18_21-26-32.txt: 12.15 MiB, modified 2025-11-19 19:47
+- Records and logging\Session_2025-11-19_23-26-46.txt: 8.49 MiB, modified 2025-11-20 15:59
+- Records and logging\Session_2025-11-20_16-11-59.txt: 6.93 MiB, modified 2025-11-20 15:43
+- Records and logging\Session_2025-11-18_21-21-05.txt: 5.61 MiB, modified 2025-11-19 19:47
+- Records and logging\Session_2025-11-06_20-16-16.txt: 3.68 MiB, modified 2025-11-07 03:05
+
+Please summarize the main storage patterns, identify likely cleanup opportunities, and recommend a sensible archival strategy.
