@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Nomad.Avalanche.Psync — FIXED VISIBILITY</title>
+<style>
+  html,body{margin:0;height:100%;overflow:hidden;background:#050509;}
+</style>
+</head>
+<body>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r152/three.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r152/examples/js/controls/OrbitControls.js"></script>
+
+<div id="container"></div>
+
+<script>
+const container=document.getElementById("container");
+
+const scene=new THREE.Scene();
+scene.background=new THREE.Color(0x050509);
+
+// IMPORTANT: remove fog (Edge hides everything except sprites)
+scene.fog = null;
+
+const camera=new THREE.PerspectiveCamera(45,innerWidth/innerHeight,0.1,1000);
+camera.position.set(0,10,20);
+
+const renderer=new THREE.WebGLRenderer({antialias:true});
+renderer.setSize(innerWidth,innerHeight);
+container.appendChild(renderer.domElement);
+
+const controls=new THREE.OrbitControls(camera,renderer.domElement);
+controls.enableDamping=true;
+
+// ---- LIGHT FIX ----
+scene.add(new THREE.AmbientLight(0xffffff,1.0));
+const dl=new THREE.DirectionalLight(0xffffff,1.0);
+dl.position.set(10,20,10);
+scene.add(dl);
+
+// ---- NODES ----
+const NODES=["NOMAD","AVALANCHE","OASIS","PSYNC","COMPLEX","SANDBOX"];
+const radius=7;
+const positions={};
+NODES.forEach((n,i)=>{
+  const a = (i/NODES.length)*Math.PI*2;
+  positions[n]=new THREE.Vector3(Math.cos(a)*radius,0,Math.sin(a)*radius);
+});
+
+// FIX: MeshBasicMaterial ensures ALWAYS visible (no lighting issues)
+const colors={
+  NOMAD:0xffc857,AVALANCHE:0xff3b3b,OASIS:0x3bd8ff,
+  PSYNC:0xc53bff,COMPLEX:0x9ea7ff,SANDBOX:0x3bff8f
+};
+
+const group=new THREE.Group();
+scene.add(group);
+
+NODES.forEach(n=>{
+  const sphere=new THREE.Mesh(
+    new THREE.SphereGeometry(0.7,32,32),
+    new THREE.MeshBasicMaterial({color:colors[n]})
+  );
+  sphere.position.copy(positions[n]);
+  group.add(sphere);
+
+  // label (unchanged except depthTest fix)
+  const c=document.createElement("canvas");
+  c.width=256;c.height=256;
+  const ctx=c.getContext("2d");
+  ctx.font="bold 64px system-ui";
+  ctx.textAlign="center";ctx.textBaseline="middle";
+  ctx.fillStyle="white";ctx.fillText(n,128,128);
+  const tex=new THREE.CanvasTexture(c);
+  const label=new THREE.Sprite(new THREE.SpriteMaterial({
+    map:tex,transparent:true,depthWrite:false,depthTest:true
+  }));
+  label.scale.set(2.5,2.5,2.5);
+  label.position.copy(positions[n]).add(new THREE.Vector3(0,1.8,0));
+  group.add(label);
+});
+
+// ---- TRIADS ----
+const TRIADS=[
+"Nomad.Avalanche.Psync","Oasis.Psync.Avalanche","Psync.Oasis.Nomad",
+"Avalanche.Psync.Nomad","Sandbox.Psync.Nomad"
+];
+
+TRIADS.forEach(t=>{
+  const p=t.split(".").map(x=>x.trim().toUpperCase());
+  if(p.length!==3)return;
+  const A=positions[p[0]],B=positions[p[1]],C=positions[p[2]];
+  if(!A||!B||!C)return;
+  const geo=new THREE.BufferGeometry().setFromPoints([A,B,C,A]);
+  const line=new THREE.Line(
+    geo,
+    new THREE.LineBasicMaterial({color:0x55e0ff,transparent:true,opacity:0.8})
+  );
+  group.add(line);
+});
+
+// ---- CORE ----
+const core=new THREE.Mesh(
+  new THREE.SphereGeometry(0.9,32,32),
+  new THREE.MeshBasicMaterial({color:0x00e0ff})
+);
+group.add(core);
+
+// ---- ANIMATION ----
+let t=0;
+function animate(){
+  requestAnimationFrame(animate);
+  t+=0.01;
+  group.rotation.y+=0.002;
+  core.position.y=Math.sin(t)*0.4;
+  controls.update();
+  renderer.render(scene,camera);
+}
+animate();
+
+addEventListener("resize",()=>{
+  camera.aspect=innerWidth/innerHeight;
+  camera.updateProjectionMatrix();
+  renderer.setSize(innerWidth,innerHeight);
+});
+</script>
+
+</body>
+</html>

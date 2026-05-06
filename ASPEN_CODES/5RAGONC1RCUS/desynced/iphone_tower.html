@@ -1,0 +1,948 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1, maximum-scale=1, viewport-fit=cover"
+  />
+  <title>Server Tower | iPhone</title>
+  <style>
+    :root {
+      --bg-1: #020504;
+      --bg-2: #09120f;
+      --cyan: #78ecff;
+      --green: #8cff98;
+      --orange: #ff9d45;
+      --text: #d5e3e8;
+      --panel: rgba(6, 11, 12, 0.82);
+      --line: rgba(120, 236, 255, 0.16);
+      --safe-top: env(safe-area-inset-top, 0px);
+      --safe-right: env(safe-area-inset-right, 0px);
+      --safe-bottom: env(safe-area-inset-bottom, 0px);
+      --safe-left: env(safe-area-inset-left, 0px);
+    }
+
+    html,
+    body {
+      height: 100%;
+      margin: 0;
+      background:
+        radial-gradient(850px 560px at 18% 10%, rgba(140, 255, 152, 0.14), transparent 60%),
+        radial-gradient(680px 520px at 82% 90%, rgba(255, 157, 69, 0.11), transparent 56%),
+        linear-gradient(180deg, rgba(120, 236, 255, 0.05), transparent 30%),
+        linear-gradient(160deg, var(--bg-1), var(--bg-2));
+      color: var(--text);
+      font-family: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+      overflow: hidden;
+      touch-action: manipulation;
+    }
+
+    body {
+      -webkit-font-smoothing: antialiased;
+    }
+
+    #wrap {
+      min-height: 100%;
+      display: grid;
+      grid-template-rows: auto 1fr;
+      gap: 10px;
+      box-sizing: border-box;
+      padding:
+        calc(10px + var(--safe-top))
+        calc(10px + var(--safe-right))
+        calc(12px + var(--safe-bottom))
+        calc(10px + var(--safe-left));
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      font-size: 10px;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      opacity: 0.78;
+    }
+
+    #stage {
+      position: relative;
+      overflow: hidden;
+      min-height: 0;
+      border-radius: 18px;
+      border: 1px solid rgba(120, 236, 255, 0.14);
+      box-shadow:
+        0 0 0 1px rgba(120, 236, 255, 0.04),
+        0 0 80px rgba(140, 255, 152, 0.08),
+        0 0 60px rgba(255, 157, 69, 0.05),
+        0 28px 72px rgba(0, 0, 0, 0.52);
+      background:
+        radial-gradient(560px 320px at 50% 34%, rgba(120, 236, 255, 0.06), transparent 74%),
+        linear-gradient(180deg, rgba(140, 255, 152, 0.06), transparent 40%),
+        repeating-linear-gradient(
+          0deg,
+          rgba(140, 255, 152, 0.025) 0,
+          rgba(140, 255, 152, 0.025) 1px,
+          transparent 1px,
+          transparent 20px
+        ),
+        repeating-linear-gradient(
+          90deg,
+          rgba(120, 236, 255, 0.026) 0,
+          rgba(120, 236, 255, 0.026) 1px,
+          transparent 1px,
+          transparent 20px
+        ),
+        linear-gradient(180deg, rgba(7, 15, 13, 0.92), rgba(4, 8, 9, 0.98));
+    }
+
+    #stage::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      background:
+        linear-gradient(90deg, transparent 0%, rgba(140, 255, 152, 0.08) 50%, transparent 100%),
+        linear-gradient(120deg, transparent 14%, rgba(255, 157, 69, 0.05) 52%, transparent 60%);
+      mix-blend-mode: screen;
+    }
+
+    canvas {
+      width: 100%;
+      height: 100%;
+      display: block;
+    }
+
+    .badge,
+    .stats,
+    .controls,
+    .warn {
+      position: absolute;
+      z-index: 6;
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+    }
+
+    .badge,
+    .stats,
+    .controls {
+      background: var(--panel);
+    }
+
+    .badge {
+      top: 12px;
+      left: 12px;
+      right: 12px;
+      padding: 10px 12px;
+      border-radius: 999px;
+      border: 1px solid rgba(255, 157, 69, 0.2);
+      color: #ffd8b4;
+      box-shadow: 0 0 22px rgba(255, 157, 69, 0.12);
+      text-align: center;
+      font-size: 11px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .stats {
+      top: 60px;
+      left: 12px;
+      right: 12px;
+      padding: 10px 12px;
+      border-radius: 14px;
+      border: 1px solid rgba(140, 255, 152, 0.16);
+      box-shadow: 0 0 24px rgba(140, 255, 152, 0.07);
+    }
+
+    .stats h2 {
+      margin: 0 0 8px;
+      font-size: 10px;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: #beffca;
+    }
+
+    .stat-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 8px;
+    }
+
+    .stat-box {
+      padding: 8px;
+      border-radius: 10px;
+      background: rgba(9, 16, 17, 0.68);
+      border: 1px solid rgba(120, 236, 255, 0.08);
+    }
+
+    .stat-box span {
+      display: block;
+      margin-bottom: 5px;
+      font-size: 9px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      opacity: 0.78;
+    }
+
+    .stat-box strong {
+      font-size: 14px;
+      color: #f1fff4;
+      font-weight: 600;
+    }
+
+    .controls {
+      left: 12px;
+      right: 12px;
+      bottom: 12px;
+      padding: 12px;
+      border-radius: 18px;
+      border: 1px solid var(--line);
+      box-shadow: 0 0 28px rgba(120, 236, 255, 0.08);
+    }
+
+    .controls label {
+      display: block;
+      margin-bottom: 8px;
+      color: #c6fff3;
+      font-size: 10px;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+    }
+
+    .controls select,
+    .controls button {
+      border: 1px solid rgba(140, 255, 152, 0.18);
+      background: rgba(10, 18, 17, 0.96);
+      color: var(--text);
+      border-radius: 12px;
+      font: inherit;
+    }
+
+    .controls select {
+      width: 100%;
+      min-height: 48px;
+      padding: 12px 14px;
+      margin-bottom: 10px;
+      appearance: none;
+      -webkit-appearance: none;
+    }
+
+    .button-row {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 8px;
+      margin-bottom: 8px;
+    }
+
+    .controls button {
+      min-height: 46px;
+      padding: 10px 8px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      font-size: 11px;
+    }
+
+    .controls button:active {
+      transform: scale(0.98);
+    }
+
+    .subhint {
+      font-size: 10px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      opacity: 0.7;
+      text-align: center;
+    }
+
+    .warn {
+      top: 12px;
+      left: 12px;
+      right: 12px;
+      display: none;
+      padding: 9px 11px;
+      border-radius: 10px;
+      background: rgba(160, 40, 40, 0.82);
+      border: 1px solid rgba(255, 160, 160, 0.6);
+      font-size: 12px;
+    }
+
+    .tower-grid,
+    .scanlines,
+    .vignette {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+    }
+
+    .tower-grid {
+      z-index: 2;
+      background:
+        linear-gradient(180deg, rgba(140, 255, 152, 0.08), transparent 32%),
+        repeating-linear-gradient(
+          90deg,
+          transparent 0,
+          transparent 8.2%,
+          rgba(140, 255, 152, 0.04) 8.2%,
+          rgba(140, 255, 152, 0.04) 8.38%
+        );
+      mix-blend-mode: screen;
+      opacity: 0.34;
+    }
+
+    .scanlines {
+      z-index: 3;
+      background: repeating-linear-gradient(
+        0deg,
+        rgba(255, 255, 255, 0.012) 0,
+        rgba(255, 255, 255, 0.012) 1px,
+        transparent 1px,
+        transparent 4px
+      );
+      opacity: 0.2;
+    }
+
+    .vignette {
+      z-index: 3;
+      background: radial-gradient(120% 120% at 50% 50%, transparent 40%, rgba(0, 0, 0, 0.36) 76%);
+      mix-blend-mode: multiply;
+    }
+
+    @media (min-width: 700px) {
+      #wrap {
+        max-width: 480px;
+        margin: 0 auto;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div id="wrap">
+    <header>
+      <div>Server Tower</div>
+      <div>iPhone View</div>
+    </header>
+
+    <div id="stage">
+      <canvas id="gl"></canvas>
+      <div class="badge" id="routeBadge">active trunk: matrix spine</div>
+
+      <div class="stats">
+        <h2>Tower Telemetry</h2>
+        <div class="stat-grid">
+          <div class="stat-box"><span>Ground</span><strong id="groundCount">0</strong></div>
+          <div class="stat-box"><span>Tower</span><strong id="towerCount">0</strong></div>
+          <div class="stat-box"><span>Packets</span><strong id="streamCount">0</strong></div>
+        </div>
+      </div>
+
+      <div class="controls">
+        <label for="routeSelect">Trunk Route</label>
+        <select id="routeSelect">
+          <option value="spine">Matrix Spine</option>
+          <option value="relay">Relay Sweep</option>
+          <option value="perimeter">Perimeter Drift</option>
+          <option value="crosslink">Crosslink Burst</option>
+          <option value="uplink">Uplink Ladder</option>
+        </select>
+        <div class="button-row">
+          <button type="button" id="zoomIn">Zoom +</button>
+          <button type="button" id="zoomOut">Zoom -</button>
+          <button type="button" id="resetView">Reset</button>
+          <button type="button" id="shuffleRoute">Shift</button>
+        </div>
+        <div class="subhint">drag to rotate • use buttons to zoom</div>
+      </div>
+
+      <div class="warn" id="warn">WebGL2 not supported</div>
+      <div class="tower-grid"></div>
+      <div class="scanlines"></div>
+      <div class="vignette"></div>
+    </div>
+  </div>
+
+  <script>
+    const canvas = document.getElementById("gl");
+    const warn = document.getElementById("warn");
+    const routeBadge = document.getElementById("routeBadge");
+    const routeSelect = document.getElementById("routeSelect");
+    const shuffleRouteButton = document.getElementById("shuffleRoute");
+    const zoomInButton = document.getElementById("zoomIn");
+    const zoomOutButton = document.getElementById("zoomOut");
+    const resetViewButton = document.getElementById("resetView");
+    const groundCount = document.getElementById("groundCount");
+    const towerCount = document.getElementById("towerCount");
+    const streamCount = document.getElementById("streamCount");
+    const gl = canvas.getContext("webgl2", { antialias: true, alpha: false });
+
+    if (!gl) {
+      warn.style.display = "block";
+      throw new Error("WebGL2 not supported");
+    }
+
+    const isIPhoneLike = /iPhone|iPod/i.test(navigator.userAgent) || (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1);
+    const isCompactTouch = matchMedia("(max-width: 700px), (pointer: coarse)").matches;
+    const dprCap = isCompactTouch ? 1.5 : 2;
+    const renderScale = isCompactTouch ? 0.9 : 1;
+    const groundCopies = isCompactTouch ? 4 : 7;
+    const towerCopies = isCompactTouch ? 6 : 10;
+    const routeCopies = isCompactTouch ? 10 : 18;
+    const towerLinkCopies = isCompactTouch ? 7 : 12;
+
+    function resize() {
+      const dpr = Math.min(window.devicePixelRatio || 1, dprCap);
+      const w = Math.floor(canvas.clientWidth * dpr * renderScale);
+      const h = Math.floor(canvas.clientHeight * dpr * renderScale);
+      if (canvas.width !== w || canvas.height !== h) {
+        canvas.width = w;
+        canvas.height = h;
+      }
+      gl.viewport(0, 0, canvas.width, canvas.height);
+    }
+
+    window.addEventListener("resize", resize);
+    resize();
+
+    const V3 = {
+      sub: (a, b) => [a[0] - b[0], a[1] - b[1], a[2] - b[2]],
+      dot: (a, b) => a[0] * b[0] + a[1] * b[1] + a[2] * b[2],
+      cross: (a, b) => [a[1] * b[2] - a[2] * b[1], a[2] * b[0] - a[0] * b[2], a[0] * b[1] - a[1] * b[0]],
+      norm: (a) => {
+        const l = Math.hypot(a[0], a[1], a[2]) || 1;
+        return [a[0] / l, a[1] / l, a[2] / l];
+      }
+    };
+
+    function mat4Perspective(fovy, aspect, near, far) {
+      const f = 1 / Math.tan(fovy / 2);
+      const nf = 1 / (near - far);
+      return [
+        f / aspect, 0, 0, 0,
+        0, f, 0, 0,
+        0, 0, (far + near) * nf, -1,
+        0, 0, (2 * far * near) * nf, 0
+      ];
+    }
+
+    function mat4LookAt(eye, center, up) {
+      const z = V3.norm(V3.sub(eye, center));
+      const x = V3.norm(V3.cross(up, z));
+      const y = V3.cross(z, x);
+      return [
+        x[0], y[0], z[0], 0,
+        x[1], y[1], z[1], 0,
+        x[2], y[2], z[2], 0,
+        -V3.dot(x, eye), -V3.dot(y, eye), -V3.dot(z, eye), 1
+      ];
+    }
+
+    function compile(type, src) {
+      const shader = gl.createShader(type);
+      gl.shaderSource(shader, src);
+      gl.compileShader(shader);
+      if (!gl.getShaderParameter(shader, gl.COMPILE_STATUS)) {
+        throw new Error(gl.getShaderInfoLog(shader));
+      }
+      return shader;
+    }
+
+    function program(vs, fs) {
+      const p = gl.createProgram();
+      gl.attachShader(p, compile(gl.VERTEX_SHADER, vs));
+      gl.attachShader(p, compile(gl.FRAGMENT_SHADER, fs));
+      gl.linkProgram(p);
+      if (!gl.getProgramParameter(p, gl.LINK_STATUS)) {
+        throw new Error(gl.getProgramInfoLog(p));
+      }
+      return p;
+    }
+
+    function makeLines(positions) {
+      const vao = gl.createVertexArray();
+      gl.bindVertexArray(vao);
+      const vbo = gl.createBuffer();
+      gl.bindBuffer(gl.ARRAY_BUFFER, vbo);
+      gl.bufferData(gl.ARRAY_BUFFER, positions, gl.STATIC_DRAW);
+      gl.enableVertexAttribArray(0);
+      gl.vertexAttribPointer(0, 3, gl.FLOAT, false, 0, 0);
+      gl.bindVertexArray(null);
+      return { vao, count: positions.length / 3 };
+    }
+
+    function makeFlows(starts, ends, seeds, rates) {
+      const vao = gl.createVertexArray();
+      gl.bindVertexArray(vao);
+      const attrs = [
+        { data: starts, loc: 0, size: 3 },
+        { data: ends, loc: 1, size: 3 },
+        { data: seeds, loc: 2, size: 1 },
+        { data: rates, loc: 3, size: 1 }
+      ];
+      for (const attr of attrs) {
+        const b = gl.createBuffer();
+        gl.bindBuffer(gl.ARRAY_BUFFER, b);
+        gl.bufferData(gl.ARRAY_BUFFER, attr.data, gl.STATIC_DRAW);
+        gl.enableVertexAttribArray(attr.loc);
+        gl.vertexAttribPointer(attr.loc, attr.size, gl.FLOAT, false, 0, 0);
+      }
+      gl.bindVertexArray(null);
+      return { vao, count: seeds.length };
+    }
+
+    function setMat(p, name, m) { gl.uniformMatrix4fv(gl.getUniformLocation(p, name), false, m); }
+    function setVec3(p, name, v) { gl.uniform3f(gl.getUniformLocation(p, name), v[0], v[1], v[2]); }
+    function setF(p, name, v) { gl.uniform1f(gl.getUniformLocation(p, name), v); }
+
+    const vsLine = `#version 300 es
+layout(location=0) in vec3 aPos;
+uniform mat4 uProj, uView;
+void main(){ gl_Position = uProj * uView * vec4(aPos, 1.0); }`;
+
+    const fsLine = `#version 300 es
+precision highp float;
+uniform vec3 uColor;
+uniform float uAlpha;
+out vec4 o;
+void main(){ o = vec4(uColor, uAlpha); }`;
+
+    const vsFlow = `#version 300 es
+layout(location=0) in vec3 aStart;
+layout(location=1) in vec3 aEnd;
+layout(location=2) in float aSeed;
+layout(location=3) in float aRate;
+uniform mat4 uProj, uView;
+uniform float uTime, uSync, uSize;
+out float vAlpha;
+void main(){
+  float t = fract(uTime * aRate + aSeed + uSync);
+  vec3 p = mix(aStart, aEnd, t);
+  gl_Position = uProj * uView * vec4(p, 1.0);
+  float head = smoothstep(0.0, 0.12, t);
+  float tail = 1.0 - smoothstep(0.66, 1.0, t);
+  float burst = 0.8 + 0.2 * sin((aSeed * 17.0 + t * 22.0) + uTime * 6.0);
+  vAlpha = head * tail * burst;
+  gl_PointSize = uSize * (0.8 + vAlpha * 1.7);
+}`;
+
+    const fsFlow = `#version 300 es
+precision highp float;
+uniform vec3 uColor;
+in float vAlpha;
+out vec4 o;
+void main(){
+  float d = length(gl_PointCoord - vec2(0.5));
+  float core = smoothstep(0.34, 0.0, d);
+  float halo = smoothstep(0.52, 0.18, d);
+  vec3 c = mix(uColor * 0.7, vec3(1.0), core * 0.42);
+  o = vec4(c, halo * vAlpha);
+}`;
+
+    const vsNode = `#version 300 es
+layout(location=0) in vec3 aPos;
+uniform mat4 uProj, uView;
+uniform float uJitter;
+uniform float uSize;
+void main(){
+  vec3 p = aPos;
+  p.y += sin((aPos.x + aPos.z) * 0.08 + uJitter) * 0.12;
+  gl_Position = uProj * uView * vec4(p, 1.0);
+  gl_PointSize = uSize;
+}`;
+
+    const fsNode = `#version 300 es
+precision highp float;
+uniform vec3 uColor;
+out vec4 o;
+void main(){
+  float d = length(gl_PointCoord - vec2(0.5));
+  float a = smoothstep(0.5, 0.08, d);
+  o = vec4(uColor, a);
+}`;
+
+    const progLine = program(vsLine, fsLine);
+    const progFlow = program(vsFlow, fsFlow);
+    const progNode = program(vsNode, fsNode);
+
+    const nodes = [];
+    function gridLayer(size, spacing, y) {
+      const half = (size - 1) / 2;
+      for (let gx = 0; gx < size; gx++) {
+        for (let gz = 0; gz < size; gz++) {
+          nodes.push([(gx - half) * spacing, y, (gz - half) * spacing]);
+        }
+      }
+    }
+    function ringHubs(count, radius, y) {
+      for (let i = 0; i < count; i++) {
+        const a = i / count * Math.PI * 2;
+        nodes.push([Math.cos(a) * radius, y, Math.sin(a) * radius]);
+      }
+    }
+
+    gridLayer(7, 8, 2);
+    gridLayer(6, 10, 10);
+    gridLayer(5, 12, 18);
+    ringHubs(16, 34, 6);
+    ringHubs(12, 24, 14);
+
+    const mapNodes = nodes.map((n) => [n[0], 0, n[2]]);
+    const edges = [];
+    for (let i = 0; i < mapNodes.length; i++) {
+      const dists = [];
+      for (let j = 0; j < mapNodes.length; j++) {
+        if (i === j) continue;
+        const a = mapNodes[i];
+        const b = mapNodes[j];
+        const dx = Math.abs(a[0] - b[0]);
+        const dz = Math.abs(a[2] - b[2]);
+        const d = Math.hypot(dx, dz) + (dx + dz) * 0.05;
+        dists.push({ j, d });
+      }
+      dists.sort((x, y) => x.d - y.d);
+      for (let n = 0; n < 4; n++) {
+        const j = dists[n].j;
+        if (i < j) edges.push([i, j]);
+      }
+    }
+
+    const linePos = new Float32Array(edges.length * 6);
+    let lp = 0;
+    for (const [i, j] of edges) {
+      const a = mapNodes[i];
+      const b = mapNodes[j];
+      linePos[lp++] = a[0]; linePos[lp++] = a[1]; linePos[lp++] = a[2];
+      linePos[lp++] = b[0]; linePos[lp++] = b[1]; linePos[lp++] = b[2];
+    }
+    const netLines = makeLines(linePos);
+
+    const routePresets = {
+      spine: { label: "matrix spine", nodes: [0, 18, 42, 69, 95, 108] },
+      relay: { label: "relay sweep", nodes: [7, 15, 39, 58, 76, 103] },
+      perimeter: { label: "perimeter drift", nodes: [48, 81, 98, 106, 111, 115] },
+      crosslink: { label: "crosslink burst", nodes: [4, 27, 55, 83, 101, 116] },
+      uplink: { label: "uplink ladder", nodes: [2, 13, 41, 67, 92, 110] }
+    };
+
+    function makeRouteGeometry(routeNodeIndexes) {
+      const routePos = new Float32Array((routeNodeIndexes.length - 1) * 6);
+      let rp = 0;
+      for (let i = 0; i < routeNodeIndexes.length - 1; i++) {
+        const a = mapNodes[routeNodeIndexes[i]];
+        const b = mapNodes[routeNodeIndexes[i + 1]];
+        routePos[rp++] = a[0]; routePos[rp++] = 0.04; routePos[rp++] = a[2];
+        routePos[rp++] = b[0]; routePos[rp++] = 0.04; routePos[rp++] = b[2];
+      }
+      return makeLines(routePos);
+    }
+
+    function buildFlowData(nodeSource, edgeList, copies, baseRate, rateBoost) {
+      const count = edgeList.length * copies;
+      const starts = new Float32Array(count * 3);
+      const ends = new Float32Array(count * 3);
+      const seeds = new Float32Array(count);
+      const rates = new Float32Array(count);
+      let p = 0;
+      for (const [i, j] of edgeList) {
+        const a = nodeSource[i];
+        const b = nodeSource[j];
+        const len = Math.hypot(a[0] - b[0], a[1] - b[1], a[2] - b[2]);
+        const rate = baseRate + (1 / (0.6 + len)) * rateBoost;
+        for (let k = 0; k < copies; k++) {
+          starts[p * 3 + 0] = a[0]; starts[p * 3 + 1] = a[1]; starts[p * 3 + 2] = a[2];
+          ends[p * 3 + 0] = b[0]; ends[p * 3 + 1] = b[1]; ends[p * 3 + 2] = b[2];
+          seeds[p] = Math.random();
+          rates[p] = rate + k * 0.022;
+          p++;
+        }
+      }
+      return makeFlows(starts, ends, seeds, rates);
+    }
+
+    const groundFlows = buildFlowData(mapNodes, edges, groundCopies, 0.22, 0.42);
+
+    const towerColumns = [
+      [-10, -10], [0, -12], [10, -10],
+      [-12, 0], [0, 0], [12, 0],
+      [-10, 10], [0, 12], [10, 10]
+    ];
+    const towerLevels = 8;
+    const towerStep = 7.0;
+    const towerNodes = [];
+    for (let level = 0; level < towerLevels; level++) {
+      for (const [x, z] of towerColumns) {
+        towerNodes.push([x, 6 + level * towerStep, z]);
+      }
+    }
+
+    function towerIndex(level, column) {
+      return level * towerColumns.length + column;
+    }
+
+    const towerEdges = [];
+    for (let level = 0; level < towerLevels; level++) {
+      for (let col = 0; col < towerColumns.length; col++) {
+        if (level < towerLevels - 1) towerEdges.push([towerIndex(level, col), towerIndex(level + 1, col)]);
+      }
+      for (let col = 0; col < towerColumns.length - 1; col++) {
+        towerEdges.push([towerIndex(level, col), towerIndex(level, col + 1)]);
+      }
+    }
+
+    const towerLinePos = new Float32Array(towerEdges.length * 6);
+    let tp = 0;
+    for (const [i, j] of towerEdges) {
+      const a = towerNodes[i];
+      const b = towerNodes[j];
+      towerLinePos[tp++] = a[0]; towerLinePos[tp++] = a[1]; towerLinePos[tp++] = a[2];
+      towerLinePos[tp++] = b[0]; towerLinePos[tp++] = b[1]; towerLinePos[tp++] = b[2];
+    }
+    const towerLines = makeLines(towerLinePos);
+    const towerFlows = buildFlowData(towerNodes, towerEdges, towerCopies, 0.35, 0.7);
+
+    const towerNodePos = new Float32Array(towerNodes.length * 3);
+    for (let i = 0; i < towerNodes.length; i++) {
+      towerNodePos[i * 3 + 0] = towerNodes[i][0];
+      towerNodePos[i * 3 + 1] = towerNodes[i][1];
+      towerNodePos[i * 3 + 2] = towerNodes[i][2];
+    }
+    const towerNodePts = makeLines(towerNodePos);
+
+    function makeRouteFlowData(routeNodeIndexes) {
+      const routeEdges = routeNodeIndexes.slice(0, -1).map((nodeIndex, i) => [nodeIndex, routeNodeIndexes[i + 1]]);
+      return buildFlowData(mapNodes, routeEdges, routeCopies, 0.58, 0.95);
+    }
+
+    function makeTowerLinkData(routeNodeIndexes) {
+      const anchorCols = [0, 1, 2, 3, 4, 5];
+      const linkEdges = routeNodeIndexes.map((nodeIndex, i) => [nodeIndex, towerIndex(0, anchorCols[i % anchorCols.length])]);
+      const starts = new Float32Array(linkEdges.length * 6);
+      let p = 0;
+      for (const [groundIndex, towerNodeIndex] of linkEdges) {
+        const a = mapNodes[groundIndex];
+        const b = towerNodes[towerNodeIndex];
+        starts[p++] = a[0]; starts[p++] = 0.04; starts[p++] = a[2];
+        starts[p++] = b[0]; starts[p++] = b[1]; starts[p++] = b[2];
+      }
+      return {
+        lines: makeLines(starts),
+        flows: (() => {
+          const count = linkEdges.length * towerLinkCopies;
+          const s = new Float32Array(count * 3);
+          const e = new Float32Array(count * 3);
+          const seeds = new Float32Array(count);
+          const rates = new Float32Array(count);
+          let fp = 0;
+          for (const [groundIndex, towerNodeIndex] of linkEdges) {
+            const a = mapNodes[groundIndex];
+            const b = towerNodes[towerNodeIndex];
+            const rate = 0.46 + Math.random() * 0.08;
+            for (let k = 0; k < towerLinkCopies; k++) {
+              s[fp * 3 + 0] = a[0]; s[fp * 3 + 1] = 0.04; s[fp * 3 + 2] = a[2];
+              e[fp * 3 + 0] = b[0]; e[fp * 3 + 1] = b[1]; e[fp * 3 + 2] = b[2];
+              seeds[fp] = Math.random();
+              rates[fp] = rate + k * 0.015;
+              fp++;
+            }
+          }
+          return makeFlows(s, e, seeds, rates);
+        })()
+      };
+    }
+
+    const routeAssets = Object.fromEntries(
+      Object.entries(routePresets).map(([key, preset]) => [
+        key,
+        {
+          lines: makeRouteGeometry(preset.nodes),
+          flows: makeRouteFlowData(preset.nodes),
+          towerLinks: makeTowerLinkData(preset.nodes)
+        }
+      ])
+    );
+
+    let activeRouteKey = routeSelect.value;
+    let activeRouteLines = routeAssets[activeRouteKey].lines;
+    let activeRouteFlows = routeAssets[activeRouteKey].flows;
+    let activeTowerLinks = routeAssets[activeRouteKey].towerLinks.lines;
+    let activeTowerLinkFlows = routeAssets[activeRouteKey].towerLinks.flows;
+
+    function refreshCount() {
+      streamCount.textContent = String(
+        groundFlows.count + towerFlows.count + activeRouteFlows.count + activeTowerLinkFlows.count
+      );
+    }
+
+    function setActiveRoute(routeKey) {
+      const preset = routePresets[routeKey];
+      if (!preset) return;
+      activeRouteKey = routeKey;
+      routeSelect.value = routeKey;
+      routeBadge.textContent = `active trunk: ${preset.label}`;
+      activeRouteLines = routeAssets[routeKey].lines;
+      activeRouteFlows = routeAssets[routeKey].flows;
+      activeTowerLinks = routeAssets[routeKey].towerLinks.lines;
+      activeTowerLinkFlows = routeAssets[routeKey].towerLinks.flows;
+      refreshCount();
+    }
+
+    groundCount.textContent = String(edges.length);
+    towerCount.textContent = String(towerEdges.length);
+    refreshCount();
+
+    const nodePos = new Float32Array(mapNodes.length * 3);
+    for (let i = 0; i < mapNodes.length; i++) {
+      nodePos[i * 3 + 0] = mapNodes[i][0];
+      nodePos[i * 3 + 1] = mapNodes[i][1];
+      nodePos[i * 3 + 2] = mapNodes[i][2];
+    }
+    const nodePts = makeLines(nodePos);
+
+    const defaultView = isIPhoneLike
+      ? { yaw: -0.24, pitch: 0.93, dist: 122 }
+      : { yaw: -0.35, pitch: 1.0, dist: 108 };
+
+    let yaw = defaultView.yaw;
+    let pitch = defaultView.pitch;
+    let dist = defaultView.dist;
+    let isDown = false;
+    let px = 0;
+    let py = 0;
+
+    canvas.addEventListener("pointerdown", (e) => {
+      isDown = true;
+      px = e.clientX;
+      py = e.clientY;
+      canvas.setPointerCapture(e.pointerId);
+    });
+
+    canvas.addEventListener("pointerup", (e) => {
+      isDown = false;
+      canvas.releasePointerCapture(e.pointerId);
+    });
+
+    canvas.addEventListener("pointercancel", () => {
+      isDown = false;
+    });
+
+    canvas.addEventListener("pointermove", (e) => {
+      if (!isDown) return;
+      const dx = (e.clientX - px) / canvas.clientWidth;
+      const dy = (e.clientY - py) / canvas.clientHeight;
+      yaw -= dx * (isCompactTouch ? 2.1 : 2.5);
+      pitch -= dy * (isCompactTouch ? 1.05 : 1.2);
+      pitch = Math.max(0.42, Math.min(1.28, pitch));
+      px = e.clientX;
+      py = e.clientY;
+    });
+
+    canvas.addEventListener("wheel", (e) => {
+      dist *= 1 + Math.sign(e.deltaY) * 0.06;
+      dist = Math.max(44, Math.min(190, dist));
+      e.preventDefault();
+    }, { passive: false });
+
+    function zoom(multiplier) {
+      dist *= multiplier;
+      dist = Math.max(44, Math.min(190, dist));
+    }
+
+    zoomInButton.addEventListener("click", () => zoom(0.88));
+    zoomOutButton.addEventListener("click", () => zoom(1.14));
+    resetViewButton.addEventListener("click", () => {
+      yaw = defaultView.yaw;
+      pitch = defaultView.pitch;
+      dist = defaultView.dist;
+    });
+
+    routeSelect.addEventListener("change", (e) => {
+      setActiveRoute(e.target.value);
+    });
+
+    shuffleRouteButton.addEventListener("click", () => {
+      const keys = Object.keys(routePresets).filter((key) => key !== activeRouteKey);
+      setActiveRoute(keys[Math.floor(Math.random() * keys.length)]);
+    });
+
+    function drawFlowLayer(layer, proj, view, time, sync, color, size) {
+      gl.useProgram(progFlow);
+      setMat(progFlow, "uProj", proj);
+      setMat(progFlow, "uView", view);
+      setF(progFlow, "uTime", time);
+      setF(progFlow, "uSync", sync);
+      setF(progFlow, "uSize", size);
+      setVec3(progFlow, "uColor", color);
+      gl.bindVertexArray(layer.vao);
+      gl.drawArrays(gl.POINTS, 0, layer.count);
+    }
+
+    function drawNodeLayer(layer, proj, view, jitter, size, color) {
+      gl.useProgram(progNode);
+      setMat(progNode, "uProj", proj);
+      setMat(progNode, "uView", view);
+      setF(progNode, "uJitter", jitter);
+      setF(progNode, "uSize", size);
+      setVec3(progNode, "uColor", color);
+      gl.bindVertexArray(layer.vao);
+      gl.drawArrays(gl.POINTS, 0, layer.count);
+    }
+
+    let start = performance.now();
+    function frame(now) {
+      resize();
+      const t = (now - start) * 0.001;
+
+      gl.enable(gl.DEPTH_TEST);
+      gl.clearColor(0.01, 0.02, 0.02, 1.0);
+      gl.clear(gl.COLOR_BUFFER_BIT | gl.DEPTH_BUFFER_BIT);
+
+      const proj = mat4Perspective(isCompactTouch ? Math.PI / 2.6 : Math.PI / 3, canvas.width / canvas.height, 0.1, 1000);
+      const eye = [
+        Math.cos(yaw) * dist * Math.cos(pitch),
+        18 + Math.sin(pitch) * dist,
+        Math.sin(yaw) * dist * Math.cos(pitch)
+      ];
+      const view = mat4LookAt(eye, [0, 18, 0], [0, 1, 0]);
+
+      gl.useProgram(progLine);
+      setMat(progLine, "uProj", proj);
+      setMat(progLine, "uView", view);
+
+      setVec3(progLine, "uColor", [0.10, 0.60, 0.65]);
+      setF(progLine, "uAlpha", isCompactTouch ? 0.18 : 0.22);
+      gl.bindVertexArray(netLines.vao);
+      gl.drawArrays(gl.LINES, 0, netLines.count);
+
+      setVec3(progLine, "uColor", [0.30, 1.0, 0.48]);
+      setF(progLine, "uAlpha", isCompactTouch ? 0.15 : 0.18);
+      gl.bindVertexArray(towerLines.vao);
+      gl.drawArrays(gl.LINES, 0, towerLines.count);
+
+      setVec3(progLine, "uColor", [1.0, 0.58, 0.22]);
+      setF(progLine, "uAlpha", 0.82);
+      gl.bindVertexArray(activeRouteLines.vao);
+      gl.drawArrays(gl.LINES, 0, activeRouteLines.count);
+
+      setVec3(progLine, "uColor", [0.72, 1.0, 0.52]);
+      setF(progLine, "uAlpha", 0.3);
+      gl.bindVertexArray(activeTowerLinks.vao);
+      gl.drawArrays(gl.LINES, 0, activeTowerLinks.count);
+
+      drawNodeLayer(nodePts, proj, view, t * 0.7, isCompactTouch ? 3.6 : 4.2, [0.34, 0.88, 0.98]);
+      drawNodeLayer(towerNodePts, proj, view, t * 1.1 + 0.6, isCompactTouch ? 5.0 : 5.8, [0.58, 1.0, 0.62]);
+
+      gl.enable(gl.BLEND);
+      gl.blendFunc(gl.SRC_ALPHA, gl.ONE);
+      const sync = Math.sin(t * 0.85) * 0.5 + 0.5;
+      drawFlowLayer(groundFlows, proj, view, t, sync * 0.44, [0.42, 0.92, 1.0], isCompactTouch ? 3.9 : 4.6);
+      drawFlowLayer(activeRouteFlows, proj, view, t * 1.14, 0.1 + sync * 0.18, [1.0, 0.54, 0.18], isCompactTouch ? 6.5 : 7.6);
+      drawFlowLayer(activeTowerLinkFlows, proj, view, t * 1.1, 0.22 + sync * 0.2, [0.86, 1.0, 0.52], isCompactTouch ? 5.6 : 6.6);
+      drawFlowLayer(towerFlows, proj, view, t * 1.28, 0.16 + sync * 0.26, [0.46, 1.0, 0.56], isCompactTouch ? 5.2 : 6.2);
+      gl.disable(gl.BLEND);
+
+      requestAnimationFrame(frame);
+    }
+
+    requestAnimationFrame(frame);
+  </script>
+</body>
+</html>

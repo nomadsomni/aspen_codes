@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nomad Somni | Portfolio</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+    />
+    <style>
+      @keyframes slideFadeIn {
+        0% { transform: translateX(15%); opacity: 0; }
+        100% { transform: translateX(0); opacity: 1; }
+      }
+      body, main {
+        background-color: whitesmoke;
+        background-image: url(/photos/orange_detail.jpg);
+        background-position: center;
+        background-size: cover;
+        color: rgba(65,65,65,0.74);
+        height: 100%; margin: 0;
+      }
+      .navbar, .jumbotron {
+        background-color: rgba(255,102,0,0.63);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        color: rgba(255,255,255,0.5);
+      }
+      .navbar.bg-transparent { background-color: transparent!important; }
+
+      .dark-box {
+        background-color: rgba(0,0,0,0.7);
+        color: white; padding: 20px; border-radius: 10px;
+      }
+      .dark-box_quick, .light-box_quick {
+        padding: 20px; border-radius: 10px;
+        animation: slideFadeIn 0.5s ease-in-out forwards;
+      }
+      .dark-box_quick { background-color: rgba(156,154,154,0.7); color: rgba(43,42,42,0.9); }
+      .light-box_quick { background-color: rgba(0,0,0,0.7); color: white; }
+
+      .project_id, .project_id_right {
+        background-color: rgba(255,255,255,0.5);
+        border-radius: 10px; width: auto; height: 230px;
+        padding: 20px; background-position: center;
+        background-size: cover; color: rgba(255,255,255,0.5);
+      }
+      .project_id { text-align: end; }
+      .project_id_right { text-align: start; }
+
+      .btn-secondary {
+        background-color: rgba(255,102,0,0.63);
+        color: rgba(255,255,255,0.8); border: none;
+      }
+      .btn-secondary:hover {
+        background-color: rgba(255,102,0,0.8);
+        color: rgba(0,0,0,0.8);
+      }
+      .btn-gray {
+        background-color: rgba(0,0,0,0.5);
+        color: rgba(255,255,255,0.8); border: none;
+      }
+      .btn-gray:hover {
+        background-color: rgba(0,0,0,0.8);
+        color: rgba(255,255,255,0.9);
+      }
+
+      .header { animation: slideFadeIn 0.5s ease-in-out forwards; }
+
+      .carousel-item { position: relative; }
+      .carousel-item iframe {
+        width: 100%; height: 100%; border: 0; overflow: hidden;
+      }
+      .carousel-overlay-title {
+        position: absolute; top: 20px; left: 20px;
+        z-index: 10; color: white; font-size: 24px;
+      }
+      .carousel-overlay-desc {
+        position: absolute; top: 60px; left: 20px;
+        z-index: 10; color: white; font-size: 14px;
+      }
+      .carousel-wrapper { height: 450px; overflow: hidden; width: 100%; }
+
+      footer { color: rgba(255,255,255,0.7); }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top bg-transparent">
+      <a class="navbar-brand" href="index.html">Nomad</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse"
+        data-target="#navbarResponsive"><span class="navbar-toggler-icon"></span></button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item active"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="index2.html">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="projects.html">Projects</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <main role="main">
+      <div class="jumbotron mb-0" style="background-color: transparent;">
+        <div class="container">
+          <div class="dark-box header">
+            <h2>aspen_codes: PORTFOLIO_LANDING_PAGE</h2>
+            <p class="mb-0">
+              Welcome to my professional portfolio. Explore live concepts,
+              prototypes, and experiments.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="container mt-3 mb-5">
+        <div class="dark-box_quick">
+          <div id="slider" class="carousel slide" data-ride="carousel" data-interval="false">
+
+            <ol class="carousel-indicators">
+              <li data-target="#slider" data-slide-to="0" class="active"></li>
+              <li data-target="#slider" data-slide-to="1"></li>
+              <li data-target="#slider" data-slide-to="2"></li>
+            </ol>
+
+            <div class="carousel-inner">
+
+              <div class="carousel-item active">
+                <div class="carousel-wrapper">
+                  <iframe src="5RAGONC1RCUS_noir_A.html" scrolling="no"></iframe>
+                </div>
+                <div class="carousel-overlay-title">PROJECT HEADER</div>
+                <div class="carousel-overlay-desc">Project description...</div>
+              </div>
+
+              <div class="carousel-item">
+                <div class="row light-box_quick d-flex justify-content-center align-items-center text-center" style="height:450px;">
+                  <div class="col-md-6 project_id" style="background-image:url(/photos/orange_detail.jpg);">
+                    <h2 style="background-color:rgba(255,102,0,0.63);">aspen_codes:</h2>
+                    <p style="color:rgba(0,0,0,0.5);background-color:rgba(255,102,0,0.63);">
+                      aspen_codes:: PORTFOLIO_PROJECT
+                    </p>
+                    <p><a class="btn btn-secondary" href="project_id2.html">#AVALANCHE</a></p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="carousel-item">
+                <div class="row light-box_quick d-flex justify-content-center align-items-center text-center" style="height:450px;">
+                  <div class="col-md-6">
+                    <div class="project_id_right" style="background-image:url(/photos/YINGYANG.jpg);">
+                      <h2 style="background-color:rgba(41,41,41,0.7);">aspen_codes::</h2>
+                      <p style="color:rgba(180,180,180,0.75);background-color:rgba(0,0,0,0.5);">
+                        PORTFOLIO_PROJECT_ID4
+                      </p>
+                      <p><a class="btn btn-gray" href="/projects/project_id4.html">#AVALANCHE</a></p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+
+            <a class="carousel-control-prev" href="#slider" role="button" data-slide="prev">
+              <span class="carousel-control-prev-icon"></span>
+            </a>
+            <a class="carousel-control-next" href="#slider" role="button" data-slide="next">
+              <span class="carousel-control-next-icon"></span>
+            </a>
+
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer class="container"><p>© Nomad Somni 2024</p></footer>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+  </body>
+</html>

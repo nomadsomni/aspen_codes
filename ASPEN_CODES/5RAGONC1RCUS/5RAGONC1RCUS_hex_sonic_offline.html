@@ -1,0 +1,128 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>5RAGONC1RCUS Hex + Sonic Waves</title>
+<style>
+  body { margin:0; background:black; overflow:hidden; }
+  canvas { display:block; }
+</style>
+</head>
+<body>
+<script type="module">
+import * as THREE from 'https://cdn.jsdelivr.net/npm/three@0.128/build/three.module.js';
+import { OrbitControls } from 'https://cdn.jsdelivr.net/npm/three@0.128/examples/jsm/controls/OrbitControls.js';
+
+const scene = new THREE.Scene();
+scene.background = new THREE.Color(0x000000);
+
+// Camera
+const camera = new THREE.PerspectiveCamera(60, window.innerWidth/window.innerHeight, 0.1, 2000);
+camera.position.set(0, 30, 50);
+
+// Renderer
+const renderer = new THREE.WebGLRenderer({ antialias:true });
+renderer.setSize(window.innerWidth, window.innerHeight);
+document.body.appendChild(renderer.domElement);
+
+// Controls
+const controls = new OrbitControls(camera, renderer.domElement);
+controls.enableDamping = true;
+
+// Lights
+const hemiLight = new THREE.HemisphereLight(0xffffff, 0x444444, 1);
+scene.add(hemiLight);
+const dirLight = new THREE.DirectionalLight(0xffffff, 0.5);
+dirLight.position.set(10,20,0);
+scene.add(dirLight);
+
+// Complex King Core
+const coreGeo = new THREE.ConeGeometry(5, 10, 6);
+const coreMat = new THREE.MeshStandardMaterial({ color: 0x9933ff, emissive: 0xaa00ff, emissiveIntensity: 1, metalness:0.7, roughness:0.2 });
+const core = new THREE.Mesh(coreGeo, coreMat);
+scene.add(core);
+
+// Hex floor generation
+function createHexTile(radius, color) {
+    const shape = new THREE.Shape();
+    for (let i = 0; i < 6; i++) {
+        const angle = (Math.PI/3) * i + Math.PI/6; // flat top
+        const x = radius * Math.cos(angle);
+        const y = radius * Math.sin(angle);
+        if (i===0) shape.moveTo(x,y);
+        else shape.lineTo(x,y);
+    }
+    shape.closePath();
+    const geo = new THREE.ShapeGeometry(shape);
+    const mat = new THREE.MeshStandardMaterial({ color: color, emissive: color, emissiveIntensity: 0.5 });
+    return new THREE.Mesh(geo, mat);
+}
+
+const hexGroup = new THREE.Group();
+const hexRadius = 2;
+const hexWidth = Math.sqrt(3) * hexRadius;
+const hexHeight = 2 * hexRadius;
+const hexRows = 30;
+const hexCols = 30;
+
+for (let row= -hexRows/2; row<hexRows/2; row++) {
+    for (let col= -hexCols/2; col<hexCols/2; col++) {
+        const tile = createHexTile(hexRadius, 0x222244);
+        const xOffset = (row % 2) * (hexWidth/2);
+        tile.position.set(col*hexWidth + xOffset, -5, row*(hexHeight*0.75));
+        tile.rotation.x = -Math.PI/2;
+        hexGroup.add(tile);
+    }
+}
+scene.add(hexGroup);
+
+// Sonic waves
+const waveMaterial = new THREE.MeshBasicMaterial({ color: 0xaa00ff, transparent:true, opacity:0.3, side:THREE.DoubleSide });
+const waveGeo = new THREE.RingGeometry(1, 1.2, 64);
+const waves = [];
+for (let i=0; i<5; i++) {
+    const mesh = new THREE.Mesh(waveGeo, waveMaterial.clone());
+    mesh.rotation.x = -Math.PI/2;
+    waves.push(mesh);
+    scene.add(mesh);
+}
+
+// Animation
+let clock = new THREE.Clock();
+function animate() {
+    requestAnimationFrame(animate);
+    const t = clock.getElapsedTime();
+
+    core.rotation.y += 0.005;
+
+    // Waves
+    waves.forEach((w, i) => {
+        const speed = 5;
+        const cycle = (t + i*0.5) % speed;
+        const r = (cycle/speed) * 100;
+        w.scale.set(r, r, r);
+        w.material.opacity = 0.5 * (1 - cycle/speed);
+    });
+
+    // Pulsing hex emissive
+    hexGroup.children.forEach(tile => {
+        const dist = Math.sqrt(tile.position.x*tile.position.x + tile.position.z*tile.position.z);
+        const pulse = Math.sin(dist*0.5 - t*3) * 0.5 + 0.5;
+        tile.material.emissive = new THREE.Color().setHSL(0.75, 1.0, 0.2 + pulse*0.3);
+    });
+
+    controls.update();
+    renderer.render(scene, camera);
+}
+
+animate();
+
+window.addEventListener('resize', () => {
+    camera.aspect = window.innerWidth / window.innerHeight;
+    camera.updateProjectionMatrix();
+    renderer.setSize(window.innerWidth, window.innerHeight);
+});
+</script>
+</body>
+</html>

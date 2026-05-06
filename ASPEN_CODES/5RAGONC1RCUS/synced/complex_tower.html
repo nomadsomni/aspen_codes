@@ -1,0 +1,806 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>5RAGONC1RCUS | Complex Tower</title>
+  <style>
+    :root {
+      --bg-1: #030605;
+      --bg-2: #081311;
+      --cyan: #78ecff;
+      --green: #8cff98;
+      --orange: #ff9d45;
+      --magenta: #ff74d0;
+      --text: #d7e6ea;
+      --panel: rgba(7, 12, 13, 0.74);
+    }
+    html, body {
+      height: 100%;
+      margin: 0;
+      overflow: hidden;
+      background:
+        radial-gradient(1100px 720px at 18% 10%, rgba(140, 255, 152, 0.14), transparent 62%),
+        radial-gradient(1000px 740px at 82% 88%, rgba(255, 157, 69, 0.10), transparent 58%),
+        linear-gradient(180deg, rgba(120, 236, 255, 0.05), transparent 32%),
+        linear-gradient(160deg, var(--bg-1), var(--bg-2));
+      color: var(--text);
+      font-family: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+    }
+    canvas {
+      width: 100vw;
+      height: 100vh;
+      display: block;
+    }
+    .hud, .terminal, .route-panel, .warn, .badge {
+      position: fixed;
+      z-index: 6;
+      background: var(--panel);
+      border: 1px solid rgba(120, 236, 255, 0.16);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      box-shadow: 0 0 26px rgba(120, 236, 255, 0.08);
+    }
+    .hud {
+      top: 14px;
+      left: 14px;
+      padding: 12px 14px;
+      width: 300px;
+      border-radius: 14px;
+      font-size: 12px;
+    }
+    .hud b { color: #caffd2; }
+    .hud .keys {
+      margin-top: 6px;
+      opacity: 0.76;
+    }
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 8px;
+      margin-top: 10px;
+    }
+    .stat {
+      padding: 8px 10px;
+      border-radius: 10px;
+      background: rgba(10, 17, 18, 0.72);
+      border: 1px solid rgba(140, 255, 152, 0.10);
+    }
+    .stat span {
+      display: block;
+      opacity: 0.72;
+      font-size: 10px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+    .stat strong {
+      display: block;
+      margin-top: 4px;
+      font-size: 17px;
+      color: #f0fff4;
+    }
+    .route-panel {
+      top: 14px;
+      right: 14px;
+      width: 280px;
+      border-radius: 14px;
+      padding: 12px;
+    }
+    .route-panel label {
+      display: block;
+      margin-bottom: 8px;
+      color: #c6fff3;
+      font-size: 11px;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+    }
+    .route-panel select,
+    .route-panel button {
+      width: 100%;
+      box-sizing: border-box;
+      border-radius: 10px;
+      border: 1px solid rgba(140, 255, 152, 0.18);
+      background: rgba(10, 18, 17, 0.96);
+      color: var(--text);
+      font: inherit;
+    }
+    .route-panel select {
+      padding: 10px 12px;
+      margin-bottom: 10px;
+      appearance: none;
+    }
+    .button-row {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 8px;
+    }
+    .route-panel button {
+      padding: 9px 10px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      cursor: pointer;
+    }
+    .terminal {
+      right: 14px;
+      bottom: 14px;
+      width: 320px;
+      border-radius: 14px;
+      padding: 12px 14px;
+      font-size: 12px;
+      line-height: 1.45;
+    }
+    .terminal .title {
+      color: #ffd8b4;
+      margin-bottom: 6px;
+    }
+    .terminal .ok { color: #bdfec4; }
+    .terminal .dim { opacity: 0.64; }
+    .badge {
+      left: 14px;
+      bottom: 14px;
+      padding: 8px 12px;
+      border-radius: 999px;
+      color: #ffd8b4;
+      border-color: rgba(255, 157, 69, 0.22);
+      box-shadow: 0 0 24px rgba(255, 157, 69, 0.10);
+    }
+    .warn {
+      left: 14px;
+      bottom: 58px;
+      display: none;
+      padding: 8px 12px;
+      border-radius: 10px;
+      background: rgba(160, 40, 40, 0.78);
+      border-color: rgba(255, 160, 160, 0.6);
+    }
+    .fx-layer {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+    }
+    .grid {
+      background:
+        linear-gradient(180deg, rgba(140, 255, 152, 0.07), transparent 36%),
+        repeating-linear-gradient(0deg, rgba(140, 255, 152, 0.024) 0, rgba(140, 255, 152, 0.024) 1px, transparent 1px, transparent 24px),
+        repeating-linear-gradient(90deg, rgba(120, 236, 255, 0.024) 0, rgba(120, 236, 255, 0.024) 1px, transparent 1px, transparent 24px);
+      mix-blend-mode: screen;
+      opacity: 0.42;
+    }
+    .scanlines {
+      background: repeating-linear-gradient(0deg, rgba(255,255,255,0.012) 0, rgba(255,255,255,0.012) 1px, transparent 1px, transparent 3px);
+      opacity: 0.28;
+    }
+    .vignette {
+      background: radial-gradient(120% 120% at 50% 50%, transparent 34%, rgba(0,0,0,0.42) 74%);
+      mix-blend-mode: multiply;
+    }
+    @media (max-width: 760px) {
+      .hud, .route-panel, .terminal {
+        width: calc(100% - 28px);
+      }
+      .route-panel {
+        top: auto;
+        bottom: 86px;
+      }
+      .terminal {
+        right: 14px;
+        bottom: 14px;
+      }
+      .badge {
+        bottom: 14px;
+        max-width: calc(100% - 28px);
+      }
+    }
+  </style>
+</head>
+<body>
+  <canvas id="gl"></canvas>
+
+  <div class="hud">
+    5RAGONC1RCUS // <b>COMPLEX TOWER BUILD</b>
+    <div class="keys">[SPACE] camera rail • drag orbit • scroll zoom • [B] beacon storm • [C] color cycle</div>
+    <div class="stats">
+      <div class="stat"><span>Ground Links</span><strong id="groundCount">0</strong></div>
+      <div class="stat"><span>Tower Streams</span><strong id="towerCount">0</strong></div>
+      <div class="stat"><span>Total Packets</span><strong id="streamCount">0</strong></div>
+      <div class="stat"><span>Beacon Load</span><strong id="beaconLoad">0%</strong></div>
+    </div>
+  </div>
+
+  <div class="route-panel">
+    <label for="routeSelect">Trunk Route</label>
+    <select id="routeSelect">
+      <option value="spine">Matrix Spine</option>
+      <option value="relay">Relay Sweep</option>
+      <option value="perimeter">Perimeter Drift</option>
+      <option value="crosslink">Crosslink Burst</option>
+      <option value="uplink">Uplink Ladder</option>
+    </select>
+    <div class="button-row">
+      <button type="button" id="shuffleRoute">Shift</button>
+      <button type="button" id="togglePalette">Palette</button>
+      <button type="button" id="toggleBeacon">Beacon</button>
+    </div>
+  </div>
+
+  <div class="terminal">
+    <div class="title">OS CONSOLE // COMPLEX TOWER</div>
+    <div class="ok">boot: ok</div>
+    <div>status: <span id="statusLine">syncing...</span></div>
+    <div>bus: <span id="t-bus">----</span></div>
+    <div>uplink: <span id="t-uplink">----</span></div>
+    <div>traffic: <span id="t-traffic">----</span></div>
+    <div>route: <span id="t-route">----</span></div>
+    <div>palette: <span id="t-palette">default</span></div>
+    <div class="dim">kernel: cirrus-5</div>
+  </div>
+
+  <div class="warn" id="warn">WebGL2 not supported</div>
+  <div class="badge" id="routeBadge">active trunk: matrix spine</div>
+  <div class="fx-layer grid"></div>
+  <div class="fx-layer scanlines"></div>
+  <div class="fx-layer vignette"></div>
+
+<script>
+const canvas = document.getElementById("gl");
+const warn = document.getElementById("warn");
+const routeBadge = document.getElementById("routeBadge");
+const routeSelect = document.getElementById("routeSelect");
+const shuffleRouteButton = document.getElementById("shuffleRoute");
+const togglePaletteButton = document.getElementById("togglePalette");
+const toggleBeaconButton = document.getElementById("toggleBeacon");
+const groundCount = document.getElementById("groundCount");
+const towerCount = document.getElementById("towerCount");
+const streamCount = document.getElementById("streamCount");
+const beaconLoad = document.getElementById("beaconLoad");
+const statusLine = document.getElementById("statusLine");
+const tBus = document.getElementById("t-bus");
+const tUplink = document.getElementById("t-uplink");
+const tTraffic = document.getElementById("t-traffic");
+const tRoute = document.getElementById("t-route");
+const tPalette = document.getElementById("t-palette");
+const gl = canvas.getContext("webgl2", { antialias: true, alpha: false });
+if (!gl) {
+  warn.style.display = "block";
+  throw new Error("WebGL2 not supported");
+}
+
+function resize() {
+  const dpr = Math.min(window.devicePixelRatio || 1, 2);
+  const w = Math.floor(canvas.clientWidth * dpr);
+  const h = Math.floor(canvas.clientHeight * dpr);
+  if (canvas.width !== w || canvas.height !== h) {
+    canvas.width = w;
+    canvas.height = h;
+  }
+  gl.viewport(0, 0, canvas.width, canvas.height);
+}
+window.addEventListener("resize", resize);
+resize();
+
+const V3 = {
+  sub: (a, b) => [a[0] - b[0], a[1] - b[1], a[2] - b[2]],
+  dot: (a, b) => a[0] * b[0] + a[1] * b[1] + a[2] * b[2],
+  cross: (a, b) => [a[1] * b[2] - a[2] * b[1], a[2] * b[0] - a[0] * b[2], a[0] * b[1] - a[1] * b[0]],
+  norm: (a) => { const l = Math.hypot(a[0], a[1], a[2]) || 1; return [a[0] / l, a[1] / l, a[2] / l]; }
+};
+function mat4Perspective(fovy, aspect, near, far) {
+  const f = 1 / Math.tan(fovy / 2);
+  const nf = 1 / (near - far);
+  return [f / aspect, 0, 0, 0, 0, f, 0, 0, 0, 0, (far + near) * nf, -1, 0, 0, (2 * far * near) * nf, 0];
+}
+function mat4LookAt(eye, center, up) {
+  const z = V3.norm(V3.sub(eye, center));
+  const x = V3.norm(V3.cross(up, z));
+  const y = V3.cross(z, x);
+  return [x[0], y[0], z[0], 0, x[1], y[1], z[1], 0, x[2], y[2], z[2], 0, -V3.dot(x, eye), -V3.dot(y, eye), -V3.dot(z, eye), 1];
+}
+function compile(type, src) {
+  const shader = gl.createShader(type);
+  gl.shaderSource(shader, src);
+  gl.compileShader(shader);
+  if (!gl.getShaderParameter(shader, gl.COMPILE_STATUS)) throw new Error(gl.getShaderInfoLog(shader));
+  return shader;
+}
+function program(vs, fs) {
+  const p = gl.createProgram();
+  gl.attachShader(p, compile(gl.VERTEX_SHADER, vs));
+  gl.attachShader(p, compile(gl.FRAGMENT_SHADER, fs));
+  gl.linkProgram(p);
+  if (!gl.getProgramParameter(p, gl.LINK_STATUS)) throw new Error(gl.getProgramInfoLog(p));
+  return p;
+}
+function makeLines(positions) {
+  const vao = gl.createVertexArray();
+  gl.bindVertexArray(vao);
+  const vbo = gl.createBuffer();
+  gl.bindBuffer(gl.ARRAY_BUFFER, vbo);
+  gl.bufferData(gl.ARRAY_BUFFER, positions, gl.STATIC_DRAW);
+  gl.enableVertexAttribArray(0);
+  gl.vertexAttribPointer(0, 3, gl.FLOAT, false, 0, 0);
+  gl.bindVertexArray(null);
+  return { vao, count: positions.length / 3 };
+}
+function makeFlows(starts, ends, seeds, rates) {
+  const vao = gl.createVertexArray();
+  gl.bindVertexArray(vao);
+  const attrs = [
+    { data: starts, loc: 0, size: 3 },
+    { data: ends, loc: 1, size: 3 },
+    { data: seeds, loc: 2, size: 1 },
+    { data: rates, loc: 3, size: 1 }
+  ];
+  for (const attr of attrs) {
+    const b = gl.createBuffer();
+    gl.bindBuffer(gl.ARRAY_BUFFER, b);
+    gl.bufferData(gl.ARRAY_BUFFER, attr.data, gl.STATIC_DRAW);
+    gl.enableVertexAttribArray(attr.loc);
+    gl.vertexAttribPointer(attr.loc, attr.size, gl.FLOAT, false, 0, 0);
+  }
+  gl.bindVertexArray(null);
+  return { vao, count: seeds.length };
+}
+function setMat(p, name, m) { gl.uniformMatrix4fv(gl.getUniformLocation(p, name), false, m); }
+function setVec3(p, name, v) { gl.uniform3f(gl.getUniformLocation(p, name), v[0], v[1], v[2]); }
+function setF(p, name, v) { gl.uniform1f(gl.getUniformLocation(p, name), v); }
+
+const vsLine = `#version 300 es
+layout(location=0) in vec3 aPos;
+uniform mat4 uProj, uView;
+void main(){ gl_Position = uProj * uView * vec4(aPos, 1.0); }`;
+const fsLine = `#version 300 es
+precision highp float;
+uniform vec3 uColor;
+uniform float uAlpha;
+out vec4 o;
+void main(){ o = vec4(uColor, uAlpha); }`;
+const vsFlow = `#version 300 es
+layout(location=0) in vec3 aStart;
+layout(location=1) in vec3 aEnd;
+layout(location=2) in float aSeed;
+layout(location=3) in float aRate;
+uniform mat4 uProj, uView;
+uniform float uTime, uSync, uSize;
+out float vAlpha;
+void main(){
+  float t = fract(uTime * aRate + aSeed + uSync);
+  vec3 p = mix(aStart, aEnd, t);
+  gl_Position = uProj * uView * vec4(p, 1.0);
+  float head = smoothstep(0.0, 0.12, t);
+  float tail = 1.0 - smoothstep(0.66, 1.0, t);
+  float burst = 0.8 + 0.2 * sin((aSeed * 17.0 + t * 22.0) + uTime * 6.0);
+  vAlpha = head * tail * burst;
+  gl_PointSize = uSize * (0.8 + vAlpha * 1.7);
+}`;
+const fsFlow = `#version 300 es
+precision highp float;
+uniform vec3 uColor;
+in float vAlpha;
+out vec4 o;
+void main(){
+  float d = length(gl_PointCoord - vec2(0.5));
+  float core = smoothstep(0.34, 0.0, d);
+  float halo = smoothstep(0.52, 0.18, d);
+  vec3 c = mix(uColor * 0.7, vec3(1.0), core * 0.42);
+  o = vec4(c, halo * vAlpha);
+}`;
+const progLine = program(vsLine, fsLine);
+const progFlow = program(vsFlow, fsFlow);
+
+const mapNodes3d = [];
+function gridLayer(size, spacing, y) {
+  const half = (size - 1) / 2;
+  for (let gx = 0; gx < size; gx++) {
+    for (let gz = 0; gz < size; gz++) {
+      mapNodes3d.push([(gx - half) * spacing, y, (gz - half) * spacing]);
+    }
+  }
+}
+function ringHubs(count, radius, y) {
+  for (let i = 0; i < count; i++) {
+    const a = i / count * Math.PI * 2;
+    mapNodes3d.push([Math.cos(a) * radius, y, Math.sin(a) * radius]);
+  }
+}
+gridLayer(7, 8, 2);
+gridLayer(6, 10, 10);
+gridLayer(5, 12, 18);
+ringHubs(16, 34, 6);
+ringHubs(12, 24, 14);
+
+const mapNodes = mapNodes3d.map((n) => [n[0], 0, n[2]]);
+const edges = [];
+for (let i = 0; i < mapNodes.length; i++) {
+  const dists = [];
+  for (let j = 0; j < mapNodes.length; j++) {
+    if (i === j) continue;
+    const a = mapNodes[i];
+    const b = mapNodes[j];
+    const dx = Math.abs(a[0] - b[0]);
+    const dz = Math.abs(a[2] - b[2]);
+    const d = Math.hypot(dx, dz) + (dx + dz) * 0.05;
+    dists.push({ j, d });
+  }
+  dists.sort((x, y) => x.d - y.d);
+  for (let n = 0; n < 4; n++) {
+    const j = dists[n].j;
+    if (i < j) edges.push([i, j]);
+  }
+}
+const linePos = new Float32Array(edges.length * 6);
+let lp = 0;
+for (const [i, j] of edges) {
+  const a = mapNodes[i];
+  const b = mapNodes[j];
+  linePos[lp++] = a[0]; linePos[lp++] = a[1]; linePos[lp++] = a[2];
+  linePos[lp++] = b[0]; linePos[lp++] = b[1]; linePos[lp++] = b[2];
+}
+const netLines = makeLines(linePos);
+
+const palettes = {
+  default: { base: [0.42, 0.92, 1.0], route: [1.0, 0.54, 0.18], tower: [0.46, 1.0, 0.56], link: [0.86, 1.0, 0.52], glow: [0.10, 0.60, 0.65] },
+  sunset: { base: [1.0, 0.52, 0.62], route: [1.0, 0.78, 0.22], tower: [1.0, 0.42, 0.86], link: [1.0, 0.88, 0.52], glow: [0.64, 0.24, 0.44] },
+  ion: { base: [0.54, 0.74, 1.0], route: [0.86, 0.42, 1.0], tower: [0.58, 1.0, 0.92], link: [0.72, 1.0, 0.62], glow: [0.24, 0.52, 0.76] }
+};
+const paletteKeys = Object.keys(palettes);
+let paletteIndex = 0;
+let beaconStorm = false;
+
+const routePresets = {
+  spine: { label: "matrix spine", nodes: [0, 18, 42, 69, 95, 108] },
+  relay: { label: "relay sweep", nodes: [7, 15, 39, 58, 76, 103] },
+  perimeter: { label: "perimeter drift", nodes: [48, 81, 98, 106, 111, 115] },
+  crosslink: { label: "crosslink burst", nodes: [4, 27, 55, 83, 101, 116] },
+  uplink: { label: "uplink ladder", nodes: [2, 13, 41, 67, 92, 110] }
+};
+function makeRouteGeometry(routeNodeIndexes) {
+  const routePos = new Float32Array((routeNodeIndexes.length - 1) * 6);
+  let rp = 0;
+  for (let i = 0; i < routeNodeIndexes.length - 1; i++) {
+    const a = mapNodes[routeNodeIndexes[i]];
+    const b = mapNodes[routeNodeIndexes[i + 1]];
+    routePos[rp++] = a[0]; routePos[rp++] = 0.04; routePos[rp++] = a[2];
+    routePos[rp++] = b[0]; routePos[rp++] = 0.04; routePos[rp++] = b[2];
+  }
+  return makeLines(routePos);
+}
+function buildFlowData(nodeSource, edgeList, copies, baseRate, rateBoost) {
+  const count = edgeList.length * copies;
+  const starts = new Float32Array(count * 3);
+  const ends = new Float32Array(count * 3);
+  const seeds = new Float32Array(count);
+  const rates = new Float32Array(count);
+  let p = 0;
+  for (const [i, j] of edgeList) {
+    const a = nodeSource[i];
+    const b = nodeSource[j];
+    const len = Math.hypot(a[0] - b[0], a[1] - b[1], a[2] - b[2]);
+    const rate = baseRate + (1 / (0.6 + len)) * rateBoost;
+    for (let k = 0; k < copies; k++) {
+      starts[p * 3 + 0] = a[0]; starts[p * 3 + 1] = a[1]; starts[p * 3 + 2] = a[2];
+      ends[p * 3 + 0] = b[0]; ends[p * 3 + 1] = b[1]; ends[p * 3 + 2] = b[2];
+      seeds[p] = Math.random();
+      rates[p] = rate + k * 0.022;
+      p++;
+    }
+  }
+  return makeFlows(starts, ends, seeds, rates);
+}
+const groundFlows = buildFlowData(mapNodes, edges, 7, 0.22, 0.42);
+
+const towerColumns = [
+  [-10, -10], [0, -12], [10, -10],
+  [-12, 0], [0, 0], [12, 0],
+  [-10, 10], [0, 12], [10, 10]
+];
+const towerLevels = 8;
+const towerStep = 7.0;
+const towerNodes = [];
+for (let level = 0; level < towerLevels; level++) {
+  for (const [x, z] of towerColumns) {
+    towerNodes.push([x, 6 + level * towerStep, z]);
+  }
+}
+function towerIndex(level, column) {
+  return level * towerColumns.length + column;
+}
+const towerEdges = [];
+for (let level = 0; level < towerLevels; level++) {
+  for (let col = 0; col < towerColumns.length; col++) {
+    if (level < towerLevels - 1) towerEdges.push([towerIndex(level, col), towerIndex(level + 1, col)]);
+  }
+  for (let col = 0; col < towerColumns.length - 1; col++) {
+    towerEdges.push([towerIndex(level, col), towerIndex(level, col + 1)]);
+  }
+}
+const towerLinePos = new Float32Array(towerEdges.length * 6);
+let tp = 0;
+for (const [i, j] of towerEdges) {
+  const a = towerNodes[i];
+  const b = towerNodes[j];
+  towerLinePos[tp++] = a[0]; towerLinePos[tp++] = a[1]; towerLinePos[tp++] = a[2];
+  towerLinePos[tp++] = b[0]; towerLinePos[tp++] = b[1]; towerLinePos[tp++] = b[2];
+}
+const towerLines = makeLines(towerLinePos);
+const towerFlows = buildFlowData(towerNodes, towerEdges, 10, 0.35, 0.7);
+
+function makeDeckRing(radius, points, y) {
+  const pos = new Float32Array(points * 6);
+  let p = 0;
+  for (let i = 0; i < points; i++) {
+    const a0 = i / points * Math.PI * 2;
+    const a1 = (i + 1) / points * Math.PI * 2;
+    pos[p++] = Math.cos(a0) * radius; pos[p++] = y; pos[p++] = Math.sin(a0) * radius;
+    pos[p++] = Math.cos(a1) * radius; pos[p++] = y; pos[p++] = Math.sin(a1) * radius;
+  }
+  return makeLines(pos);
+}
+const deckRings = [
+  makeDeckRing(16, 32, 18),
+  makeDeckRing(14, 28, 34),
+  makeDeckRing(12, 24, 50)
+];
+
+function makeRouteFlowData(routeNodeIndexes) {
+  const routeEdges = routeNodeIndexes.slice(0, -1).map((nodeIndex, i) => [nodeIndex, routeNodeIndexes[i + 1]]);
+  return buildFlowData(mapNodes, routeEdges, 18, 0.58, 0.95);
+}
+function makeTowerLinkData(routeNodeIndexes) {
+  const anchorCols = [0, 1, 2, 3, 4, 5];
+  const linkEdges = routeNodeIndexes.map((nodeIndex, i) => [nodeIndex, towerIndex(0, anchorCols[i % anchorCols.length])]);
+  const starts = new Float32Array(linkEdges.length * 6);
+  let p = 0;
+  for (const [groundIndex, towerNodeIndex] of linkEdges) {
+    const a = mapNodes[groundIndex];
+    const b = towerNodes[towerNodeIndex];
+    starts[p++] = a[0]; starts[p++] = 0.04; starts[p++] = a[2];
+    starts[p++] = b[0]; starts[p++] = b[1]; starts[p++] = b[2];
+  }
+  return {
+    lines: makeLines(starts),
+    flows: (() => {
+      const count = linkEdges.length * 12;
+      const s = new Float32Array(count * 3);
+      const e = new Float32Array(count * 3);
+      const seeds = new Float32Array(count);
+      const rates = new Float32Array(count);
+      let fp = 0;
+      for (const [groundIndex, towerNodeIndex] of linkEdges) {
+        const a = mapNodes[groundIndex];
+        const b = towerNodes[towerNodeIndex];
+        const rate = 0.46 + Math.random() * 0.08;
+        for (let k = 0; k < 12; k++) {
+          s[fp * 3 + 0] = a[0]; s[fp * 3 + 1] = 0.04; s[fp * 3 + 2] = a[2];
+          e[fp * 3 + 0] = b[0]; e[fp * 3 + 1] = b[1]; e[fp * 3 + 2] = b[2];
+          seeds[fp] = Math.random();
+          rates[fp] = rate + k * 0.015;
+          fp++;
+        }
+      }
+      return makeFlows(s, e, seeds, rates);
+    })()
+  };
+}
+function makeBeaconField(count, radiusMin, radiusMax, yMin, yMax) {
+  const starts = new Float32Array(count * 3);
+  const ends = new Float32Array(count * 3);
+  const seeds = new Float32Array(count);
+  const rates = new Float32Array(count);
+  for (let i = 0; i < count; i++) {
+    const a = Math.random() * Math.PI * 2;
+    const r = radiusMin + Math.random() * (radiusMax - radiusMin);
+    const y = yMin + Math.random() * (yMax - yMin);
+    starts[i * 3 + 0] = Math.cos(a) * r;
+    starts[i * 3 + 1] = y;
+    starts[i * 3 + 2] = Math.sin(a) * r;
+    ends[i * 3 + 0] = 0;
+    ends[i * 3 + 1] = 58 + Math.random() * 10;
+    ends[i * 3 + 2] = 0;
+    seeds[i] = Math.random();
+    rates[i] = 0.24 + Math.random() * 0.14;
+  }
+  return makeFlows(starts, ends, seeds, rates);
+}
+const beaconFlows = makeBeaconField(140, 30, 72, 2, 24);
+
+const routeAssets = Object.fromEntries(
+  Object.entries(routePresets).map(([key, preset]) => [
+    key,
+    {
+      lines: makeRouteGeometry(preset.nodes),
+      flows: makeRouteFlowData(preset.nodes),
+      towerLinks: makeTowerLinkData(preset.nodes)
+    }
+  ])
+);
+let activeRouteKey = routeSelect.value;
+let activeRouteLines = routeAssets[activeRouteKey].lines;
+let activeRouteFlows = routeAssets[activeRouteKey].flows;
+let activeTowerLinks = routeAssets[activeRouteKey].towerLinks.lines;
+let activeTowerLinkFlows = routeAssets[activeRouteKey].towerLinks.flows;
+function setActiveRoute(routeKey) {
+  const preset = routePresets[routeKey];
+  if (!preset) return;
+  activeRouteKey = routeKey;
+  routeSelect.value = routeKey;
+  routeBadge.textContent = `active trunk: ${preset.label}`;
+  tRoute.textContent = preset.label;
+  activeRouteLines = routeAssets[routeKey].lines;
+  activeRouteFlows = routeAssets[routeKey].flows;
+  activeTowerLinks = routeAssets[routeKey].towerLinks.lines;
+  activeTowerLinkFlows = routeAssets[routeKey].towerLinks.flows;
+  refreshCounts();
+}
+function refreshCounts() {
+  groundCount.textContent = String(edges.length);
+  towerCount.textContent = String(towerEdges.length);
+  const total = groundFlows.count + towerFlows.count + activeRouteFlows.count + activeTowerLinkFlows.count + (beaconStorm ? beaconFlows.count : 0);
+  streamCount.textContent = String(total);
+}
+function currentPalette() {
+  return palettes[paletteKeys[paletteIndex]];
+}
+function cyclePalette() {
+  paletteIndex = (paletteIndex + 1) % paletteKeys.length;
+  tPalette.textContent = paletteKeys[paletteIndex];
+}
+
+let yaw = -0.35;
+let pitch = 1.0;
+let dist = 108;
+let isDown = false;
+let px = 0;
+let py = 0;
+let autoCam = false;
+canvas.addEventListener("pointerdown", (e) => {
+  isDown = true;
+  autoCam = false;
+  px = e.clientX;
+  py = e.clientY;
+  canvas.setPointerCapture(e.pointerId);
+});
+canvas.addEventListener("pointerup", (e) => {
+  isDown = false;
+  canvas.releasePointerCapture(e.pointerId);
+});
+canvas.addEventListener("pointermove", (e) => {
+  if (!isDown) return;
+  const dx = (e.clientX - px) / canvas.clientWidth;
+  const dy = (e.clientY - py) / canvas.clientHeight;
+  yaw -= dx * 2.5;
+  pitch -= dy * 1.2;
+  pitch = Math.max(0.42, Math.min(1.28, pitch));
+  px = e.clientX;
+  py = e.clientY;
+});
+canvas.addEventListener("wheel", (e) => {
+  dist *= 1 + Math.sign(e.deltaY) * 0.06;
+  dist = Math.max(36, Math.min(190, dist));
+  e.preventDefault();
+}, { passive: false });
+routeSelect.addEventListener("change", (e) => setActiveRoute(e.target.value));
+shuffleRouteButton.addEventListener("click", () => {
+  const keys = Object.keys(routePresets).filter((key) => key !== activeRouteKey);
+  setActiveRoute(keys[Math.floor(Math.random() * keys.length)]);
+});
+togglePaletteButton.addEventListener("click", cyclePalette);
+toggleBeaconButton.addEventListener("click", () => {
+  beaconStorm = !beaconStorm;
+  refreshCounts();
+});
+window.addEventListener("keydown", (e) => {
+  if (e.code === "Space") {
+    autoCam = !autoCam;
+    e.preventDefault();
+  } else if (e.code === "KeyB") {
+    beaconStorm = !beaconStorm;
+    refreshCounts();
+  } else if (e.code === "KeyC") {
+    cyclePalette();
+  }
+});
+
+function drawFlowLayer(layer, proj, view, time, sync, color, size) {
+  gl.useProgram(progFlow);
+  setMat(progFlow, "uProj", proj);
+  setMat(progFlow, "uView", view);
+  setF(progFlow, "uTime", time);
+  setF(progFlow, "uSync", sync);
+  setF(progFlow, "uSize", size);
+  setVec3(progFlow, "uColor", color);
+  gl.bindVertexArray(layer.vao);
+  gl.drawArrays(gl.POINTS, 0, layer.count);
+}
+
+setActiveRoute(activeRouteKey);
+tPalette.textContent = paletteKeys[paletteIndex];
+refreshCounts();
+
+let start = performance.now();
+function frame(now) {
+  resize();
+  const t = (now - start) * 0.001;
+  const pal = currentPalette();
+
+  if (autoCam) {
+    const k = t * 0.18;
+    yaw = -0.4 + Math.sin(k) * 0.7;
+    pitch = 0.92 + Math.sin(k * 0.63) * 0.12;
+    dist = 104 + Math.sin(k * 0.92) * 18;
+  }
+
+  gl.enable(gl.DEPTH_TEST);
+  gl.clearColor(0.01, 0.02, 0.02, 1.0);
+  gl.clear(gl.COLOR_BUFFER_BIT | gl.DEPTH_BUFFER_BIT);
+
+  const proj = mat4Perspective(Math.PI / 3, canvas.width / canvas.height, 0.1, 1000);
+  const eye = [
+    Math.cos(yaw) * dist * Math.cos(pitch),
+    18 + Math.sin(pitch) * dist,
+    Math.sin(yaw) * dist * Math.cos(pitch)
+  ];
+  const view = mat4LookAt(eye, [0, 18, 0], [0, 1, 0]);
+
+  gl.useProgram(progLine);
+  setMat(progLine, "uProj", proj);
+  setMat(progLine, "uView", view);
+
+  setVec3(progLine, "uColor", pal.glow);
+  setF(progLine, "uAlpha", 0.24);
+  gl.bindVertexArray(netLines.vao);
+  gl.drawArrays(gl.LINES, 0, netLines.count);
+
+  setVec3(progLine, "uColor", pal.tower);
+  setF(progLine, "uAlpha", 0.18);
+  gl.bindVertexArray(towerLines.vao);
+  gl.drawArrays(gl.LINES, 0, towerLines.count);
+
+  setVec3(progLine, "uColor", pal.route);
+  setF(progLine, "uAlpha", 0.84);
+  gl.bindVertexArray(activeRouteLines.vao);
+  gl.drawArrays(gl.LINES, 0, activeRouteLines.count);
+
+  setVec3(progLine, "uColor", pal.link);
+  setF(progLine, "uAlpha", 0.34);
+  gl.bindVertexArray(activeTowerLinks.vao);
+  gl.drawArrays(gl.LINES, 0, activeTowerLinks.count);
+
+  setVec3(progLine, "uColor", [pal.route[0], pal.route[1], pal.route[2]]);
+  setF(progLine, "uAlpha", 0.22);
+  for (const ring of deckRings) {
+    gl.bindVertexArray(ring.vao);
+    gl.drawArrays(gl.LINES, 0, ring.count);
+  }
+
+  gl.enable(gl.BLEND);
+  gl.blendFunc(gl.SRC_ALPHA, gl.ONE);
+  const sync = Math.sin(t * 0.9) * 0.5 + 0.5;
+  drawFlowLayer(groundFlows, proj, view, t, sync * 0.44, pal.base, 4.7);
+  drawFlowLayer(activeRouteFlows, proj, view, t * 1.14, 0.1 + sync * 0.18, pal.route, 7.6);
+  drawFlowLayer(activeTowerLinkFlows, proj, view, t * 1.1, 0.22 + sync * 0.2, pal.link, 6.7);
+  drawFlowLayer(towerFlows, proj, view, t * 1.28, 0.16 + sync * 0.26, pal.tower, 6.3);
+  if (beaconStorm) {
+    drawFlowLayer(beaconFlows, proj, view, t * 1.06, 0.2 + sync * 0.24, [1.0, 0.45, 0.82], 8.8);
+  }
+  gl.disable(gl.BLEND);
+
+  const throughput = (0.6 + 0.4 * sync) * 100;
+  const latency = 14 + (1.0 - sync) * 8;
+  const util = 40 + 35 * (0.5 + 0.5 * Math.sin(t * 0.7 + 0.6));
+  const phase = Math.round(sync * 100);
+  const bus = Math.round(90 + 10 * sync);
+  const uplink = Math.round(70 + 20 * Math.sin(t * 0.6 + 0.4));
+  const beaconPct = Math.round((beaconStorm ? 0.44 + sync * 0.56 : sync * 0.18) * 100);
+
+  statusLine.textContent = `synced ${phase}% - traffic ${util.toFixed(0)}% - throughput ${throughput.toFixed(0)}% - latency ${latency.toFixed(1)}ms`;
+  tBus.textContent = `${bus}%`;
+  tUplink.textContent = `${uplink}%`;
+  tTraffic.textContent = `${util.toFixed(0)}%`;
+  beaconLoad.textContent = `${beaconPct}%`;
+
+  requestAnimationFrame(frame);
+}
+requestAnimationFrame(frame);
+</script>
+</body>
+</html>

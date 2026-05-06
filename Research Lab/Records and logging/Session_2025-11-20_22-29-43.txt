@@ -1,0 +1,317 @@
+**********************
+PowerShell transcript start
+Start time: 20251120222948
+Username: NOMAD\Surface
+RunAs User: NOMAD\Surface
+Configuration Name: 
+Machine: NOMAD (Microsoft Windows NT 10.0.22631.0)
+Host Application: C:\Program Files\PowerShell\7-preview\pwsh.dll
+Process ID: 17040
+PSVersion: 7.6.0-preview.5
+PSEdition: Core
+GitCommitId: 7.6.0-preview.5
+OS: Microsoft Windows 10.0.22631
+Platform: Win32NT
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1, 6.0, 7.0
+PSRemotingProtocolVersion: 2.4
+SerializationVersion: 1.1.0.1
+WSManStackVersion: 3.0
+**********************
+Transcript started, output file is C:\Users\Surface\OneDrive\SIRENSSD\Research Lab\Records and logging\Session_2025-11-20_22-29-43.txt
+aspen_codes :: session started.
+
+
+➤ .//logsession
+Transcript started, output file is C:\Users\Surface\OneDrive\SIRENSSD\Research Lab\Records and logging\Session_2025-11-20_22-30-53.txt
+aspen_codes:: Ocean Avalanche
+
+
+➤ .//logsession
+aspen_codes:: Ocean Avalanche
+
+
+➤ .//logsession
+aspen_codes:: session
+Ocean Avalanche®
+
+
+➤ .//logsession
+aspen_codes:: session
+Ocean Avalanche ®
+
+
+➤ .//logsession
+
+➤ TerminatingError(Start-Transcript): "Transcription cannot be started due to the error: Nazwa pliku, nazwa katalogu lub składnia etykiety woluminu jest niepoprawna. : 'C:\Users\Surface\OneDrive\SIRENSSD\Research Lab\Records and logging\aspen_codes::_session:2025-11-20_22-41-15.txt'."
+Start-Transcript: C:\Users\Surface\OneDrive\SIRENSSD\LogSession.ps1:20
+Line |
+  20 |  Start-Transcript -Path $LogFile *>$null
+     |  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     | Transcription cannot be started due to the error: Nazwa pliku, nazwa katalogu lub składnia etykiety woluminu jest niepoprawna. : 'C:\Users\Surface\OneDrive\SIRENSSD\Research Lab\Records and logging\aspen_codes::_session:2025-11-20_22-41-15.txt'.
+Start-Transcript: C:\Users\Surface\OneDrive\SIRENSSD\LogSession.ps1:20
+Line |
+  20 |  Start-Transcript -Path $LogFile *>$null
+     |  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     | Transcription cannot be started due to the error: Nazwa pliku, nazwa katalogu lub składnia etykiety woluminu jest niepoprawna. : 'C:\Users\Surface\OneDrive\SIRENSSD\Research Lab\Records and
+     | logging\aspen_codes::_session:2025-11-20_22-41-15.txt'.
+
+aspen_codes:: session
+Ocean Avalanche ®
+
+
+➤ .//logsession
+
+➤ TerminatingError(Start-Transcript): "Transcription cannot be started due to the error: Nazwa pliku, nazwa katalogu lub składnia etykiety woluminu jest niepoprawna. : 'C:\Users\Surface\OneDrive\SIRENSSD\Research Lab\Records and logging\aspen_codes:: session_2025-11-20_22-42-20.txt'."
+Start-Transcript: C:\Users\Surface\OneDrive\SIRENSSD\LogSession.ps1:20
+Line |
+  20 |  Start-Transcript -Path $LogFile *>$null
+     |  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     | Transcription cannot be started due to the error: Nazwa pliku, nazwa katalogu lub składnia etykiety woluminu jest niepoprawna. : 'C:\Users\Surface\OneDrive\SIRENSSD\Research Lab\Records and logging\aspen_codes:: session_2025-11-20_22-42-20.txt'.
+Start-Transcript: C:\Users\Surface\OneDrive\SIRENSSD\LogSession.ps1:20
+Line |
+  20 |  Start-Transcript -Path $LogFile *>$null
+     |  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     | Transcription cannot be started due to the error: Nazwa pliku, nazwa katalogu lub składnia etykiety woluminu jest niepoprawna. : 'C:\Users\Surface\OneDrive\SIRENSSD\Research Lab\Records and logging\aspen_codes::
+     | session_2025-11-20_22-42-20.txt'.
+
+aspen_codes:: session
+Ocean Avalanche ®
+
+
+➤ .//logsession
+aspen_codes:: session
+Ocean Avalanche ®
+
+
+➤ .//logsession
+aspen_codes:: session.started
+Ocean Avalanche ®
+
+
+➤ .//logsession
+aspen_codes:: session launched
+Ocean Avalanche ®
+
+
+
+➤ .//logsession
+aspen_codes:: session launched
+Ocean Avalanche ®
+
+
+➤ .//logsession
+aspen_codes:: session launched ®
+Ocean Avalanche
+
+
+➤ .//logsession
+Ocean Avalanche
+aspen_codes:: session launched ®
+
+
+➤ start-Process pwsh
+
+
+➤ .//logsession
+aspen_codes:: session launched ® Ocean Avalanche
+
+
+➤ .//logsession
+aspen_codes:: session launched ®  Ocean Avalanche
+
+
+➤ .//logsession
+aspen_codes:: session launched.
+
+
+
+
+
+
+➤ code aspen_codes::session_started.ps1
+
+
+
+➤ .//logsession
+aspen_codes:: session launched.
+
+
+➤ stop-transcript
+Transcript stopped, output file is C:\Users\Surface\OneDrive\SIRENSSD\Research Lab\Records and logging\aspen_codes:session_2025-11-20_22-59-56.txt
+
+
+➤ .//logsession
+aspen_codes:: session launched.
+
+
+➤ stop-transcript
+Transcript stopped, output file is C:\Users\Surface\OneDrive\SIRENSSD\Research Lab\Records and logging\aspen_codes:session_2025-11-20_23-00-56.txt
+
+
+➤ code $profile
+
+
+
+➤ code $profile
+
+
+
+➤ code $profile
+
+
+
+➤ start-Process pwsh
+
+
+➤ stop-transcript
+Transcript stopped, output file is C:\Users\Surface\OneDrive\SIRENSSD\Research Lab\Records and logging\session_2025-11-20_22-54-50.txt
+
+
+➤ code LogSession.ps1
+
+
+
+➤ stop-loggingsession
+stop-loggingsession: The term 'stop-loggingsession' is not recognized as a name of a cmdlet, function, script file, or executable program.
+Check the spelling of the name, or if a path was included, verify that the path is correct and try again.
+stop-loggingsession: The term 'stop-loggingsession' is not recognized as a name of a cmdlet, function, script file, or executable program.
+Check the spelling of the name, or if a path was included, verify that the path is correct and try again.
+
+➤ CommandInvocation(Get-Command): "Get-Command"
+>> ParameterBinding(Get-Command): name="UseFuzzyMatching"; value="True"
+>> ParameterBinding(Get-Command): name="FuzzyMinimumDistance"; value="1"
+>> ParameterBinding(Get-Command): name="Name"; value="stop-loggingsession"
+>> CommandInvocation(Select-Object): "Select-Object"
+>> ParameterBinding(Select-Object): name="First"; value="5"
+>> ParameterBinding(Select-Object): name="Unique"; value="True"
+>> ParameterBinding(Select-Object): name="ExpandProperty"; value="Name"
+
+
+➤ .//logsession
+aspen_codes:: session launched.
+
+
+➤ .//logsession
+aspen_codes:: session launched.
+
+
+➤ stop-loggingsession
+stop-loggingsession: The term 'stop-loggingsession' is not recognized as a name of a cmdlet, function, script file, or executable program.
+Check the spelling of the name, or if a path was included, verify that the path is correct and try again.
+stop-loggingsession: The term 'stop-loggingsession' is not recognized as a name of a cmdlet, function, script file, or executable program.
+Check the spelling of the name, or if a path was included, verify that the path is correct and try again.
+
+➤ CommandInvocation(Get-Command): "Get-Command"
+>> ParameterBinding(Get-Command): name="UseFuzzyMatching"; value="True"
+>> ParameterBinding(Get-Command): name="FuzzyMinimumDistance"; value="1"
+>> ParameterBinding(Get-Command): name="Name"; value="stop-loggingsession"
+>> CommandInvocation(Select-Object): "Select-Object"
+>> ParameterBinding(Select-Object): name="First"; value="5"
+>> ParameterBinding(Select-Object): name="Unique"; value="True"
+>> ParameterBinding(Select-Object): name="ExpandProperty"; value="Name"
+
+
+➤ code $profile
+
+
+
+➤ pwd
+
+Path
+----
+C:\Users\Surface\OneDrive\SIRENSSD
+
+
+
+➤ ll
+ll: The term 'll' is not recognized as a name of a cmdlet, function, script file, or executable program.
+Check the spelling of the name, or if a path was included, verify that the path is correct and try again.
+ll: The term 'll' is not recognized as a name of a cmdlet, function, script file, or executable program.
+Check the spelling of the name, or if a path was included, verify that the path is correct and try again.
+
+➤ CommandInvocation(Get-Command): "Get-Command"
+>> ParameterBinding(Get-Command): name="UseFuzzyMatching"; value="True"
+>> ParameterBinding(Get-Command): name="FuzzyMinimumDistance"; value="1"
+>> ParameterBinding(Get-Command): name="Name"; value="ll"
+>> CommandInvocation(Select-Object): "Select-Object"
+>> ParameterBinding(Select-Object): name="First"; value="5"
+>> ParameterBinding(Select-Object): name="Unique"; value="True"
+>> ParameterBinding(Select-Object): name="ExpandProperty"; value="Name"
+>> ParameterBinding(Select-Object): name="InputObject"; value="fl"
+>> ParameterBinding(Select-Object): name="InputObject"; value="gl"
+>> ParameterBinding(Select-Object): name="InputObject"; value="sl"
+>> ParameterBinding(Select-Object): name="InputObject"; value="ls"
+>> ParameterBinding(Select-Object): name="InputObject"; value="L:"
+fl
+gl
+sl
+ls
+L:
+
+
+➤ get-childItem
+
+    Directory: C:\Users\Surface\OneDrive\SIRENSSD
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+l----          13.08.2025    01:38                ASPEN_CODES
+la---          23.04.2024    21:58                heloroman
+la---          20.04.2024    03:04                landing
+l----          20.04.2024    02:54                node_modules
+la---          17.05.2024    02:26                portfolio
+la---          10.04.2024    04:02                PowerShell
+la---          10.04.2024    04:02                powershellscripts
+d----          19.11.2025    22:38                Research Lab
+l----          20.07.2024    02:51                X
+l----          13.10.2024    04:40                xvode
+la---          20.04.2024    03:04             86 .gitignore
+-a---          13.08.2025    02:14          19215 5RAGONC1RCUS.html
+la---          20.04.2024    03:04            681 daddy.ps1
+la---          05.04.2024    13:26            534 download.ps1
+la---          20.04.2024    03:04           3463 index.html
+la---          05.04.2024    18:03            344 ipgenerate.ps1
+-a---          17.08.2025    02:17            610 klucze
+-a---          17.08.2025    02:17            220 klucze.pub
+-a---          20.11.2025    23:07           1637 LogSession.ps1
+la---          07.04.2024    18:48            754 menu
+la---          20.04.2024    03:04            468 menu.ps1
+la---          20.04.2024    03:04         133567 package-lock.json
+la---          20.04.2024    03:04            133 package.json
+-a---          09.07.2025    20:06           1097 record.ps1
+-a---          09.07.2025    19:59              0 record.ps1.txt
+la---          13.08.2025    01:38           1117 sandbox.ps1
+la---          20.04.2024    03:04            417 script.js
+la---          20.04.2024    03:04            215 style.css
+la---          28.04.2024    21:03            631 words.ps1
+la---          20.04.2024    03:04          90283 yarn.lock
+
+
+
+➤ pwd
+
+Path
+----
+C:\Users\Surface\OneDrive\SIRENSSD
+
+
+
+➤ xvode "ANCESTOR EXPLAINATION"
+
+
+
+➤ get-command logsession.ps1
+Get-Command: The term 'logsession.ps1' is not recognized as a name of a cmdlet, function, script file, or executable program.
+Check the spelling of the name, or if a path was included, verify that the path is correct and try again.
+Get-Command: The term 'logsession.ps1' is not recognized as a name of a cmdlet, function, script file, or executable program.
+Check the spelling of the name, or if a path was included, verify that the path is correct and try again.
+
+
+➤ (Get-Item "..\logsession.ps1").FullName
+Get-Item: Cannot find path 'C:\Users\Surface\OneDrive\logsession.ps1' because it does not exist.
+Get-Item: Cannot find path 'C:\Users\Surface\OneDrive\logsession.ps1' because it does not exist.
+
+
+➤ (Get-Item ".\logsession.ps1").FullName
+C:\Users\Surface\OneDrive\SIRENSSD\logsession.ps1
+

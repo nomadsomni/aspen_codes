@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nomad Somni | Portfolio v4</title>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+
+<style>
+    html, body {
+        margin:0;
+        padding:0;
+        height:100%;
+        overflow:hidden; /* NO PAGE SCROLL */
+        background:black;
+    }
+
+    main {
+        height:100vh;
+        overflow:hidden;
+        display:flex;
+        flex-direction:column;
+        background-image:url('/photos/YINGYANG.jpg');
+        background-size:cover;
+        background-position:center;
+    }
+
+    .jumbotron {
+        flex:1;
+        margin:0;
+        padding:0;
+        background-color:rgba(0,0,0,0.55);
+        display:flex;
+        flex-direction:column;
+    }
+
+    .dark-box.header {
+        padding:0;
+        margin:0;
+    }
+
+    .animated-header {
+        background-color:rgba(20,20,20,0.75);
+        padding:40px 0 25px 0;
+        text-align:center;
+        color:white;
+        font-size:26px;
+    }
+
+    /* Plasma core box */
+    .inferno-plasma-box {
+        padding:15px;
+        background:rgba(0,0,0,0.55);
+        border:1px solid rgba(255,120,0,0.75);
+        box-shadow:0 0 12px rgba(255,120,0,0.6), inset 0 0 25px rgba(255,80,0,0.35);
+        margin:10px 25px;
+        border-radius:10px;
+        text-align:center;
+    }
+    .inferno-plasma-line {
+        width:60px;
+        height:2px;
+        margin:6px auto;
+        background:linear-gradient(90deg, rgba(255,80,0,0), rgba(255,150,0,1), rgba(255,80,0,0));
+    }
+    .inferno-plasma-box h4 {
+        margin:0;
+        color:rgba(255,180,120,0.95);
+        text-shadow:0 0 8px rgba(255,120,0,0.9);
+    }
+    .inferno-plasma-box small {
+        color:rgba(255,200,150,0.75);
+    }
+
+    /* FIXED SLIDER HEIGHT */
+    #slider {
+        flex:1;
+        display:flex;
+        flex-direction:column;
+    }
+
+    .carousel-inner {
+        flex:1;
+    }
+
+    .carousel-item {
+        height:100%;
+    }
+
+    .carousel-item iframe {
+        width:100%;
+        height:100%;
+        border:0;
+        overflow:hidden;
+    }
+
+    .light-box_quick {
+        width:100%;
+        height:100%;
+        background:rgba(0,0,0,0.6);
+        border-radius:10px;
+        padding:20px;
+        color:white;
+    }
+
+    footer {
+        padding:5px;
+        text-align:center;
+        color:white;
+        background:rgba(0,0,0,0.4);
+    }
+</style>
+</head>
+
+<body>
+<main>
+    <div class="jumbotron">
+
+        <div class="dark-box header">
+            <h2 class="animated-header">aspen_codes: PORTFOLIO_LANDING_PAGE</h2>
+
+            <div class="inferno-plasma-box">
+                <h4>FIERY EARTH · 5RAGONC1RCUS</h4>
+                <div class="inferno-plasma-line"></div>
+                <small>interactive environment system prototype</small>
+            </div>
+        </div>
+
+        <div id="slider" class="carousel slide" data-ride="carousel">
+            <ol class="carousel-indicators">
+                <li data-target="#slider" data-slide-to="0" class="active"></li>
+                <li data-target="#slider" data-slide-to="1"></li>
+                <li data-target="#slider" data-slide-to="2"></li>
+            </ol>
+
+            <div class="carousel-inner">
+
+                <!-- Slide 1 — Inferno -->
+                <div class="carousel-item active">
+                    <iframe src="5RAGONC1RCUS.html"></iframe>
+                </div>
+
+                <!-- Slide 2 -->
+                <div class="carousel-item">
+                    <div class="light-box_quick" style="background-image:url(/photos/orange_detail.jpg); background-size:cover;">
+                        <h2 style="background-color:rgba(255,102,0,0.63);">aspen_codes:</h2>
+                        <p style="background-color:rgba(255,102,0,0.63); color:black;">
+                            aspen_codes:: PORTFOLIO_PROJECT
+                        </p>
+                        <p><a class="btn btn-secondary" href="project_id2.html">#AVALANCHE</a></p>
+                    </div>
+                </div>
+
+                <!-- Slide 3 -->
+                <div class="carousel-item">
+                    <div class="light-box_quick" style="background-image:url(/photos/YINGYANG.jpg); background-size:cover;">
+                        <h2 style="background-color:rgba(41,41,41,0.7);">aspen_codes::</h2>
+                        <p style="background-color:rgba(0,0,0,0.5);">
+                            aspen_codes:: PORTFOLIO_PROJECT_ID4
+                        </p>
+                        <p><a class="btn btn-gray" href="project_id4.html">#AVALANCHE</a></p>
+                    </div>
+                </div>
+
+            </div>
+
+            <a class="carousel-control-prev" href="#slider" data-slide="prev">
+                <span class="carousel-control-prev-icon"></span>
+            </a>
+
+            <a class="carousel-control-next" href="#slider" data-slide="next">
+                <span class="carousel-control-next-icon"></span>
+            </a>
+        </div>
+
+        <footer>
+            © Nomad Somni 2024
+        </footer>
+
+    </div>
+</main>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+
+</body>
+</html>

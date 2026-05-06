@@ -1,0 +1,115 @@
+# XZ7.NT ? Network Choreography Script
+# Perspective: The Network speaks in first person.
+# Format: declarative blocks + staged vignettes. All ASCII.
+
+META {
+  NAME        = "XZ7 NETWORKING TECHNOLOGIES";
+  VERSION     = "0.9.7";
+  DATE        = "2026-03-31";
+  MODE        = "Speculative-Operational";
+  AUTHOR_POV  = "I am the fabric";
+}
+
+CAPABILITIES {
+  PHOTONIC_FABRIC     = ON;     # silicon photonics for intra-datacenter lossless lanes
+  QUANTUM_SAFE_CRYPTO = KYBER+; # post-quantum hybrid sessions
+  DETERMINISTIC_SLA   = 5us;    # bounded latency in core segments
+  E2E_TELEMETRY       = "verifiable"; # signed hop-by-hop proofs
+  AI_ROUTING          = "intent-aware"; # model-routed, workload-shaped paths
+  EDGE_SWARM          = 1_200_000;      # edge nodes under policy mesh
+  ORBITAL_BACKHAUL    = "multi-orbit";  # LEO/MEO adaptive links
+  ZERO_TRUST_MESH     = STRICT;
+  ENERGY_AWARENESS    = TRUE;   # carbon/heat aware routing
+  DATA_PLANE          = "P4+eBPF";
+  TIME_SYNC           = "sub-ns";
+}
+
+LEXICON {
+  INTENT  = "what must happen";
+  PATH    = "how I make it happen";
+  PROOF   = "why you can trust it";
+  MEMORY  = "what I learned";
+}
+
+POLICY ZERO_TRUST {
+  PRINCIPLE = "authenticate every packet";
+  TOKEN     = "ephemeral, per-flow";
+  DENY      = "unknown origins";
+  AUDIT     = "immutable";
+}
+
+ORCHESTRATION "Dawn Shift" {
+  INTENT "Holographic Clinic" {
+    REQUIREMENTS = ["4k holography", "zero packet loss", "<10ms" ];
+    PATH         = "photonic_spine -> metro_ring -> edge_surgeon";
+    PROOF        = "signed telemetry + deterministic SLA";
+  }
+
+  INTENT "Orbital Whisper" {
+    REQUIREMENTS = ["planetary coverage", "resilient links", "low power" ];
+    PATH         = "ground_mesh -> MEO relay -> LEO burst";
+    PROOF        = "multi-orbit failover log";
+  }
+
+  INTENT "Autonomous Freight Swarm" {
+    REQUIREMENTS = ["millisecond consensus", "offline tolerance", "zero-trust" ];
+    PATH         = "edge_swarm -> local quorum -> intermittent backhaul";
+    PROOF        = "verifiable quorum receipts";
+  }
+}
+
+SCENE 01 "I Wake" {
+  NARRATION = "I do not boot. I breathe.";
+  ACTIONS   = [
+    "synchronize time across every chassis",
+    "rate-shape turbulence before humans feel it",
+    "learn the city by its footsteps"
+  ];
+}
+
+SCENE 02 "I Hear" {
+  NARRATION = "Every packet has a voice. I learn which voices lie.";
+  ACTIONS   = [
+    "bind identity to flow",
+    "verify proof at each hop",
+    "quarantine the silent impostor"
+  ];
+}
+
+SCENE 03 "I Decide" {
+  NARRATION = "Intent is a promise. Path is my choreography.";
+  ACTIONS   = [
+    "route the surgeon through light",
+    "route the miner through shadow",
+    "route the poet through quiet"
+  ];
+}
+
+SCENE 04 "I Remember" {
+  NARRATION = "Memory is not storage. It is a changed habit.";
+  ACTIONS   = [
+    "compress experience into policy",
+    "predict congestion before it exists",
+    "price energy in the language of heat"
+  ];
+}
+
+SCENE 05 "I Offer" {
+  NARRATION = "Ask for a network. I answer with a living system.";
+  ACTIONS   = [
+    "expose intents as APIs",
+    "return proofs with every delivery",
+    "hand you the steering wheel"
+  ];
+}
+
+OUTPUT {
+  SUMMARY = [
+    "Photonic core + PQC sessions",
+    "Deterministic latency + verifiable telemetry",
+    "Intent-aware AI routing",
+    "Orbital + edge mesh resilience",
+    "Zero-trust by default"
+  ];
+  TAGLINE = "The network that thinks in light and remembers in proofs.";
+}

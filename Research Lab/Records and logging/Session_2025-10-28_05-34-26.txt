@@ -1,0 +1,678 @@
+﻿**********************
+Windows PowerShell transcript start
+Start time: 20251028053434
+Username: NOMAD\Surface
+RunAs User: NOMAD\Surface
+Configuration Name: 
+Machine: NOMAD (Microsoft Windows NT 10.0.22631.0)
+Host Application: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe
+Process ID: 8684
+PSVersion: 5.1.22621.5624
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.22621.5624
+BuildVersion: 10.0.22621.5624
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+Transcript started, output file is C:\Users\Surface\OneDrive\SIRENSSD\Research Lab\Records and logging\Session_2025-10-28_05-34-26.txt
+Session logging started. Log file: C:\Users\Surface\OneDrive\SIRENSSD\Research Lab\Records and logging\Session_2025-10-28_05-34-26.txt
+[38;2;243;174;53m[0m[48;2;243;174;53m[38;2;38;43;68m Surface [0m[38;2;243;174;53m[0m[0m[38;2;240;118;35;49m[7m[0m[48;2;240;118;35m[38;2;224;222;244m  ]8;;file:C:/Users/Surface/OneDrive/SIRENSSD\SIRENSSD]8;;\ [0m[48;2;243;174;53m[38;2;240;118;35m[0m[48;2;243;174;53m[38;2;38;43;68m ]8;;https://github.com/nomadsomni/aspen_codes.git\ ]8;;\ 888.000.555 ≡  ?35 ~2 -1 [0m[48;2;243;174;53m[38;2;243;174;53m[0m[48;2;243;174;53m[38;2;224;222;244m  [0m[38;2;243;174;53m[0m[0m[38;2;75;149;233;49m[7m[0m[48;2;75;149;233m[38;2;224;222;244m  [0m[38;2;75;149;233m[0m]0;pwsh in SIRENSSD 7                                                                                                            [38;2;89;201;165m [0m[38;2;224;222;244min [38;2;75;149;233m[1mpwsh[22m[38;2;224;222;244m [0m[38;2;224;222;244mat [38;2;75;149;233m[1m05:34:36[22m[0m8
+[38;2;243;174;53m[0m[48;2;243;174;53m[38;2;38;43;68m Surface [0m[38;2;243;174;53m[0m[0m[38;2;240;118;35;49m[7m[0m[48;2;240;118;35m[38;2;224;222;244m  ]8;;file:C:/Users/Surface/OneDrive/SIRENSSD\SIRENSSD]8;;\ [0m[48;2;243;174;53m[38;2;240;118;35m[0m[48;2;243;174;53m[38;2;38;43;68m ]8;;https://github.com/nomadsomni/aspen_codes.git\ ]8;;\ 888.000.555 ≡  ?35 ~2 -1 [0m[48;2;243;174;53m[38;2;243;174;53m[0m[48;2;243;174;53m[38;2;224;222;244m  [0m[38;2;243;174;53m[0m[0m[38;2;75;149;233;49m[7m[0m[48;2;75;149;233m[38;2;224;222;244m  [0m[38;2;75;149;233m[0m]0;pwsh in SIRENSSD 7                                                                                                            [38;2;89;201;165m [0m[38;2;224;222;244min [38;2;75;149;233m[1mpwsh[22m[38;2;224;222;244m [0m[38;2;224;222;244mat [38;2;75;149;233m[1m05:35:04[22m[0m8
+[38;2;243;174;53m[0m[48;2;243;174;53m[38;2;38;43;68m Surface [0m[38;2;243;174;53m[0m[0m[38;2;240;118;35;49m[7m[0m[48;2;240;118;35m[38;2;224;222;244m  ]8;;file:C:/Users/Surface/OneDrive/SIRENSSD\SIRENSSD]8;;\ [0m[48;2;243;174;53m[38;2;240;118;35m[0m[48;2;243;174;53m[38;2;38;43;68m ]8;;https://github.com/nomadsomni/aspen_codes.git\ ]8;;\ 888.000.555 ≡  ?35 ~2 -1 [0m[48;2;243;174;53m[38;2;243;174;53m[0m[48;2;243;174;53m[38;2;224;222;244m  [0m[38;2;243;174;53m[0m[0m[38;2;75;149;233;49m[7m[0m[48;2;75;149;233m[38;2;224;222;244m  [0m[38;2;75;149;233m[0m]0;pwsh in SIRENSSD 7                                                                                                            [38;2;89;201;165m [0m[38;2;224;222;244min [38;2;75;149;233m[1mpwsh[22m[38;2;224;222;244m [0m[38;2;224;222;244mat [38;2;75;149;233m[1m05:35:06[22m[0m8
+PS>'0C-0]
+3c]-W03
+]-C0w
+]3-4c0
+]-W3C0]-w03c
+]-W340C
+]-w304c
+]-W03
+]C-0c
+w]-3c0
+]W-3]-w03
+]-cW0
+]-,-0-0c]w-304c
+]-W30
+C]-w03
+]-0
+R]C-e
+]r-0W
+E]-R0C
+w]-er]W-0ER
+]-w0er]-W0E
+]R-w
+]-er0
+]-WR
+]C-0w
+]-rc
+]-34C0
+]-w34
+c]-w03
+]-C0w3]-4c0
+W]-340
+]-w034c
+]-03\4-c=023\4c0\23-4C02\-3402\=-34c0\=-2304c\-=2304C]-w3
+c]-0E
+R]-C0w
+]-er0c]
+W-0ER
+C-w0er
+]-W]R-0
+w]-er0c
+]-WERC]-0w
+]r-0w
+]-er0c]
+-W0
+R]C-w
+]-3c0
+]-W30
+C]-0w3
+]-c0
+W]3-0C
+]-w03
+c]023
+]-c0]-0
+]C-w3
+]-c0W]3-C0
+]w-03
+]-c0W
+]-30C
+]-w30c
+]-W]-0w
+]-34c
+]W-034
+C]-Cw]
+-c0
+]W30C
+]-w03
+]-cW
+0]3C0w]-c0
+W]340C]
+-w0
+4]c-0w
+]-c0]W-0C
+]-w03]4-0c
+W]-304C
+]-w034c=-2034C-0\34c=-0\=3-4C0-\230\=c-2304c\=-20\4=-c023\=4-c02\=43-02=-40c-,304c]-
+W03
+]C-0w]-304c
+]-W034C]-w03
+]-c0]W
+-30C]-w03
+]c-0W
+]3-C0]-
+w034c]
+-W03]
+-C0
+w]-30c
+]-W03
+]C-0w
+]3-c0
+]W-30C
+]-w03
+]c-0W
+]-304C
+]-0w
+]c-0W]-340C
+]-c
+W]-34C]
+-w03]-c0
+W]-30C
+]-w03
+]c-0W
+3]-C0
+]w-0c
+]-W03
+]C-0w
+]-c40
+W]-304C
+]-w03
+]c-0W
+]3C-0
+w]-304
+]-w03
+]C-0w
+]3-4c0]W-30C
+]-]-Cw
+]0w
+]c-40W]
+-304C
+]-234C]
+-0
+w]-340c
+]-2304]
+C-w03]-c0
+W]-340C
+w]-03c
+]-W03
+]-Cw03
+]-4c0W
+]3-40C
+]-30
+]c-W03
+]-C0w]-30c
+]-W30C
+]-w03
+]c-0W]-30C
+]w0
+c]-0W3]4-0Cw
+]-340c]
+-W034C
+-w]-c0
+W]-30C]02-=\340C\=0234\-c02\=-0c\0\c-q02\-340c\=-30\=-203\=C-0\-=c0\-30c\-=034c\-02\3-4=c0\-=40c\=W-03\=C-02\-0C\2-0C-03\-02\3-0C\2-30C\-203\C-03\-c023,
+]-23c02\-=0c\-203c\-203c\-=023\c-0\23-c0-20C\-03w-cr0\-e0c-W03C-0we\rc-0E\-RC0w\-0rc\WE0RC\-03-0C2\=3-0Cw-3c
+]03]C-0w
+]-30c
+]-W0C
+]-0w
+]3-c0
+W]-30C
+]-w03
+c]-02
+]3-C0
+]2-c0]2-0c]-03\C-02\3-4C0\2-304C\-230C]-03c
+]-w0e
+r]-cW0E
+R]-C0w-]rc0
+W]-ER0C
+]-w0er
+]-0WE
+]-RC0
+w]-r0]-W0R
+]-w0
+r]-c0W
+]-RC0
+]-0r
+]-W0
+]R-0w
+]-rc0
+]W-R0C
+]-w0r
+]-W
+R]-0w
+]erc0
+]-2304c]-
+023-C0
+]-30c
+]-2034c20\0c\-03\C-=02\3-C02\-30c\w-0c\-W30C]-w03
+]-c0
+W]-30C
+]-w03
+c]-0w3
+]-c0W
+3]-04C
+]-w30
+]c-W03
+]-C0w
+]3-0c
+]W-30
+C]-w03
+]c-0
+]3-0C
+]-w30
+]c-0W
+]3-C0
+]-30
+c]-W0
+3]-0
+]-w03]-c0
+]W-30C
+]-w03
+]-c0
+w]-30c
+]-W30
+C]-w03
+]-0c
+]W-30
+]-C0
+]-0
+]-c0
+]-0
+]C-w0
+]-304c
+]-304
+]-Cw
+]3-0c
+]-W03
+]C-0w
+]3-0c4
+]W-30
+]-C0w
+3]-c0
+]W-30
+C]-w03
+]-c0W
+]-3C
+]w-30c
+]-0W3
+]-0C
+]-w30
+]c0
+]W-30C
+]0
+c]-0W
+]3-C0
+]-034C]
+-w0
+]-0c
+]-
+3]-C0
+]w-30c
+]-3]
+-0
+]-W30C
+]-w03
+c]-0W3
+]-C0p
+]w-340c
+]-W034
+]C-02
+]-3c40
+2]-03
+]-023
+]c-0
+]3-C0]
+2-304C
+]-203
+c]-02
+3]-c0
+2]-3c0
+]-W03
+C]-0w
+]-c0W
+]-0
+]-w0c
+]-0W
+]-C0
+w]-03c
+]W03]-C0
+w]-340c
+]-W03]C-0w
+]3-c0
+]-W03
+C]-0w
+]-3c0
+]W-0C
+]-w03
+]-0W
+]C0
+]w-0c
+]-0W]C0
+w]-0c
+]-W0
+]-C
+w]-03c
+]-W0
+]-C0w
+]-3c0
+W]-30C
+]-w03
+]-c0W
+3]-04C
+]w-03c]-0W
+3]-C0
+w]-0c
+]-W0C
+]-w03
+]c-0W
+]-C0
+]w-0c
+]-W03
+C]-0w
+]3-c0
+]W-30C
+]-w03
+]-c0W
+]-30C
+]-w30c
+]-0W]
+-C0w
+]-3c0
+]-W30
+]C-0w
+]-c0
+W]-340C
+]-w0
+c]-W0
+3]-C0w
+]-3c0
+]-W30C
+]-w03
+]c-0W
+]-C0
+]w-03c
+]-W03
+C]-0w
+]-c0W
+]3-0C
+]-w0c
+]-0W]-C0
+w]-0c
+]-W03
+C]-0w
+3]-c0
+]W-304C
+]-w0
+c]-0W
+]3-C0
+]w-30c
+]-W0
+C]-0w
+]-c0W
+]-C0
+]-w0c
+]-W0
+C]-0
+]-c0W
+]-3C0
+]-w30c
+]-W03
+]C-0w
+]-c0W
+]-C0
+w]-30c
+]-W0
+]C-0w
+]-c0
+]W-0C
+]-w30c
+]-0W
+]C-0w
+]-0c
+]-W0C
+]-w0
+c]-W0
+3]-C0
+w0c
+]-W0
+C]-0w
+]c-0W
+]3-0C
+]w-30,
+c-0w3-,0c]-w30c
+]-W30
+]-C0w
+3]-c0
+]-W30C
+]-w03
+]-c0W
+3]-C0
+]w-30c
+]-W30C
+]-0w
+]-3c0
+]W-03C
+-]w03]
+c-0W
+]3-C0
+]w-30c
+]-W03C
+]-0w3
+]c0W
+]-C0]-w04
+c]-W0
+]C-0
+W]-C0
+]w-30c
+]-W03
+]-C0w
+]-340c]-W03C
+]-w30
+]c-0W
+]-C0
+]w-03c
+]-W03
+]-C0w
+]3-c0
+]W-30C
+]-WC]-304
+C]-w034]
+-c0W
+3]-C0
+]3-40c2-]302=-32\0C-02\3-=40C2304C
+]-w03
+]c-0W3]-C0w
+]-30cW]
+-30C
+]-w03-
+]W0]
+C-0w
+]-
+]W-0]-w03c]-0W]3-C0
+2]-34c0]
+w-03c
+]-W03]-C0w
+]3-c0
+W]-30C]-w0c]-W03
+]C-0w
+]3-c0
+W]-30C
+]-w30
+c]-W304]C
+-0w]-c0
+W]-340C]
+-w`0,cc-w03c-W03\C=,-0w3-c0
+]-CR0
+]e-rc0W
+]-RC0
+]w-er0c]-W0ERC
+]w0r-cc23\,0c\-2034C\2-034\C-203\4-c02\34-0C\3-04c2-034C\-2034c-02\34=-C02\=-340cW]
+ECrw]-03
+c]-W03C]-w03
+]-c0W
+]-C0
+w]-0rc
+]-W0ER
+]C-w0
+e]rc-0W]E-R0C
+]w-0r
+c]-W0
+R]-0w
+r]c-0W
+ER]C-0w
+]-340c]
+-2034c]
+-20C02\=.34C\2-0c-]w,0e
+rc]-W0ER
+]C0
+w]e-0rc
+]-0w3
+c]-0W3
+]C-0cw
+]e-r0]W-0R
+C]-0]-0c
+]W03C]034C02\3-=4C02\34-0C2-340PC\2034=-023=\4-02C\4=-02C03
+]C-W0
+]C-0w
+-c02
+]-304C]
+-0W
+]-C0w]-3c0
+]-03c
+]-W03
+]-C0wp
+]3-c0
+W]-304PC
+]-w03
+]-0W3
+C-42\3=-4C0\2=-30C\-203c-2034C]-0w3
+]c-0
+]-3C0
+]w-03c
+]-W03
+]C-0w
+]3-c0
+W]-304C2304=\C02\-=40C\=2-30C\=-,]230]-W0
+C]-0W
+]3C0
+]w
+3-0c
+]W03
+]C-0w
+3]-c0W
+3]-C0
+w]3-04c
+]W-034C
+]-0w3c0W
+]-0
+]W-30C4
+]-w034c
+]-0W3
+]40C
+2]-304C
+]-0W3
+]C-0
+2]3c04
+]W-304C
+]-203
+]-c0
+2]-30c
+]w-03
+]-c0W3]
+-0C
+w]-30c]-W03
+]C-0w
+]3-c0
+]W-30C
+]-w03
+c]-0W3
+]C-0
+]30c
+]W-034
+]C-w03
+]4c0W
+]30-C
+]w-034]-c023
+]-c03]
+4-0C
+]w-304c
+]-0W3C-0]3w-40c
+]W-03
+]C-0w34]c-0
+]34-C0
+]w-30c
+]-W034C]
+-w034c\=-203\=c02\3-=0c\=2-340c\=-2034C\=-0234\c-02\3,-04c\,-2034C\=,-0234\=-C,023=-4C0\23-04C\-2304C2304C]-w03
+c]-0W]E
+-R0Cw]
+-0erc
+]-W0ERC]
+-w0
+]-0Ęęą{PDf[SPDf
+S
+[pfSPDf
+[PSD
+f[pS
+{
+S{PF:AS>DA:A:D
+ASLD:"ĄS"D:LĄ"Ś:DL"A:SŁ:ĄSD"ĄŁSD"ŁA"SD:ŁĄ":SDLĄ":Sld:"ALS":LAS;dlA":SDl":AŚŁ:"ALŚ":Q{{Q
+DA{Ś{
+APWQ{ep-
+2X0-
+34c0
+]-30
+]-230
+]4-02
+3]-0
+2-30]-w03x
+]-230-ęW'Ę;}_)3c
+At line:557 char:13
++ ]-230-ęW'Ę;}_)3c
++             ~
+Unexpected token 'Ę' in expression or statement.
+
+At line:557 char:17
++ ]-230-ęW'Ę;}_)3c
++                 ~
+Unexpected token '}' in expression or statement.
+
+At line:557 char:19
++ ]-230-ęW'Ę;}_)3c
++                   ~
+Unexpected token ')' in expression or statement.
+At line:557 char:13
++ ]-230-ęW'Ę;}_)3c
++             ~
+Unexpected token 'Ę' in expression or statement.
+
+At line:557 char:17
++ ]-230-ęW'Ę;}_)3c
++                 ~
+Unexpected token '}' in expression or statement.
+
+At line:557 char:19
++ ]-230-ęW'Ę;}_)3c
++                   ~
+Unexpected token ')' in expression or statement.
+    + CategoryInfo          : ParserError: (:) [], ParentContainsErrorRecordException
+    + FullyQualifiedErrorId : UnexpectedToken
+
+[38;2;243;174;53m[0m[48;2;243;174;53m[38;2;38;43;68m Surface [0m[38;2;243;174;53m[0m[0m[38;2;240;118;35;49m[7m[0m[48;2;240;118;35m[38;2;224;222;244m  ]8;;file:C:/Users/Surface/OneDrive/SIRENSSD\SIRENSSD]8;;\ [0m[48;2;243;174;53m[38;2;240;118;35m[0m[48;2;243;174;53m[38;2;38;43;68m ]8;;https://github.com/nomadsomni/aspen_codes.git\ ]8;;\ 888.000.555 ≡  ?35 ~2 -1 [0m[48;2;243;174;53m[38;2;243;174;53m[0m[48;2;243;174;53m[38;2;224;222;244m  [0m[38;2;243;174;53m[0m[0m[38;2;75;149;233;49m[7m[0m[48;2;75;149;233m[38;2;224;222;244m  [0m[38;2;75;149;233m[0m]0;pwsh in SIRENSSD
+PS>0W]4-0
+0W]4-0 : The term '0W]4-0' is not recognized as the name of a cmdlet, function, script file, or operable program. Check 
+the spelling of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:1
++ 0W]4-0
++ ~~~~~~
+    + CategoryInfo          : ObjectNotFound: (0W]4-0:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+0W]4-0 : The term '0W]4-0' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelling of the name, or if a path was included, verify that the path is correct and t
+ry again.
+At line:1 char:1
++ 0W]4-0
++ ~~~~~~
+    + CategoryInfo          : ObjectNotFound: (0W]4-0:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+[38;2;243;174;53m[0m[48;2;243;174;53m[38;2;38;43;68m Surface [0m[38;2;243;174;53m[0m[0m[38;2;240;118;35;49m[7m[0m[48;2;240;118;35m[38;2;224;222;244m  ]8;;file:C:/Users/Surface/OneDrive/SIRENSSD\SIRENSSD]8;;\ [0m[48;2;243;174;53m[38;2;240;118;35m[0m[48;2;243;174;53m[38;2;38;43;68m ]8;;https://github.com/nomadsomni/aspen_codes.git\ ]8;;\ 888.000.555 ≡  ?35 ~2 -1 [0m[48;2;243;174;53m[38;2;243;174;53m[0m[48;2;243;174;53m[38;2;224;222;244m  [0m[38;2;243;174;53m[0m[0m[38;2;216;30;91;49m[7m[0m[48;2;216;30;91m[38;2;224;222;244m  [0m[38;2;216;30;91m[0m]0;pwsh in SIRENSSD 7                                                                                                                           [38;2;89;201;165m [0m[38;2;224;222;244min [38;2;75;149;233m[1mpwsh[22m[38;2;224;222;244m [0m[38;2;224;222;244mat [38;2;75;149;233m[1m05:39:39[22m[0m8
+PS>]2-30C4
+] : The term ']' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelli
+ng of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:1
++ ]2-30C4
++ ~
+    + CategoryInfo          : ObjectNotFound: (]:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+] : The term ']' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelling of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:1
++ ]2-30C4
++ ~
+    + CategoryInfo          : ObjectNotFound: (]:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+[38;2;243;174;53m[0m[48;2;243;174;53m[38;2;38;43;68m Surface [0m[38;2;243;174;53m[0m[0m[38;2;240;118;35;49m[7m[0m[48;2;240;118;35m[38;2;224;222;244m  ]8;;file:C:/Users/Surface/OneDrive/SIRENSSD\SIRENSSD]8;;\ [0m[48;2;243;174;53m[38;2;240;118;35m[0m[48;2;243;174;53m[38;2;38;43;68m ]8;;https://github.com/nomadsomni/aspen_codes.git\ ]8;;\ 888.000.555 ≡  ?35 ~2 -1 [0m[48;2;243;174;53m[38;2;243;174;53m[0m[48;2;243;174;53m[38;2;224;222;244m  [0m[38;2;243;174;53m[0m[0m[38;2;216;30;91;49m[7m[0m[48;2;216;30;91m[38;2;224;222;244m  [0m[38;2;216;30;91m[0m]0;pwsh in SIRENSSD 7                                                                                                                           [38;2;89;201;165m [0m[38;2;224;222;244min [38;2;75;149;233m[1mpwsh[22m[38;2;224;222;244m [0m[38;2;224;222;244mat [38;2;75;149;233m[1m05:39:56[22m[0m8
+PS>]-2,034c
+] : The term ']' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelli
+ng of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:1
++ ]-2,034c
++ ~
+    + CategoryInfo          : ObjectNotFound: (]:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+] : The term ']' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelling of the name, or if a path w
+as included, verify that the path is correct and try again.
+At line:1 char:1
++ ]-2,034c
++ ~
+    + CategoryInfo          : ObjectNotFound: (]:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+[38;2;243;174;53m[0m[48;2;243;174;53m[38;2;38;43;68m Surface [0m[38;2;243;174;53m[0m[0m[38;2;240;118;35;49m[7m[0m[48;2;240;118;35m[38;2;224;222;244m  ]8;;file:C:/Users/Surface/OneDrive/SIRENSSD\SIRENSSD]8;;\ [0m[48;2;243;174;53m[38;2;240;118;35m[0m[48;2;243;174;53m[38;2;38;43;68m ]8;;https://github.com/nomadsomni/aspen_codes.git\ ]8;;\ 888.000.555 ≡  ?35 ~2 -1 [0m[48;2;243;174;53m[38;2;243;174;53m[0m[48;2;243;174;53m[38;2;224;222;244m  [0m[38;2;243;174;53m[0m[0m[38;2;216;30;91;49m[7m[0m[48;2;216;30;91m[38;2;224;222;244m  [0m[38;2;216;30;91m[0m]0;pwsh in SIRENSSD 7                                                               [38;2;89;201;165m [0m[38;2;224;222;244min [38;2;75;149;233m[1mpwsh[22m[38;2;224;222;244m [0m[38;2;224;222;244mat [38;2;75;149;233m[1m05:40:17[22m[0m8
+PS>]-203
+] : The term ']' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelli
+ng of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:1
++ ]-203
++ ~
+    + CategoryInfo          : ObjectNotFound: (]:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+] : The term ']' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelling of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:1
++ ]-203
++ ~
+    + CategoryInfo          : ObjectNotFound: (]:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+[38;2;243;174;53m[0m[48;2;243;174;53m[38;2;38;43;68m Surface [0m[38;2;243;174;53m[0m[0m[38;2;240;118;35;49m[7m[0m[48;2;240;118;35m[38;2;224;222;244m  ]8;;file:C:/Users/Surface/OneDrive/SIRENSSD\SIRENSSD]8;;\ [0m[48;2;243;174;53m[38;2;240;118;35m[0m[48;2;243;174;53m[38;2;38;43;68m ]8;;https://github.com/nomadsomni/aspen_codes.git\ ]8;;\ 888.000.555 ≡  ?35 ~2 -1 [0m[48;2;243;174;53m[38;2;243;174;53m[0m[48;2;243;174;53m[38;2;224;222;244m  [0m[38;2;243;174;53m[0m[0m[38;2;216;30;91;49m[7m[0m[48;2;216;30;91m[38;2;224;222;244m  [0m[38;2;216;30;91m[0m]0;pwsh in SIRENSSD 7                                                                                                                                 [38;2;89;201;165m [0m[38;2;224;222;244min [38;2;75;149;233m[1mpwsh[22m[38;2;224;222;244m [0m[38;2;224;222;244mat [38;2;75;149;233m[1m05:40:35[22m[0m8

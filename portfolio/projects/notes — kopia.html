@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nomad Somni | Portfolio</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <style>
+        body, main {
+            background-color: #0000005d;
+            background-position: top;
+            background-repeat: no-repeat;
+            background-size: cover;
+            margin-bottom: -150px;
+            border-radius: 0;
+            height: 100%;
+            margin: 0;
+        }
+        nav{
+            background-color: aquamarine;
+        }
+        main {
+            width: 100vw; /* Full viewport width */
+            height: 100vh; /* Full viewport height */
+            background-image: url('/photos/YINGYANG.jpg');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center; /* Centers content vertically */
+            justify-content: baseline; /* Centers content horizontally */
+        }
+        .jumbotron {
+            background-color: #0000005d;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            margin-bottom: 0;
+            border-radius: 0;
+        }
+        .container {
+            max-width: 40em;
+        }
+        .dark-box {
+            background-color: rgba(0, 0, 0, 0.7); /* Adjust the alpha value for desired transparency */
+            color: rgba(255, 255, 255, 0.74); /* Text color */
+            margin: 15px;
+            padding: 20px; /* Add some padding for content */
+            border-radius: 10px; /* Rounded corners */
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        .row {
+            display: flex;
+        }
+
+        .column {
+            flex: 50%; /* Adjust the width as needed */
+        }
+        /* styles.css */
+        .animated-header {
+            background-color: #333333a9;
+            color: rgba(255, 255, 255, 0.603);
+            text-align: center;
+            padding: 100px 0;
+            animation: fadeInUp 1s ease;
+        }
+        @media screen and (max-width: 600px) {
+        .column {
+            width: 100%;
+            flex: none; /* This will disable the flex property */
+            }
+        }
+
+        @keyframes fadeInUp {
+        from {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }}
+        @keyframes header {
+            from {
+                opacity: 0;
+                transform:translateY(-150px) ;
+            }
+            to{
+                opacity: 1;
+                transform:translateY(0);
+            }
+        }
+        a.nav-link.active {
+            color: #00000050;
+            background-color: aquamarine;
+        }
+        .light-box {
+            background-color: rgba(255, 255, 255, 0.829); 
+            color:rgba(104, 101, 101, 0.568); 
+            margin: 10px;">
+            padding: 20px; /* Add some padding for content */
+            border-radius: 10px; /* Rounded corners */
+        }
+        .navbar-transparent {
+            background: transparent !important;
+            box-shadow: none; /* Removes the box shadow if there is any */
+        }
+        .navbar-transparent .navbar-brand,
+        .navbar-transparent .navbar-nav .nav-link {
+            color: rgb(61, 61, 61); /* Change this color based on your background for visibility */
+        }
+        /* Ensures navbar text colors change on hover for better visibility */
+        .navbar-transparent .navbar-nav .nav-link:hover,
+        .navbar-transparent .navbar-nav .nav-link:focus {
+            color: #ccc; /* Lighter shade for hover/focus */
+        }
+        .PORTFOLIO_PROJECT_ID { 
+            left: auto;
+            background-color: rgba(0, 0, 0, 0.5); 
+            color: rgba(255, 255, 255, 0.5);
+
+        }
+        .PORTFOLIO_PROJECT_ID2 { 
+            left: auto;
+            background-color: rgba(255, 255, 255, 0.5); 
+            color: rgba(0, 0, 0, 0.5);
+
+        }
+        .header {
+            animation: header 0.5s ease;
+        }
+        img {
+            width: 50%;
+            height: auto;
+        }
+        .carousel-item img {
+            width: auto%;
+            height: 450px;
+            size: cover;
+        }
+        @keyframes slideFadeIn {
+        0% {
+          transform: translateX(15%); /* Start off-screen to the left */
+          opacity: 0; /* Start fully transparent */
+        }
+        100% {
+          transform: translateX(0); /* End at its final position */
+          opacity: 1; /* Fade to fully opaque */
+        }
+      }
+              /* Add your CSS here */
+              .dark-box {
+                  background-color: rgba(0, 0, 0, 0.7); /* Adjust the alpha value for desired transparency */
+                  color: white; /* Text color */
+                  padding: 20px; /* Add some padding for content */
+                  border-radius: 10px; /* Rounded corners */
+                  /* animation: slideFadeIn 2s ease-in-out forwards; Apply the animation */
+
+              }
+              .dark-box_quick {
+                  background-color: rgba(156, 154, 154, 0.7); /* Adjust the alpha value for desired transparency */
+                  color: rgba(43, 42, 42, 0.658); /* Text color */
+                  padding: 20px; /* Add some padding for content */
+                  border-radius: 10px; /* Rounded corners */
+                  animation: slideFadeIn 0.5s ease-in-out forwards; Apply the animation */
+
+              }
+              .light-box_quick {
+                  background-color: rgba(0, 0, 0, 0.7); /* Adjust the alpha value for desired transparency */
+                  color: white; /* Text color */
+                  padding: 20px; /* Add some padding for content */
+                  border-radius: 10px; /* Rounded corners */
+                  animation: slideFadeIn 0.5s ease-in-out forwards; Apply the animation */
+
+              }
+              .project_id{
+                  background-color: rgba(255, 255, 255, 0.5);
+                  border-radius: 10px;
+                  width: auto;
+                  height: 230px;
+                  padding: 20px;
+                  text-align: end;
+                  background-position: center;
+                  background-repeat: no-repeat;
+                  background-size: cover; /* Sets the background image */
+                  color: rgba(255, 255, 255, 0.5); /* Sets the text color to white for contrast */
+
+              }
+              .project_id_right{
+                  background-color: rgba(255, 255, 255, 0.5);
+                  border-radius: 10px;
+                  width: auto;
+                  height: 230px;
+                  padding: 20px;
+                  text-align: start;
+                  background-position: center;
+                  background-repeat: no-repeat;
+                  background-size: cover; /* Sets the background image */
+                  color: rgba(255, 255, 255, 0.5); /* Sets the text color to white for contrast */
+
+              }
+              .btn-secondary{
+                      background-color: rgba(255, 102, 0, 0.63); /* Sets the background color of the navbar, jumbotron, and footer to red */
+                      color: rgba(255, 255, 255, 0.5); /* Sets the text color to white for contrast */
+                  }
+                .btn-secondary:hover{
+                    background-color: rgba(255, 102, 0, 0.63); /* Sets the background color of the navbar, jumbotron, and footer to red */
+                    color: rgba(0, 0, 0, 0.5); /* Sets the text color to white for contrast */
+                }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top navbar-transparent">
+        <a class="navbar-brand" href="index.html">Nomad</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="index2.html">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="projects.html">Projects</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="contact.html">Contact</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    
+
+    <main role="main"style="background-image:url(/photos/YINGYANG.jpg); >
+        <div class="jumbotron">
+            <div class="container-fluid ">
+                <!-- <h1 class="display-4 dark-box animated-header">Welcome to My Professional Portfolio</h1> -->
+                <div class="dark-box header" style="background-color: rgba(0, 0, 0, 0.7); position: relative; bottom: auto; " >
+                    <h2 class="animated-header">aspen_codes: PORTFOLIO_LANDING_PAGE</h2>
+                <div class="row">
+            <div class="column">
+                <div id="slider" class="carousel slide" data-ride="carousel">
+                    <ol class="carousel-indicators">
+                        <li data-target="#slider" data-slide-to="0" class="active"></li>
+                        <li data-target="#slider" data-slide-to="1"></li>
+                        <li data-target="#slider" data-slide-to="2"></li>
+                    </ol>
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <div class="row light-box_quick">
+                                <div
+                                class="col-md-6 project_id d-block w-100"
+                                style="background-image: url(/photos/orange_detail.jpg)"
+                                href="/projects/project_id2.html"
+                                role="banner"
+                                
+                                >
+                                <p></p><h2 style="background-color: rgba(255, 102, 0, 0.63)">aspen_codes:</h2>
+                                <p style="color: rgba(0, 0, 0, 0.5); background-color: rgba(255, 102, 0, 0.63);">aspen_codes:: PORTFOLIO_PROJECT</p>
+                                <p>
+                                  <a class="btn btn-secondary" href="project_id2.html" role="button"
+                                    >#AVALANCHE</a
+                                  >
+                                </p>
+                              <!-- </div><img src="YINGYANG.jpg" class="d-block w-100" alt="Image 2"> -->
+                        </div></div>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="row light-box_quick">
+                                <div
+                                class="col-md-6 project_id d-block w-100"
+                                style="background-image: url(/photos/orange_detail.jpg)"
+                                href="/projects/project_id2.html"
+                                role="banner"
+                                
+                                >
+                                <p></p><h2 style="background-color: rgba(255, 102, 0, 0.63)">aspen_codes:</h2>
+                                <p style="color: rgba(0, 0, 0, 0.5); background-color: rgba(255, 102, 0, 0.63);">aspen_codes:: PORTFOLIO_PROJECT</p>
+                                <p>
+                                  <a class="btn btn-secondary" href="project_id2.html" role="button"
+                                    >#AVALANCHE</a
+                                  >
+                                </p>
+                              <!-- </div><img src="YINGYANG.jpg" class="d-block w-100" alt="Image 2"> -->
+                        </div></div></div>
+                        <div class="carousel-item">
+                            <div class="row light-box_quick">
+                                <div
+                                class="col-md-6 project_id d-block w-100"
+                                style="background-image: url(/photos/orange_detail.jpg)"
+                                href="/projects/project_id2.html"
+                                role="banner"
+                                
+                                >
+                                <p></p><h2 style="background-color: rgba(255, 102, 0, 0.63)">aspen_codes:</h2>
+                                <p style="color: rgba(0, 0, 0, 0.5); background-color: rgba(255, 102, 0, 0.63);">aspen_codes:: PORTFOLIO_PROJECT</p>
+                                <p>
+                                  <a class="btn btn-secondary" href="project_id2.html" role="button"
+                                    >#AVALANCHE</a
+                                  >
+                                </p>
+                              <!-- </div><img src="YINGYANG.jpg" class="d-block w-100" alt="Image 2"> -->
+                        </div></div>
+                    </div>
+                    <a class="carousel-control-prev" href="#slider" role="button" data-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="carousel-control-next" href="#slider" role="button" data-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Next</span>
+                    </a>
+                </div>
+            </div>
+        
+            <footer class="container" style=" position: absolute; bottom: 0px">
+                <p>© Nomad Somni 2024</p>
+            </footer>
+        </main>
+    
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+</body>
+</html>

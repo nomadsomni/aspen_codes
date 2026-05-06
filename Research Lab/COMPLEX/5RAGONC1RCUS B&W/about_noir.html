@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>About | Nomad Somni</title>
+<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet"/>
+<style>
+body, main {
+    background-color: #000000;
+    background-image: url('/photos/YINGYANG.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    margin: 0;
+}
+.navbar-transparent { background: transparent !important; }
+.navbar-transparent .nav-link, .navbar-brand { color: #ddd !important; }
+.dark-box {
+    background-color: rgba(0,0,0,0.7);
+    color: #eee;
+    border-radius: 10px;
+    padding: 30px;
+    margin-top: 90px;
+    animation: fade 0.6s ease;
+}
+@keyframes fade { from {opacity:0; transform:translateY(20px);} to {opacity:1; transform:translateY(0);} }
+.content-box {
+    background-color: rgba(255,255,255,0.08);
+    color: #ccc;
+    padding: 25px;
+    border-radius: 10px;
+    margin-top: 25px;
+}
+</style>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top navbar-transparent">
+  <a class="navbar-brand" href="index.html">Nomad</a>
+  <button class="navbar-toggler" data-toggle="collapse" data-target="#nav" type="button">
+      <span class="navbar-toggler-icon"></span>
+  </button>
+  <div id="nav" class="collapse navbar-collapse">
+      <ul class="navbar-nav ml-auto">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item active"><a class="nav-link" href="about.html">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="projects.html">Projects</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+      </ul>
+  </div>
+</nav>
+
+<main class="container">
+    <div class="dark-box text-center">
+        <h2>ABOUT ME</h2>
+        <p style="opacity:0.7">aspen_codes:: PORTFOLIO_ABOUT_SECTION</p>
+    </div>
+
+    <div class="content-box">
+        <h4>Lorem Ipsum</h4>
+        <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent suscipit 
+        sem non metus varius, vitae pulvinar metus porta. Quisque bibendum, lorem 
+        vel aliquet faucibus, risus sapien tincidunt arcu, vitae faucibus arcu ligula nec lorem. 
+        Integer sit amet arcu consequat, tincidunt ipsum in, tincidunt nisl.
+        </p>
+
+        <p>
+        Aliquam erat volutpat. Donec vitae enim elit. Vivamus suscipit, libero sed 
+        hendrerit suscipit, nulla ligula vulputate lorem, id placerat metus velit ut eros. 
+        Fusce ut ullamcorper magna. Mauris rhoncus risus ac justo tempor, vitae dapibus 
+        purus pellentesque.
+        </p>
+    </div>
+</main>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+</body>
+</html>

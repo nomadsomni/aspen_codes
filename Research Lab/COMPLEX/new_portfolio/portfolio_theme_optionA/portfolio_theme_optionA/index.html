@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Nomad Somni | Portfolio</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" href="assets/style.css" />
+
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top bg-transparent">
+      <a class="navbar-brand" href="index.html">Nomad</a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarResponsive"
+        aria-controls="navbarResponsive"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="about.html">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="projects.html">Projects</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="contact.html">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <main role="main" class="main-spacer">
+      <div class="jumbotron mb-0" style="background-color: transparent;">
+        <div class="container">
+          <div class="dark-box header">
+            <h2>aspen_codes: PORTFOLIO_LANDING_PAGE</h2>
+            <p class="mb-0">
+              Live concepts, prototypes, and experimental systems. Scroll the slider to step into each environment.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="container mt-3 mb-5 section-spacer">
+        <div class="dark-box_quick">
+          <div
+            id="slider"
+            class="carousel slide"
+            data-ride="carousel"
+            data-interval="false"
+          >
+            <ol class="carousel-indicators">
+              <li data-target="#slider" data-slide-to="0" class="active"></li>
+              <li data-target="#slider" data-slide-to="1"></li>
+              <li data-target="#slider" data-slide-to="2"></li>
+            </ol>
+
+            <div class="carousel-inner">
+              <!-- SLIDE 1: WebGL FIERY EARTH -->
+              <div class="carousel-item active">
+                <div class="carousel-wrapper">
+                  <iframe
+                    src="5RAGONC1RCUS_noir_A.html"
+                    scrolling="no"
+                    title="5RAGONC1RCUS — FIERY EARTH"
+                  ></iframe>
+                </div>
+                <div class="carousel-overlay-title">5RAGONC1RCUS — FIERY EARTH</div>
+                <div class="carousel-overlay-desc">
+                  Real‑time WebGL vignette. Drag, pinch, orbit. Inferno‑grade orbital scene tuned for mobile and desktop.
+                </div>
+              </div>
+
+              <!-- SLIDE 2: PROJECT_ID2 -->
+              <div class="carousel-item">
+                <div
+                  class="row light-box_quick d-flex justify-content-center align-items-center text-center"
+                  style="height: 450px;"
+                >
+                  <div
+                    class="col-md-6 project_id"
+                    role="banner"
+                    style="background-image: url(/photos/orange_detail.jpg);"
+                  >
+                    <h2 style="background-color: rgba(255, 102, 0, 0.85);">
+                      aspen_codes:: PROJECT_ID2
+                    </h2>
+                    <p
+                      style="
+                        color: rgba(0, 0, 0, 0.65);
+                        background-color: rgba(255, 102, 0, 0.85);
+                      "
+                    >
+                      High‑contrast orange noir layout. Glass modules, cinematic scroll.
+                    </p>
+                    <p>
+                      <a
+                        class="btn btn-secondary"
+                        href="projects/project_id2.html"
+                        role="button"
+                        >View project</a
+                      >
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- SLIDE 3: PROJECT_ID4 -->
+              <div class="carousel-item">
+                <div
+                  class="row light-box_quick d-flex justify-content-center align-items-center text-center"
+                  style="height: 450px;"
+                >
+                  <div class="col-md-6">
+                    <div
+                      class="project_id_right"
+                      role="banner"
+                      style="background-image: url(/photos/YINGYANG.jpg);"
+                    >
+                      <h2
+                        style="
+                          background-color: rgba(41, 41, 41, 0.78);
+                        "
+                      >
+                        aspen_codes:: PROJECT_ID4
+                      </h2>
+                      <p
+                        style="
+                          color: rgba(220, 220, 220, 0.9);
+                          background-color: rgba(0, 0, 0, 0.6);
+                        "
+                      >
+                        Yin‑yang pattern study. Minimalist geometry under noir glass.
+                      </p>
+                      <p>
+                        <a
+                          class="btn btn-gray"
+                          href="projects/project_id4.html"
+                          role="button"
+                          >View project</a
+                        >
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <a
+              class="carousel-control-prev"
+              href="#slider"
+              role="button"
+              data-slide="prev"
+            >
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="sr-only">Previous</span>
+            </a>
+            <a
+              class="carousel-control-next"
+              href="#slider"
+              role="button"
+              data-slide="next"
+            >
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="sr-only">Next</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </main>
+    <footer class="container text-center">
+      <div class="footer-inner mt-3">
+        <span>© Nomad Somni 2024</span>
+      </div>
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+
+  </body>
+</html>

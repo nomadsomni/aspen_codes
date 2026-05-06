@@ -1,0 +1,67 @@
+
+body, main {
+    background-color: #000000;
+    background-image: url('/photos/YINGYANG.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    margin: 0;
+    min-height: 100vh;
+}
+
+.navbar-transparent {
+    background: transparent !important;
+    box-shadow: none;
+}
+
+.navbar-transparent .navbar-brand,
+.navbar-transparent .nav-link {
+    color: #dddddd !important;
+}
+
+.navbar-transparent .nav-link:hover,
+.navbar-transparent .nav-link:focus {
+    color: #ffffff !important;
+}
+
+.dark-box {
+    background-color: rgba(0,0,0,0.75);
+    color: #eeeeee;
+    border-radius: 10px;
+    padding: 30px;
+    margin-top: 90px;
+    animation: fadeInUp 0.6s ease;
+}
+
+.content-box {
+    background-color: rgba(255,255,255,0.06);
+    color: #cccccc;
+    padding: 25px;
+    border-radius: 10px;
+    margin-top: 25px;
+}
+
+.btn-noir {
+    border-radius: 999px;
+    border: 1px solid rgba(255,255,255,0.4);
+    color: #f0f0f0;
+    background-color: rgba(0,0,0,0.4);
+    padding: 8px 22px;
+    font-size: 0.9rem;
+}
+
+.btn-noir:hover {
+    background-color: rgba(255,255,255,0.12);
+    color: #ffffff;
+}
+
+footer {
+    color: #888;
+    font-size: 0.8rem;
+    padding: 30px 0 10px;
+}
+
+@keyframes fadeInUp {
+    from { opacity:0; transform:translateY(20px); }
+    to   { opacity:1; transform:translateY(0); }
+}

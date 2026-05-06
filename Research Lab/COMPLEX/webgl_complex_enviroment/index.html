@@ -1,0 +1,478 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>PSYNC / NOMAD Complex WebGL2 Graph</title>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      background: #050509;
+      overflow: hidden;
+      font-family: system-ui, sans-serif;
+      color: #eee;
+    }
+    #glcanvas {
+      width: 100vw;
+      height: 100vh;
+      display: block;
+    }
+    #hud {
+      position: fixed;
+      left: 16px;
+      top: 16px;
+      padding: 8px 12px;
+      background: rgba(0, 0, 0, 0.6);
+      border-radius: 6px;
+      font-size: 12px;
+      pointer-events: none;
+      backdrop-filter: blur(8px);
+    }
+    #hud strong {
+      color: #ff4b9a;
+    }
+  </style>
+  <script src="https://cdn.jsdelivr.net/npm/gl-matrix@3.4.3/gl-matrix-min.js"></script>
+</head>
+<body>
+<canvas id="glcanvas"></canvas>
+<div id="hud">
+  <div><strong>PSYNC COMPLEX / NODE MAP</strong></div>
+  <div>Drag: orbit · Wheel: zoom</div>
+</div>
+<script>
+(function() {
+  const canvas = document.getElementById('glcanvas');
+  const gl = canvas.getContext('webgl2');
+  if (!gl) {
+    alert('WebGL2 not supported');
+    return;
+  }
+
+  // --- Resize handling ---
+  function resize() {
+    const dpr = window.devicePixelRatio || 1;
+    const width = Math.floor(window.innerWidth * dpr);
+    const height = Math.floor(window.innerHeight * dpr);
+    canvas.width = width;
+    canvas.height = height;
+    canvas.style.width = window.innerWidth + 'px';
+    canvas.style.height = window.innerHeight + 'px';
+    gl.viewport(0, 0, width, height);
+  }
+  window.addEventListener('resize', resize);
+  resize();
+
+  // --- Source data (from PSYNC .txt) ---
+  const rawData = `
+NOMAD.PSYNC.SANDBOX
+AVALANCHE.OASIS.PSYNC
+PSYNC.OASIS.NOMAD
+NOMAD.OASIS.AVALANCHE
+OASIS.SANDBOX.PSYNC
+AVALANCHE.OASIS.PSYNC
+
+PSYNC.OASIS.NOMAD
+SANDBOX.AVALANCHE.PSYNC
+PSYNC.NOMAD.OASIS
+PSYNC.NOMAD.SANDBOX
+AVALANCHE.PSYNC.SANDBOX
+NOMAD.PSYNC.AVALANCHE
+PSYNC.OASIS.NOMAD
+AVALANCHE.OASIS.PSYNC
+OASIS.SANDBOX.PSYNC
+AVALANCHE.OASIS.NOMAD
+NOMAD.COMPLEX.SANDBOX
+AVALANCHE.NOMAD.OASIS
+SANDBOX.AVALANCHE.OASIS
+AVALANCHE.OASIS.NOMAD
+AVALANCHE.COMPLEX.PSYNC
+OASIS.SANDBOX.PSYNC
+OASIS.AVALANCHE.PSYNC
+AVALANCHE.PSYNC.NOMAD
+PSYNC.NOMAD.SANDBOX
+AVALANCHE.OASIS.PSYNC
+NOMAD.SANDBOX.AVALANCHE
+OASIS.AVALANCHE.PSYNC
+OASIS.COMPLEX.PSYNC
+PSYNC.NOMAD.OASIS
+SANDBOX.OASIS.PSYNC
+AVALANCHE.NOMAD.PSYNC
+COMPLEX.PSYNC.AVALANCHE
+OASIS.NOMAD.PSYNC
+AVALANCHE.COMPLEX.PSYNC
+AVALANCHE.PSYNC.OASIS
+PSYNC.SYSTEM.NOMAD
+SANDBOX.PSYNC.OASIS
+PSYNC.OASIS.NOMAD
+OASIS.SANDBOX.PSYNC
+OASIS.NOMAD.AVALANCHE
+PSYNC.COMPLEX.SANDBOX
+SANDBOX.COMPLEX.PSYNC
+PSYNC.OASIS.NOMAD
+PSYNC.COMPLEX.OASIS
+AVALANCHE.PSYNC.NOMAD
+OASIS.PSYNC.AVALANCHE
+AVALANCHE.NOMAD.SANDBOX
+COMPLEX.OASIS.PSYNC
+AVALANCHE.COMPLEX.SANDBOX
+PSYNC.COMPLEX.AVALANCHE
+OASIS.NOMAD.SANDBOX.
+NOMAD.PSYNC.AVALANCHE
+OASIS.NOMAD.SANDBOX
+PSYNC.NOMAD.COMPLEX
+AVALANCHE.NOMAD.SANDBOX
+NOMAD.COMPLEX.OASIS
+OASIS.COMPLEX.SANDBOX
+NOMAD.PSYNC.OASIS
+AVALANCHE.OASIS.PSYNC
+SANDBOX.OASIS.COMPLEX
+SANDBOX.OASIS.PSYNC
+NOMAD.SANDBOX.AVALANCHE
+NOMAD.COMPLEX.SANDBOX
+AVALANCHE.SANBOX.NOMAD
+NOMAD.SANDBOX.AVALANCHE
+OASIS.SANDBOX.PSYNC
+NOMAD.OASIS.AVALANCHE
+NOMAD.PSYNC.OASIS
+SANDBOX.NOMAD.COMPLEX
+OASIS.NOMAD.SANDBOX
+NOMAD.AVALANCHE.PSYNC
+SANDBOX.COMPLEX.OASIS
+NOMAD.PSYNC.AVALANCHE
+NOMAD.COMPLEX.SANDBOX
+SANDBOX.OASIS.PSYNC
+NOMAD.SANDBOX.COMPLEX
+NOMAD.SANDBOX.PSYNC
+OASIS.PSYNC.COMPLEX
+AVALANCHE.NOMAD.OASIS
+OASIS.NOMAD.PSYNC
+$AVALANCHE.PSYNC.NOMAD
+OASIS.NOMAD.PSYNC
+OASIS.COMPLEX.SANDBOX
+SANDBOX.COMPLEX.OASIS
+NOMAD.PSYNC.OASIS
+PSYNC.OASIS.AVALANCHE
+NOMAD.OASIS.PSYNC
+SANDBOX.OASIS.AVALANCHE
+NOMAD.COMPLEX.PSYNC
+COMPLEX.OASIS.SANDBOX
+PSYNC.COMPLEX.SANDBOX
+OASIS.PSYNC.AVALANCHE
+AVALANCHE.PSYNC.COMPLEX
+OASIS.PSYNC.NOMAD
+SANDBOX.NOMAD.PSYNC
+OASIS.COMPLEX.AVALANCHE
+AVALANCHE.PSYNC.NOMAD
+PSYNC.OASIS.NOMAD
+NOMAD.AVALANCHE.SANDBOX
+AVALANCHE.NOMAD.COMPLEX
+PSYNC.NOMAD.SANDBOX
+PSYNC.NOMAD.AVALANCHE
+AVALANCHE.NOMAD.PSYNC
+AVALANCHE.NOMAD.COMPLEX
+PSYNC.NOMAD.AVALANCHE
+COMPLEX.NOMAD.AVALANCHE
+AVALANCHE.SANDBOX.PSYNC
+AVALANCHE.PSYNC.SANDBOX
+SANDBOX.PSYNC.NOMAD
+COMPLEX.PSYNC.OASIS
+SANDBOX.OASIS.PSYNC
+AVALANCHE.PSYNC.NOMAD
+AVALANCHE.SANDBOX.NOMAD
+PSYNC.NOMAD.SANDBOX
+OASIS.SANDBOX.NOMAD
+NOMAD.AVALANCHE.OASIS
+COMPLEX.PSYNC.NOMAD
+COMPLEX.PSYNC.SANDBOX
+AVALANCHE.SANDBOX.PSYNC
+NOMAD.OASIS.SANDBOX 
+AVALANCHE.PSYNC.NOMAD
+SANDBOX.NOMAD.COMPLEX
+SANDBOX.NOMAD.MACHINIMA
+SANDBOX.NOMAD.PSYNC
+PSYNC.NOMAD.SANDBOX
+PSYNC.SANDBOX.NOMAD
+PSYNC.OASIS.AVALANCHE
+COMPLEX.PSYNC.SANDBOX
+NOMAD.PSYNC.SANDBOX
+AVALANCHE.PSYNC.COMPLEX
+OASIS.NOMAD.COMPLEX
+OASIS.PSYNC.AVALANCHE 
+-AVALANCHE.COMPLEX
+AVALANCHE.NOMAD.COMPLEX
+COMPLEX.PSYNC.NOMAD
+AVALANCHE.PSYNC.NOMAD
+PSYNC.AVALANCHE.NOMAD.SANDBOX.COMPLEX.OASIS
+PSYNC.NOMAD.COMPLEX -OASIS.SANDBOX.NOMAD 
+TERMINAL BREACH
+  `;
+
+  // --- Parse into nodes & edges ---
+  const nodeIndex = new Map();
+  const nodes = [];
+  const edges = [];
+
+  function getNodeId(name) {
+    if (!nodeIndex.has(name)) {
+      nodeIndex.set(name, nodes.length);
+      nodes.push({ name, position: [0,0,0] });
+    }
+    return nodeIndex.get(name);
+  }
+
+  rawData.split('\n').forEach(line => {
+    line = line.trim();
+    if (!line) return;
+    // split on non-letters, so "$", "-", ".", spaces etc become separators
+    const parts = line.toUpperCase().split(/[^A-Z]+/).filter(Boolean);
+    if (parts.length < 2) {
+      if (parts.length === 1) {
+        getNodeId(parts[0]); // single node line -> just ensure it exists
+      }
+      return;
+    }
+    const ids = parts.map(getNodeId);
+    for (let i = 0; i < ids.length - 1; i++) {
+      edges.push({ from: ids[i], to: ids[i+1] });
+    }
+  });
+
+  // Layout nodes roughly in a ring
+  const radius = 5;
+  nodes.forEach((node, i) => {
+    const t = i / nodes.length * Math.PI * 2;
+    const y = (Math.sin(i * 1.37) * 0.8); // slight vertical noise
+    node.position = [
+      Math.cos(t) * radius,
+      y,
+      Math.sin(t) * radius
+    ];
+  });
+
+  // --- Color mapping ---
+  function colorForName(name) {
+    switch (name) {
+      case 'NOMAD':      return [0.2, 0.9, 1.0]; // cyan
+      case 'PSYNC':      return [1.0, 0.1, 0.7]; // magenta
+      case 'SANDBOX':    return [1.0, 0.85, 0.2]; // yellow
+      case 'OASIS':      return [0.4, 1.0, 0.5]; // green
+      case 'AVALANCHE':  return [1.0, 0.45, 0.1]; // orange
+      case 'COMPLEX':    return [1.0, 0.15, 0.2]; // red
+      case 'SYSTEM':     return [0.3, 0.7, 1.0];
+      case 'MACHINIMA':  return [0.8, 0.4, 1.0];
+      case 'TERMINAL':   return [0.9, 0.9, 0.9];
+      case 'BREACH':     return [1.0, 0.2, 0.3];
+      default:           return [0.6, 0.6, 0.7];
+    }
+  }
+
+  // --- Build buffers ---
+  const nodePositions = new Float32Array(nodes.length * 3);
+  nodes.forEach((node, i) => {
+    nodePositions[i*3+0] = node.position[0];
+    nodePositions[i*3+1] = node.position[1];
+    nodePositions[i*3+2] = node.position[2];
+  });
+
+  const edgePositions = new Float32Array(edges.length * 2 * 3);
+  edges.forEach((e, i) => {
+    const a = nodes[e.from].position;
+    const b = nodes[e.to].position;
+    const o = i * 6;
+    edgePositions[o+0] = a[0];
+    edgePositions[o+1] = a[1];
+    edgePositions[o+2] = a[2];
+    edgePositions[o+3] = b[0];
+    edgePositions[o+4] = b[1];
+    edgePositions[o+5] = b[2];
+  });
+
+  function createBuffer(data) {
+    const buf = gl.createBuffer();
+    gl.bindBuffer(gl.ARRAY_BUFFER, buf);
+    gl.bufferData(gl.ARRAY_BUFFER, data, gl.STATIC_DRAW);
+    return buf;
+  }
+
+  const nodeBuffer = createBuffer(nodePositions);
+  const edgeBuffer = createBuffer(edgePositions);
+
+  // --- Shader compilation ---
+  function compileShader(type, src) {
+    const shader = gl.createShader(type);
+    gl.shaderSource(shader, src);
+    gl.compileShader(shader);
+    if (!gl.getShaderParameter(shader, gl.COMPILE_STATUS)) {
+      console.error(gl.getShaderInfoLog(shader));
+      gl.deleteShader(shader);
+      return null;
+    }
+    return shader;
+  }
+
+  const vsSource = `#version 300 es
+  precision highp float;
+  layout(location = 0) in vec3 a_position;
+  uniform mat4 u_mvp;
+  void main() {
+    gl_Position = u_mvp * vec4(a_position, 1.0);
+    gl_PointSize = 9.0;
+  }`;
+
+  const fsSource = `#version 300 es
+  precision highp float;
+  uniform vec3 u_color;
+  out vec4 outColor;
+  void main() {
+    // simple round point
+    vec2 p = gl_PointCoord * 2.0 - 1.0;
+    float d = dot(p, p);
+    if (d > 1.0) {
+      discard;
+    }
+    float alpha = 1.0 - smoothstep(0.8, 1.0, d);
+    outColor = vec4(u_color, alpha);
+  }`;
+
+  const vsLines = `#version 300 es
+  precision highp float;
+  layout(location = 0) in vec3 a_position;
+  uniform mat4 u_mvp;
+  void main() {
+    gl_Position = u_mvp * vec4(a_position, 1.0);
+  }`;
+
+  const fsLines = `#version 300 es
+  precision highp float;
+  uniform vec3 u_color;
+  out vec4 outColor;
+  void main() {
+    outColor = vec4(u_color, 0.6);
+  }`;
+
+  function createProgram(vsSrc, fsSrc) {
+    const vs = compileShader(gl.VERTEX_SHADER, vsSrc);
+    const fs = compileShader(gl.FRAGMENT_SHADER, fsSrc);
+    const prog = gl.createProgram();
+    gl.attachShader(prog, vs);
+    gl.attachShader(prog, fs);
+    gl.linkProgram(prog);
+    if (!gl.getProgramParameter(prog, gl.LINK_STATUS)) {
+      console.error(gl.getProgramInfoLog(prog));
+      gl.deleteProgram(prog);
+      return null;
+    }
+    return prog;
+  }
+
+  const pointProgram = createProgram(vsSource, fsSource);
+  const lineProgram = createProgram(vsLines, fsLines);
+
+  const pointAttribLoc = 0;
+  const pointMvpLoc = gl.getUniformLocation(pointProgram, 'u_mvp');
+  const pointColorLoc = gl.getUniformLocation(pointProgram, 'u_color');
+
+  const lineAttribLoc = 0;
+  const lineMvpLoc = gl.getUniformLocation(lineProgram, 'u_mvp');
+  const lineColorLoc = gl.getUniformLocation(lineProgram, 'u_color');
+
+  // --- Camera / controls ---
+  let yaw = 0.6;
+  let pitch = 0.3;
+  let distance = 14;
+
+  let isDragging = false;
+  let lastX = 0;
+  let lastY = 0;
+
+  canvas.addEventListener('mousedown', e => {
+    isDragging = true;
+    lastX = e.clientX;
+    lastY = e.clientY;
+  });
+
+  window.addEventListener('mouseup', () => {
+    isDragging = false;
+  });
+
+  window.addEventListener('mousemove', e => {
+    if (!isDragging) return;
+    const dx = e.clientX - lastX;
+    const dy = e.clientY - lastY;
+    lastX = e.clientX;
+    lastY = e.clientY;
+    yaw += dx * 0.005;
+    pitch += dy * 0.005;
+    const limit = Math.PI / 2 - 0.1;
+    pitch = Math.max(-limit, Math.min(limit, pitch));
+  });
+
+  canvas.addEventListener('wheel', e => {
+    e.preventDefault();
+    distance *= (1 + e.deltaY * 0.001);
+    distance = Math.max(5, Math.min(30, distance));
+  }, { passive: false });
+
+  const proj = mat4.create();
+  const view = mat4.create();
+  const mvp  = mat4.create();
+
+  // --- Render loop ---
+  gl.enable(gl.BLEND);
+  gl.blendFunc(gl.SRC_ALPHA, gl.ONE_MINUS_SRC_ALPHA);
+  gl.enable(gl.DEPTH_TEST);
+
+  function render(time) {
+    time *= 0.001; // seconds
+    const width = canvas.width;
+    const height = canvas.height;
+    const aspect = width / height;
+
+    gl.viewport(0, 0, width, height);
+    gl.clearColor(0.01, 0.01, 0.03, 1.0);
+    gl.clear(gl.COLOR_BUFFER_BIT | gl.DEPTH_BUFFER_BIT);
+
+    // gentle auto orbit
+    const autoYaw = yaw + time * 0.02;
+
+    const cx = Math.cos(autoYaw) * Math.cos(pitch) * distance;
+    const cy = Math.sin(pitch) * distance;
+    const cz = Math.sin(autoYaw) * Math.cos(pitch) * distance;
+
+    mat4.perspective(proj, Math.PI / 3, aspect, 0.1, 100.0);
+    mat4.lookAt(view, [cx, cy, cz], [0, 0, 0], [0, 1, 0]);
+    mat4.multiply(mvp, proj, view);
+
+    // Draw edges
+    gl.useProgram(lineProgram);
+    gl.uniformMatrix4fv(lineMvpLoc, false, mvp);
+    gl.uniform3f(lineColorLoc, 0.35, 0.45, 0.9);
+    gl.bindBuffer(gl.ARRAY_BUFFER, edgeBuffer);
+    gl.enableVertexAttribArray(lineAttribLoc);
+    gl.vertexAttribPointer(lineAttribLoc, 3, gl.FLOAT, false, 0, 0);
+    gl.lineWidth(1.0);
+    gl.drawArrays(gl.LINES, 0, edgePositions.length / 3);
+
+    // Draw nodes, one by one so we can color by name
+    gl.useProgram(pointProgram);
+    gl.uniformMatrix4fv(pointMvpLoc, false, mvp);
+    gl.bindBuffer(gl.ARRAY_BUFFER, nodeBuffer);
+    gl.enableVertexAttribArray(pointAttribLoc);
+    gl.vertexAttribPointer(pointAttribLoc, 3, gl.FLOAT, false, 0, 0);
+
+    for (let i = 0; i < nodes.length; i++) {
+      const col = colorForName(nodes[i].name);
+      gl.uniform3f(pointColorLoc, col[0], col[1], col[2]);
+      gl.drawArrays(gl.POINTS, i, 1);
+    }
+
+    requestAnimationFrame(render);
+  }
+
+  requestAnimationFrame(render);
+})();
+</script>
+</body>
+</html>

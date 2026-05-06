@@ -1,0 +1,98 @@
+﻿**********************
+Windows PowerShell transcript start
+Start time: 20251028041139
+Username: NOMAD\Surface
+RunAs User: NOMAD\Surface
+Configuration Name: 
+Machine: NOMAD (Microsoft Windows NT 10.0.22631.0)
+Host Application: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe
+Process ID: 7452
+PSVersion: 5.1.22621.5624
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.22621.5624
+BuildVersion: 10.0.22621.5624
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+Transcript started, output file is C:\Users\Surface\OneDrive\SIRENSSD\Research Lab\Records and logging\Session_2025-10-28_04-11-29.txt
+Session logging started. Log file: C:\Users\Surface\OneDrive\SIRENSSD\Research Lab\Records and logging\Session_2025-10-28_04-11-29.txt
+[38;2;243;174;53m[0m[48;2;243;174;53m[38;2;38;43;68m Surface [0m[38;2;243;174;53m[0m[0m[38;2;240;118;35;49m[7m[0m[48;2;240;118;35m[38;2;224;222;244m  ]8;;file:C:/Users/Surface/OneDrive/SIRENSSD\SIRENSSD]8;;\ [0m[48;2;243;174;53m[38;2;240;118;35m[0m[48;2;243;174;53m[38;2;38;43;68m ]8;;https://github.com/nomadsomni/aspen_codes.git\ ]8;;\ 888.000.555 ≡  ?35 ~2 -1 [0m[48;2;243;174;53m[38;2;243;174;53m[0m[48;2;243;174;53m[38;2;224;222;244m  [0m[38;2;243;174;53m[0m[0m[38;2;75;149;233;49m[7m[0m[48;2;75;149;233m[38;2;224;222;244m  [0m[38;2;75;149;233m[0m]0;pwsh in SIRENSSD 7                                                              [38;2;89;201;165m [0m[38;2;224;222;244min [38;2;75;149;233m[1mpwsh[22m[38;2;224;222;244m [0m[38;2;224;222;244mat [38;2;75;149;233m[1m04:11:41[22m[0m8
+PS>'0-34c,\2304c\034c]-W03
+C=34-c023=-40c\q-034\c=-03\4-C02\=3-04c-2034C\=-2034C-023\4C=-023\=-c0\W=-0C\=w-0e\rc-0WER\-=Cw0er\-=c0WE-RC0w\rc0\2-30c\=-W034C\-=0234-c0230-]w0erc
+]-0W
+]E-RC0
+w]-er0c
+]-W0ER
+C]0w
+]er-c0
+W0C]W03c
+]-W03
+]C-0w
+3]0c
+]W-03C
+]0w3
+]c0W
+]-30C
+]w-03
+c]-W03
+]C-0w
+]3-0c
+]W034]
+C0w
+]30c
+]W-30C
+]-0w3
+]4c-0
+W]-0C
+]w-304c
+]-W03
+]C-0w
+]3-0c
+]-W03
+]C-0
+]R-C0W
+]-E0RC
+]-w0
+3]-c0
+W]-E0R
+]cw0
+]34c0
+]W-03
+C]-03]4-c02
+3]-C402]-340c
+]2-034
+C]-0234c2\3-=40C-\=2034c\-023\4C=-02\=3-40c\=-2304C\-02\=-340c2034\C=-203\4c-02\-=340C\-2034\c=-2034\C-023\4=-c0\2=3-04C\=-2034\c=-023\4=-C0\2=-304c\=-2034\C=-023\4-c0\2=3-04C=\-203c-0W\=-0CR-0wer]c-0W
+]ER-0
+]2-304C
+]-034c]
+-023
+]-0C
+]-30c
+]-2034C]
+-0w3-02-]]3-0
+]-2034
+]C-,023
+]c-2
+]3-0C4
+]2-30=-\20,3\4-=C02,-340c\-=2304-20x.\=-0`-0]`0`]-0
+]-0`
+]x-320e
+]-20
+]-03
+]C-0-34
+]-230
+]c-W]EadLś;L"sdlf"śł":Ls":sdF"sdlf'sl":łsdf:"ś0]-C02]3-40c
+At line:65 char:41
++ ]c-W]EadLś;L"sdlf"śł":Ls":sdF"sdlf'sl":łsdf:"ś0]-C02]3-40c
++                                         ~~~~~~~~~~~~~~~~~~~~~~~~~
+Unexpected token 'sl":łsdf:"ś0]-C02]3-40c' in expression or statement.
+At line:65 char:41
++ ]c-W]EadLś;L"sdlf"śł":Ls":sdF"sdlf'sl":łsdf:"ś0]-C02]3-40c
++                                         ~~~~~~~~~~~~~~~~~~~~~~~~~
+Unexpected token 'sl":łsdf:"ś0]-C02]3-40c' in expression or statement.
+    + CategoryInfo          : ParserError: (:) [], ParentContainsErrorRecordException
+    + FullyQualifiedErrorId : UnexpectedToken
+
+[38;2;243;174;53m[0m[48;2;243;174;53m[38;2;38;43;68m Surface [0m[38;2;243;174;53m[0m[0m[38;2;240;118;35;49m[7m[0m[48;2;240;118;35m[38;2;224;222;244m  ]8;;file:C:/Users/Surface/OneDrive/SIRENSSD\SIRENSSD]8;;\ [0m[48;2;243;174;53m[38;2;240;118;35m[0m[48;2;243;174;53m[38;2;38;43;68m ]8;;https://github.com/nomadsomni/aspen_codes.git\ ]8;;\ 888.000.555 ≡  ?35 ~2 -1 [0m[48;2;243;174;53m[38;2;243;174;53m[0m[48;2;243;174;53m[38;2;224;222;244m  [0m[38;2;243;174;53m[0m[0m[38;2;75;149;233;49m[7m[0m[48;2;75;149;233m[38;2;224;222;244m  [0m[38;2;75;149;233m[0m]0;pwsh in SIRENSSD

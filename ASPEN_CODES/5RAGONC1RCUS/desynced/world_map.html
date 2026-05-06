@@ -1,0 +1,499 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>World Map - Internet Traffic (Realtime)</title>
+  <style>
+    :root {
+      --bg-1: #05080b;
+      --bg-2: #0b1217;
+      --grid: #1c2a33;
+      --line: #6ee7ff;
+      --text: #b7c7d6;
+    }
+    html, body {
+      height: 100%;
+      margin: 0;
+      background: radial-gradient(1200px 800px at 20% 10%, #0e1a22, transparent 60%),
+                  radial-gradient(1000px 700px at 80% 90%, #0a1016, transparent 60%),
+                  linear-gradient(160deg, var(--bg-1), var(--bg-2));
+      color: var(--text);
+      font-family: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+    }
+    #wrap {
+      display: grid;
+      grid-template-rows: auto 1fr auto;
+      height: 100%;
+      gap: 8px;
+      padding: 16px;
+      box-sizing: border-box;
+    }
+    header, footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 11px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      opacity: 0.6;
+    }
+    #stage {
+      position: relative;
+      border: 1px solid rgba(110, 231, 255, 0.12);
+      border-radius: 6px;
+      overflow: hidden;
+      min-height: 60vh;
+      box-shadow: 0 0 0 1px rgba(110, 231, 255, 0.08), 0 30px 80px rgba(0,0,0,0.55);
+      background: radial-gradient(600px 400px at 50% 40%, rgba(110,231,255,0.05), transparent 70%),
+      repeating-linear-gradient(
+        0deg,
+        rgba(110,231,255,0.04) 0,
+        rgba(110,231,255,0.04) 1px,
+        transparent 1px,
+        transparent 24px
+      ),
+      repeating-linear-gradient(
+        90deg,
+        rgba(110,231,255,0.04) 0,
+        rgba(110,231,255,0.04) 1px,
+        transparent 1px,
+        transparent 24px
+      );
+    }
+    canvas {
+      width: 100%;
+      height: 100%;
+      display: block;
+    }
+    .hint {
+      position: absolute;
+      right: 16px;
+      bottom: 16px;
+      font-size: 12px;
+      opacity: 0.65;
+      background: rgba(7, 10, 13, 0.7);
+      border: 1px solid rgba(110, 231, 255, 0.18);
+      border-radius: 999px;
+      padding: 6px 12px;
+      backdrop-filter: blur(6px);
+    }
+    .warn {
+      position: absolute;
+      left: 16px;
+      top: 16px;
+      font-size: 12px;
+      background: rgba(160, 40, 40, 0.75);
+      border: 1px solid rgba(255, 160, 160, 0.6);
+      padding: 6px 10px;
+      border-radius: 8px;
+      display: none;
+    }
+    .panel {
+      position: absolute;
+      left: 16px;
+      top: 16px;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 6px;
+      align-items: center;
+      background: rgba(7, 10, 13, 0.7);
+      border: 1px solid rgba(110, 231, 255, 0.18);
+      border-radius: 8px;
+      padding: 8px 10px;
+      backdrop-filter: blur(6px);
+      max-width: 420px;
+    }
+    .panel input {
+      width: 100%;
+      background: #0a0f14;
+      border: 1px solid rgba(110, 231, 255, 0.2);
+      color: var(--text);
+      font-size: 12px;
+      padding: 6px 8px;
+      border-radius: 6px;
+    }
+    .panel button {
+      background: rgba(110, 231, 255, 0.12);
+      border: 1px solid rgba(110, 231, 255, 0.35);
+      color: var(--text);
+      font-size: 11px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      padding: 6px 8px;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    .panel .status {
+      grid-column: 1 / -1;
+      font-size: 11px;
+      opacity: 0.7;
+    }
+    .vignette {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      background: radial-gradient(120% 120% at 50% 50%, transparent 40%, rgba(0,0,0,0.35) 70%);
+      mix-blend-mode: multiply;
+    }
+    .scanlines {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      background: repeating-linear-gradient(
+        0deg,
+        rgba(255,255,255,0.02) 0,
+        rgba(255,255,255,0.02) 1px,
+        transparent 1px,
+        transparent 3px
+      );
+      opacity: 0.35;
+    }
+  </style>
+</head>
+<body>
+  <div id="wrap">
+    <header>
+      <div>WORLD GRID</div>
+      <div>INTERNET TRAFFIC</div>
+    </header>
+
+    <div id="stage">
+      <canvas id="gl"></canvas>
+      <div class="panel">
+        <div class="status" id="status">Waiting for local proxy on http://localhost:8787</div>
+      </div>
+      <div class="hint">drag to pan • scroll to zoom</div>
+      <div class="warn" id="warn">WebGL2 not supported</div>
+      <div class="scanlines"></div>
+      <div class="vignette"></div>
+    </div>
+
+    <footer>
+      <div>VECTOR OUTLINE</div>
+      <div>LIVE FEED</div>
+    </footer>
+  </div>
+
+<script>
+const canvas = document.getElementById("gl");
+const warn = document.getElementById("warn");
+const statusEl = document.getElementById("status");
+const PROXY_BASE = "http://localhost:8787";
+const gl = canvas.getContext("webgl2", { antialias: true, alpha: false });
+if (!gl) {
+  warn.style.display = "block";
+  throw new Error("WebGL2 not supported");
+}
+
+function setStatus(text) {
+  statusEl.textContent = text;
+}
+
+function resize() {
+  const dpr = Math.min(window.devicePixelRatio || 1, 2);
+  const w = Math.floor(canvas.clientWidth * dpr);
+  const h = Math.floor(canvas.clientHeight * dpr);
+  if (canvas.width !== w || canvas.height !== h) {
+    canvas.width = w;
+    canvas.height = h;
+  }
+  gl.viewport(0, 0, canvas.width, canvas.height);
+}
+window.addEventListener("resize", resize);
+resize();
+
+function compile(type, src) {
+  const shader = gl.createShader(type);
+  gl.shaderSource(shader, src);
+  gl.compileShader(shader);
+  if (!gl.getShaderParameter(shader, gl.COMPILE_STATUS)) {
+    throw new Error(gl.getShaderInfoLog(shader));
+  }
+  return shader;
+}
+function program(vs, fs) {
+  const p = gl.createProgram();
+  gl.attachShader(p, compile(gl.VERTEX_SHADER, vs));
+  gl.attachShader(p, compile(gl.FRAGMENT_SHADER, fs));
+  gl.linkProgram(p);
+  if (!gl.getProgramParameter(p, gl.LINK_STATUS)) {
+    throw new Error(gl.getProgramInfoLog(p));
+  }
+  return p;
+}
+
+const vsLine = `#version 300 es
+layout(location=0) in vec2 aPos;
+uniform mat3 uView;
+void main(){
+  vec3 p = uView * vec3(aPos, 1.0);
+  gl_Position = vec4(p.xy, 0.0, 1.0);
+}`;
+const fsLine = `#version 300 es
+precision highp float;
+out vec4 o;
+uniform vec3 uColor;
+uniform float uAlpha;
+void main(){ o = vec4(uColor, uAlpha); }`;
+
+const vsPoint = `#version 300 es
+layout(location=0) in vec2 aPos;
+layout(location=1) in float aSize;
+layout(location=2) in float aPhase;
+layout(location=3) in float aAmp;
+uniform mat3 uView;
+uniform float uTime;
+void main(){
+  vec3 p = uView * vec3(aPos, 1.0);
+  gl_Position = vec4(p.xy, 0.0, 1.0);
+  float pulse = 0.6 + 0.4 * sin(uTime * 2.2 + aPhase);
+  gl_PointSize = aSize * (0.8 + 0.6 * aAmp) * (0.85 + 0.15 * pulse);
+}`;
+const fsPoint = `#version 300 es
+precision highp float;
+out vec4 o;
+uniform vec3 uColor;
+void main(){
+  float d = length(gl_PointCoord - vec2(0.5));
+  float a = smoothstep(0.5, 0.1, d);
+  o = vec4(uColor, a);
+}`;
+
+const progLine = program(vsLine, fsLine);
+const progPoint = program(vsPoint, fsPoint);
+
+function makeLines(positions) {
+  const vao = gl.createVertexArray();
+  gl.bindVertexArray(vao);
+  const vbo = gl.createBuffer();
+  gl.bindBuffer(gl.ARRAY_BUFFER, vbo);
+  gl.bufferData(gl.ARRAY_BUFFER, positions, gl.STATIC_DRAW);
+  gl.enableVertexAttribArray(0);
+  gl.vertexAttribPointer(0, 2, gl.FLOAT, false, 0, 0);
+  gl.bindVertexArray(null);
+  return { vao, count: positions.length / 2 };
+}
+
+function makePoints(pos, sizes, phases, amps) {
+  const vao = gl.createVertexArray();
+  gl.bindVertexArray(vao);
+  const pbo = gl.createBuffer();
+  gl.bindBuffer(gl.ARRAY_BUFFER, pbo);
+  gl.bufferData(gl.ARRAY_BUFFER, pos, gl.STATIC_DRAW);
+  gl.enableVertexAttribArray(0);
+  gl.vertexAttribPointer(0, 2, gl.FLOAT, false, 0, 0);
+
+  const sbo = gl.createBuffer();
+  gl.bindBuffer(gl.ARRAY_BUFFER, sbo);
+  gl.bufferData(gl.ARRAY_BUFFER, sizes, gl.STATIC_DRAW);
+  gl.enableVertexAttribArray(1);
+  gl.vertexAttribPointer(1, 1, gl.FLOAT, false, 0, 0);
+
+  const phbo = gl.createBuffer();
+  gl.bindBuffer(gl.ARRAY_BUFFER, phbo);
+  gl.bufferData(gl.ARRAY_BUFFER, phases, gl.STATIC_DRAW);
+  gl.enableVertexAttribArray(2);
+  gl.vertexAttribPointer(2, 1, gl.FLOAT, false, 0, 0);
+
+  const abo = gl.createBuffer();
+  gl.bindBuffer(gl.ARRAY_BUFFER, abo);
+  gl.bufferData(gl.ARRAY_BUFFER, amps, gl.STATIC_DRAW);
+  gl.enableVertexAttribArray(3);
+  gl.vertexAttribPointer(3, 1, gl.FLOAT, false, 0, 0);
+
+  gl.bindVertexArray(null);
+  return { vao, count: pos.length / 2 };
+}
+
+// Simple world outline using coarse longitude/latitude bands (stylized)
+const outlines = [];
+function pushLine(points) {
+  for (const p of points) outlines.push(p[0], p[1]);
+}
+// North America (very rough)
+pushLine([[-1.0, 0.55], [-0.75, 0.7], [-0.5, 0.62], [-0.35, 0.48], [-0.55, 0.3], [-0.85, 0.35], [-1.0, 0.55]]);
+// South America
+pushLine([[-0.55, 0.25], [-0.4, 0.05], [-0.3, -0.2], [-0.35, -0.5], [-0.55, -0.6], [-0.62, -0.35], [-0.55, 0.25]]);
+// Europe + Africa
+pushLine([[0.0, 0.55], [0.2, 0.55], [0.35, 0.45], [0.3, 0.25], [0.2, 0.1], [0.15, -0.1], [0.1, -0.35], [0.0, -0.55], [-0.05, -0.2], [0.0, 0.1], [0.05, 0.3], [0.0, 0.55]]);
+// Asia
+pushLine([[0.35, 0.5], [0.6, 0.6], [0.85, 0.45], [0.95, 0.25], [0.8, 0.1], [0.6, 0.15], [0.45, 0.3], [0.35, 0.5]]);
+// Australia
+pushLine([[0.7, -0.35], [0.85, -0.4], [0.9, -0.55], [0.75, -0.6], [0.62, -0.5], [0.7, -0.35]]);
+// Greenland
+pushLine([[-0.7, 0.75], [-0.55, 0.82], [-0.4, 0.75], [-0.55, 0.68], [-0.7, 0.75]]);
+
+const outlinePos = new Float32Array(outlines);
+const worldLines = makeLines(outlinePos);
+
+let pointMesh = null;
+let offsetX = 0;
+let offsetY = 0;
+let zoom = 1.0;
+let isDrag = false;
+let lastX = 0;
+let lastY = 0;
+
+canvas.addEventListener("pointerdown", (e) => {
+  isDrag = true;
+  lastX = e.clientX;
+  lastY = e.clientY;
+  canvas.setPointerCapture(e.pointerId);
+});
+canvas.addEventListener("pointerup", (e) => {
+  isDrag = false;
+  canvas.releasePointerCapture(e.pointerId);
+});
+canvas.addEventListener("pointermove", (e) => {
+  if (!isDrag) return;
+  const dx = (e.clientX - lastX) / canvas.clientWidth;
+  const dy = (e.clientY - lastY) / canvas.clientHeight;
+  offsetX += dx * 2.0 / zoom;
+  offsetY -= dy * 2.0 / zoom;
+  lastX = e.clientX;
+  lastY = e.clientY;
+});
+canvas.addEventListener("wheel", (e) => {
+  const delta = Math.sign(e.deltaY);
+  zoom *= (1.0 + delta * 0.08);
+  zoom = Math.max(0.6, Math.min(3.0, zoom));
+  e.preventDefault();
+}, { passive: false });
+
+function makeView() {
+  return [
+    zoom, 0, 0,
+    0, zoom, 0,
+    offsetX, offsetY, 1
+  ];
+}
+
+function projectLonLat(lon, lat) {
+  return [lon / 180, lat / 90];
+}
+
+async function fetchJson(url) {
+  const res = await fetch(url, {
+    headers: { "Content-Type": "application/json" }
+  });
+  if (!res.ok) throw new Error(`HTTP ${res.status}`);
+  return await res.json();
+}
+
+async function loadLocations() {
+  const url = `${PROXY_BASE}/api/locations?limit=500`;
+  const data = await fetchJson(url);
+  if (!data.success) throw new Error("Cloudflare locations request failed");
+  const map = new Map();
+  for (const loc of data.result.locations || []) {
+    map.set(loc.alpha2, {
+      lat: parseFloat(loc.latitude),
+      lon: parseFloat(loc.longitude),
+      name: loc.name
+    });
+  }
+  return map;
+}
+
+async function loadTraffic(locationMap) {
+  const url = `${PROXY_BASE}/api/traffic?dateRange=1d&limit=80`;
+  const data = await fetchJson(url);
+  if (!data.success) throw new Error("Cloudflare traffic request failed");
+  const items = data.result.top_0 || [];
+  const points = [];
+  for (const item of items) {
+    const loc = locationMap.get(item.clientCountryAlpha2);
+    if (!loc) continue;
+    const value = parseFloat(item.value);
+    points.push({
+      lon: loc.lon,
+      lat: loc.lat,
+      value,
+      name: item.clientCountryName
+    });
+  }
+  return points;
+}
+
+function buildPointMesh(points) {
+  if (points.length === 0) return null;
+  const values = points.map(p => p.value);
+  const min = Math.min(...values);
+  const max = Math.max(...values);
+  const range = Math.max(1, max - min);
+
+  const pos = new Float32Array(points.length * 2);
+  const sizes = new Float32Array(points.length);
+  const phases = new Float32Array(points.length);
+  const amps = new Float32Array(points.length);
+
+  for (let i = 0; i < points.length; i++) {
+    const p = points[i];
+    const t = (p.value - min) / range;
+    const [x, y] = projectLonLat(p.lon, p.lat);
+    pos[i * 2 + 0] = x;
+    pos[i * 2 + 1] = y;
+    sizes[i] = 4 + t * 12;
+    phases[i] = Math.random() * Math.PI * 2;
+    amps[i] = t;
+  }
+  return makePoints(pos, sizes, phases, amps);
+}
+
+let locationMap = null;
+let lastUpdate = 0;
+
+async function refreshTraffic() {
+  try {
+    setStatus("Loading locations...");
+    if (!locationMap) {
+      locationMap = await loadLocations();
+    }
+    setStatus("Loading traffic...");
+    const points = await loadTraffic(locationMap);
+    pointMesh = buildPointMesh(points);
+    lastUpdate = Date.now();
+    setStatus("Live traffic loaded via local proxy. Updates every 2 minutes.");
+  } catch (err) {
+    setStatus("Error loading data (check proxy/token). " + err.message);
+  }
+}
+
+setInterval(() => {
+  refreshTraffic();
+}, 120000);
+refreshTraffic();
+
+function frame(now) {
+  resize();
+  gl.clearColor(0.02, 0.03, 0.04, 1);
+  gl.clear(gl.COLOR_BUFFER_BIT);
+
+  const view = makeView();
+
+  gl.useProgram(progLine);
+  gl.uniformMatrix3fv(gl.getUniformLocation(progLine, "uView"), false, view);
+  gl.uniform3f(gl.getUniformLocation(progLine, "uColor"), 0.16, 0.78, 0.88);
+  gl.uniform1f(gl.getUniformLocation(progLine, "uAlpha"), 0.6);
+  gl.bindVertexArray(worldLines.vao);
+  gl.drawArrays(gl.LINE_STRIP, 0, worldLines.count);
+
+  if (pointMesh) {
+    gl.enable(gl.BLEND);
+    gl.blendFunc(gl.SRC_ALPHA, gl.ONE);
+    gl.useProgram(progPoint);
+    gl.uniformMatrix3fv(gl.getUniformLocation(progPoint, "uView"), false, view);
+    gl.uniform1f(gl.getUniformLocation(progPoint, "uTime"), now * 0.001);
+    gl.uniform3f(gl.getUniformLocation(progPoint, "uColor"), 0.45, 0.95, 1.0);
+    gl.bindVertexArray(pointMesh.vao);
+    gl.drawArrays(gl.POINTS, 0, pointMesh.count);
+    gl.disable(gl.BLEND);
+  }
+
+  requestAnimationFrame(frame);
+}
+requestAnimationFrame(frame);
+</script>
+</body>
+</html>

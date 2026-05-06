@@ -1,0 +1,117 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1000" viewBox="0 0 1600 1000">
+  <defs>
+    <radialGradient id="ember" cx="50%" cy="35%" r="70%">
+      <stop offset="0%" stop-color="#3b1014"/>
+      <stop offset="48%" stop-color="#101014"/>
+      <stop offset="100%" stop-color="#060608"/>
+    </radialGradient>
+    <linearGradient id="goldRed" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f2a93b"/>
+      <stop offset="52%" stop-color="#e3343f"/>
+      <stop offset="100%" stop-color="#32e6d1"/>
+    </linearGradient>
+    <filter id="glow" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="7" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <pattern id="grid" width="44" height="44" patternUnits="userSpaceOnUse">
+      <path d="M44 0H0V44" fill="none" stroke="#24262d" stroke-width="1" opacity=".55"/>
+      <circle cx="0" cy="0" r="2" fill="#e3343f" opacity=".22"/>
+    </pattern>
+    <style>
+      .title { font-family: Impact, "Arial Black", sans-serif; letter-spacing: 4px; fill: #f2eee6; }
+      .mono { font-family: "Consolas", "Courier New", monospace; fill: #d6d0c7; }
+      .sans { font-family: Arial, Helvetica, sans-serif; fill: #e8e1d4; }
+      .label { font-family: "Consolas", "Courier New", monospace; fill: #32e6d1; letter-spacing: 2px; font-size: 18px; }
+      .hair { stroke: #3a3d46; stroke-width: 1; }
+      .red { fill: #e3343f; }
+      .gold { fill: #f2a93b; }
+      .cyan { fill: #32e6d1; }
+    </style>
+  </defs>
+
+  <rect width="1600" height="1000" fill="url(#ember)"/>
+  <rect width="1600" height="1000" fill="url(#grid)" opacity=".72"/>
+
+  <g opacity=".55">
+    <path d="M98 156C274 106 373 148 506 96C666 34 819 54 955 118C1124 198 1287 158 1496 86" fill="none" stroke="#e3343f" stroke-width="2"/>
+    <path d="M86 848C284 742 446 850 639 766C835 680 982 731 1120 812C1250 889 1379 885 1506 812" fill="none" stroke="#32e6d1" stroke-width="2" opacity=".45"/>
+  </g>
+
+  <text x="88" y="92" class="label">IDENTITY SYSTEM / ACT V</text>
+  <text x="88" y="178" class="title" font-size="82">5RAGONC1RCUS</text>
+  <text x="94" y="230" class="mono" font-size="28" letter-spacing="10">APT</text>
+  <text x="88" y="286" class="sans" font-size="25" opacity=".84">A cyber-mythic threat collective: disciplined, theatrical, hostile, and precise.</text>
+
+  <g transform="translate(1000 92)">
+    <rect x="0" y="0" width="470" height="235" rx="8" fill="#101116" stroke="#353842"/>
+    <text x="30" y="50" class="label">PRIMARY MARK</text>
+    <g transform="translate(235 130)" filter="url(#glow)">
+      <circle r="78" fill="none" stroke="#e3343f" stroke-width="7"/>
+      <circle r="51" fill="none" stroke="#f2a93b" stroke-width="3" stroke-dasharray="10 10"/>
+      <path d="M-54 21C-19 83 82 64 76-4C72-51 27-70-15-52C-54-36-65 7-32 34C-1 60 43 43 39 6C36-21 8-30-12-18" fill="none" stroke="url(#goldRed)" stroke-width="17" stroke-linecap="round"/>
+      <path d="M37-54L70-80L61-39Z" fill="#f2a93b"/>
+      <circle cx="45" cy="-48" r="5" fill="#32e6d1"/>
+      <path d="M-84-1H84M0-84V84" stroke="#32e6d1" stroke-width="1.5" opacity=".6"/>
+    </g>
+  </g>
+
+  <g transform="translate(88 380)">
+    <text class="label" x="0" y="0">LOGO LOCKUPS</text>
+    <rect x="0" y="30" width="690" height="250" rx="8" fill="#111217" stroke="#363943"/>
+    <g transform="translate(48 72)">
+      <circle cx="80" cy="80" r="62" fill="none" stroke="#e3343f" stroke-width="6"/>
+      <path d="M36 91C62 132 137 116 132 67C129 32 96 17 65 32C36 46 28 78 53 98C76 117 109 105 106 76" fill="none" stroke="#f2a93b" stroke-width="13" stroke-linecap="round"/>
+      <path d="M102 27L130 8L122 42Z" fill="#e3343f"/>
+      <circle cx="108" cy="32" r="4" fill="#32e6d1"/>
+    </g>
+    <text x="196" y="105" class="title" font-size="50">5RAGONC1RCUS</text>
+    <text x="202" y="147" class="mono" font-size="19" letter-spacing="8" fill="#32e6d1">ADVANCED PERSISTENT THEATER</text>
+    <line x1="202" y1="176" x2="620" y2="176" stroke="#e3343f" stroke-width="2"/>
+    <text x="202" y="212" class="mono" font-size="18">THE RING IS LIVE // SIGNAL ACQUIRED // ACT V</text>
+  </g>
+
+  <g transform="translate(840 380)">
+    <text class="label" x="0" y="0">COLOR CODE</text>
+    <g transform="translate(0 30)">
+      <rect width="120" height="160" rx="8" fill="#08080a" stroke="#363943"/>
+      <rect x="142" width="120" height="160" rx="8" fill="#1a1b1f"/>
+      <rect x="284" width="120" height="160" rx="8" fill="#e3343f"/>
+      <rect x="426" width="120" height="160" rx="8" fill="#f2a93b"/>
+      <rect x="568" width="120" height="160" rx="8" fill="#32e6d1"/>
+      <text x="0" y="194" class="mono" font-size="17">#08080A</text>
+      <text x="142" y="194" class="mono" font-size="17">#1A1B1F</text>
+      <text x="284" y="194" class="mono" font-size="17">#E3343F</text>
+      <text x="426" y="194" class="mono" font-size="17">#F2A93B</text>
+      <text x="568" y="194" class="mono" font-size="17">#32E6D1</text>
+    </g>
+  </g>
+
+  <g transform="translate(88 728)">
+    <text class="label" x="0" y="0">VOICE</text>
+    <text x="0" y="62" class="title" font-size="43">THE BREACH RING</text>
+    <text x="0" y="104" class="sans" font-size="24">No applause. Just access.</text>
+    <text x="0" y="145" class="mono" font-size="21" opacity=".84">Five rings. One breach. The dragon does not announce entry.</text>
+  </g>
+
+  <g transform="translate(840 665)">
+    <text class="label" x="0" y="0">APPLICATION SNAPSHOT</text>
+    <rect x="0" y="28" width="650" height="250" rx="8" fill="#0e0f13" stroke="#363943"/>
+    <rect x="24" y="56" width="602" height="42" fill="#171920"/>
+    <text x="44" y="84" class="mono" font-size="18" fill="#f2a93b">5RAGONC1RCUS / OPS CONSOLE</text>
+    <circle cx="585" cy="77" r="7" fill="#32e6d1"/>
+    <rect x="24" y="126" width="170" height="102" fill="#15161b" stroke="#343741"/>
+    <rect x="218" y="126" width="170" height="102" fill="#15161b" stroke="#343741"/>
+    <rect x="412" y="126" width="214" height="102" fill="#15161b" stroke="#343741"/>
+    <text x="44" y="158" class="mono" font-size="16" fill="#32e6d1">RING</text>
+    <text x="44" y="194" class="title" font-size="36">LIVE</text>
+    <text x="238" y="158" class="mono" font-size="16" fill="#32e6d1">SIGNAL</text>
+    <text x="238" y="194" class="title" font-size="36">5.01</text>
+    <text x="432" y="158" class="mono" font-size="16" fill="#32e6d1">STATUS</text>
+    <text x="432" y="194" class="title" font-size="30" fill="#e3343f">INSIDE</text>
+    <path d="M24 244H626" stroke="#e3343f" stroke-width="2" stroke-dasharray="8 9"/>
+  </g>
+</svg>

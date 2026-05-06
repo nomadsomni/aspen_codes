@@ -1,0 +1,175 @@
+﻿**********************
+Windows PowerShell transcript start
+Start time: 20251105192357
+Username: NOMAD\Surface
+RunAs User: NOMAD\Surface
+Configuration Name: 
+Machine: NOMAD (Microsoft Windows NT 10.0.22631.0)
+Host Application: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe
+Process ID: 25404
+PSVersion: 5.1.22621.5624
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.22621.5624
+BuildVersion: 10.0.22621.5624
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+Transcript started, output file is C:\Users\Surface\OneDrive\SIRENSSD\Research Lab\Records and logging\Session_2025-11-05_19-23-49.txt
+Session logging started. Log file: C:\Users\Surface\OneDrive\SIRENSSD\Research Lab\Records and logging\Session_2025-11-05_19-23-49.txt
+[38;2;243;174;53m[0m[48;2;243;174;53m[38;2;38;43;68m Surface [0m[38;2;243;174;53m[0m[0m[38;2;240;118;35;49m[7m[0m[48;2;240;118;35m[38;2;224;222;244m  ]8;;file:C:/Users/Surface/OneDrive/SIRENSSD\SIRENSSD]8;;\ [0m[48;2;243;174;53m[38;2;240;118;35m[0m[48;2;243;174;53m[38;2;38;43;68m ]8;;https://github.com/nomadsomni/aspen_codes.git\ ]8;;\ 888.000.555 ≡  ?35 ~2 -1 [0m[48;2;243;174;53m[38;2;243;174;53m[0m[48;2;243;174;53m[38;2;224;222;244m  [0m[38;2;243;174;53m[0m[0m[38;2;75;149;233;49m[7m[0m[48;2;75;149;233m[38;2;224;222;244m  [0m[38;2;75;149;233m[0m]0;pwsh in SIRENSSD
+PS>TerminatingError(Resolve-Path): "The specified wildcard character pattern is not valid: lś"FLPęó'óę'ó"ĘÓP"ÓPĘęW\]ĘW
+'ŁePLfppe"fslp"pfpsOsefopP\[EPF{speF
+\[Ps{eP{
+wep{r
+P
+E\[P\]\[pe
+\]\[PW\]
+\[EP
+pe{{f
+ps{pd
+F\[Ps
+d\[PF
+{pellwe'LS'FPLps"D"sdFÓP'ó"Oś"pdfęp{eĘŚŁś"Ł"pę
+{p
+\[p
+epEęp{{WEP{prwpr\[epr
+\[Wper
+\[
+E\[rp\[
+E\]Pr\]\[W
+w\[pe\]Ep\]\[WEPwp
+e\[pW\]\[Pę
+\]\[PęĘę\]\[PWE\[epr
+\]ĘpęPę{
+PE
+{P{PE
+PW
+E\[
+P\[P
+\[PW
+E{p{PE\[e
+\[rp
+{WEWPPW
+e\[p
+ę
+\[rp
+\[wep
+\[pwe
+\[rpE{PE{PE
+{WEW{per
+pe
+\[pW\[E
+R
+\[wepr
+\]\[P\[\]p
+\]E\[Pw}EP}wpe
+\]\[P\]\[WEP
+\]\[WPE
+\]\[p}w{ePp
+pwe
+Rpw
+}{\]P\]\[Wp
+\]Pr\]\[pW
+\]EPR
+\]E\[P
+\]RPWE
+\]RP\]\[PWre\]\[PW
+\]E\[PR}{wp
+R}{pwęR
+}w{pweR\[
+\]peRP{
+\]ERP
+\]{peR
+eR\]
+e
+\[RPw
+}\[ERPęp{
+erp
+{wepe{per
+{P{
+rp{epR{per{pe
+r\[p{e
+PR\[wepr\[per
+{Pewr{ePĘp{Pw{e
+RP
+\[pw
+e{{epR{ę{P*"
+PS>TerminatingError(Get-Command): "The specified wildcard character pattern is not valid: lś"FLPęó'óę'ó"ĘÓP"ÓPĘęW]ĘW
+'ŁePLfppe"fslp"pfpsOsefopP[EPF{speF
+[Ps{eP{
+wep{r
+P
+E[P][pe
+][PW]
+[EP
+pe{{f
+ps{pd
+F[Ps
+d[PF
+{pellwe'LS'FPLps"D"sdFÓP'ó"Oś"pdfęp{eĘŚŁś"Ł"pę
+{p
+[p
+epEęp{{WEP{prwpr[epr
+[Wper
+[
+E[rp[
+E]Pr][W
+w[pe]Ep][WEPwp
+e[pW][Pę
+][PęĘę][PWE[epr
+]ĘpęPę{
+PE
+{P{PE
+PW
+E[
+P[P
+[PW
+E{p{PE[e
+[rp
+{WEWPPW
+e[p
+ę
+[rp
+[wep
+[pwe
+[rpE{PE{PE
+{WEW{per
+pe
+[pW[E
+R
+[wepr
+][P[]p
+]E[Pw}EP}wpe
+][P][WEP
+][WPE
+][p}w{ePp
+pwe
+Rpw
+}{]P][Wp
+]Pr][pW
+]EPR
+]E[P
+]RPWE
+]RP][PWre][PW
+]E[PR}{wp
+R}{pwęR
+}w{pweR[
+]peRP{
+]ERP
+]{peR
+eR]
+e
+[RPw
+}[ERPęp{
+erp
+{wepe{per
+{P{
+rp{epR{per{pe
+r[p{e
+PR[wepr[per
+{Pewr{ePĘp{Pw{e
+RP
+[pw
+e{{epR{ę{P*"

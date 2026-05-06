@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>Nomad.Avalanche.Psync — WebGL2 Offline</title>
+<style>
+  html, body { margin:0; height:100%; overflow:hidden; background:#050509; color:#eee; }
+  #gl { width:100vw; height:100vh; display:block; }
+  #info {
+    position:fixed; top:10px; left:50%; transform:translateX(-50%);
+    padding:6px 12px; background:rgba(0,0,0,0.65); border-radius:999px;
+    font:12px system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    letter-spacing:0.08em; text-transform:uppercase; white-space:nowrap;
+    pointer-events:none;
+  }
+  .label {
+    position:fixed;
+    font:11px system-ui, -apple-system, "Segoe UI", sans-serif;
+    color:#fdfdfd;
+    text-shadow:0 0 4px #000;
+    transform:translate(-50%, -50%);
+    pointer-events:none;
+    white-space:nowrap;
+  }
+</style>
+</head>
+<body>
+<canvas id="gl"></canvas>
+<div id="info">NOMAD · AVALANCHE · OASIS · PSYNC · COMPLEX · SANDBOX — TRIAD WEB (WebGL2 offline)</div>
+
+<div id="label-NOMAD" class="label">NOMAD</div>
+<div id="label-AVALANCHE" class="label">AVALANCHE</div>
+<div id="label-OASIS" class="label">OASIS</div>
+<div id="label-PSYNC" class="label">PSYNC</div>
+<div id="label-COMPLEX" class="label">COMPLEX</div>
+<div id="label-SANDBOX" class="label">SANDBOX</div>
+
+<script>
+(function(){
+  const canvas = document.getElementById('gl');
+  const gl = canvas.getContext('webgl2', { antialias:true, alpha:false });
+  if(!gl){
+    alert('WebGL2 not supported');
+    return;
+  }
+
+  // ---------- Resize ----------
+  function resize(){
+    const dpr = Math.min(window.devicePixelRatio || 1, 2);
+    const w = Math.floor(canvas.clientWidth * dpr);
+    const h = Math.floor(canvas.clientHeight * dpr);
+    if(canvas.width !== w || canvas.height !== h){
+      canvas.width = w; canvas.height = h;
+      gl.viewport(0,0,w,h);
+    }
+  }
+  window.addEventListener('resize', resize);
+  resize();
+
+  // ---------- Math ----------
+  function mat4Identity(){ return [1,0,0,0, 0,1,0,0, 0,0,1,0, 0,0,0,1]; }
+  function mat4Mul(a,b){
+    const o=new Array(16);
+    for(let r=0;r<4;r++){
+      for(let c=0;c<4;c++){
+        o[r*4+c]=0;
+        for(let k=0;k<4;k++){
+          o[r*4+c]+=a[r*4+k]*b[k*4+c];
+        }
+      }
+    }
+    return o;
+  }
+  function mat4Perspective(fovy, aspect, near, far){
+    const f = 1/Math.tan(fovy/2);
+    const nf = 1/(near-far);
+    return [
+      f/aspect,0,0,0,
+      0,f,0,0,
+      0,0,(far+near)*nf,-1,
+      0,0,(2*far*near)*nf,0
+    ];
+  }
+  function mat4LookAt(eye,center,up){
+    const ex=eye[0],ey=eye[1],ez=eye[2];
+    const cx=center[0],cy=center[1],cz=center[2];
+    let zx=ex-cx, zy=ey-cy, zz=ez-cz;
+    let len=Math.hypot(zx,zy,zz)||1; zx/=len; zy/=len; zz/=len;
+    let xx=up[1]*zz-up[2]*zy;
+    let xy=up[2]*zx-up[0]*zz;
+    let xz=up[0]*zy-up[1]*zx;
+    len=Math.hypot(xx,xy,xz)||1; xx/=len; xy/=len; xz/=len;
+    let yx=zy*xz-zz*xy;
+    let yy=zz*xx-zx*xz;
+    let yz=zx*xy-zy*xx;
+    return [
+      xx, yx, zx, 0,
+      xy, yy, zy, 0,
+      xz, yz, zz, 0,
+      -(xx*ex+xy*ey+xz*ez),
+      -(yx*ex+yy*ey+yz*ez),
+      -(zx*ex+zy*ey+zz*ez),
+      1
+    ];
+  }
+
+  // ---------- Shaders ----------
+  const vsSphere = `#version 300 es
+  layout(location=0) in vec3 aPos;
+  layout(location=1) in vec3 aNor;
+  uniform mat4 uProj, uView, uModel;
+  out vec3 vNor;
+  out vec3 vPos;
+  void main(){
+    vec4 wp = uModel * vec4(aPos,1.0);
+    vPos = wp.xyz;
+    vNor = mat3(uModel) * aNor;
+    gl_Position = uProj * uView * wp;
+  }`;
+  const fsSphere = `#version 300 es
+  precision highp float;
+  in vec3 vNor;
+  in vec3 vPos;
+  out vec4 o;
+  uniform vec3 uColor;
+  uniform vec3 uEye;
+  uniform float uEmissive;
+  void main(){
+    vec3 N = normalize(vNor);
+    vec3 L = normalize(vec3(0.3,1.0,0.4));
+    float diff = max(dot(N,L),0.0);
+    vec3 V = normalize(uEye - vPos);
+    vec3 H = normalize(L+V);
+    float spec = pow(max(dot(N,H),0.0), 32.0)*0.25;
+    vec3 base = uColor * (0.3 + 0.7*diff) + spec;
+    vec3 glow = uColor * uEmissive;
+    o = vec4(base + glow, 1.0);
+  }`;
+
+  const vsLine = `#version 300 es
+  layout(location=0) in vec3 aPos;
+  uniform mat4 uProj,uView,uModel;
+  void main(){
+    gl_Position = uProj * uView * uModel * vec4(aPos,1.0);
+  }`;
+  const fsLine = `#version 300 es
+  precision highp float;
+  out vec4 o;
+  uniform vec3 uColor;
+  void main(){ o = vec4(uColor,0.6); }`;
+
+  function compile(type, src){
+    const s=gl.createShader(type);
+    gl.shaderSource(s,src);
+    gl.compileShader(s);
+    if(!gl.getShaderParameter(s, gl.COMPILE_STATUS)){
+      console.error(gl.getShaderInfoLog(s));
+      throw new Error('Shader compile error');
+    }
+    return s;
+  }
+  function makeProgram(vsSrc, fsSrc){
+    const p=gl.createProgram();
+    gl.attachShader(p, compile(gl.VERTEX_SHADER,vsSrc));
+    gl.attachShader(p, compile(gl.FRAGMENT_SHADER,fsSrc));
+    gl.linkProgram(p);
+    if(!gl.getProgramParameter(p, gl.LINK_STATUS)){
+      console.error(gl.getProgramInfoLog(p));
+      throw new Error('Program link error');
+    }
+    return p;
+  }
+
+  const progSphere = makeProgram(vsSphere, fsSphere);
+  const progLine   = makeProgram(vsLine, fsLine);
+
+  // ---------- Geometry ----------
+  function makeSphere(radius, lat, lon){
+    const pos=[], nor=[], idx=[];
+    for(let y=0;y<=lat;y++){
+      const v=y/lat, a1=v*Math.PI;
+      for(let x=0;x<=lon;x++){
+        const u=x/lon, a2=u*Math.PI*2.0;
+        const sx=Math.sin(a1)*Math.cos(a2);
+        const sy=Math.cos(a1);
+        const sz=Math.sin(a1)*Math.sin(a2);
+        pos.push(radius*sx, radius*sy, radius*sz);
+        nor.push(sx,sy,sz);
+      }
+    }
+    for(let y=0;y<lat;y++){
+      for(let x=0;x<lon;x++){
+        const i=y*(lon+1)+x;
+        const i2=i+lon+1;
+        idx.push(i, i+1, i2);
+        idx.push(i+1, i2+1, i2);
+      }
+    }
+    return {
+      pos:new Float32Array(pos),
+      nor:new Float32Array(nor),
+      idx:new Uint16Array(idx)
+    };
+  }
+
+  const sphereGeo = makeSphere(0.6, 16, 24);
+
+  function makeSphereVAO(geo){
+    const vao=gl.createVertexArray();
+    gl.bindVertexArray(vao);
+    const vboPos=gl.createBuffer();
+    gl.bindBuffer(gl.ARRAY_BUFFER,vboPos);
+    gl.bufferData(gl.ARRAY_BUFFER, geo.pos, gl.STATIC_DRAW);
+    gl.enableVertexAttribArray(0);
+    gl.vertexAttribPointer(0,3,gl.FLOAT,false,0,0);
+    const vboNor=gl.createBuffer();
+    gl.bindBuffer(gl.ARRAY_BUFFER,vboNor);
+    gl.bufferData(gl.ARRAY_BUFFER, geo.nor, gl.STATIC_DRAW);
+    gl.enableVertexAttribArray(1);
+    gl.vertexAttribPointer(1,3,gl.FLOAT,false,0,0);
+    const ibo=gl.createBuffer();
+    gl.bindBuffer(gl.ELEMENT_ARRAY_BUFFER,ibo);
+    gl.bufferData(gl.ELEMENT_ARRAY_BUFFER, geo.idx, gl.STATIC_DRAW);
+    gl.bindVertexArray(null);
+    return {vao, count: geo.idx.length};
+  }
+
+  const nodeSphere = makeSphereVAO(sphereGeo);
+
+  const coreSphereGeo = makeSphere(0.9, 18, 28);
+  const coreSphere = makeSphereVAO(coreSphereGeo);
+
+  function makeLines(vertices){
+    const vao=gl.createVertexArray();
+    gl.bindVertexArray(vao);
+    const vbo=gl.createBuffer();
+    gl.bindBuffer(gl.ARRAY_BUFFER,vbo);
+    gl.bufferData(gl.ARRAY_BUFFER,new Float32Array(vertices),gl.STATIC_DRAW);
+    gl.enableVertexAttribArray(0);
+    gl.vertexAttribPointer(0,3,gl.FLOAT,false,0,0);
+    gl.bindVertexArray(null);
+    return {vao, count: vertices.length/3};
+  }
+
+  // ---------- Scene data (from original) ----------
+  const NODES = ["NOMAD","AVALANCHE","OASIS","PSYNC","COMPLEX","SANDBOX"];
+  const nodeColors = {
+    NOMAD:[1.0,0.785,0.34],
+    AVALANCHE:[1.0,0.23,0.23],
+    OASIS:[0.23,0.85,1.0],
+    PSYNC:[0.77,0.23,1.0],
+    COMPLEX:[0.62,0.65,1.0],
+    SANDBOX:[0.23,1.0,0.56]
+  };
+
+  const TRIADS = [
+    "Nomad.Avalanche.Psync",
+    "Oasis.Avalanche.Psync",
+    "Avalanche.Complex.Psync",
+    "Psync.Nomad.Oasis",
+    "Psync.Oasis.Nomad",
+    "Avalanche.Psync.Nomad",
+    "Avalanche.Oasis.Psync",
+    "Avalanche.Psync.Oasis",
+    "Nomad.Oasis.Avalanche",
+    "Nomad.Psync.Avalanche",
+    "Psync.Nomad.Oasis",
+    "Psync.Oasis.Sandbox",
+    "Nomad.Psync.Sandbox",
+    "Oasis.Sandbox.Psync",
+    "Oasis.Nomad.Psync",
+    "Sandbox.Avalanche.Oasis",
+    "Sandbox.Avalanche.Psync",
+    "Sandbox.Nomad.Complex",
+    "Sandbox.Complex.Psync",
+    "Sandbox.Oasis.Psync",
+    "Oasis.Psync.Avalanche",
+    "Oasis.Complex.Sandbox",
+    "Oasis.Nomad.Complex",
+    "Nomad.Complex.Psync",
+    "Psync.Complex.Sandbox",
+    "Avalanche.Psync.Sandbox",
+    "Avalanche.Nomad.Sandbox",
+    "Avalanche.Nomad.Complex",
+    "Oasis.Complex.Avalanche",
+    "Oasis.Sandbox.Nomad",
+    "Sandbox.Nomad.Avalanche",
+    "Complex.Nomad.Avalanche",
+    "Avalanche.Sandbox.Psync",
+    "Avalanche.Sandbox.Nomad",
+    "Sandbox.Complex.Oasis",
+    "Nomad.Sandbox.Psync",
+    "Nomad.Sandbox.Avalanche",
+    "Oasis.Psync.Sandbox",
+    "Psync.Nomad.Sandbox",
+    "Sandbox.Psync.Nomad"
+  ];
+
+  const nodeRadius = 6.0;
+  const nodePositions = {};
+  NODES.forEach((name,i)=>{
+    const a = (i / NODES.length) * Math.PI * 2;
+    nodePositions[name] = [
+      Math.cos(a)*nodeRadius,
+      0.0,
+      Math.sin(a)*nodeRadius
+    ];
+  });
+
+  // Build triad line geometry
+  const triadLines = [];
+  TRIADS.forEach(str=>{
+    const parts=str.split(".").map(s=>s.trim().toUpperCase());
+    if(parts.length!==3) return;
+    const A=nodePositions[parts[0]];
+    const B=nodePositions[parts[1]];
+    const C=nodePositions[parts[2]];
+    if(!A||!B||!C) return;
+    triadLines.push(...A,...B,...C,...A);
+  });
+  const triadVAO = makeLines(triadLines);
+
+  // ---------- Camera / interaction ----------
+  let yaw = 0.5;
+  let pitch = 0.25;
+  let dist = 18;
+  let isDown=false, px=0, py=0;
+
+  canvas.addEventListener('mousedown', e=>{
+    isDown=true; px=e.clientX; py=e.clientY;
+  });
+  window.addEventListener('mouseup', ()=>{ isDown=false; });
+  window.addEventListener('mousemove', e=>{
+    if(!isDown) return;
+    const dx=(e.clientX-px)/canvas.clientWidth;
+    const dy=(e.clientY-py)/canvas.clientHeight;
+    yaw   -= dx*3.0;
+    pitch -= dy*2.0;
+    pitch = Math.max(-1.3, Math.min(1.3,pitch));
+    px=e.clientX; py=e.clientY;
+  }, {passive:true});
+  canvas.addEventListener('wheel', e=>{
+    dist *= (1 + Math.sign(e.deltaY)*0.08);
+    dist = Math.max(8, Math.min(40, dist));
+    e.preventDefault();
+  }, {passive:false});
+
+  function getEye(){
+    const cx=0, cy=3, cz=0;
+    const ex = cx + dist*Math.cos(pitch)*Math.cos(yaw);
+    const ey = cy + dist*Math.sin(pitch);
+    const ez = cz + dist*Math.cos(pitch)*Math.sin(yaw);
+    return [ex,ey,ez];
+  }
+
+  // ---------- Label projection ----------
+  const labelEls = {};
+  NODES.forEach(name=>{
+    labelEls[name] = document.getElementById('label-'+name);
+  });
+
+  function projectToScreen(pos, projView, width, height){
+    const x=pos[0], y=pos[1], z=pos[2];
+    const v = [x,y,z,1];
+    const m = projView;
+    const nx =
+      v[0]*m[0] + v[1]*m[4] + v[2]*m[8]  + v[3]*m[12];
+    const ny =
+      v[0]*m[1] + v[1]*m[5] + v[2]*m[9]  + v[3]*m[13];
+    const nz =
+      v[0]*m[2] + v[1]*m[6] + v[2]*m[10] + v[3]*m[14];
+    const nw =
+      v[0]*m[3] + v[1]*m[7] + v[2]*m[11] + v[3]*m[15];
+    if(nw === 0) return null;
+    const invW = 1/nw;
+    const sx = (nx*invW * 0.5 + 0.5) * width;
+    const sy = (1 - (ny*invW * 0.5 + 0.5)) * height;
+    if(nz*invW > 1.0) return null;
+    return [sx, sy];
+  }
+
+  // ---------- Render loop ----------
+  gl.enable(gl.DEPTH_TEST);
+  gl.enable(gl.CULL_FACE);
+  gl.clearColor(0.02,0.01,0.05,1);
+
+  let start = performance.now();
+  function frame(now){
+    const t = (now - start) * 0.001;
+    resize();
+    gl.clear(gl.COLOR_BUFFER_BIT | gl.DEPTH_BUFFER_BIT);
+
+    const eye = getEye();
+    const aspect = canvas.width / canvas.height;
+    const proj = mat4Perspective(50*Math.PI/180, aspect, 0.1, 200.0);
+    const view = mat4LookAt(eye, [0,0,0], [0,1,0]);
+    const projView = mat4Mul(proj, view);
+
+    // Group rotation
+    const rotY = t*0.2;
+    const c = Math.cos(rotY), s = Math.sin(rotY);
+    const modelGroup = [
+      c,0,-s,0,
+      0,1, 0,0,
+      s,0, c,0,
+      0,0, 0,1
+    ];
+
+    // Draw triad lines
+    gl.useProgram(progLine);
+    let loc = gl.getUniformLocation(progLine,'uProj');
+    gl.uniformMatrix4fv(loc,false,new Float32Array(proj));
+    loc = gl.getUniformLocation(progLine,'uView');
+    gl.uniformMatrix4fv(loc,false,new Float32Array(view));
+    loc = gl.getUniformLocation(progLine,'uModel');
+    gl.uniformMatrix4fv(loc,false,new Float32Array(modelGroup));
+    loc = gl.getUniformLocation(progLine,'uColor');
+    gl.uniform3f(loc,0.33,0.88,1.0);
+    gl.bindVertexArray(triadVAO.vao);
+    gl.drawArrays(gl.LINE_STRIP,0,triadVAO.count);
+
+    // Draw nodes
+    gl.useProgram(progSphere);
+    loc = gl.getUniformLocation(progSphere,'uProj');
+    gl.uniformMatrix4fv(loc,false,new Float32Array(proj));
+    loc = gl.getUniformLocation(progSphere,'uView');
+    gl.uniformMatrix4fv(loc,false,new Float32Array(view));
+    loc = gl.getUniformLocation(progSphere,'uEye');
+    gl.uniform3f(loc,eye[0],eye[1],eye[2]);
+
+    gl.bindVertexArray(nodeSphere.vao);
+    NODES.forEach(name=>{
+      const basePos = nodePositions[name];
+      const x = basePos[0]*c + basePos[2]*s;
+      const z = -basePos[0]*s + basePos[2]*c;
+      const y = basePos[1];
+
+      const model = [1,0,0,0, 0,1,0,0, 0,0,1,0, x,y,z,1];
+      gl.uniformMatrix4fv(gl.getUniformLocation(progSphere,'uModel'),
+                          false,new Float32Array(model));
+      const col = nodeColors[name];
+      gl.uniform3f(gl.getUniformLocation(progSphere,'uColor'),
+                   col[0],col[1],col[2]);
+
+      const emis = 0.25 + 0.15*Math.sin(t*2.0 + basePos[0]*0.2);
+      gl.uniform1f(gl.getUniformLocation(progSphere,'uEmissive'), emis);
+      gl.drawElements(gl.TRIANGLES, nodeSphere.count, gl.UNSIGNED_SHORT, 0);
+    });
+
+    // Draw core (at origin)
+    gl.bindVertexArray(coreSphere.vao);
+    const coreModel = mat4Identity();
+    gl.uniformMatrix4fv(gl.getUniformLocation(progSphere,'uModel'),
+                        false,new Float32Array(coreModel));
+    gl.uniform3f(gl.getUniformLocation(progSphere,'uColor'),
+                 0.0,0.88,1.0);
+    const emisCore = 0.6 + 0.3*Math.sin(t*3.0);
+    gl.uniform1f(gl.getUniformLocation(progSphere,'uEmissive'), emisCore);
+    gl.drawElements(gl.TRIANGLES, coreSphere.count, gl.UNSIGNED_SHORT, 0);
+
+    // Update labels
+    const w = canvas.clientWidth;
+    const h = canvas.clientHeight;
+    NODES.forEach(name=>{
+      const basePos = nodePositions[name];
+      const x = basePos[0]*c + basePos[2]*s;
+      const z = -basePos[0]*s + basePos[2]*c;
+      const y = basePos[1] + 1.4;
+      const screen = projectToScreen([x,y,z], projView, w, h);
+      const el = labelEls[name];
+      if(screen && screen[0]>=0 && screen[0]<=w && screen[1]>=0 && screen[1]<=h){
+        el.style.display='block';
+        el.style.left = screen[0] + 'px';
+        el.style.top  = screen[1] + 'px';
+      } else {
+        el.style.display='none';
+      }
+    });
+
+    requestAnimationFrame(frame);
+  }
+  requestAnimationFrame(frame);
+})();
+</script>
+</body>
+</html>

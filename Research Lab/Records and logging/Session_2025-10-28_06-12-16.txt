@@ -1,0 +1,327 @@
+﻿**********************
+Windows PowerShell transcript start
+Start time: 20251028061227
+Username: NOMAD\Surface
+RunAs User: NOMAD\Surface
+Configuration Name: 
+Machine: NOMAD (Microsoft Windows NT 10.0.22631.0)
+Host Application: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe
+Process ID: 17512
+PSVersion: 5.1.22621.5624
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.22621.5624
+BuildVersion: 10.0.22621.5624
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+Transcript started, output file is C:\Users\Surface\OneDrive\SIRENSSD\Research Lab\Records and logging\Session_2025-10-28_06-12-16.txt
+Session logging started. Log file: C:\Users\Surface\OneDrive\SIRENSSD\Research Lab\Records and logging\Session_2025-10-28_06-12-16.txt
+[38;2;243;174;53m[0m[48;2;243;174;53m[38;2;38;43;68m Surface [0m[38;2;243;174;53m[0m[0m[38;2;240;118;35;49m[7m[0m[48;2;240;118;35m[38;2;224;222;244m  ]8;;file:C:/Users/Surface/OneDrive/SIRENSSD\SIRENSSD]8;;\ [0m[48;2;243;174;53m[38;2;240;118;35m[0m[48;2;243;174;53m[38;2;38;43;68m ]8;;https://github.com/nomadsomni/aspen_codes.git\ ]8;;\ 888.000.555 ≡  ?35 ~2 -1 [0m[38;2;243;174;53m[0m[0m[38;2;75;149;233;49m[7m[0m[48;2;75;149;233m[38;2;224;222;244m  [0m[38;2;75;149;233m[0m]0;pwsh in SIRENSSD
+PS>TerminatingError(): "Exception calling "InvokePrompt" with "0" argument(s): "Wartość musi być większa lub równa zero i mniejsza od rozmiaru buforu konsoli w tym wymiarze.
+Nazwa parametru: top
+Rzeczywista wartość to -30.""
+PS>TerminatingError(): "Exception calling "InvokePrompt" with "0" argument(s): "Wartość musi być większa lub równa zero i mniejsza od rozmiaru buforu konsoli w tym wymiarze.
+Nazwa parametru: top
+Rzeczywista wartość to -31.""
+PS>TerminatingError(): "Exception calling "InvokePrompt" with "0" argument(s): "Wartość musi być większa lub równa zero i mniejsza od rozmiaru buforu konsoli w tym wymiarze.
+Nazwa parametru: top
+Rzeczywista wartość to -66.""
+PS>TerminatingError(): "Exception calling "InvokePrompt" with "0" argument(s): "Wartość musi być większa lub równa zero i mniejsza od rozmiaru buforu konsoli w tym wymiarze.
+Nazwa parametru: top
+Rzeczywista wartość to -66.""
+PS>TerminatingError(): "Exception calling "InvokePrompt" with "0" argument(s): "Wartość musi być większa lub równa zero i mniejsza od rozmiaru buforu konsoli w tym wymiarze.
+Nazwa parametru: top
+Rzeczywista wartość to -69.""
+PS>TerminatingError(): "Exception calling "InvokePrompt" with "0" argument(s): "Wartość musi być większa lub równa zero i mniejsza od rozmiaru buforu konsoli w tym wymiarze.
+Nazwa parametru: top
+Rzeczywista wartość to -70.""
+PS>.'-]c,0
+]-034c]
+-023
+]c-0W
+]-30C
+]w-0c
+W]-E0R
+0w-]c0
+3]-c0
+]e-0
+]-ER0
+]-0erc
+]-W0ER
+]C-0w
+]-0c
+2]-340ccw
+]3-0C
+]-03
+c]-0E
+]R-c0w]
+-c0
+2]3-40c
+]W-03
+]-C0]w3-0c
+]-03
+]-c0w
+3]-c0W
+]3-0C
+]w30
+c]-0234C02]
+3-40C
+]w-0c
+]-023
+]4-C02
+3]C0-4]2-034c
+]-2034C]
+-0234]C-0]
+3-c02]-304C
+]-20
+3C-0
+2]3-04c
+]-30C]-203
+C]-02
+]34-c0
+]W-0
+]w,er0
+]-w0r
+c]-0W
+R]C-0w
+]-rc0
+]-034C
+]-203
+]C-0w
+]3-c0
+2]-340c
+]-2304C
+]-2034]c-
+02
+3]C-02]-340
+c]-2034]
+C0w3]
+erp[ę Ę ę ]
+WERsdfs":dlfls"ł"s:dfl"s:"śA':
+alłąś":dLa":sdl":asld":lasDÓ3ró[2P3Ó[2pó32Ó3R[pó23[rpó23ó2ó3ó23ó2[P3Ó23Ó2Ó3Ó23ó2[prow[poerÓER[pwoer
+. : The term '-]c,0
+]-034c]
+-023
+]c-0W
+]-30C
+]w-0c
+W]-E0R
+0w-]c0
+3]-c0
+]e-0
+]-ER0
+]-0erc
+]-W0ER
+]C-0w
+]-0c
+2]-340ccw
+]3-0C
+]-03
+c]-0E
+]R-c0w]
+-c0
+2]3-40c
+]W-03
+]-C0]w3-0c
+]-03
+]-c0w
+3]-c0W
+]3-0C
+]w30
+c]-0234C02]
+3-40C
+]w-0c
+]-023
+]4-C02
+3]C0-4]2-034c
+]-2034C]
+-0234]C-0]
+3-c02]-304C
+]-20
+3C-0
+2]3-04c
+]-30C]-203
+C]-02
+]34-c0
+]W-0
+]w,er0
+]-w0r
+c]-0W
+R]C-0w
+]-rc0
+]-034C
+]-203
+]C-0w
+]3-c0
+2]-340c
+]-2304C
+]-2034]c-
+02
+3]C-02]-340
+c]-2034]
+C0w3]
+erp[ę Ę ę ]
+WERsdfs":dlfls"ł"s:dfl"s:"śA' is not recognized as the name of a cmdlet, function, script file, or operable program
+. Check the spelling of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:2
++ .'-]c,0
++  ~~~~~~
+    + CategoryInfo          : ObjectNotFound: (-]c,0
+]-034c]
+-...ł"s:dfl"s:"śA:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+. : The term '-]c,0
+]-034c]
+-023
+]c-0W
+]-30C
+]w-0c
+W]-E0R
+0w-]c0
+3]-c0
+]e-0
+]-ER0
+]-0erc
+]-W0ER
+]C-0w
+]-0c
+2]-340ccw
+]3-0C
+]-03
+c]-0E
+]R-c0w]
+-c0
+2]3-40c
+]W-03
+]-C0]w3-0c
+]-03
+]-c0w
+3]-c0W
+]3-0C
+]w30
+c]-0234C02]
+3-40C
+]w-0c
+]-023
+]4-C02
+3]C0-4]2-034c
+]-2034C]
+-0234]C-0]
+3-c02]-304C
+]-20
+3C-0
+2]3-04c
+]-30C]-203
+C]-02
+]34-c0
+]W-0
+]w,er0
+]-w0r
+c]-0W
+R]C-0w
+]-rc0
+]-034C
+]-203
+]C-0w
+]3-c0
+2]-340c
+]-2304C
+]-2034]c-
+02
+3]C-02]-340
+c]-2034]
+C0w3]
+erp[ę Ę ę 
+]
+WERsdfs":dlfls"ł"s:df
+l"s:"śA' is not recogniz
+ed as the name of a cmdle
+t, function, script file,
+ or operable program. Che
+ck the spelling of the na
+me, or if a path was incl
+uded, verify that the pat
+h is correct and try agai
+n.
+At line:1 char:2
++ .'-]c,0
++  ~~~~~~
+    + CategoryInfo
+       : ObjectNotFound
+  : (-]c,0
+]-034c]
+    -...ł"s:dfl"s:"śA:
+   String) [], CommandN
+  otFoundException
+    + FullyQualifiedErro
+   rId : CommandNotFoun
+  dException
+
+alłąś:dLa:sdl:asld:lasDÓ3ró[2P3Ó[2pó32Ó3R[pó23[rpó23ó2ó3ó23ó2[P3Ó23Ó2Ó3Ó23ó2[prow[poer
+ÓER[pwoer : The term 'alłąś:dLa:sdl:asld:lasDÓ3ró[2P3Ó[2pó32Ó3R[pó23[rpó23ó2ó3ó23ó2[P3Ó23Ó2Ó3
+Ó23ó2[prow[poerÓER[pwoer' is not recognized as the name of a cmdlet, function, script file, or operable program. 
+Check the spelling of the name, or if a path was included, verify that the path is correct and try again.
+At line:64 char:1
++ alłąś":dLa":sdl":asld":lasDÓ3ró[2P3Ó[2pó32Ó3R[pó23[rpó23ó ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (alłąś:dLa:sdl:a...oerÓER[pwoer:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+alłąś:dLa:sdl:asld:lasDÓ
+3ró[2P3Ó[2pó32Ó3R
+[pó23[rpó23ó2ó3ó2
+3ó2[P3Ó23Ó2Ó3Ó
+23ó2[prow[poerÓER[p
+woer : The term 'alłąś:dL
+a:sdl:asld:lasDÓ3ró[
+2P3Ó[2pó32Ó3R[pó23[rp
+ó23ó2ó3ó23ó2[P
+3Ó23Ó2Ó3Ó23ó2[
+prow[poerÓER[pwoer' is
+ not recognized as the na
+me of a cmdlet, function,
+ script file, or operable
+ program. Check the spell
+ing of the name, or if a
+path was included, verify
+ that the path is correct
+ and try again.
+At line:64 char:1
++ alłąś":dLa":sdl":asld":
+lasDÓ3ró[2P3Ó[2pó3
+2Ó3R[pó23[rpó23ó ...
++ ~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo
+       : ObjectNotFound
+  : (alłąś:dLa:sdl:a..
+ .oerÓER[pwoer:Str
+ing) [], CommandNotF    o
+undException
+    + FullyQualifiedErro
+   rId : CommandNotFoun
+  dException
+
+[38;2;243;174;53m[0m[48;2;243;174;53m[38;2;38;43;68m Surface [0m[38;2;243;174;53m[0m[0m[38;2;240;118;35;49m[7m[0m[48;2;240;118;35m[38;2;224;222;244m  ]8;;file:C:/Users/Surface/OneDrive/SIRENSSD\SIRENSSD]8;;\ [0m[48;2;243;174;53m[38;2;240;118;35m[0m[48;2;243;174;53m[38;2;38;43;68m ]8;;https://github.com/nomadsomni/aspen_codes.git\ ]8;;\ 888.000.555 ≡  ?35 ~2 -1 [0m[38;2;243;174;53m[0m[0m[38;2;75;149;233;49m[7m[0m[48;2;75;149;233m[38;2;224;222;244m  [0m[38;2;75;149;233m[0m]0;pwsh in SIRENSSD
+PS>[owĘÓęóĘÓ--3033
+At line:1 char:2
++ [owĘÓęóĘÓ--3033
++  ~
+Missing type name after '['.
+At line:1 char:2
++ [owĘÓęóĘÓ-
+-3033
++  ~
+Missing type name after '
+['.
+    + CategoryInfo
+       : ParserError: (
+  :) [], ParentContain
+ sErrorRecordExceptio
+n
+    + FullyQualifiedErro
+   rId : MissingTypenam
+  e
+

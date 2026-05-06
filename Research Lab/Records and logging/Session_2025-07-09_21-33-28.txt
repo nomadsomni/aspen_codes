@@ -1,0 +1,56 @@
+﻿**********************
+Windows PowerShell transcript start
+Start time: 20250709213334
+Username: NOMAD\Surface
+RunAs User: NOMAD\Surface
+Configuration Name: 
+Machine: NOMAD (Microsoft Windows NT 10.0.22631.0)
+Host Application: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe
+Process ID: 3388
+PSVersion: 5.1.22621.5624
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.22621.5624
+BuildVersion: 10.0.22621.5624
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+Transcript started, output file is C:\Users\Surface\OneDrive\SIRENSSD\Research Lab\Records and logging\Session_2025-07-09_21-33-28.txt
+Session logging started. Log file: C:\Users\Surface\OneDrive\SIRENSSD\Research Lab\Records and logging\Session_2025-07-09_21-33-28.txt
+[38;2;243;174;53m[0m[48;2;243;174;53m[38;2;38;43;68m Surface [0m[38;2;243;174;53m[0m[0m[38;2;240;118;35;49m[7m[0m[48;2;240;118;35m[38;2;224;222;244m  ]8;;file:C:/Users/Surface/OneDrive/SIRENSSD\SIRENSSD]8;;\ [0m[48;2;243;174;53m[38;2;240;118;35m[0m[48;2;243;174;53m[38;2;38;43;68m ]8;;https://github.com/nomadsomni/aspen_codes.git\ ]8;;\ 888.000.555 ≡  ?31 ~2 -1 [0m[48;2;243;174;53m[38;2;243;174;53m[0m[48;2;243;174;53m[38;2;224;222;244m  [0m[38;2;243;174;53m[0m[0m[38;2;75;149;233;49m[7m[0m[48;2;75;149;233m[38;2;224;222;244m  [0m[38;2;75;149;233m[0m]0;pwsh in SIRENSSD
+PS>.//menu
+                          16    C:\Users\Surface\OneDrive\SIRENSSD\Res
+earch Lab\Records and logging\
+            Newer                  19939        Session_2025-07-09_20-
+100%  txt
+            Newer                  10641        Session_2025-07-09_20-
+100%  txt
+            Newer                 149608        Session_2025-07-09_20-
+100%  txt
+            Newer                 341526        Session_2025-07-09_20-
+100%  txt
+            New File                   0        Session_2025-07-09_21-
+100%  txt
+            New File                   0        Session_2025-07-09_21-
+100%  txt
+            New File                   0        Session_2025-07-09_21-
+100%  txt
+                          39    C:\Users\Surface\OneDrive\SIRENSSD\X\
+                          20    C:\Users\Surface\OneDrive\SIRENSSD\xvo
+de\
+
+----------------------------------------------------------------------
+--------
+
+               Total    Copied   Skipped  Mismatch    FAILED    Extras
+    Dirs :      7555         0      7555         0         0         0
+   Files :     61481         7     61474         0         0         0
+   Bytes :  819.59 m   509.4 k  819.09 m         0         0         0
+   Times :   0:01:40   0:00:00                       0:00:00   0:01:40
+
+
+   Speed :           12 132 883 Bytes/sec.
+   Speed :              694,249 MegaBytes/min.
+   Ended : środa, 9 lipca 2025 21:35:21
+[38;2;243;174;53m[0m[48;2;243;174;53m[38;2;38;43;68m Surface [0m[38;2;243;174;53m[0m[0m[38;2;240;118;35;49m[7m[0m[48;2;240;118;35m[38;2;224;222;244m  ]8;;file:C:/Users/Surface/OneDrive/SIRENSSD\SIRENSSD]8;;\ [0m[48;2;243;174;53m[38;2;240;118;35m[0m[48;2;243;174;53m[38;2;38;43;68m ]8;;https://github.com/nomadsomni/aspen_codes.git\ ]8;;\ 888.000.555 ≡  ?31 ~2 -1 [0m[48;2;243;174;53m[38;2;243;174;53m[0m[48;2;243;174;53m[38;2;224;222;244m  [0m[38;2;243;174;53m[0m[0m[38;2;75;149;233;49m[7m[0m[48;2;75;149;233m[38;2;224;222;244m  [0m[38;2;75;149;233m[0m]0;pwsh in SIRENSSD

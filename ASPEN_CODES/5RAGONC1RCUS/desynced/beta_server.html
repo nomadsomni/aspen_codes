@@ -1,0 +1,664 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>WebGL Network Mesh | Beta Server</title>
+  <style>
+    :root {
+      --bg-1: #040608;
+      --bg-2: #0c141a;
+      --line: #6ee7ff;
+      --line-hot: #ff9b3d;
+      --text: #c4d4e2;
+    }
+    html, body {
+      height: 100%;
+      margin: 0;
+      background:
+        radial-gradient(1200px 800px at 18% 12%, rgba(67, 193, 255, 0.12), transparent 60%),
+        radial-gradient(900px 700px at 82% 84%, rgba(255, 145, 58, 0.12), transparent 58%),
+        linear-gradient(160deg, var(--bg-1), var(--bg-2));
+      color: var(--text);
+      font-family: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+    }
+    #wrap {
+      display: grid;
+      grid-template-rows: auto 1fr auto;
+      height: 100%;
+      gap: 8px;
+      padding: 16px;
+      box-sizing: border-box;
+    }
+    header, footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 11px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      opacity: 0.72;
+    }
+    #stage {
+      position: relative;
+      border: 1px solid rgba(110, 231, 255, 0.14);
+      border-radius: 10px;
+      overflow: hidden;
+      min-height: 60vh;
+      box-shadow:
+        0 0 0 1px rgba(110, 231, 255, 0.06),
+        0 0 90px rgba(255, 155, 61, 0.08),
+        0 36px 90px rgba(0, 0, 0, 0.58);
+      background:
+        radial-gradient(700px 420px at 50% 45%, rgba(110, 231, 255, 0.07), transparent 72%),
+        radial-gradient(620px 340px at 57% 48%, rgba(255, 155, 61, 0.06), transparent 74%),
+        repeating-linear-gradient(
+          0deg,
+          rgba(110, 231, 255, 0.035) 0,
+          rgba(110, 231, 255, 0.035) 1px,
+          transparent 1px,
+          transparent 24px
+        ),
+        repeating-linear-gradient(
+          90deg,
+          rgba(110, 231, 255, 0.035) 0,
+          rgba(110, 231, 255, 0.035) 1px,
+          transparent 1px,
+          transparent 24px
+        ),
+        linear-gradient(180deg, rgba(8, 15, 19, 0.7), rgba(5, 8, 11, 0.96));
+    }
+    #stage::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      background:
+        linear-gradient(115deg, transparent 0%, rgba(255, 155, 61, 0.08) 48%, transparent 54%),
+        linear-gradient(180deg, rgba(255, 255, 255, 0.02), transparent 18%);
+      mix-blend-mode: screen;
+    }
+    canvas {
+      width: 100%;
+      height: 100%;
+      display: block;
+    }
+    .hint, .badge, .menu {
+      position: absolute;
+      font-size: 12px;
+      background: rgba(7, 10, 13, 0.72);
+      backdrop-filter: blur(6px);
+    }
+    .hint {
+      right: 16px;
+      bottom: 16px;
+      opacity: 0.68;
+      border-radius: 999px;
+      padding: 6px 12px;
+      border: 1px solid rgba(110, 231, 255, 0.18);
+    }
+    .badge {
+      left: 16px;
+      bottom: 16px;
+      color: #ffd0a1;
+      border-radius: 999px;
+      padding: 6px 12px;
+      border: 1px solid rgba(255, 155, 61, 0.28);
+      box-shadow: 0 0 24px rgba(255, 155, 61, 0.12);
+    }
+    .menu {
+      top: 16px;
+      right: 16px;
+      min-width: 220px;
+      padding: 12px;
+      border: 1px solid rgba(255, 155, 61, 0.24);
+      border-radius: 14px;
+      box-shadow: 0 0 24px rgba(255, 155, 61, 0.1);
+    }
+    .menu label {
+      display: block;
+      margin-bottom: 8px;
+      color: #ffcd9b;
+      font-size: 11px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+    }
+    .menu select,
+    .menu button {
+      width: 100%;
+      appearance: none;
+      border: 1px solid rgba(255, 155, 61, 0.26);
+      background: rgba(12, 17, 21, 0.96);
+      color: var(--text);
+      font: inherit;
+    }
+    .menu select {
+      border-radius: 10px;
+      padding: 10px 12px;
+      margin-bottom: 10px;
+    }
+    .menu button {
+      border-radius: 10px;
+      padding: 9px 12px;
+      cursor: pointer;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: #ffd6ab;
+    }
+    .menu button:hover {
+      background: rgba(28, 20, 14, 0.96);
+    }
+    .warn {
+      position: absolute;
+      left: 16px;
+      top: 16px;
+      font-size: 12px;
+      background: rgba(160, 40, 40, 0.75);
+      border: 1px solid rgba(255, 160, 160, 0.6);
+      padding: 6px 10px;
+      border-radius: 8px;
+      display: none;
+    }
+    .vignette {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      background: radial-gradient(120% 120% at 50% 50%, transparent 38%, rgba(0,0,0,0.42) 72%);
+      mix-blend-mode: multiply;
+    }
+    .scanlines {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      background: repeating-linear-gradient(
+        0deg,
+        rgba(255,255,255,0.018) 0,
+        rgba(255,255,255,0.018) 1px,
+        transparent 1px,
+        transparent 3px
+      );
+      opacity: 0.38;
+    }
+  </style>
+</head>
+<body>
+  <div id="wrap">
+    <header>
+      <div>Signal Network</div>
+      <div>Beta Server / Selectable Route Map</div>
+    </header>
+
+    <div id="stage">
+      <canvas id="gl"></canvas>
+      <div class="hint">drag to rotate • scroll to zoom</div>
+      <div class="badge" id="routeBadge">backbone route: spine uplink</div>
+      <div class="menu">
+        <label for="routeSelect">Secondary Line</label>
+        <select id="routeSelect">
+          <option value="spine">Spine Uplink</option>
+          <option value="relay">Relay Sweep</option>
+          <option value="perimeter">Perimeter Drift</option>
+          <option value="crosslink">Crosslink Burst</option>
+        </select>
+        <button type="button" id="shuffleRoute">Shuffle Route</button>
+      </div>
+      <div class="warn" id="warn">WebGL2 not supported</div>
+      <div class="scanlines"></div>
+      <div class="vignette"></div>
+    </div>
+
+    <footer>
+      <div>Vector Streams+</div>
+      <div>Traffic Escalated</div>
+    </footer>
+  </div>
+
+<script>
+const canvas = document.getElementById("gl");
+const warn = document.getElementById("warn");
+const routeBadge = document.getElementById("routeBadge");
+const routeSelect = document.getElementById("routeSelect");
+const shuffleRouteButton = document.getElementById("shuffleRoute");
+const gl = canvas.getContext("webgl2", { antialias: true, alpha: false });
+if (!gl) {
+  warn.style.display = "block";
+  throw new Error("WebGL2 not supported");
+}
+
+function resize() {
+  const dpr = Math.min(window.devicePixelRatio || 1, 2);
+  const w = Math.floor(canvas.clientWidth * dpr);
+  const h = Math.floor(canvas.clientHeight * dpr);
+  if (canvas.width !== w || canvas.height !== h) {
+    canvas.width = w;
+    canvas.height = h;
+  }
+  gl.viewport(0, 0, canvas.width, canvas.height);
+}
+window.addEventListener("resize", resize);
+resize();
+
+const V3 = {
+  sub: (a, b) => [a[0] - b[0], a[1] - b[1], a[2] - b[2]],
+  dot: (a, b) => a[0] * b[0] + a[1] * b[1] + a[2] * b[2],
+  cross: (a, b) => [a[1] * b[2] - a[2] * b[1], a[2] * b[0] - a[0] * b[2], a[0] * b[1] - a[1] * b[0]],
+  norm: (a) => { const l = Math.hypot(a[0], a[1], a[2]) || 1; return [a[0] / l, a[1] / l, a[2] / l]; }
+};
+function mat4Perspective(fovy, aspect, near, far) {
+  const f = 1 / Math.tan(fovy / 2);
+  const nf = 1 / (near - far);
+  return [
+    f / aspect, 0, 0, 0,
+    0, f, 0, 0,
+    0, 0, (far + near) * nf, -1,
+    0, 0, (2 * far * near) * nf, 0
+  ];
+}
+function mat4LookAt(eye, center, up) {
+  const z = V3.norm(V3.sub(eye, center));
+  const x = V3.norm(V3.cross(up, z));
+  const y = V3.cross(z, x);
+  return [
+    x[0], y[0], z[0], 0,
+    x[1], y[1], z[1], 0,
+    x[2], y[2], z[2], 0,
+    -V3.dot(x, eye), -V3.dot(y, eye), -V3.dot(z, eye), 1
+  ];
+}
+
+function compile(type, src) {
+  const shader = gl.createShader(type);
+  gl.shaderSource(shader, src);
+  gl.compileShader(shader);
+  if (!gl.getShaderParameter(shader, gl.COMPILE_STATUS)) {
+    throw new Error(gl.getShaderInfoLog(shader));
+  }
+  return shader;
+}
+function program(vs, fs) {
+  const p = gl.createProgram();
+  gl.attachShader(p, compile(gl.VERTEX_SHADER, vs));
+  gl.attachShader(p, compile(gl.FRAGMENT_SHADER, fs));
+  gl.linkProgram(p);
+  if (!gl.getProgramParameter(p, gl.LINK_STATUS)) {
+    throw new Error(gl.getProgramInfoLog(p));
+  }
+  return p;
+}
+
+const vsLine = `#version 300 es
+layout(location=0) in vec3 aPos;
+uniform mat4 uProj, uView;
+void main(){ gl_Position = uProj * uView * vec4(aPos, 1.0); }`;
+const fsLine = `#version 300 es
+precision highp float;
+out vec4 o;
+uniform vec3 uColor;
+uniform float uAlpha;
+void main(){ o = vec4(uColor, uAlpha); }`;
+
+const vsFlow = `#version 300 es
+layout(location=0) in vec3 aStart;
+layout(location=1) in vec3 aEnd;
+layout(location=2) in float aSeed;
+layout(location=3) in float aRate;
+uniform mat4 uProj, uView;
+uniform float uTime;
+uniform float uSync;
+uniform float uSize;
+out float vAlpha;
+void main(){
+  float t = fract(uTime * aRate + aSeed + uSync);
+  vec3 p = mix(aStart, aEnd, t);
+  gl_Position = uProj * uView * vec4(p, 1.0);
+  float head = smoothstep(0.0, 0.12, t);
+  float tail = 1.0 - smoothstep(0.64, 1.0, t);
+  float burst = 0.78 + 0.22 * sin((aSeed * 17.0 + t * 24.0) + uTime * 6.0);
+  vAlpha = head * tail * burst;
+  gl_PointSize = uSize * (0.78 + vAlpha * 1.85);
+}`;
+const fsFlow = `#version 300 es
+precision highp float;
+in float vAlpha;
+out vec4 o;
+uniform vec3 uColor;
+void main(){
+  vec2 uv = gl_PointCoord - vec2(0.5);
+  float d = length(uv);
+  float core = smoothstep(0.36, 0.0, d);
+  float halo = smoothstep(0.52, 0.16, d);
+  float a = halo * vAlpha;
+  vec3 color = mix(uColor * 0.7, vec3(1.0), core * 0.42);
+  o = vec4(color, a);
+}`;
+
+const vsNode = `#version 300 es
+layout(location=0) in vec3 aPos;
+uniform mat4 uProj, uView;
+uniform float uJitter;
+void main(){
+  vec3 p = aPos;
+  p.y += sin((aPos.x + aPos.z) * 0.08 + uJitter) * 0.18;
+  gl_Position = uProj * uView * vec4(p, 1.0);
+  gl_PointSize = 4.8;
+}`;
+const fsNode = `#version 300 es
+precision highp float;
+out vec4 o;
+void main(){
+  float d = length(gl_PointCoord - vec2(0.5));
+  float a = smoothstep(0.5, 0.08, d);
+  o = vec4(0.55, 0.94, 1.0, a);
+}`;
+
+const progLine = program(vsLine, fsLine);
+const progFlow = program(vsFlow, fsFlow);
+const progNode = program(vsNode, fsNode);
+
+function makeLines(positions) {
+  const vao = gl.createVertexArray();
+  gl.bindVertexArray(vao);
+  const vbo = gl.createBuffer();
+  gl.bindBuffer(gl.ARRAY_BUFFER, vbo);
+  gl.bufferData(gl.ARRAY_BUFFER, positions, gl.STATIC_DRAW);
+  gl.enableVertexAttribArray(0);
+  gl.vertexAttribPointer(0, 3, gl.FLOAT, false, 0, 0);
+  gl.bindVertexArray(null);
+  return { vao, count: positions.length / 3 };
+}
+function makeFlows(starts, ends, seeds, rates) {
+  const vao = gl.createVertexArray();
+  gl.bindVertexArray(vao);
+
+  const sbo = gl.createBuffer();
+  gl.bindBuffer(gl.ARRAY_BUFFER, sbo);
+  gl.bufferData(gl.ARRAY_BUFFER, starts, gl.STATIC_DRAW);
+  gl.enableVertexAttribArray(0);
+  gl.vertexAttribPointer(0, 3, gl.FLOAT, false, 0, 0);
+
+  const ebo = gl.createBuffer();
+  gl.bindBuffer(gl.ARRAY_BUFFER, ebo);
+  gl.bufferData(gl.ARRAY_BUFFER, ends, gl.STATIC_DRAW);
+  gl.enableVertexAttribArray(1);
+  gl.vertexAttribPointer(1, 3, gl.FLOAT, false, 0, 0);
+
+  const fbo = gl.createBuffer();
+  gl.bindBuffer(gl.ARRAY_BUFFER, fbo);
+  gl.bufferData(gl.ARRAY_BUFFER, seeds, gl.STATIC_DRAW);
+  gl.enableVertexAttribArray(2);
+  gl.vertexAttribPointer(2, 1, gl.FLOAT, false, 0, 0);
+
+  const rbo = gl.createBuffer();
+  gl.bindBuffer(gl.ARRAY_BUFFER, rbo);
+  gl.bufferData(gl.ARRAY_BUFFER, rates, gl.STATIC_DRAW);
+  gl.enableVertexAttribArray(3);
+  gl.vertexAttribPointer(3, 1, gl.FLOAT, false, 0, 0);
+
+  gl.bindVertexArray(null);
+  return { vao, count: seeds.length };
+}
+
+const nodes = [];
+function gridLayer(size, spacing, y) {
+  const half = (size - 1) / 2;
+  for (let gx = 0; gx < size; gx++) {
+    for (let gz = 0; gz < size; gz++) {
+      const x = (gx - half) * spacing;
+      const z = (gz - half) * spacing;
+      nodes.push([x, y, z]);
+    }
+  }
+}
+function ringHubs(count, radius, y) {
+  for (let i = 0; i < count; i++) {
+    const a = i / count * Math.PI * 2;
+    nodes.push([Math.cos(a) * radius, y, Math.sin(a) * radius]);
+  }
+}
+
+gridLayer(7, 8, 2);
+gridLayer(6, 10, 10);
+gridLayer(5, 12, 18);
+ringHubs(16, 34, 6);
+ringHubs(12, 24, 14);
+
+const mapNodes = nodes.map((n) => [n[0], 0, n[2]]);
+
+const edges = [];
+for (let i = 0; i < mapNodes.length; i++) {
+  const dists = [];
+  for (let j = 0; j < mapNodes.length; j++) {
+    if (i === j) continue;
+    const a = mapNodes[i];
+    const b = mapNodes[j];
+    const dx = Math.abs(a[0] - b[0]);
+    const dy = Math.abs(a[1] - b[1]);
+    const dz = Math.abs(a[2] - b[2]);
+    const manhattan = dx + dy + dz;
+    const d = Math.hypot(dx, dy, dz) + manhattan * 0.05;
+    dists.push({ j, d });
+  }
+  dists.sort((x, y) => x.d - y.d);
+  for (let n = 0; n < 4; n++) {
+    const j = dists[n].j;
+    if (i < j) edges.push([i, j]);
+  }
+}
+
+const linePos = new Float32Array(edges.length * 2 * 3);
+let lp = 0;
+for (const [i, j] of edges) {
+  const a = mapNodes[i];
+  const b = mapNodes[j];
+  linePos[lp++] = a[0]; linePos[lp++] = a[1]; linePos[lp++] = a[2];
+  linePos[lp++] = b[0]; linePos[lp++] = b[1]; linePos[lp++] = b[2];
+}
+const netLines = makeLines(linePos);
+
+const routePresets = {
+  spine: {
+    label: "spine uplink",
+    nodes: [0, 18, 42, 69, 95, 108]
+  },
+  relay: {
+    label: "relay sweep",
+    nodes: [7, 15, 39, 58, 76, 103]
+  },
+  perimeter: {
+    label: "perimeter drift",
+    nodes: [48, 81, 98, 106, 111, 115]
+  },
+  crosslink: {
+    label: "crosslink burst",
+    nodes: [4, 27, 55, 83, 101, 116]
+  }
+};
+
+function makeRouteGeometry(routeNodeIndexes) {
+  const routePos = new Float32Array((routeNodeIndexes.length - 1) * 2 * 3);
+  let rp = 0;
+  for (let i = 0; i < routeNodeIndexes.length - 1; i++) {
+    const a = mapNodes[routeNodeIndexes[i]];
+    const b = mapNodes[routeNodeIndexes[i + 1]];
+    routePos[rp++] = a[0]; routePos[rp++] = a[1] + 0.02; routePos[rp++] = a[2];
+    routePos[rp++] = b[0]; routePos[rp++] = b[1] + 0.02; routePos[rp++] = b[2];
+  }
+  return makeLines(routePos);
+}
+
+function buildFlowData(edgeList, copies, baseRate, rateBoost) {
+  const count = edgeList.length * copies;
+  const starts = new Float32Array(count * 3);
+  const ends = new Float32Array(count * 3);
+  const seeds = new Float32Array(count);
+  const rates = new Float32Array(count);
+  let p = 0;
+  for (let e = 0; e < edgeList.length; e++) {
+    const [i, j] = edgeList[e];
+    const a = mapNodes[i];
+    const b = mapNodes[j];
+    const len = Math.hypot(a[0] - b[0], a[1] - b[1], a[2] - b[2]);
+    const rate = baseRate + (1.0 / (0.6 + len)) * rateBoost;
+    for (let k = 0; k < copies; k++) {
+      starts[p * 3 + 0] = a[0]; starts[p * 3 + 1] = a[1]; starts[p * 3 + 2] = a[2];
+      ends[p * 3 + 0] = b[0]; ends[p * 3 + 1] = b[1]; ends[p * 3 + 2] = b[2];
+      seeds[p] = Math.random();
+      rates[p] = rate + k * 0.028;
+      p++;
+    }
+  }
+  return makeFlows(starts, ends, seeds, rates);
+}
+
+const flows = buildFlowData(edges, 5, 0.2, 0.34);
+
+function makeRouteFlowData(routeNodeIndexes) {
+  const routeEdges = routeNodeIndexes.slice(0, -1).map((nodeIndex, i) => [nodeIndex, routeNodeIndexes[i + 1]]);
+  return buildFlowData(routeEdges, 16, 0.56, 0.9);
+}
+
+let activeRouteKey = routeSelect.value;
+const routeAssets = Object.fromEntries(
+  Object.entries(routePresets).map(([key, preset]) => [
+    key,
+    {
+      lines: makeRouteGeometry(preset.nodes),
+      flows: makeRouteFlowData(preset.nodes)
+    }
+  ])
+);
+let activeRouteLines = routeAssets[activeRouteKey].lines;
+let activeRouteFlows = routeAssets[activeRouteKey].flows;
+
+function setActiveRoute(routeKey) {
+  const preset = routePresets[routeKey];
+  if (!preset) return;
+  activeRouteKey = routeKey;
+  routeSelect.value = routeKey;
+  routeBadge.textContent = `backbone route: ${preset.label}`;
+  activeRouteLines = routeAssets[routeKey].lines;
+  activeRouteFlows = routeAssets[routeKey].flows;
+}
+
+const nodePos = new Float32Array(mapNodes.length * 3);
+for (let i = 0; i < mapNodes.length; i++) {
+  nodePos[i * 3 + 0] = mapNodes[i][0];
+  nodePos[i * 3 + 1] = mapNodes[i][1];
+  nodePos[i * 3 + 2] = mapNodes[i][2];
+}
+const nodePts = makeLines(nodePos);
+
+let yaw = 0.0;
+let pitch = 1.2;
+let dist = 90;
+let isDown = false;
+let px = 0;
+let py = 0;
+
+canvas.addEventListener("pointerdown", (e) => {
+  isDown = true;
+  px = e.clientX;
+  py = e.clientY;
+  canvas.setPointerCapture(e.pointerId);
+});
+canvas.addEventListener("pointerup", (e) => {
+  isDown = false;
+  canvas.releasePointerCapture(e.pointerId);
+});
+canvas.addEventListener("pointermove", (e) => {
+  if (!isDown) return;
+  const dx = (e.clientX - px) / canvas.clientWidth;
+  const dy = (e.clientY - py) / canvas.clientHeight;
+  yaw -= dx * 2.5;
+  pitch -= dy * 1.5;
+  pitch = Math.max(0.6, Math.min(1.4, pitch));
+  px = e.clientX;
+  py = e.clientY;
+});
+canvas.addEventListener("wheel", (e) => {
+  dist *= (1 + Math.sign(e.deltaY) * 0.06);
+  dist = Math.max(20, Math.min(180, dist));
+  e.preventDefault();
+}, { passive: false });
+
+routeSelect.addEventListener("change", (e) => {
+  setActiveRoute(e.target.value);
+});
+
+shuffleRouteButton.addEventListener("click", () => {
+  const keys = Object.keys(routePresets).filter((key) => key !== activeRouteKey);
+  const nextKey = keys[Math.floor(Math.random() * keys.length)];
+  setActiveRoute(nextKey);
+});
+
+function setMat(p, name, m) { gl.uniformMatrix4fv(gl.getUniformLocation(p, name), false, m); }
+function setVec3(p, name, v) { gl.uniform3f(gl.getUniformLocation(p, name), v[0], v[1], v[2]); }
+function setF(p, name, v) { gl.uniform1f(gl.getUniformLocation(p, name), v); }
+
+let start = performance.now();
+function drawFlowLayer(layer, proj, view, time, sync, color, size) {
+  gl.useProgram(progFlow);
+  setMat(progFlow, "uProj", proj);
+  setMat(progFlow, "uView", view);
+  setF(progFlow, "uTime", time);
+  setF(progFlow, "uSync", sync);
+  setF(progFlow, "uSize", size);
+  setVec3(progFlow, "uColor", color);
+  gl.bindVertexArray(layer.vao);
+  gl.drawArrays(gl.POINTS, 0, layer.count);
+}
+
+function frame(now) {
+  resize();
+  const t = (now - start) * 0.001;
+
+  gl.enable(gl.DEPTH_TEST);
+  gl.clearColor(0.02, 0.03, 0.04, 1);
+  gl.clear(gl.COLOR_BUFFER_BIT | gl.DEPTH_BUFFER_BIT);
+
+  const aspect = canvas.width / canvas.height;
+  const proj = mat4Perspective(Math.PI / 3, aspect, 0.1, 1000);
+  const eye = [
+    Math.cos(yaw) * dist * Math.cos(pitch),
+    30 + Math.sin(pitch) * dist,
+    Math.sin(yaw) * dist * Math.cos(pitch)
+  ];
+  const view = mat4LookAt(eye, [0, 0, 0], [0, 1, 0]);
+
+  gl.useProgram(progLine);
+  setMat(progLine, "uProj", proj);
+  setMat(progLine, "uView", view);
+  setVec3(progLine, "uColor", [0.13, 0.78, 0.9]);
+  setF(progLine, "uAlpha", 0.3);
+  gl.bindVertexArray(netLines.vao);
+  gl.drawArrays(gl.LINES, 0, netLines.count);
+
+  setVec3(progLine, "uColor", [0.16, 0.92, 1.0]);
+  setF(progLine, "uAlpha", 0.12);
+  gl.drawArrays(gl.LINES, 0, netLines.count);
+
+  setVec3(progLine, "uColor", [1.0, 0.55, 0.18]);
+  setF(progLine, "uAlpha", 0.82);
+  gl.bindVertexArray(activeRouteLines.vao);
+  gl.drawArrays(gl.LINES, 0, activeRouteLines.count);
+
+  gl.useProgram(progNode);
+  setMat(progNode, "uProj", proj);
+  setMat(progNode, "uView", view);
+  setF(progNode, "uJitter", t * 0.9);
+  gl.bindVertexArray(nodePts.vao);
+  gl.drawArrays(gl.POINTS, 0, nodePts.count);
+
+  gl.enable(gl.BLEND);
+  gl.blendFunc(gl.SRC_ALPHA, gl.ONE);
+  const sync = Math.sin(t * 0.9) * 0.5 + 0.5;
+  drawFlowLayer(flows, proj, view, t, sync * 0.45, [0.54, 0.92, 1.0], 4.8);
+  drawFlowLayer(activeRouteFlows, proj, view, t * 1.15, 0.12 + sync * 0.24, [1.0, 0.56, 0.16], 7.2);
+  gl.disable(gl.BLEND);
+
+  requestAnimationFrame(frame);
+}
+requestAnimationFrame(frame);
+</script>
+</body>
+</html>

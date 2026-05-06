@@ -1,0 +1,1021 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>Nomad.Avalanche.Psync — DE:NETWORK TERMINAL MODE // BREACH BUILD</title>
+<style>
+html,body{
+  margin:0;
+  height:100%;
+  overflow:hidden;
+  background:#050308;
+  color:#f4e7c0;
+  font-family:system-ui,-apple-system,"Segoe UI",sans-serif;
+}
+
+/* CANVASES */
+#gl{
+  position:fixed;
+  inset:0;
+  display:block;
+}
+#noise{
+  position:fixed;
+  inset:0;
+  pointer-events:none;
+  mix-blend-mode:screen;
+  opacity:0;
+  z-index:2;
+}
+body.breach #noise,
+body.breach-force #noise{
+  opacity:0.28;
+}
+
+/* TOP INFO BAR */
+#info{
+  position:fixed;
+  top:10px;
+  left:50%;
+  transform:translateX(-50%);
+  padding:4px 12px;
+  background:rgba(0,0,0,.7);
+  border-radius:999px;
+  font-size:10px;
+  letter-spacing:.18em;
+  text-transform:uppercase;
+  white-space:nowrap;
+  pointer-events:none;
+  z-index:5;
+  border:1px solid rgba(255,215,128,.45);
+  color:#ffe6b8;
+}
+
+/* TERMINAL */
+#terminal{
+  position:fixed;
+  left:18px;
+  bottom:18px;
+  width:320px;
+  max-width:70vw;
+  height:210px;
+  background:rgba(3,2,1,.96);
+  border-radius:12px;
+  border:1px solid rgba(255,215,128,.45);
+  box-shadow:0 18px 40px rgba(0,0,0,.85);
+  display:flex;
+  flex-direction:column;
+  overflow:hidden;
+  z-index:6;
+  transition:border-color .25s ease, box-shadow .25s ease, background .25s ease;
+}
+#term-header{
+  padding:4px 8px;
+  border-bottom:1px solid rgba(255,215,128,.25);
+  font-size:10px;
+  text-transform:uppercase;
+  letter-spacing:.16em;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  background:radial-gradient(circle at 0% 0%,rgba(255,210,120,.22),transparent);
+  color:#ffe2a8;
+}
+#term-mode{
+  font-size:9px;
+  opacity:.85;
+  text-transform:uppercase;
+}
+#term-out{
+  flex:1;
+  padding:5px 8px 3px;
+  font-family:ui-monospace,Menlo,Consolas,monospace;
+  font-size:10px;
+  line-height:1.35;
+  color:#f7e3ba;
+  overflow-y:auto;
+  white-space:pre-wrap;
+}
+.tline{margin-bottom:1px;}
+.tline.sys{color:#ffc870;}
+.tline.err{color:#ff8080;}
+.tline.inf{color:#c9ffe0;}
+.tline.echo{color:#f0d1a0;}
+#term-row{
+  border-top:1px solid rgba(255,215,128,.25);
+  padding:3px 6px 4px;
+  display:flex;
+  align-items:center;
+  gap:4px;
+  background:rgba(8,5,3,.98);
+}
+#term-prompt{
+  font-family:ui-monospace,Menlo,Consolas,monospace;
+  font-size:11px;
+  color:#ffdca2;
+}
+#term-in{
+  flex:1;
+  background:transparent;
+  border:none;
+  outline:none;
+  color:#ffeac0;
+  font-family:ui-monospace,Menlo,Consolas,monospace;
+  font-size:11px;
+}
+#term-in::placeholder{color:rgba(255,230,180,.45);}
+
+/* Terminal glitch themes */
+body.vis-glitch #terminal,
+body.breach #terminal,
+body.breach-force #terminal{
+  background:radial-gradient(circle at 0% 0%,rgba(255,60,160,.15),#050308 70%);
+  border-color:rgba(255,90,160,.9);
+  box-shadow:0 0 26px rgba(255,60,140,.85);
+}
+body.breach-force #terminal{
+  box-shadow:0 0 32px rgba(255,80,80,.95);
+}
+
+/* HUD / CODEX */
+#hud{
+  position:fixed;
+  right:18px;
+  bottom:18px;
+  width:240px;
+  max-width:55vw;
+  background:rgba(7,4,2,.96);
+  border-radius:14px;
+  padding:8px 10px 8px;
+  font-size:10px;
+  line-height:1.35;
+  box-shadow:0 14px 34px rgba(0,0,0,.75);
+  border:1px solid rgba(255,210,120,.45);
+  z-index:5;
+}
+#hud h3{
+  margin:0 0 3px;
+  font-size:10px;
+  letter-spacing:.2em;
+  text-transform:uppercase;
+  color:#f8e2a0;
+}
+#hud-node,
+#hud-triad,
+#hud-mode{
+  font-family:ui-monospace,Menlo,Consolas,monospace;
+  color:#ffe6b3;
+  margin-bottom:3px;
+}
+#hud-mode{color:#ffbfa6;}
+#hud-speed{
+  display:flex;
+  align-items:center;
+  gap:6px;
+}
+#hud-speed span{
+  font-size:9px;
+  text-transform:uppercase;
+  letter-spacing:.14em;
+  white-space:nowrap;
+  color:#f1dec0;
+}
+#speed{
+  flex:1;
+}
+#speed-val{
+  font-family:ui-monospace,Menlo,Consolas,monospace;
+  font-size:10px;
+  min-width:32px;
+  text-align:right;
+  color:#ffe6b3;
+}
+
+/* breach / forced background tint */
+body.breach{
+  background:#08030e;
+}
+body.breach-force{
+  background:#10020f;
+}
+</style>
+</head>
+<body>
+<canvas id="gl"></canvas>
+<canvas id="noise"></canvas>
+
+<div id="info">DE:NETWORK MATRIX · NOMAD / AVALANCHE / OASIS / PSYNC / COMPLEX / SANDBOX</div>
+
+<div id="terminal">
+  <div id="term-header">
+    <span>PSYNC//TERMINAL</span>
+    <span id="term-mode">NORMAL</span>
+  </div>
+  <div id="term-out"></div>
+  <div id="term-row">
+    <span id="term-prompt">&gt;</span>
+    <input id="term-in" autocomplete="off" spellcheck="false" placeholder="type 'help' for commands"/>
+  </div>
+</div>
+
+<div id="hud">
+  <h3>NETWORK STATE</h3>
+  <div id="hud-node">NODE: NOMAD</div>
+  <div id="hud-triad">TRIAD: —</div>
+  <div id="hud-mode">MODE: NORMAL</div>
+  <div id="hud-speed">
+    <span>TRAFFIC</span>
+    <input id="speed" type="range" min="1" max="6" step="1" value="3">
+    <div id="speed-val">3x</div>
+  </div>
+</div>
+
+<script>
+(function(){
+  const canvas=document.getElementById("gl");
+  const gl=canvas.getContext("webgl2",{antialias:true,alpha:false});
+  if(!gl){alert("WebGL2 not supported");return;}
+
+  function resize(){
+    const dpr=Math.min(window.devicePixelRatio||1,2);
+    const w=Math.floor(window.innerWidth*dpr);
+    const h=Math.floor(window.innerHeight*dpr);
+    if(canvas.width!==w||canvas.height!==h){
+      canvas.width=w;canvas.height=h;
+      gl.viewport(0,0,w,h);
+    }
+  }
+  window.addEventListener("resize",resize);resize();
+
+  // simple noise overlay
+  const noiseCanvas=document.getElementById("noise");
+  const nctx=noiseCanvas.getContext("2d");
+  function resizeNoise(){
+    const dpr=Math.min(window.devicePixelRatio||1,2);
+    noiseCanvas.width=window.innerWidth*dpr;
+    noiseCanvas.height=window.innerHeight*dpr;
+  }
+  resizeNoise();
+  window.addEventListener("resize",resizeNoise);
+  function drawNoise(){
+    const w=noiseCanvas.width,h=noiseCanvas.height;
+    const img=nctx.createImageData(w,h);
+    for(let i=0;i<img.data.length;i+=4){
+      const v=Math.random()*255;
+      img.data[i]=v;img.data[i+1]=v;img.data[i+2]=v;img.data[i+3]=Math.random()*60;
+    }
+    nctx.putImageData(img,0,0);
+    requestAnimationFrame(drawNoise);
+  }
+  drawNoise();
+
+  function persp(fovy,aspect,near,far){
+    const f=1/Math.tan(fovy/2),nf=1/(near-far);
+    return new Float32Array([
+      f/aspect,0,0,0,
+      0,f,0,0,
+      0,0,(far+near)*nf,-1,
+      0,0,(2*far*near)*nf,0
+    ]);
+  }
+  function lookAt(ex,ey,ez,cx,cy,cz,ux,uy,uz){
+    let zx=ex-cx,zy=ey-cy,zz=ez-cz;
+    let len=Math.hypot(zx,zy,zz)||1;zx/=len;zy/=len;zz/=len;
+    let xx=uy*zz-uz*zy,xy=uz*zx-ux*zz,xz=ux*zy-uy*zx;
+    len=Math.hypot(xx,xy,xz)||1;xx/=len;xy/=len;xz/=len;
+    let yx=zy*xz-zz*xy,yy=zz*xx-zx*xz,yz=zx*xy-zy*xx;
+    return new Float32Array([
+      xx,yx,zx,0,
+      xy,yy,zy,0,
+      xz,yz,zz,0,
+      -(xx*ex+xy*ey+xz*ez),
+      -(yx*ex+yy*ey+yz*ez),
+      -(zx*ex+zy*ey+zz*ez),
+      1
+    ]);
+  }
+
+  const vs=`#version 300 es
+  layout(location=0) in vec3 aPos;
+  uniform mat4 uP,uV,uM;
+  out vec3 vPos;
+  void main(){
+    vec4 w=uM*vec4(aPos,1.0);
+    vPos=w.xyz;
+    gl_Position=uP*uV*w;
+  }`;
+
+  const fsLine=`#version 300 es
+  precision highp float;
+  in vec3 vPos;
+  uniform float uTime;
+  uniform vec3 uColor;
+  out vec4 o;
+  void main(){
+    float p=vPos.x*0.3+vPos.y*0.7+vPos.z*0.5;
+    float k=0.45+0.55*abs(sin(uTime*2.0+p*1.7));
+    o=vec4(uColor*k,1.0);
+  }`;
+
+  const fsNode=`#version 300 es
+  precision highp float;
+  in vec3 vPos;
+  uniform float uTime;
+  uniform vec3 uColor;
+  out vec4 o;
+  void main(){
+    float b=0.45+0.55*abs(sin(uTime*3.0+vPos.x*0.8));
+    o=vec4(uColor*b,1.0);
+  }`;
+
+  function compile(type,src){
+    const s=gl.createShader(type);
+    gl.shaderSource(s,src);
+    gl.compileShader(s);
+    if(!gl.getShaderParameter(s,gl.COMPILE_STATUS)){
+      console.error(gl.getShaderInfoLog(s));
+      throw new Error("shader");
+    }
+    return s;
+  }
+  function program(vsSrc,fsSrc){
+    const p=gl.createProgram();
+    gl.attachShader(p,compile(gl.VERTEX_SHADER,vsSrc));
+    gl.attachShader(p,compile(gl.FRAGMENT_SHADER,fsSrc));
+    gl.linkProgram(p);
+    if(!gl.getProgramParameter(p,gl.LINK_STATUS)){
+      console.error(gl.getProgramInfoLog(p));
+      throw new Error("link");
+    }
+    return p;
+  }
+
+  const progLine=program(vs,fsLine);
+  const progNode=program(vs,fsNode);
+
+  const CORE_NODES=["NOMAD","AVALANCHE","OASIS","PSYNC","COMPLEX","SANDBOX"];
+  const BREACH_NODES=["MIRAGE","VORTEX","GATEWAY","SENTINEL"];
+  const ALL_NODES=CORE_NODES.concat(BREACH_NODES);
+
+  const INFO={
+    NOMAD:"Independent roaming vector. Adaptive roaming routes.",
+    AVALANCHE:"High-energy surge module. Destabilizes static meshes.",
+    OASIS:"Stabilizer node. Damps variance and restores cadence.",
+    PSYNC:"Synchronization core. Time-locks and phase-aligns the lattice.",
+    COMPLEX:"Topology logic anchor. Enforces structural constraints.",
+    SANDBOX:"Isolated test domain. Unsafe experiments run here.",
+    MIRAGE:"Spectral relay. Echo-paths between unstable routes.",
+    VORTEX:"Collapse vector. Concentrates and redistributes excess flux.",
+    GATEWAY:"Ingress/egress border node. Interfaces external stacks.",
+    SENTINEL:"Defensive barrier. Monitors and reacts to anomalies."
+  };
+
+  const OUTER_R=6.0;
+  const INNER_R=3.6;
+
+  const nodes=[]; // {name,pos:[x,y,z],breachOnly:boolean}
+  for(let i=0;i<CORE_NODES.length;i++){
+    const a=i/CORE_NODES.length*Math.PI*2;
+    nodes.push({name:CORE_NODES[i],pos:[Math.cos(a)*OUTER_R,0,Math.sin(a)*OUTER_R],breachOnly:false});
+  }
+  for(let i=0;i<BREACH_NODES.length;i++){
+    const a=i/4*Math.PI*2+Math.PI/4;
+    nodes.push({name:BREACH_NODES[i],pos:[Math.cos(a)*INNER_R,0,Math.sin(a)*INNER_R],breachOnly:true});
+  }
+
+  function nodePos(name){
+    const n=nodes.find(n=>n.name===name);
+    return n?n.pos:null;
+  }
+
+  // outer ring lines
+  const outerVerts=[];
+  for(let i=0;i<CORE_NODES.length;i++){
+    const a=nodes[i].pos;
+    const b=nodes[(i+1)%CORE_NODES.length].pos;
+    outerVerts.push(a[0],a[1],a[2],b[0],b[1],b[2]);
+  }
+  const outerBuf=gl.createBuffer();
+  gl.bindBuffer(gl.ARRAY_BUFFER,outerBuf);
+  gl.bufferData(gl.ARRAY_BUFFER,new Float32Array(outerVerts),gl.STATIC_DRAW);
+
+  // spokes center -> outer
+  const spokeVerts=[];
+  for(let i=0;i<CORE_NODES.length;i++){
+    const p=nodes[i].pos;
+    spokeVerts.push(0,0,0,p[0],p[1],p[2]);
+  }
+  const spokeBuf=gl.createBuffer();
+  gl.bindBuffer(gl.ARRAY_BUFFER,spokeBuf);
+  gl.bufferData(gl.ARRAY_BUFFER,new Float32Array(spokeVerts),gl.STATIC_DRAW);
+
+  // inner ring lines (between breach nodes)
+  const innerVerts=[];
+  for(let i=0;i<BREACH_NODES.length;i++){
+    const a=nodes[CORE_NODES.length+i].pos;
+    const b=nodes[CORE_NODES.length+((i+1)%BREACH_NODES.length)].pos;
+    innerVerts.push(a[0],a[1],a[2],b[0],b[1],b[2]);
+  }
+  const innerBuf=gl.createBuffer();
+  gl.bindBuffer(gl.ARRAY_BUFFER,innerBuf);
+  gl.bufferData(gl.ARRAY_BUFFER,new Float32Array(innerVerts),gl.STATIC_DRAW);
+
+  // cross-layer full mesh
+  const crossVerts=[];
+  for(let i=0;i<BREACH_NODES.length;i++){
+    const innerP=nodes[CORE_NODES.length+i].pos;
+    for(let j=0;j<CORE_NODES.length;j++){
+      const outerP=nodes[j].pos;
+      crossVerts.push(innerP[0],innerP[1],innerP[2],outerP[0],outerP[1],outerP[2]);
+    }
+  }
+  const crossBuf=gl.createBuffer();
+  gl.bindBuffer(gl.ARRAY_BUFFER,crossBuf);
+  gl.bufferData(gl.ARRAY_BUFFER,new Float32Array(crossVerts),gl.STATIC_DRAW);
+
+  // node points buffer
+  const nodeVerts=[];
+  for(const n of nodes){
+    nodeVerts.push(n.pos[0],n.pos[1],n.pos[2]);
+  }
+  const nodeBuf=gl.createBuffer();
+  gl.bindBuffer(gl.ARRAY_BUFFER,nodeBuf);
+  gl.bufferData(gl.ARRAY_BUFFER,new Float32Array(nodeVerts),gl.STATIC_DRAW);
+
+  // TRIADS
+  let triadActive=null; // array of node names
+  let triadStr="—";
+  const hudNode=document.getElementById("hud-node");
+  const hudTriad=document.getElementById("hud-triad");
+  const hudMode=document.getElementById("hud-mode");
+
+  function parseTriadSpec(spec){
+    const parts=spec.split(".");
+    const found=[];
+    for(const raw of parts){
+      const t=raw.trim().toUpperCase();
+      if(ALL_NODES.includes(t) && !found.includes(t)) found.push(t);
+    }
+    if(found.length<3)return null;
+    return found;
+  }
+
+  function setTriadFromString(s){
+    const list=parseTriadSpec(s);
+    if(!list)return false;
+    triadActive=list.slice(0,3);
+    triadStr=triadActive.join(" · ");
+    hudTriad.textContent="TRIAD: "+triadStr;
+    termPrint("triad: "+triadStr,"sys");
+    return true;
+  }
+
+  function clearTriad(){
+    triadActive=null;
+    triadStr="—";
+    hudTriad.textContent="TRIAD: —";
+  }
+
+  // traffic speed
+  const speedSlider=document.getElementById("speed");
+  const speedVal=document.getElementById("speed-val");
+  let speed=3;       // slider integer
+  let speedF=3.0;    // float multiplier
+
+  speedSlider.addEventListener("input",()=>{
+    const v=Math.round(parseInt(speedSlider.value,10)||3);
+    speed=v;
+    speedSlider.value=String(v);
+    speedVal.textContent=v.toFixed(0)+"x";
+    speedF=v;
+  });
+
+  // terminal
+  const termOut=document.getElementById("term-out");
+  const termIn=document.getElementById("term-in");
+  const termMode=document.getElementById("term-mode");
+  let hist=[],hIndex=0;
+
+  function termPrint(text,kind){
+    const d=document.createElement("div");
+    d.className="tline "+(kind||"");
+    d.textContent=text;
+    termOut.appendChild(d);
+    termOut.scrollTop=termOut.scrollHeight;
+  }
+
+  // MODES
+  let visMode="gold";
+  let visBeforeBreach="gold";
+  let breach=false;
+  let breachForce=false;
+  let breachPhase="idle"; // idle | loading | active
+  let breachStart=0;
+  const BREACH_LOAD=1200; // ms
+  const BREACH_DURATION=10000;
+  let overdrive=false;
+  const blackoutNodes=new Set();
+  let selected="NOMAD";
+
+  function updateHud(){
+    hudNode.textContent="NODE: "+selected;
+    if(triadActive) hudTriad.textContent="TRIAD: "+triadStr;
+    else hudTriad.textContent="TRIAD: —";
+    if(breachForce){
+      termMode.textContent="FORCED BREACH";
+      hudMode.textContent="MODE: FORCED BREACH";
+    }else if(breach){
+      termMode.textContent="BREACH";
+      hudMode.textContent="MODE: BREACH";
+    }else if(overdrive){
+      termMode.textContent="OVERDRIVE";
+      hudMode.textContent="MODE: OVERDRIVE";
+    }else{
+      termMode.textContent="NORMAL";
+      hudMode.textContent="MODE: NORMAL";
+    }
+  }
+
+  function setVis(mode){
+    const m=mode.toLowerCase();
+    if(!["gold","cold","noir","glitch","amber"].includes(m)){
+      termPrint("vis: expected gold / cold / noir / glitch / amber","err");
+      return;
+    }
+    visMode=m;
+    termPrint("vis: "+m,"inf");
+    if(m==="glitch"){
+      document.body.classList.add("vis-glitch");
+    }else{
+      document.body.classList.remove("vis-glitch");
+    }
+  }
+
+  function enterBreach(force){
+    if(breachPhase==="loading"||breachPhase==="active"){
+      termPrint("[SYS] breach already in progress.","inf");
+      return;
+    }
+    breachPhase="loading";
+    breachStart=performance.now();
+    breach=true;
+    breachForce=!!force;
+    visBeforeBreach=visMode;
+    visMode="glitch";
+    document.body.classList.add("vis-glitch");
+    if(force){
+      termPrint("[BREACH] initializing… (forced)","sys");
+    }else{
+      termPrint("[BREACH] initializing…","sys");
+    }
+    updateHud();
+  }
+
+  function finalizeBreach(){
+    breachPhase="active";
+    document.body.classList.add(breachForce?"breach-force":"breach");
+    if(breachForce){
+      termPrint("[B] Phase-shift complete.","sys");
+      termPrint("[SYS] Breach layer accessed.","sys");
+      termPrint("[CRITICAL] Forced route override active.","sys");
+    }else{
+      termPrint("[B] Phase-shift complete.","sys");
+      termPrint("[SYS] Breach layer accessed.","sys");
+    }
+    updateHud();
+  }
+
+  function exitBreach(){
+    breach=false;
+    breachForce=false;
+    breachPhase="idle";
+    document.body.classList.remove("breach");
+    document.body.classList.remove("breach-force");
+    visMode=visBeforeBreach;
+    if(visMode==="glitch") document.body.classList.add("vis-glitch");
+    else document.body.classList.remove("vis-glitch");
+    termPrint("[SYS] Breach protocol terminated.","sys");
+    termPrint("Topology restored.","sys");
+    updateHud();
+  }
+
+  function enterOverdrive(){
+    if(breachForce){
+      termPrint("[ERROR] Overdrive denied. Forced Breach has priority.","err");
+      return;
+    }
+    if(overdrive){
+      termPrint("[PSYNC] Overdrive already active.","inf");
+      return;
+    }
+    overdrive=true;
+    termPrint("[PSYNC] Overdrive mode engaged.","sys");
+    updateHud();
+  }
+
+  function exitOverdrive(){
+    if(!overdrive)return;
+    overdrive=false;
+    termPrint("[PSYNC] Overdrive cleared.","sys");
+    updateHud();
+  }
+
+  function eventTrigger(kind,arg){
+    kind=kind.toUpperCase();
+    if(kind==="FLUX"){
+      termPrint("[EVENT] flux storm triggered.","sys");
+    }else if(kind==="BLACKOUT"){
+      const n=(arg||"").toUpperCase();
+      if(!ALL_NODES.includes(n)){
+        termPrint("event blackout: unknown node '"+arg+"'","err");
+        return;
+      }
+      blackoutNodes.add(n);
+      termPrint("[EVENT] blackout on "+n,"sys");
+    }else if(kind==="FRACTURE"){
+      termPrint("[EVENT] topology fracture.","sys");
+    }else if(kind==="STORM"){
+      termPrint("[EVENT] storm event.","sys");
+    }else if(kind==="OVERLOAD"){
+      termPrint("[EVENT] overload spike.","sys");
+    }else if(kind==="RANDOM"){
+      const ks=["FLUX","BLACKOUT","FRACTURE","STORM","OVERLOAD"];
+      const k=ks[Math.floor(Math.random()*ks.length)];
+      if(k==="BLACKOUT"){
+        const n=ALL_NODES[Math.floor(Math.random()*ALL_NODES.length)];
+        eventTrigger("BLACKOUT",n);
+      }else eventTrigger(k);
+    }else{
+      termPrint("event: unknown kind","err");
+    }
+  }
+
+  function termHelp(){
+    termPrint("────────────────────────────────────────","sys");
+    termPrint("DE:NETWORK COMMAND INDEX // TERMINALMODE","sys");
+    termPrint("────────────────────────────────────────","sys");
+    termPrint("SYSTEM","sys");
+    termPrint("  help                    show this list","inf");
+    termPrint("  clear                   clear terminal output","inf");
+    termPrint("  status                  view network state","inf");
+    termPrint("  select <NODE>           focus node (all 10 nodes)","inf");
+    termPrint("VISUAL","sys");
+    termPrint("  vis <mode>              gold / cold / noir / glitch / amber","inf");
+    termPrint("  speed <value>           set traffic speed (floats allowed)","inf");
+    termPrint("TRIADS","sys");
+    termPrint("  triad                   random triad (core layer)","inf");
+    termPrint("  triad A.B.C[… ]         explicit triad","inf");
+    termPrint("  A.B.C[… ]               direct triad activation","inf");
+    termPrint("  <NODE>                  direct node selection","inf");
+    termPrint("EVENT ENGINE","sys");
+    termPrint("  event flux","inf");
+    termPrint("  event blackout <NODE>","inf");
+    termPrint("  event fracture","inf");
+    termPrint("  event storm","inf");
+    termPrint("  event overload","inf");
+    termPrint("  event random","inf");
+    termPrint("BREACH PROTOCOL","sys");
+    termPrint("  breach                  engage breach layer (glitch)","inf");
+    termPrint("  breach force            forced breach (no timeout)","inf");
+    termPrint("  breach off              restore normal topology","inf");
+    termPrint("PSYNC","sys");
+    termPrint("  psync overdrive         activate overdrive","inf");
+    termPrint("  psync normal            disable overdrive","inf");
+    termPrint("NODES","sys");
+    termPrint("  nomad, avalanche, oasis, psync, complex, sandbox","inf");
+    termPrint("  mirage*, vortex*, gateway*, sentinel* (*breach-only visuals)","inf");
+  }
+
+  function status(){
+    termPrint("network.status {","sys");
+    termPrint("  selected: "+selected,"inf");
+    termPrint("  triad:    "+triadStr,"inf");
+    termPrint("  speed:    "+speedF.toFixed(2)+"x","inf");
+    termPrint("  mode:     "+termMode.textContent,"inf");
+    termPrint("}","sys");
+  }
+
+  // simple random core-layer triad list
+  const CORE_TRIADS=[
+    "NOMAD.AVALANCHE.PSYNC",
+    "NOMAD.OASIS.AVALANCHE",
+    "PSYNC.NOMAD.OASIS",
+    "AVALANCHE.PSYNC.SANDBOX",
+    "OASIS.PSYNC.SANDBOX",
+    "COMPLEX.NOMAD.AVALANCHE",
+    "PSYNC.COMPLEX.SANDBOX",
+    "SANDBOX.AVALANCHE.OASIS"
+  ];
+  function randomTriad(){
+    const s=CORE_TRIADS[Math.floor(Math.random()*CORE_TRIADS.length)];
+    setTriadFromString(s);
+  }
+
+  termIn.addEventListener("keydown",e=>{
+    if(e.key==="Enter"){
+      const v=termIn.value;
+      if(v.trim()){hist.push(v);hIndex=hist.length;}
+      handle(v);
+      termIn.value="";
+      e.preventDefault();
+    }else if(e.key==="ArrowUp"){
+      if(hist.length){hIndex=Math.max(0,hIndex-1);termIn.value=hist[hIndex]||"";termIn.setSelectionRange(termIn.value.length,termIn.value.length);}
+      e.preventDefault();
+    }else if(e.key==="ArrowDown"){
+      if(hist.length){hIndex=Math.min(hist.length,hIndex+1);termIn.value=hIndex===hist.length?"":hist[hIndex];termIn.setSelectionRange(termIn.value.length,termIn.value.length);}
+      e.preventDefault();
+    }
+  });
+
+  function handle(lineRaw){
+    const line=lineRaw.trim();
+    if(!line)return;
+    termPrint("> "+line,"echo");
+    const parts=line.split(/\s+/);
+    const cmd=parts[0].toLowerCase();
+    const args=parts.slice(1);
+
+    if(cmd==="help"){termHelp();return;}
+    if(cmd==="clear"){termOut.innerHTML="";return;}
+    if(cmd==="status"){status();return;}
+
+    if(cmd==="select"){
+      if(!args[0]){termPrint("select: missing node","err");return;}
+      const n=args[0].toUpperCase();
+      if(!ALL_NODES.includes(n)){termPrint("select: unknown node '"+n+"'","err");return;}
+      selected=n;
+      hudNode.textContent="NODE: "+selected;
+      termPrint("select: "+n+" locked","sys");
+      return;
+    }
+
+    if(cmd==="triad"){
+      if(!args[0]){randomTriad();return;}
+      const ok=setTriadFromString(args[0]);
+      if(!ok) termPrint("triad: invalid '"+args[0]+"'","err");
+      return;
+    }
+
+    if(cmd==="speed"){
+      if(!args[0]){termPrint("speed: "+speedF.toFixed(2)+"x","inf");return;}
+      let v=parseFloat(args[0]);
+      if(!isFinite(v)||v<=0){termPrint("speed: invalid '"+args[0]+"'","err");return;}
+      speedF=v;
+      if(v>=1 && v<=6){
+        const iv=Math.round(v);
+        speedSlider.value=String(iv);
+        speedVal.textContent=iv.toFixed(0)+"x";
+        speed=iv;
+      }
+      termPrint("speed: set "+v.toFixed(2)+"x","sys");
+      return;
+    }
+
+    if(cmd==="vis"){
+      if(!args[0]){termPrint("vis: "+visMode,"inf");return;}
+      setVis(args[0]);
+      return;
+    }
+
+    if(cmd==="event"){
+      if(!args[0]){termPrint("event: missing kind","err");return;}
+      if(args[0].toLowerCase()==="blackout"){
+        eventTrigger("BLACKOUT",args[1]||"");
+      }else{
+        eventTrigger(args[0]);
+      }
+      return;
+    }
+
+    if(cmd==="breach"){
+      if(args[0] && args[0].toLowerCase()==="force"){
+        enterBreach(true);
+      }else if(args[0] && args[0].toLowerCase()==="off"){
+        if(!breach && !breachForce){termPrint("[SYS] no active breach.","inf");}
+        else exitBreach();
+      }else{
+        enterBreach(false);
+      }
+      return;
+    }
+
+    if(cmd==="psync"){
+      const sub=(args[0]||"").toLowerCase();
+      if(sub==="overdrive"){
+        enterOverdrive();
+      }else if(sub==="normal"||sub==="clear"||sub==="off"){
+        exitOverdrive();
+      }else{
+        termPrint("psync: expected overdrive|normal","err");
+      }
+      return;
+    }
+
+    // direct node select
+    const upper=line.toUpperCase();
+    if(ALL_NODES.includes(upper)){
+      selected=upper;
+      hudNode.textContent="NODE: "+selected;
+      termPrint("select: "+upper+" locked","sys");
+      return;
+    }
+
+    // direct triad by dot chain
+    if(line.indexOf(".")!==-1){
+      const ok=setTriadFromString(line);
+      if(ok)return;
+    }
+
+    termPrint("unknown: "+cmd+" (type 'help')","err");
+  }
+
+  termPrint("psync://de.network-terminal v3.0","sys");
+  termPrint("type 'help' for routes & protocols.","sys");
+  updateHud();
+
+  // RENDER
+  gl.enable(gl.DEPTH_TEST);
+  gl.clearColor(0.01,0.005,0.02,1);
+  gl.enable(gl.BLEND);
+  gl.blendFunc(gl.SRC_ALPHA,gl.ONE_MINUS_SRC_ALPHA);
+
+  let start=performance.now();
+
+  function frame(now){
+    const dt=now-start;
+    let tBase=dt*0.001;
+
+    resize();
+    gl.clear(gl.COLOR_BUFFER_BIT|gl.DEPTH_BUFFER_BIT);
+
+    // effective speed
+    let sMul=speedF;
+    if(overdrive)sMul*=1.8;
+    if(breach && breachPhase==="active")sMul*=1.6;
+    if(breachForce && breachPhase==="active")sMul*=2.2;
+
+    const t=tBase*sMul;
+
+    const aspect=canvas.width/canvas.height;
+    const P=persp(50*Math.PI/180,aspect,0.1,100);
+    const eye=[Math.cos(tBase*0.2)*16,6+Math.sin(tBase*0.3)*2,Math.sin(tBase*0.2)*16];
+    const V=lookAt(eye[0],eye[1],eye[2],0,0,0,0,1,0);
+
+    let a=t*0.15;
+    let scale=1.0;
+    if(breachPhase==="loading"){
+      const u=Math.min(1,(performance.now()-breachStart)/BREACH_LOAD);
+      // ease-out cubic
+      const e=1-Math.pow(1-u,3);
+      scale=1.0+0.03*e;
+    }else if(breachPhase==="active"){
+      if(breachForce)scale=1.06;
+      else scale=1.03;
+    }
+    const c=Math.cos(a),si=Math.sin(a);
+    const M=new Float32Array([
+      c*scale,0,-si*scale,0,
+      0,scale,0,0,
+      si*scale,0,c*scale,0,
+      0,0,0,1
+    ]);
+
+    // palette
+    let ringCol=[0.8,0.66,0.36];
+    let coreCol=[0.7,0.55,0.32];
+    let nodeCol=[1.0,0.88,0.55];
+    if(visMode==="cold"){
+      ringCol=[0.7,0.85,1.0];
+      coreCol=[0.55,0.8,1.0];
+      nodeCol=[0.8,0.92,1.0];
+    }else if(visMode==="noir"){
+      ringCol=[0.8,0.8,0.8];
+      coreCol=[0.7,0.7,0.7];
+      nodeCol=[0.9,0.9,0.9];
+    }else if(visMode==="glitch"){
+      ringCol=[1.0,0.5,0.9];
+      coreCol=[0.9,0.4,0.8];
+      nodeCol=[1.0,0.7,0.95];
+    }else if(visMode==="amber"){
+      ringCol=[1.0,0.8,0.5];
+      coreCol=[0.9,0.7,0.4];
+      nodeCol=[1.0,0.85,0.6];
+    }
+
+    if(breachPhase==="active" || overdrive){
+      ringCol=[ringCol[0]*1.1,ringCol[1]*1.05,ringCol[2]*1.0];
+      coreCol=[coreCol[0]*1.15,coreCol[1]*1.1,coreCol[2]*1.0];
+    }
+    if(breachForce && breachPhase==="active"){
+      ringCol=[1.0,0.6,0.5];
+      coreCol=[1.0,0.55,0.4];
+    }
+
+    // lines
+    gl.useProgram(progLine);
+    gl.uniformMatrix4fv(gl.getUniformLocation(progLine,"uP"),false,P);
+    gl.uniformMatrix4fv(gl.getUniformLocation(progLine,"uV"),false,V);
+    gl.uniformMatrix4fv(gl.getUniformLocation(progLine,"uM"),false,M);
+    gl.uniform1f(gl.getUniformLocation(progLine,"uTime"),t);
+
+    // outer ring
+    gl.uniform3f(gl.getUniformLocation(progLine,"uColor"),ringCol[0],ringCol[1],ringCol[2]);
+    gl.bindBuffer(gl.ARRAY_BUFFER,outerBuf);
+    gl.enableVertexAttribArray(0);
+    gl.vertexAttribPointer(0,3,gl.FLOAT,false,0,0);
+    gl.drawArrays(gl.LINES,0,outerVerts.length/3);
+
+    // spokes
+    gl.uniform3f(gl.getUniformLocation(progLine,"uColor"),coreCol[0],coreCol[1],coreCol[2]);
+    gl.bindBuffer(gl.ARRAY_BUFFER,spokeBuf);
+    gl.vertexAttribPointer(0,3,gl.FLOAT,false,0,0);
+    gl.drawArrays(gl.LINES,0,spokeVerts.length/3);
+
+    // inner + cross only when breach-phase active
+    if(breachPhase==="active"){
+      // inner ring
+      gl.uniform3f(gl.getUniformLocation(progLine,"uColor"),ringCol[0]*1.05,ringCol[1]*0.8,ringCol[2]*1.05);
+      gl.bindBuffer(gl.ARRAY_BUFFER,innerBuf);
+      gl.vertexAttribPointer(0,3,gl.FLOAT,false,0,0);
+      gl.drawArrays(gl.LINES,0,innerVerts.length/3);
+
+      // cross mesh
+      const pulse=0.8+0.4*Math.sin(t*3.0);
+      gl.uniform3f(gl.getUniformLocation(progLine,"uColor"),
+        ringCol[0]*1.1,
+        ringCol[1]*0.6,
+        ringCol[2]*pulse);
+      gl.bindBuffer(gl.ARRAY_BUFFER,crossBuf);
+      gl.vertexAttribPointer(0,3,gl.FLOAT,false,0,0);
+      gl.drawArrays(gl.LINES,0,crossVerts.length/3);
+    }
+
+    // triad highlight
+    if(triadActive){
+      const triVerts=[];
+      for(let i=0;i<3;i++){
+        const p=nodePos(triadActive[i]);
+        if(!p)continue;
+        triVerts.push(p[0],p[1],p[2]);
+      }
+      if(triVerts.length===9){
+        triVerts.push(triVerts[0],triVerts[1],triVerts[2]);
+        const tb=gl.createBuffer();
+        gl.bindBuffer(gl.ARRAY_BUFFER,tb);
+        gl.bufferData(gl.ARRAY_BUFFER,new Float32Array(triVerts),gl.STREAM_DRAW);
+        const pulse=0.8+0.4*Math.sin(t*3.0);
+        gl.uniform3f(gl.getUniformLocation(progLine,"uColor"),1.0,0.9*pulse,0.6*pulse);
+        gl.vertexAttribPointer(0,3,gl.FLOAT,false,0,0);
+        gl.drawArrays(gl.LINE_STRIP,0,4);
+        gl.deleteBuffer(tb);
+      }
+    }
+
+    // nodes
+    gl.useProgram(progNode);
+    gl.uniformMatrix4fv(gl.getUniformLocation(progNode,"uP"),false,P);
+    gl.uniformMatrix4fv(gl.getUniformLocation(progNode,"uV"),false,V);
+    gl.uniformMatrix4fv(gl.getUniformLocation(progNode,"uM"),false,M);
+    gl.uniform1f(gl.getUniformLocation(progNode,"uTime"),t);
+    gl.bindBuffer(gl.ARRAY_BUFFER,nodeBuf);
+    gl.enableVertexAttribArray(0);
+    gl.vertexAttribPointer(0,3,gl.FLOAT,false,0,0);
+
+    const selIndex=ALL_NODES.indexOf(selected);
+    const maxIndex = (breachPhase==="active") ? nodes.length : CORE_NODES.length;
+
+    for(let i=0;i<maxIndex;i++){
+      const nName=nodes[i].name;
+      let col=nodeCol.slice();
+      if(blackoutNodes.has(nName)){
+        col=[0.25,0.25,0.25];
+      }else if(i===selIndex){
+        col=[col[0]*1.15,col[1]*1.15,col[2]*1.05];
+      }
+      gl.uniform3f(gl.getUniformLocation(progNode,"uColor"),col[0],col[1],col[2]);
+      gl.drawArrays(gl.POINTS,i,1);
+    }
+
+    // breach auto-timeout
+    if(breachPhase==="active" && breach && !breachForce){
+      const elapsed=performance.now()-breachStart;
+      if(elapsed>BREACH_DURATION){
+        exitBreach();
+      }
+    }
+
+    // breach loading -> active transition
+    if(breachPhase==="loading"){
+      const elapsed=performance.now()-breachStart;
+      if(elapsed>=BREACH_LOAD){
+        finalizeBreach();
+      }
+    }
+
+    requestAnimationFrame(frame);
+  }
+  requestAnimationFrame(frame);
+})();
+</script>
+</body>
+</html>
